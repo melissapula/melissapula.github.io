@@ -1,47 +1,49 @@
 import Vue from "vue";
-import Router from "vue-router";
-import NotFound from "@/pages/404";
-import About from "@/pages/about";
-//import Dashboard from "@/pages/Dashboard";
+import VueRouter from "vue-router";
+import PerfectScrollbar from "vue2-perfect-scrollbar";
+import "vue2-perfect-scrollbar/dist/vue2-perfect-scrollbar.css";
+import About from "../pages/about.vue";
+import Home from "../pages/home.vue";
+import FishCreek from "../pages/fishCreek.vue";
+import Resume from "../pages/resume";
+import Pacific from "../pages/pacific";
 
-Vue.use(Router);
+Vue.use(PerfectScrollbar);
 
-const router = new Router({
-    routes: [
-        /*{
-            path: "/adminrecoveryexec",
-            name: "AdminRecoveryEXEC",
-            component: AdminRecoveryEXEC,
-        },*/
-        {
-            path: "/notfound",
-            name: "404",
-            component: NotFound,
-        },
-        {
-            path: "/about",
-            name: "about",
-            component: About,
-        },
-    ],
-});
+Vue.use(VueRouter);
 
-router.beforeEach((to, from, next) => {
-    if (!to.matched.length) {
-        next("/notfound");
-    }
-    if (to.matched.some((record) => record.meta.requiresAuth)) {
-        if (localStorage.getItem("token") === null) {
-            next({
-                name: "Login",
-                params: { nextUrl: to.fullPath },
-            });
-        } else {
-            next();
-        }
-    } else {
-        next();
-    }
+const routes = [
+  {
+    path: "/",
+    name: "Home",
+    component: Home
+  },
+  {
+    path: "/about",
+    name: "About",
+    component: About
+  },
+  {
+    path: "/fishcreek",
+    name: "FishCreek",
+    component: FishCreek
+  },
+  {
+    path: "/resume",
+    name: "Resume",
+    component: Resume
+  },
+  {
+    path: "/pacific",
+    name: "Pacific",
+    component: Pacific
+  }
+];
+
+const router = new VueRouter({
+  mode: "history",
+  base: process.env.BASE_URL,
+  routes
 });
 
 export default router;
