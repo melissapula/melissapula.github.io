@@ -1,8 +1,7 @@
 <template>
-  <mdb-container class="h-100 overflow-auto m-0 p-0 mb-0" fluid>
-      <mdb-navbar color="default" class="white-text" dark scrolling>
-        <mdb-navbar-brand href="https://mdbootstrap.com/">
-          Navbar
+  <mdb-container class="h-100 m-0 p-0 mb-0" fluid>
+      <mdb-navbar color="default" class="white-text" dark>
+        <mdb-navbar-brand href="https://mdbootstrap.com/"><router-link style="color: white" to="/">Melissa Pula</router-link>
         </mdb-navbar-brand>
         <mdb-navbar-toggler>
           <mdb-navbar-nav>
@@ -16,13 +15,21 @@
                 <mdb-dropdown-item><router-link to="pacific">Pacific</router-link></mdb-dropdown-item>
                 <mdb-dropdown-item><router-link to="javaJam">Java Jam</router-link></mdb-dropdown-item>
                 <mdb-dropdown-item><router-link to="hangman">Hangman</router-link></mdb-dropdown-item>
+                <mdb-dropdown-item><router-link to="bugsGame">Bugs Game</router-link></mdb-dropdown-item>
               </mdb-dropdown-menu>
             </mdb-dropdown>
-            <mdb-nav-item><router-link to="/blog" class="mr-3 white-text">Blog<mdb-icon icon="blog" class="ml-2"></mdb-icon></router-link></mdb-nav-item>
+            <mdb-dropdown tag="li" class="nav-item">
+              <mdb-dropdown-toggle tag="a" navLink color="default" slot="toggle" waves-fixed>Blog<mdb-icon icon="blog" class="ml-2"></mdb-icon></mdb-dropdown-toggle>
+              <mdb-dropdown-menu>
+                <mdb-dropdown-item><router-link to="parentingBlog">Parenting</router-link></mdb-dropdown-item>
+                <mdb-dropdown-item><router-link to="fitnessBlog">Fitness</router-link></mdb-dropdown-item>
+                <!--<mdb-dropdown-item><router-link to="travelBlog">Travel</router-link></mdb-dropdown-item>-->
+              </mdb-dropdown-menu>
+            </mdb-dropdown>
           </mdb-navbar-nav>
-          <form>
+          <!--<form>
             <mdb-input type="text" class="text-white" placeholder="Search" aria-label="Search" label navInput waves waves-fixed/>
-          </form>
+          </form>-->
         </mdb-navbar-toggler>
       </mdb-navbar>
     <router-view/>

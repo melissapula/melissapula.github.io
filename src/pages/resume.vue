@@ -1,8 +1,8 @@
 <template>
-  <mdb-container class="h-100 overflow-hidden mt-0 pt-0" fluid>
+  <mdb-container class="h-100 mt-0 pt-0" fluid>
     <mdb-row>
-      <mdb-col col="4" id="pic">
-        <mdb-row class="align-items-center" id="picRow">
+      <mdb-col lg="4" sm="12" id="pic">
+        <mdb-row class="align-items-center my-4" id="picRow">
           <mdb-col col="12">
             <mdb-row class="text-center">
               <mdb-col col="12">
@@ -15,10 +15,10 @@
                 <img :src="profile" class="img-fluid z-depth-1 rounded-circle">
               </mdb-col>
             </mdb-row>
-            <mdb-row class="justify-content-center my-4 py-2">
-              <mdb-col col="6">
+            <mdb-row class="justify-content-center">
+              <mdb-col lg="8" sm="8">
                 <h4>Call: 218-209-5056</h4>
-                <h4 class="text-nowrap">eMail: melissa_m_24@yahoo.com</h4>
+                <h4 class="text-nowrap">EMail: melissa_m_24@yahoo.com</h4>
                 <h4>Web: <a href="https://mmpula24.github.io">mmpula24.github.io</a></h4>
                 <h4>Home: Bemidji, MN</h4>
                 <h4><a href="https://www.linkedin.com/in/melissa-pula-833748172?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BwtWUh3kJQDm4rkKmkKITfg%3D%3D">LinkedIn</a></h4>
@@ -27,9 +27,9 @@
           </mdb-col>
         </mdb-row>
       </mdb-col>
-      <mdb-col col="8" id="experience">
-        <mdb-row class="align-items-center" id="experienceRow">
-          <mdb-col col="12" class="scrollbar scrollbar-primary">
+      <mdb-col lg="8" sm="12" id="experience">
+        <mdb-row class="align-items-center my-4" id="experienceRow">
+          <mdb-col col="12">
             <h4 class="cyan-text">EDUCATION</h4>
             <p class="mb-1">M.S. SOFTWARE ENGINEERING, ST CLOUD STATE UNIVERSITY (AUG 2021 - MAY 2023)</p>
             <p class="mb-1">B.S. MATHEMATICS, BEMIDJI STATE UNIVERSITY (JULY 2020)</p>

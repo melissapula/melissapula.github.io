@@ -1,17 +1,15 @@
 <template>
-  <mdb-container class="h-100 overflow-hidden mt-0 pt-0" id="pacific" fluid>
+  <mdb-container class="h-100 mt-0 pt-0" id="pacific" fluid>
     <div id="wrapper">
-      <h1 class="mt-4 mb-0">Pacific Trails Resort</h1>
-      <router-link to="fishCreek">test fish creek</router-link>
-      <router-view></router-view>
-      <mdb-navbar>
-        <mdb-navbar-nav nav vertical class="sidebar">
-          <mdb-nav-item active @click.native="view = 'home'">Home</mdb-nav-item>
-          <mdb-nav-item @click.native="view = 'yurts'">Yurts</mdb-nav-item>
-          <mdb-nav-item @click.native="view = 'activities'">Activities</mdb-nav-item>
-          <mdb-nav-item @click.native="view = 'reservations'">Reservations</mdb-nav-item>
-        </mdb-navbar-nav>
-      </mdb-navbar>
+      <h1 class="mb-0">Pacific Trails Resort</h1>
+      <mdb-row>
+        <mdb-col lg="2" sm="12">
+          <mdb-nav-item active @click.native="view = 'home'" class="noBullets">Home</mdb-nav-item>
+          <mdb-nav-item @click.native="view = 'yurts'" class="noBullets">Yurts</mdb-nav-item>
+          <mdb-nav-item @click.native="view = 'activities'" class="noBullets">Activities</mdb-nav-item>
+          <mdb-nav-item @click.native="view = 'reservations'" class="noBullets">Reservations</mdb-nav-item>
+        </mdb-col>
+        <mdb-col lg="10" sm="12">
       <main>
         <mdb-row v-if="view == 'home'" id="homehero">
           <mdb-col col="12">
@@ -41,7 +39,7 @@
           </mdb-row>
           </mdb-col>
         </mdb-row>
-        <mdb-row v-if="view == 'yurts'"><!--id="yurthero"-->
+        <mdb-row v-if="view == 'yurts'">
           <mdb-col col="12">
             <mdb-row><img :src="yurt" class="img-fluid"></mdb-row>
           <mdb-row><h2>The Yurts at Pacific Trails</h2></mdb-row>
@@ -89,7 +87,9 @@
             </mdb-row>
           </mdb-col>
         </mdb-row>
-        <mdb-row v-if="view == 'activities'" id="trailhero">
+        <mdb-row v-if="view == 'activities'">
+          <mdb-col col="12">
+            <mdb-row><img src="../assets/trail.jpg" class="img-fluid"></mdb-row>
           <h2>Activities at Pacific Trails</h2>
           <h3>Hiking</h3>
           <p><span class="resort">Pacific Trails Resort</span> has 5 miles of hiking trails and is adjacent to a state park.  Go it alone of join one of our guided hikes.</p>
@@ -97,8 +97,11 @@
           <p>Ocean kayaks are available for guest use.</p>
           <h3>Bird Watching</h3>
           <p>While anytime is a good time for bird watching at Pacific Trails, we offer guided bird-watching trips at sunrise several times a week.</p><br>
+          </mdb-col>
         </mdb-row>
-        <mdb-row v-if="view == 'reservations'" id="reservationshero">
+        <mdb-row v-if="view == 'reservations'">
+          <mdb-col col="12">
+            <mdb-row><img src="../assets/coast.jpg" class="img-fluid"></mdb-row>
           <h2>Reservations at Pacific Trails</h2>
           <h3>Contact Us</h3>
           <p>Required information is marked with an asterisk (*).</p>
@@ -119,11 +122,14 @@
             <textarea id="myComments" name="myComments" rows="2" cols="20" required></textarea>
             <input type="submit" id="mySubmit" value="Submit">
           </form>
+          </mdb-col>
         </mdb-row>
       </main>
+        </mdb-col>
+      </mdb-row>
       <footer>
-        <mdb-row>Copyright &copy; 2016 Pacific Trails Resort</mdb-row>
-        <mdb-row><a href="mailto:melissa_m_24@yahoo.com">Melissa Pula</a></mdb-row>
+        <mdb-row class="pl-2">Copyright &copy; 2016 Pacific Trails Resort</mdb-row>
+        <mdb-row class="pl-2"><a href="mailto:melissa_m_24@yahoo.com">Melissa Pula</a></mdb-row>
       </footer>
     </div>
   </mdb-container>
@@ -145,6 +151,9 @@ export default {
 </script>
 
 <style scoped>
+.noBullets {
+  list-style-type: none;
+}
 .sidebar {
   height: 100%;
   outline: none;
@@ -189,7 +198,7 @@ dt {
 }
 footer {
   background-color: #FFFFFF;
-  margin-left: 170px;
+  margin-left: 175px;
   padding: 10px;
   font-size: .7em;
   font-style: italic;
@@ -214,7 +223,6 @@ h3 {
 }
 main {
   background-color: #FFFFFF;
-  margin-left: 170px;
   padding-top: 1px;
   padding-bottom: 1px;
   padding-left: 20px;
@@ -306,86 +314,5 @@ input, textarea {
 }
 #mySubmit {
   margin-left: 10em;
-}
-@media only screen and (max-width: 1024px) {
-  body {
-    margin: 0;
-    padding: 0;
-    background-image: none;
-  }
-  #wrapper {
-    width: auto;
-    min-width: 0;
-    margin: 0;
-    box-shadow: none;
-  }
-  h1 {
-    margin: 0;
-  }
-  nav {
-    float: none;
-    width: auto;
-    padding: 0.5em;
-  }
-  nav li {
-    display: inline-block;
-  }
-  nav a {
-    padding: 1em;
-  }
-  main {
-    padding: 1em;
-    margin-left: 0;
-    font-size: 90%;
-  }
-  footer {
-    margin: 0;
-  }
-  #homehero, #yurthero, #trailhero, #reservationshero {
-    margin: 0;
-  }
-}
-@media only all and (max-width: 768px) {
-  h1 {
-    height: 100%;
-    font-size: 1.5em;
-    padding-left: 0.3em;
-  }
-  nav {
-    padding: 0;
-  }
-  nav a {
-    display: block;
-    padding: 0.2em;
-    font-size: 1.3em;
-    border-bottom: 1px #330000;
-  }
-  nav ul {
-    margin: 0;
-    padding: 0;
-  }
-  nav li {
-    display: block;
-    margin: 0;
-    padding: 0;
-  }
-  main {
-    padding-top: 0.1em;
-    padding-right: 0.6em;
-    padding-bottom: 0.1em;
-    padding-left: 0.4em;
-  }
-  #homehero, #yurthero, #trailhero, #reservationshero {
-    display: none;
-  }
-  footer {
-    padding: 0;
-  }
-  #mobile {
-    display: inline;
-  }
-  #desktop {
-    display: none;
-  }
 }
 </style>

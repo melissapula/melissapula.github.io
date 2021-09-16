@@ -1,15 +1,15 @@
 <template>
-  <mdb-container class="h-100 overflow-hidden mt-0 pt-0" id="fishCreek" fluid>
+  <mdb-container class="h-100 mt-0 pt-0" id="fishCreek" fluid>
   <div id="wrapper">
-    <h1 class="mt-4 mb-0">Fish Creek Animal Hospital</h1>
-    <mdb-navbar>
-      <mdb-navbar-nav nav vertical class="sidebar">
+    <h1 class="mb-0">Fish Creek Animal Hospital</h1>
+    <mdb-row>
+      <mdb-col col="2">
         <mdb-nav-item active @click.native="view = 'home'">Home</mdb-nav-item>
         <mdb-nav-item @click.native="view = 'services'">Services</mdb-nav-item>
         <mdb-nav-item @click.native="view = 'vet'">Ask the Vet</mdb-nav-item>
         <mdb-nav-item @click.native="view = 'contact'">Contact</mdb-nav-item>
-      </mdb-navbar-nav>
-    </mdb-navbar>
+      </mdb-col>
+      <mdb-col col="10">
     <main class="mt-2">
       <mdb-row v-if="view == 'home'">
         <mdb-col col="12">
@@ -72,6 +72,8 @@
         </mdb-col>
       </mdb-row>
     </main>
+      </mdb-col>
+    </mdb-row>
     <footer>
       <mdb-row>Copyright &copy; 2016 Fish Creek Animal Hospital</mdb-row>
       <mdb-row><a href="mailto:melissa_m_24@yahoo.com">Melissa Pula</a></mdb-row>
@@ -99,6 +101,9 @@ export default {
 </script>
 
 <style scoped>
+li {
+  list-style-type: none;
+}
 .sidebar {
   min-height: 352px;
   outline: none;
@@ -174,7 +179,6 @@ nav a:hover {
   color: #CCCCCC;
 }
 main {
-  margin-left: 180px;
   padding-right: 20px;
   padding-bottom: 20px;
 }
