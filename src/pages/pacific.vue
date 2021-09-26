@@ -1,5 +1,7 @@
 <template>
-  <mdb-container class="h-100 mt-0 pt-0" id="pacific" fluid>
+  <mdb-container class="mt-0 pt-0" fluid style="height: 100vh">
+    <mdb-row id="pacific">
+      <mdb-col>
     <div id="wrapper">
       <h1 class="mb-0">Pacific Trails Resort</h1>
       <mdb-row>
@@ -9,10 +11,10 @@
           <mdb-nav-item @click.native="view = 'activities'" class="noBullets">Activities</mdb-nav-item>
           <mdb-nav-item @click.native="view = 'reservations'" class="noBullets">Reservations</mdb-nav-item>
         </mdb-col>
-        <mdb-col lg="10" sm="12">
+        <mdb-col>
       <main>
         <mdb-row v-if="view == 'home'" id="homehero">
-          <mdb-col col="12">
+          <mdb-col>
             <mdb-row><img :src="coast" class="img-fluid"></mdb-row>
             <mdb-row><h2>Enjoy Nature in Luxury</h2></mdb-row>
           <mdb-row>
@@ -124,14 +126,16 @@
           </form>
           </mdb-col>
         </mdb-row>
+        <footer>
+          <mdb-row class="pl-2">Copyright &copy; 2016 Pacific Trails Resort</mdb-row>
+          <mdb-row class="pl-2"><a href="mailto:melissa_m_24@yahoo.com">Melissa Pula</a></mdb-row>
+        </footer>
       </main>
         </mdb-col>
       </mdb-row>
-      <footer>
-        <mdb-row class="pl-2">Copyright &copy; 2016 Pacific Trails Resort</mdb-row>
-        <mdb-row class="pl-2"><a href="mailto:melissa_m_24@yahoo.com">Melissa Pula</a></mdb-row>
-      </footer>
     </div>
+      </mdb-col>
+    </mdb-row>
   </mdb-container>
 </template>
 
@@ -163,6 +167,7 @@ export default {
   background-color: #FFFFFF;
   color: #666666;
   font-family: Verdana, Arial, sans-serif;
+  min-height: 100vh;
 }
 h1 {
   margin-bottom: 0;
@@ -198,7 +203,6 @@ dt {
 }
 footer {
   background-color: #FFFFFF;
-  margin-left: 175px;
   padding: 10px;
   font-size: .7em;
   font-style: italic;
@@ -210,7 +214,6 @@ footer {
 }
 #wrapper {
   background-color: #90C7E3;
-  min-width: 700px;
   max-width: 1024px;
   box-shadow: 3px 3px 3px #333;
   margin-left: auto;

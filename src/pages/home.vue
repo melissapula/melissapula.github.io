@@ -1,6 +1,6 @@
 <template>
-  <mdb-container class="h-100 mt-0 pt-0" fluid>
-  <mdb-row class="align-items-center justify-content-center" style="min-height: 100vh">
+  <mdb-container class="mt-0 pt-0" fluid>
+  <mdb-row class="align-items-center justify-content-center" style="min-height: 100vh; background-color:#EFC9AF">
     <mdb-col lg="3" sm="12" v-if="showTheForce == false">
       <mdb-row>
         <mdb-col col="12">

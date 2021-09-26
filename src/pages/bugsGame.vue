@@ -1,6 +1,6 @@
 <template>
   <mdb-container class="h-100 m-0 p-0 mb-0" fluid>
-    <mdb-row class="justify-content-center align-items-center" style="min-height: 100vh">
+    <mdb-row class="justify-content-center align-items-center" style="min-height: 100vh; background-color:#EFC9AF">
       <mdb-col col="8">
   <mdb-tbl v-if="tableCreated" bordered style="background-color:lightyellow" class="mt-4">
     <mdb-tbl-head>

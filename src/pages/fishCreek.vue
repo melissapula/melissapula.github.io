@@ -3,14 +3,14 @@
   <div id="wrapper">
     <h1 class="mb-0">Fish Creek Animal Hospital</h1>
     <mdb-row>
-      <mdb-col col="2">
+      <mdb-col lg="2" sm="12">
         <mdb-nav-item active @click.native="view = 'home'">Home</mdb-nav-item>
         <mdb-nav-item @click.native="view = 'services'">Services</mdb-nav-item>
         <mdb-nav-item @click.native="view = 'vet'">Ask the Vet</mdb-nav-item>
         <mdb-nav-item @click.native="view = 'contact'">Contact</mdb-nav-item>
       </mdb-col>
       <mdb-col col="10">
-    <main class="mt-2">
+    <main class="mt-2 ml-4">
       <mdb-row v-if="view == 'home'">
         <mdb-col col="12">
           <mdb-row><p class="category mb-1">Full Service Facility</p></mdb-row>
@@ -71,13 +71,13 @@
         </form>
         </mdb-col>
       </mdb-row>
+      <footer>
+        <mdb-row>Copyright &copy; 2016 Fish Creek Animal Hospital</mdb-row>
+        <mdb-row><a href="mailto:melissa_m_24@yahoo.com">Melissa Pula</a></mdb-row>
+      </footer>
     </main>
       </mdb-col>
     </mdb-row>
-    <footer>
-      <mdb-row>Copyright &copy; 2016 Fish Creek Animal Hospital</mdb-row>
-      <mdb-row><a href="mailto:melissa_m_24@yahoo.com">Melissa Pula</a></mdb-row>
-    </footer>
   </div>
   </mdb-container>
 </template>
@@ -140,7 +140,6 @@ nav {
 }
 footer {
   padding: 10px;
-  margin-left: 180px;
   font-size: .7em;
   font-style: italic;
 }

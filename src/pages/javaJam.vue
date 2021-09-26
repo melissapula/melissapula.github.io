@@ -1,5 +1,7 @@
 <template>
-  <mdb-container class="h-100 mt-0 pt-0" id="javaJam" fluid>
+  <mdb-container class="h-100 mt-0 pt-0" fluid>
+    <mdb-row id="javaJam">
+      <mdb-col>
     <div id="wrapper">
       <h1 class="mb-0">JavaJam Coffee House</h1>
       <mdb-row>
@@ -91,6 +93,8 @@
             <a href="mailto:melissa_m_24@yahoo.com">Melissa Pula</a>
           </footer>
     </div>
+      </mdb-col>
+    </mdb-row>
   </mdb-container>
 </template>
 
@@ -114,6 +118,7 @@ export default {
   background-color: #FCEBB6;
   color: #221811;
   text-family: Verdana, Arial, sans-serif;
+  min-height: 100vh;
 }
 h1 {
   height: 150px;

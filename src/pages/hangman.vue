@@ -1,16 +1,25 @@
 <template>
-  <mdb-container class="h-100 mt-0 pt-0" fluid>
-    <mdb-row>
-      <mdb-col col="12">
+  <mdb-container class="mt-0 pt-0" fluid style="height: 100vh">
+    <mdb-row style="background-color: #EFC9AF; min-height: 100vh">
+      <mdb-col>
+        <mdb-row class="justify-content-center">
         <p id="gameTitle">H A N G M A N</p>
-        <mdb-row class="justify-content-center"><img :src="images[wrongLetters.length]" class="img-fluid"></mdb-row>
+        </mdb-row>
+        <mdb-row class="justify-content-center">
+          <img :src="images[wrongLetters.length]" class="img-fluid">
+        </mdb-row>
+        <mdb-row class="justify-content-center">
         <p id="rongLetters">Wrong Guesses: {{wrongLetters.toUpperCase()}}</p>
+        </mdb-row>
+        <mdb-row class="justify-content-center">
         <div id="guessDiv">
           <input ref="inputBox" type="text" id="guess" v-model="guess" @keyup.enter="btnClik_onclick('enter')">
           <mdb-btn id="button" type="button" @click.native="btnClik_onclick('click')">Guess</mdb-btn>
         </div>
-        <div class="clear"></div>
+        </mdb-row>
+        <mdb-row class="justify-content-center">
         <p id="secretWord">Secret Word: <span id="showWord"></span></p>
+        </mdb-row>
       </mdb-col>
     </mdb-row>
   </mdb-container>
@@ -125,7 +134,7 @@ focusOnInbox() {
 
 <style scoped>
 #gameTitle {
-  font-size: 80px;
+  font-size: 40px;
   color: green;
   text-align: center;
   margin-top: 2px;
@@ -137,12 +146,12 @@ body {
   text-align: center;
 }
 #showWord {
-  font-size: 80px;
+  font-size: 40px;
   color: yellow;
   text-align: center;
 }
 #secretWord {
-  font-size: 80px;
+  font-size: 40px;
   color: coral;
   text-align: center;
 }

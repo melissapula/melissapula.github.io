@@ -1,9 +1,9 @@
 <template>
-  <mdb-container class="h-100 m-0 p-0 mb-0" fluid>
+  <mdb-container class="mt-0 pt-0 mb-0" fluid style="height: 100vh">
     <mdb-row class="justify-content-center align-items-center" style="background-color:white; color: #104C91; height: 100px">
       <h1>ABOUT</h1>
     </mdb-row>
-    <mdb-row class="justify-content-center pt-4" style="background-color: #104C91; height: 100%">
+    <mdb-row class="justify-content-center pt-4" style="background-color: #104C91; min-height: 100vh">
       <mdb-col col="12">
         <mdb-row class="justify-content-center align-items-center">
       <mdb-col lg="3" sm="12" class="mr-4">
@@ -12,7 +12,7 @@
         <mdb-btn size="lg" outline="white" @click.native="edModal = true" class="w-100 mt-4">Education</mdb-btn>
         <mdb-btn size="lg" outline="white" @click.native="workModal = true" class="w-100 mt-4">Work Experience</mdb-btn>
         </mdb-col>
-      <mdb-col lg="3" sm="12">
+      <mdb-col lg="2" sm="8">
         <img src="../assets/funFamily.jpg" class="img-fluid">
       </mdb-col>
           </mdb-row>

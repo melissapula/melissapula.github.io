@@ -1,18 +1,18 @@
 <template>
-  <mdb-container class="h-100 m-0 p-0 mb-0 overflow-auto" fluid>
+  <mdb-container class="h-90 mt-0 pt-0 mb-0" fluid>
     <mdb-row class="pb-4" style="background-color: #A8D0E6">
       <mdb-col col="12">
         <mdb-row class="mt-4 justify-content-center align-items-center" style="background-color: #24305E; color: white; height: 50px">
           <h1>Parenting</h1>
         </mdb-row>
         <mdb-row class="justify-content-center mt-4">
-      <mdb-col col="3">
+      <mdb-col col="2">
         <img src="../assets/Madison.jpg" class="img-fluid">
         </mdb-col>
-        <mdb-col col="3">
+        <mdb-col col="2">
           <img src="../assets/girlsnme.jpg" class="img-fluid">
         </mdb-col>
-        <mdb-col col="3">
+        <mdb-col col="2">
           <img src="../assets/Olivia.jpg" class="img-fluid">
         </mdb-col>
         </mdb-row>
@@ -74,9 +74,10 @@
                 <li><b>14:30 - 15:30:</b> cardio/reading (two days a week, one walks on the treadmill while the other reads out
                 loud to me for half an hour and then they switch; two days a week we do a boxing working for half an hour
                 and then they read quietly on their own for half an hour)</li>
-                <li><b>15:30 - 18:00:</b> outdoor play, kindle time, supper</li>
-                <li><b>18:00:</b> bedtime (usually a little bit of kindle time in bed and then I read to them for half an hour
-                before lights out by 19:00)</li>
+                <li><b>15:30 - 18:00:</b> outdoor play, kindle time</li>
+                <li><b>18:00</b> supper</li>
+                <li><b>20:00:</b> bedtime (usually a little bit of kindle time in bed and then I read to them for half an hour
+                before lights out by 21:00)</li>
               </ul>
               <p>For anyone interested, we get most of our books through a company called <a href="http://www.criticalthinking.com" target="_blank">Critical Thinking Company.</a></p>
             </mdb-card-text>

@@ -1,6 +1,8 @@
 <template>
-  <mdb-container class="h-100 m-0 p-0 mb-0 overflow-auto" style="background-color: darkred; color:white" fluid>
-    <mdb-row class="justify-content-center align-items-center mt-4">
+  <mdb-container class="h-100 mt-0 pt-0 mb-0" fluid>
+    <mdb-row style="background-color: darkred; color:white">
+      <mdb-col col="12">
+    <mdb-row class="justify-content-center align-items-center pt-4">
       <mdb-col lg="2" sm="3">
         <img src="../assets/backPhoto.png" class="img-fluid">
       </mdb-col>
@@ -97,6 +99,8 @@
               <mdb-accordion :panes="panesTwo" style="width: 100%"></mdb-accordion>
             </mdb-col>
           </mdb-row>
+      </mdb-col>
+    </mdb-row>
       </mdb-col>
     </mdb-row>
   </mdb-container>
