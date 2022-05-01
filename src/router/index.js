@@ -1,5 +1,7 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
+import VueGoodTablePlugin from 'vue-good-table';
+import 'vue-good-table/dist/vue-good-table.css'
 import PerfectScrollbar from "vue2-perfect-scrollbar";
 import "vue2-perfect-scrollbar/dist/vue2-perfect-scrollbar.css";
 import About from "../pages/about.vue";
@@ -25,11 +27,18 @@ import Sticks from "../pages/sticks";
 import Pig from "../pages/pig";
 import Turtle from "../pages/turtle";
 import Pygame from "../pages/pygame";
-import verify from "../pages/verify"
+import verify from "../pages/verify";
+import LibraryHome from "../library-management-system/libraryHome";
+import LibraryBooks from "../library-management-system/libraryBooks";
+import LibraryCheckouts from "../library-management-system/libraryCheckouts";
+import LibraryReturns from "../library-management-system/libraryReturns";
+import LibraryUsers from "../library-management-system/libraryUsers"
 
 Vue.use(PerfectScrollbar);
 
 Vue.use(VueRouter);
+
+Vue.use(VueGoodTablePlugin);
 
 const routes = [
   {
@@ -151,6 +160,31 @@ const routes = [
     path: "/verify",
     name: "verify",
     component: verify
+  },
+  {
+    path: "/libraryhome",
+    name: "LibraryHome",
+    component: LibraryHome
+  },
+  {
+    path: "/librarybooks",
+    name: "LibraryBooks",
+    component: LibraryBooks
+  },
+  {
+    path: "/librarycheckouts",
+    name: "LibraryCheckouts",
+    component: LibraryCheckouts
+  },
+  {
+    path: "/libraryreturns",
+    name: "LibraryReturns",
+    component: LibraryReturns
+  },
+  {
+    path: "/libraryusers",
+    name: "LibraryUsers",
+    component: LibraryUsers
   },
 ];
 

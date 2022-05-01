@@ -38,8 +38,15 @@
             <h4 class="cyan-text mt-4">WORK EXPERIENCE</h4>
             <p class="mb-1"><b>WEB DEVELOPER (CONTRACT), TRANSPORTATION IMPACT (FEB 2020 - PRESENT)</b></p>
             <ul>
-              <li>Design and build web sites as directed</li>
-              <li>Learn required programming languages and libraries, to include PHP, VueJS, BootstrapVue, and Git</li>
+              <li>Writing code in the VueJS framework to replicate current site behavior</li>
+              <li>Writing unit tests to ensure features are working as intended</li>
+              <li>Writing code for new features as requested to enhance to the current site</li>
+              <li>Working with existing API calls to recreate site functionality</li>
+              <li>Submitting requests for new API endpoints to support the development of enhancements</li>
+              <li>Working in a source-controlled environment using a branching and merging strategy</li>
+              <li>Using a package manager to install and utilize open-source technologies</li>
+              <li>Working independently without input for several days at a time and presenting results to supervisor</li>
+              <li>Transitioning knowledge of the application design through demos and meetings</li>
             </ul>
             <p class="mb-1">REGISTRATION CLERK/COURSE SCHEDULER, BEMIDJI STATE UNIVERSITY (OCT 2019 - JUNE 2020)</p>
             <ul>
@@ -56,15 +63,7 @@
             <li>Designed, built, and maintained web sites using authoring or scripting languages, content creation tools, management tools, and digital media</li>
             <li>Performed and directed web site updates</li>
             <li>Wrote, designed, and edited web page content</li>
-            <li>Learned required programming languages and libraries, to include HTML, CSS, JavaScript, TypeScript, AngularJS, JSON, Bootstrap, and JQuery</li>
-            </ul>
-            <p class="mb-1">BAILIFF, BELTRAMI COUNTY SHERIFF’S OFFICE (APR 2008 - AUG 2012)</p>
-            <ul>
-              <li>Screened persons entering courthouse using magnetometers, x-ray machines, and other devices to collect and retain unauthorized firearms and other contraband</li>
-              <li>Provided security by patrolling interior and exterior of courthouse and escorting judges and other court employees</li>
-              <li>Enforced courtroom rules of behavior and maintain order in courtroom during court and trial and guard jury from outside contact</li>
-              <li>Screened, controlled, and handled evidence and exhibits during court proceedings</li>
-              <li>Escorted prisoners to and from courthouse and maintain custody of prisoners during court proceedings</li>
+            <li>Learned required programming languages and libraries, to include HTML, CSS, JavaScript, TypeScript, Angular, JSON, Bootstrap, and JQuery</li>
             </ul>
             <h4 class="cyan-text">SKILLS</h4>
             <mdb-row>
@@ -104,7 +103,7 @@
 </template>
 
 <script>
-import image from '../assets/profile.jpg';
+import image from '../assets/profilePic.jpg';
 export default {
   name: "Resume",
   data() {
