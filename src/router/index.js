@@ -25,6 +25,7 @@ import Sticks from "../pages/sticks";
 import Pig from "../pages/pig";
 import Turtle from "../pages/turtle";
 import Pygame from "../pages/pygame";
+import verify from "../pages/verify"
 
 Vue.use(PerfectScrollbar);
 
@@ -145,6 +146,11 @@ const routes = [
     path: "/pygame",
     name: "Pygame",
     component: Pygame
+  },
+  {
+    path: "/verify",
+    name: "verify",
+    component: verify
   },
 ];
 
