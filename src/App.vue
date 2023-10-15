@@ -29,7 +29,8 @@
                 <mdb-dropdown-item><router-link to="hangman">Hangman</router-link></mdb-dropdown-item>
                 <mdb-dropdown-item><router-link to="bugsGame">Bugs Game</router-link></mdb-dropdown-item>
                 <mdb-dropdown-item><router-link to="verify">Simple Calculator</router-link></mdb-dropdown-item>
-                <!--<mdb-dropdown-item><router-link to="kidsBook">Kid's Interactive Book</router-link></mdb-dropdown-item>
+                <!--<mdb-dropdown-item><router-link to="ticTacToe">Tic Tac Toe</router-link></mdb-dropdown-item>
+                <mdb-dropdown-item><router-link to="kidsBook">Kid's Interactive Book</router-link></mdb-dropdown-item>
                 <mdb-dropdown-item><router-link to="trainingSession">Training Session</router-link></mdb-dropdown-item>
                 <mdb-dropdown-item><router-link to="midterm">Midterm</router-link></mdb-dropdown-item>
                 <mdb-dropdown-item><router-link to="finalPractice">Final (Practice)</router-link></mdb-dropdown-item>
