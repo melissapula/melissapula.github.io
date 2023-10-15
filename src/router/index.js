@@ -32,7 +32,8 @@ import LibraryHome from "../library-management-system/libraryHome";
 import LibraryBooks from "../library-management-system/libraryBooks";
 import LibraryCheckouts from "../library-management-system/libraryCheckouts";
 import LibraryReturns from "../library-management-system/libraryReturns";
-import LibraryUsers from "../library-management-system/libraryUsers"
+import LibraryUsers from "../library-management-system/libraryUsers";
+import TicTacToe from "../pages/ticTacToe";
 
 Vue.use(PerfectScrollbar);
 
@@ -185,6 +186,11 @@ const routes = [
     path: "/libraryusers",
     name: "LibraryUsers",
     component: LibraryUsers
+  },
+  {
+    path: "/tictactoe",
+    name: "TicTacToe",
+    component: TicTacToe
   },
 ];
 
