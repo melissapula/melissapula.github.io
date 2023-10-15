@@ -22,8 +22,8 @@
           <mdb-modal-title>About Me</mdb-modal-title>
         </mdb-modal-header>
         <mdb-modal-body>
-          I grew up in a small town, have three sisters, and am 38 years old.  Currently, I live on a ten-acre hobby
-          farm with my husband and two children.  We have ten chickens, two dogs, two cats, and a turtle.  We plan to
+          I grew up in a small town, have three sisters, and am 40 years old.  Currently, I live on a ten-acre hobby
+          farm with my husband and two children.  We have ten chickens, three dogs, one cats (and four kittens), and a turtle.  We plan to
           expand into rabbits, goats, and horses in the near future as well.  We also garden and homeschool.</mdb-modal-body>
         <mdb-modal-footer>
           <mdb-btn color="info" @click.native="meModal = false">Close</mdb-btn>
@@ -35,7 +35,7 @@
           </mdb-modal-header>
           <mdb-modal-body>
             My hobbies include hunting, fishing, kayaking, hiking, biking, skiing, and anything else outdoors I can do
-            with my family.  I also love to read, lift weights, and play video games.</mdb-modal-body>
+            with my family.  I also love to read, lift weights, and play video games with my kids.</mdb-modal-body>
           <mdb-modal-footer>
             <mdb-btn color="info" @click.native="hobbiesModal = false">Close</mdb-btn>
           </mdb-modal-footer>
@@ -48,7 +48,7 @@
             - B.S. in Criminal Justice <br>
           - B.S. in Mathematics <br>
           - Minor in Computer Science <br>
-          - M.S. in Software Engineering (currently attending) <br><br>
+          - P.S.M. (Professional Science Masters) in Software Engineering <br><br>
           Funny story; I have always wanted a degree in mathematics and had been working toward it for almost 20 years.
             Because of the Marine Corps, having a full-time job, and having babies though, it was difficult to achieve.
           Then, in order for me to be able to take full advantage of the GI Bill, I was required to take a certain amount
@@ -56,7 +56,7 @@
           take some criminal justice courses to make up for those required credits, especially since I was working in
           the law enforcement field anyway.  Long story short, I accidentally obtained my Criminal Justice Degree first.
           Then finally, five years and two kids later, I obtained my long-sought-after Math degree.  And since I still
-            haven't had enough, I am currently attending a Professional Masters in Software Engineering program.</mdb-modal-body>
+            haven't had enough, I am decided to obtain a Professional Science Masters in Software Engineering as well.</mdb-modal-body>
           <mdb-modal-footer>
             <mdb-btn color="info" @click.native="edModal = false">Close</mdb-btn>
           </mdb-modal-footer>
