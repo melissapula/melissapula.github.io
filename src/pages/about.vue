@@ -22,7 +22,7 @@
           <mdb-modal-title>About Me</mdb-modal-title>
         </mdb-modal-header>
         <mdb-modal-body>
-          I grew up in a small town, have three sisters, and am 40 years old.  Currently, I live on a ten-acre hobby
+          I grew up in a small town, have three sisters, and am {{age}} years old.  Currently, I live on a ten-acre hobby
           farm with my husband and two children.  We have ten chickens, three dogs, one cats (and four kittens), and a turtle.  We plan to
           expand into rabbits, goats, and horses in the near future as well.  We also garden and homeschool.</mdb-modal-body>
         <mdb-modal-footer>
@@ -55,8 +55,8 @@
           of credits.  It was too hard finding math courses offered at a time in which I could attend, so I decided to
           take some criminal justice courses to make up for those required credits, especially since I was working in
           the law enforcement field anyway.  Long story short, I accidentally obtained my Criminal Justice Degree first.
-          Then finally, five years and two kids later, I obtained my long-sought-after Math degree.  And since I still
-            haven't had enough, I am decided to obtain a Professional Science Masters in Software Engineering as well.</mdb-modal-body>
+          Then finally, five years and two kids later, I obtained my long-sought-after Math degree, as well as a minor in computer science.  And since I still
+            haven't had enough, I decided to obtain a Professional Science Masters in Software Engineering as well.</mdb-modal-body>
           <mdb-modal-footer>
             <mdb-btn color="info" @click.native="edModal = false">Close</mdb-btn>
           </mdb-modal-footer>
@@ -66,13 +66,13 @@
             <mdb-modal-title>My Work Experience</mdb-modal-title>
           </mdb-modal-header>
           <mdb-modal-body>
-            - TransImpact (Web Developer, contract) <br>
+            - TransImpact (Application Developer, contract) <br>
             - Bemidji State University (Registration Clerk) <br>
             - Big Rock Sports (Web Developer, intern) <br>
             - Beltrami County Sheriff's Office (Bailiff) <br>
             - United States Marine Corps (Small Arms Repairer) <br><br>
             I have been extremely fortunate in my work history and experiences.  Through the Marine Corps, I have lived
-            in North Carolina, South Carolina, Maryland, and Okinawa, as well as being deployed to Iraq and the
+            in North Carolina, South Carolina, Maryland, and Okinawa, as well as been deployed to Iraq and the
             Philippines.  I have twice worn a uniform in which I felt pride in serving my country and community.  And
             I have been given opportunities to grow in the programming field through internship and contract work.  I have
             met and kept in contact with many amazing individuals and cherish so much of what I have lived, and I take
@@ -87,6 +87,7 @@
 </template>
 
 <script>
+import moment from 'moment';
 export default {
   name: "About",
   data() {
@@ -95,7 +96,11 @@ export default {
       meModal: false,
       edModal: false,
       workModal: false,
+        age: 0
     }
+  },
+  mounted() {
+      this.age = (moment().year() - 1983);
   }
 }
 </script>

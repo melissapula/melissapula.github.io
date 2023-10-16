@@ -20,6 +20,12 @@
                 <mdb-dropdown-item><router-link to="pygame">Pygame</router-link></mdb-dropdown-item>
               </mdb-dropdown-menu>
             </mdb-dropdown>
+              <mdb-dropdown tag="li" class="nav-item mr-3">
+                  <mdb-dropdown-toggle tag="a" navLink color="default" slot="toggle" waves-fixed>Pyspark Code<mdb-icon icon="file-code" class="ml-2"></mdb-icon></mdb-dropdown-toggle>
+                  <mdb-dropdown-menu>
+                      <mdb-dropdown-item><router-link to="wordcount">Word Count</router-link></mdb-dropdown-item>
+                  </mdb-dropdown-menu>
+              </mdb-dropdown>
             <mdb-dropdown tag="li" class="nav-item mr-3">
               <mdb-dropdown-toggle tag="a" navLink color="default" slot="toggle" waves-fixed>Working Examples<mdb-icon icon="laptop" class="ml-2"></mdb-icon></mdb-dropdown-toggle>
               <mdb-dropdown-menu>
@@ -29,12 +35,6 @@
                 <mdb-dropdown-item><router-link to="hangman">Hangman</router-link></mdb-dropdown-item>
                 <mdb-dropdown-item><router-link to="bugsGame">Bugs Game</router-link></mdb-dropdown-item>
                 <mdb-dropdown-item><router-link to="verify">Simple Calculator</router-link></mdb-dropdown-item>
-                <!--<mdb-dropdown-item><router-link to="ticTacToe">Tic Tac Toe</router-link></mdb-dropdown-item>
-                <mdb-dropdown-item><router-link to="kidsBook">Kid's Interactive Book</router-link></mdb-dropdown-item>
-                <mdb-dropdown-item><router-link to="trainingSession">Training Session</router-link></mdb-dropdown-item>
-                <mdb-dropdown-item><router-link to="midterm">Midterm</router-link></mdb-dropdown-item>
-                <mdb-dropdown-item><router-link to="finalPractice">Final (Practice)</router-link></mdb-dropdown-item>
-                <mdb-dropdown-item><router-link to="final">Final</router-link></mdb-dropdown-item>-->
               </mdb-dropdown-menu>
             </mdb-dropdown>
             <mdb-dropdown tag="li" class="nav-item mr-3">
@@ -42,24 +42,10 @@
               <mdb-dropdown-menu>
                 <mdb-dropdown-item><router-link to="parentingBlog">Parenting</router-link></mdb-dropdown-item>
                 <mdb-dropdown-item><router-link to="fitnessBlog">Fitness</router-link></mdb-dropdown-item>
-                <!--<mdb-dropdown-item><router-link to="travelBlog">Travel</router-link></mdb-dropdown-item>-->
               </mdb-dropdown-menu>
             </mdb-dropdown>
             <mdb-nav-item><router-link to="/VeteransHomePage" class="mr-3 white-text">Beltrami County<mdb-icon icon="flag-usa" class="ml-2"></mdb-icon></router-link></mdb-nav-item>
-            <!--<mdb-dropdown tag="li" class="nav-item mr-3">
-              <mdb-dropdown-toggle tag="a" navLink color="default" slot="toggle" waves-fixed>SE641 Library Management System<mdb-icon icon="project-diagram" class="ml-2"></mdb-icon></mdb-dropdown-toggle>
-              <mdb-dropdown-menu>
-                <mdb-dropdown-item><router-link to="/libraryhome">Home</router-link></mdb-dropdown-item>
-                <mdb-dropdown-item><router-link to="/librarybooks">Book Catalog</router-link></mdb-dropdown-item>
-                <mdb-dropdown-item><router-link to="/libraryusers">Users</router-link></mdb-dropdown-item>
-                <mdb-dropdown-item><router-link to="/librarycheckouts">Checkouts</router-link></mdb-dropdown-item>
-                <mdb-dropdown-item><router-link to="/libraryreturns">Returns</router-link></mdb-dropdown-item>
-              </mdb-dropdown-menu>
-            </mdb-dropdown>-->
           </mdb-navbar-nav>
-          <!--<form>
-            <mdb-input type="text" class="text-white" placeholder="Search" aria-label="Search" label navInput waves waves-fixed/>
-          </form>-->
         </mdb-navbar-toggler>
       </mdb-navbar>
     <router-view/>

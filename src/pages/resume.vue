@@ -7,7 +7,7 @@
             <mdb-row class="text-center">
               <mdb-col col="12">
                 <h1>Melissa M. Pula</h1>
-                <h4>Web Developer</h4>
+                <h4>Application Developer</h4>
               </mdb-col>
             </mdb-row>
             <mdb-row class="justify-content-center my-4 py-2">
@@ -19,34 +19,33 @@
               <mdb-col lg="8" sm="8">
                 <h4>Call: 218-209-5056</h4>
                 <h4 class="text-nowrap">EMail: melissa_m_24@yahoo.com</h4>
-                <h4>Web: <a href="https://mmpula24.github.io">mmpula24.github.io</a></h4>
+                <h4>Web: <a href="https://melissapula.github.io">melissapula.github.io</a></h4>
                 <h4>Home: Bemidji, MN</h4>
-                <h4><a href="https://www.linkedin.com/in/melissa-pula-833748172?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BwtWUh3kJQDm4rkKmkKITfg%3D%3D">LinkedIn</a></h4>
+                <h4><a href="https://www.linkedin.com/in/melissa-pula-833748172">LinkedIn</a></h4>
               </mdb-col>
             </mdb-row>
           </mdb-col>
         </mdb-row>
       </mdb-col>
       <mdb-col lg="8" sm="12" id="experience">
-        <mdb-row class="align-items-center my-4" id="experienceRow">
+        <mdb-row class="align-items-center pb-4" id="experienceRow">
           <mdb-col col="12">
             <h4 class="cyan-text">EDUCATION</h4>
-            <p class="mb-1">M.S. SOFTWARE ENGINEERING, ST CLOUD STATE UNIVERSITY (AUG 2021 - MAY 2023)</p>
+            <p class="mb-1">P.S.M. (PROFESSIONAL SCIENCE MASTERS) SOFTWARE ENGINEERING, ST CLOUD STATE UNIVERSITY (MAY 2023)</p>
             <p class="mb-1">B.S. MATHEMATICS, BEMIDJI STATE UNIVERSITY (JULY 2020)</p>
             <p class="mb-1">MINOR COMPUTER SCIENCE, BEMIDJI STATE UNIVERSITY (JULY 2020)</p>
             <p class="mb-1">B.S. CRIMINAL JUSTICE, BEMIDJI STATE UNIVERSITY (DECEMBER 2015)</p>
             <h4 class="cyan-text mt-4">WORK EXPERIENCE</h4>
             <p class="mb-1"><b>WEB DEVELOPER (CONTRACT), TRANSPORTATION IMPACT (FEB 2020 - PRESENT)</b></p>
             <ul>
-              <li>Writing code in the VueJS framework to replicate current site behavior</li>
-              <li>Writing unit tests to ensure features are working as intended</li>
-              <li>Writing code for new features as requested to enhance to the current site</li>
-              <li>Working with existing API calls to recreate site functionality</li>
-              <li>Submitting requests for new API endpoints to support the development of enhancements</li>
-              <li>Working in a source-controlled environment using a branching and merging strategy</li>
-              <li>Using a package manager to install and utilize open-source technologies</li>
-              <li>Working independently without input for several days at a time and presenting results to supervisor</li>
-              <li>Transitioning knowledge of the application design through demos and meetings</li>
+              <li>Writing code in the VueJS, Angular, and NestJS framework to replicate current site behavior as well as implement new behaviors and features</li>
+                <li>Writing unit tests to ensure features are working as intended</li>
+                <li>Working with existing API calls, as well as creating new API endpoints, to recreate and develop site features and enhancements</li>
+                  <li>Working in a source-controlled environment using a branching and merging strategy</li>
+                  <li>Using Docker to containerize and deploy the application to cloud-based servers</li>
+                  <li>Using a package manager to install and utilize open-source technologies</li>
+                  <li>Working independently without input for several days at a time and presenting results to supervisor</li>
+                  <li>Transitioning knowledge of the application design through demos and meetings</li>
             </ul>
             <p class="mb-1">REGISTRATION CLERK/COURSE SCHEDULER, BEMIDJI STATE UNIVERSITY (OCT 2019 - JUNE 2020)</p>
             <ul>
@@ -69,14 +68,14 @@
             <mdb-row>
               <mdb-col col="3">
                 <ul>
-                  <li>Problem Solving</li>
-                  <li>Analytical Thinking</li>
+                  <li>Full-stack Development</li>
+                  <li>Testing and Debugging</li>
                 </ul>
               </mdb-col>
               <mdb-col col="3">
                 <ul>
-                  <li>Leadership</li>
-                  <li>Project Management</li>
+                  <li>Git</li>
+                  <li>Learning and openness to new technologies</li>
                 </ul>
               </mdb-col>
               <mdb-col col="3">
@@ -87,8 +86,8 @@
               </mdb-col>
               <mdb-col col="3">
                 <ul>
-                  <li>Adaptable</li>
-                  <li>Reliable</li>
+                  <li>Problem Solving</li>
+                  <li>Analytical Thinking</li>
                 </ul>
               </mdb-col>
             </mdb-row>

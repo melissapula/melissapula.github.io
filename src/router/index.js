@@ -34,6 +34,7 @@ import LibraryCheckouts from "../library-management-system/libraryCheckouts";
 import LibraryReturns from "../library-management-system/libraryReturns";
 import LibraryUsers from "../library-management-system/libraryUsers";
 import TicTacToe from "../pages/ticTacToe";
+import WordCount from "../pages/wordcount";
 
 Vue.use(PerfectScrollbar);
 
@@ -191,6 +192,11 @@ const routes = [
     path: "/tictactoe",
     name: "TicTacToe",
     component: TicTacToe
+  },
+  {
+    path: "/wordcount",
+    name: "WordCount",
+    component: WordCount
   },
 ];
 
