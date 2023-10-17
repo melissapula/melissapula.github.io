@@ -21,9 +21,10 @@
               </mdb-dropdown-menu>
             </mdb-dropdown>
               <mdb-dropdown tag="li" class="nav-item mr-3">
-                  <mdb-dropdown-toggle tag="a" navLink color="default" slot="toggle" waves-fixed>Pyspark Code<mdb-icon icon="file-code" class="ml-2"></mdb-icon></mdb-dropdown-toggle>
+                  <mdb-dropdown-toggle tag="a" navLink color="default" slot="toggle" waves-fixed>Data Analysis<mdb-icon icon="database" class="ml-2"></mdb-icon></mdb-dropdown-toggle>
                   <mdb-dropdown-menu>
                       <mdb-dropdown-item><router-link to="wordcount">Word Count</router-link></mdb-dropdown-item>
+                      <mdb-dropdown-item><router-link to="imageclustering">Image Clustering</router-link></mdb-dropdown-item>
                   </mdb-dropdown-menu>
               </mdb-dropdown>
             <mdb-dropdown tag="li" class="nav-item mr-3">

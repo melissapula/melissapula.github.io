@@ -35,6 +35,7 @@ import LibraryReturns from "../library-management-system/libraryReturns";
 import LibraryUsers from "../library-management-system/libraryUsers";
 import TicTacToe from "../pages/ticTacToe";
 import WordCount from "../pages/wordcount";
+import ImageClustering from "../pages/imageClustering.vue";
 
 Vue.use(PerfectScrollbar);
 
@@ -197,6 +198,11 @@ const routes = [
     path: "/wordcount",
     name: "WordCount",
     component: WordCount
+  },
+  {
+    path: "/imageclustering",
+    name: "ImageClustering",
+    component: ImageClustering
   },
 ];
 
