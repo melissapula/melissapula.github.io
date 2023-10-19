@@ -23,8 +23,8 @@
         </mdb-modal-header>
         <mdb-modal-body>
           I grew up in a small town, have three sisters, and am {{age}} years old.  Currently, I live on a ten-acre hobby
-          farm with my husband and two children.  We have ten chickens, three dogs, one cats (and four kittens), and a turtle.  We plan to
-          expand into rabbits, goats, and horses in the near future as well.  We also garden and homeschool.</mdb-modal-body>
+          farm with my husband and two children.  We have ten chickens, three dogs, one cat (and four kittens), and a turtle.
+            We also garden and homeschool.</mdb-modal-body>
         <mdb-modal-footer>
           <mdb-btn color="info" @click.native="meModal = false">Close</mdb-btn>
         </mdb-modal-footer>
@@ -45,10 +45,10 @@
             <mdb-modal-title>My Education</mdb-modal-title>
           </mdb-modal-header>
           <mdb-modal-body>
-            - B.S. in Criminal Justice <br>
+              - P.S.M. (Professional Science Masters) in Software Engineering <br>
           - B.S. in Mathematics <br>
           - Minor in Computer Science <br>
-          - P.S.M. (Professional Science Masters) in Software Engineering <br><br>
+          -B.S. in Criminal Justice <br><br>
           Funny story; I have always wanted a degree in mathematics and had been working toward it for almost 20 years.
             Because of the Marine Corps, having a full-time job, and having babies though, it was difficult to achieve.
           Then, in order for me to be able to take full advantage of the GI Bill, I was required to take a certain amount
@@ -56,7 +56,7 @@
           take some criminal justice courses to make up for those required credits, especially since I was working in
           the law enforcement field anyway.  Long story short, I accidentally obtained my Criminal Justice Degree first.
           Then finally, five years and two kids later, I obtained my long-sought-after Math degree, as well as a minor in computer science.  And since I still
-            haven't had enough, I decided to obtain a Professional Science Masters in Software Engineering as well.</mdb-modal-body>
+            hadn't had enough, I decided to obtain a Professional Science Masters in Software Engineering as well.</mdb-modal-body>
           <mdb-modal-footer>
             <mdb-btn color="info" @click.native="edModal = false">Close</mdb-btn>
           </mdb-modal-footer>

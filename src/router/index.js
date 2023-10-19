@@ -36,6 +36,7 @@ import LibraryUsers from "../library-management-system/libraryUsers";
 import TicTacToe from "../pages/ticTacToe";
 import WordCount from "../pages/wordcount";
 import ImageClustering from "../pages/imageClustering.vue";
+import RandomForestClassifier from "../pages/randomForestClassifier.vue";
 
 Vue.use(PerfectScrollbar);
 
@@ -203,6 +204,11 @@ const routes = [
     path: "/imageclustering",
     name: "ImageClustering",
     component: ImageClustering
+  },
+  {
+    path: "/randomforestclassifier",
+    name: "RandomForestClassifier",
+    component: RandomForestClassifier
   },
 ];
 

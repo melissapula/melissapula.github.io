@@ -25,6 +25,7 @@
                   <mdb-dropdown-menu>
                       <mdb-dropdown-item><router-link to="wordcount">Word Count</router-link></mdb-dropdown-item>
                       <mdb-dropdown-item><router-link to="imageclustering">Image Clustering</router-link></mdb-dropdown-item>
+                      <mdb-dropdown-item><router-link to="randomforestclassifier">Random Forest Classifier</router-link></mdb-dropdown-item>
                   </mdb-dropdown-menu>
               </mdb-dropdown>
             <mdb-dropdown tag="li" class="nav-item mr-3">

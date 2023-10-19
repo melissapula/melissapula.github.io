@@ -36,7 +36,7 @@
             <p class="mb-1">MINOR COMPUTER SCIENCE, BEMIDJI STATE UNIVERSITY (JULY 2020)</p>
             <p class="mb-1">B.S. CRIMINAL JUSTICE, BEMIDJI STATE UNIVERSITY (DECEMBER 2015)</p>
             <h4 class="cyan-text mt-4">WORK EXPERIENCE</h4>
-            <p class="mb-1"><b>WEB DEVELOPER (CONTRACT), TRANSPORTATION IMPACT (FEB 2020 - PRESENT)</b></p>
+            <p class="mb-1"><b>APPLICATION DEVELOPER (CONTRACT), TRANSIMPACT (FEB 2020 - PRESENT)</b></p>
             <ul>
               <li>Writing code in the VueJS, Angular, and NestJS framework to replicate current site behavior as well as implement new behaviors and features</li>
                 <li>Writing unit tests to ensure features are working as intended</li>
