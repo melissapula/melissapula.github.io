@@ -42,19 +42,19 @@ function loadScript(src) {
     const script = document.createElement('script');
     script.src = src;
     script.onload = resolve;
-    script.onerror = reject;
+    script.onerror = () => reject(new Error(`Failed to load script: ${src}`));
     document.head.appendChild(script);
   });
 }
 
-const BLOCKLY_CDN = 'https://cdnjs.cloudflare.com/ajax/libs/blockly/11.2.1';
+const BLOCKLY_CDN = 'https://unpkg.com/blockly@11.2.1';
 
 async function initBlockly() {
   try {
-    await loadScript(`${BLOCKLY_CDN}/blockly_compressed.min.js`);
-    await loadScript(`${BLOCKLY_CDN}/blocks_compressed.min.js`);
-    await loadScript(`${BLOCKLY_CDN}/javascript_compressed.min.js`);
-    await loadScript(`${BLOCKLY_CDN}/msg/en.min.js`);
+    await loadScript(`${BLOCKLY_CDN}/blockly_compressed.js`);
+    await loadScript(`${BLOCKLY_CDN}/blocks_compressed.js`);
+    await loadScript(`${BLOCKLY_CDN}/javascript_compressed.js`);
+    await loadScript(`${BLOCKLY_CDN}/msg/en.js`);
     await new Promise((r) => setTimeout(r, 200));
 
     const Blockly = window.Blockly;
