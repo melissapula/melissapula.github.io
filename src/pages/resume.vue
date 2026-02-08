@@ -1,134 +1,213 @@
 <template>
-  <mdb-container class="h-100 mt-0 pt-0" fluid>
-    <mdb-row>
-      <mdb-col lg="4" sm="12" id="pic">
-        <mdb-row class="align-items-center my-4" id="picRow">
-          <mdb-col col="12">
-            <mdb-row class="text-center">
-              <mdb-col col="12">
-                <h1>Melissa M. Pula</h1>
-                <h4>Application Developer</h4>
-              </mdb-col>
-            </mdb-row>
-            <mdb-row class="justify-content-center my-4 py-2">
-              <mdb-col col="6">
-                <img :src="profile" class="img-fluid z-depth-1 rounded-circle">
-              </mdb-col>
-            </mdb-row>
-            <mdb-row class="justify-content-center">
-              <mdb-col lg="8" sm="8">
-                <h4>Call: 218-209-5056</h4>
-                <h4 class="text-nowrap">EMail: melissa_m_24@yahoo.com</h4>
-                <h4>Web: <a href="https://melissapula.github.io">melissapula.github.io</a></h4>
-                <h4>Home: Bemidji, MN</h4>
-                <h4><a href="https://www.linkedin.com/in/melissa-pula-833748172">LinkedIn</a></h4>
-              </mdb-col>
-            </mdb-row>
-          </mdb-col>
-        </mdb-row>
-      </mdb-col>
-      <mdb-col lg="8" sm="12" id="experience">
-        <mdb-row class="align-items-center pb-4" id="experienceRow">
-          <mdb-col col="12">
-            <h4 class="cyan-text">EDUCATION</h4>
-            <p class="mb-1">P.S.M. (PROFESSIONAL SCIENCE MASTERS) SOFTWARE ENGINEERING, ST CLOUD STATE UNIVERSITY (MAY 2023)</p>
-            <p class="mb-1">B.S. MATHEMATICS, BEMIDJI STATE UNIVERSITY (JULY 2020)</p>
-            <p class="mb-1">MINOR COMPUTER SCIENCE, BEMIDJI STATE UNIVERSITY (JULY 2020)</p>
-            <p class="mb-1">B.S. CRIMINAL JUSTICE, BEMIDJI STATE UNIVERSITY (DECEMBER 2015)</p>
-            <h4 class="cyan-text mt-4">WORK EXPERIENCE</h4>
-            <p class="mb-1"><b>APPLICATION DEVELOPER (CONTRACT), TRANSIMPACT (FEB 2020 - PRESENT)</b></p>
-            <ul>
-              <li>Writing code in the VueJS, Angular, and NestJS framework to replicate current site behavior as well as implement new behaviors and features</li>
-                <li>Writing unit tests to ensure features are working as intended</li>
-                <li>Working with existing API calls, as well as creating new API endpoints, to recreate and develop site features and enhancements</li>
-                  <li>Working in a source-controlled environment using a branching and merging strategy</li>
-                  <li>Using Docker to containerize and deploy the application to cloud-based servers</li>
-                  <li>Using a package manager to install and utilize open-source technologies</li>
-                  <li>Working independently without input for several days at a time and presenting results to supervisor</li>
-                  <li>Transitioning knowledge of the application design through demos and meetings</li>
-            </ul>
-            <p class="mb-1">REGISTRATION CLERK/COURSE SCHEDULER, BEMIDJI STATE UNIVERSITY (OCT 2019 - JUNE 2020)</p>
-            <ul>
-              <li>Served as the lead on phone call management with the office</li>
-              <li>Trained and monitored all student workers hired, to include payroll and scheduling</li>
-              <li>Organized, coordinated, and analyzed course set-up timeline, term course web application training, and course input</li>
-              <li>Led instruction and training on the course input into the term course web application to departmental/divisional staff</li>
-              <li>Identified, researched, corrected, and communicated any data problems in the student records system</li>
-              <li>Recruited and trained staff, students, and other offices to assist with Commencement ceremony activities and act as main point of contact</li>
-              <li>Maintained the Records Office website</li>
-            </ul>
-            <p class="mb-1">WEB DEVELOPER (INTERN), BIG ROCK SPORTS (FEB 2018 - NOV 2018)</p>
-            <ul>
-            <li>Designed, built, and maintained web sites using authoring or scripting languages, content creation tools, management tools, and digital media</li>
-            <li>Performed and directed web site updates</li>
-            <li>Wrote, designed, and edited web page content</li>
-            <li>Learned required programming languages and libraries, to include HTML, CSS, JavaScript, TypeScript, Angular, JSON, Bootstrap, and JQuery</li>
-            </ul>
-            <h4 class="cyan-text">SKILLS</h4>
-            <mdb-row>
-              <mdb-col col="3">
+    <MDBContainer class="mt-0 pt-0" fluid>
+        <MDBRow>
+            <MDBCol lg="4" sm="12" id="pic">
+                <div id="picInner">
+                    <MDBRow class="text-center">
+                        <MDBCol col="12">
+                            <h1>Melissa Freundschuh-Pula</h1>
+                            <h4>Software Engineer</h4>
+                        </MDBCol>
+                    </MDBRow>
+                    <div class="my-3" style="flex: 1; min-height: 0; width: 80%">
+                        <img
+                            :src="profile"
+                            style="
+                                width: 100%;
+                                height: 100%;
+                                object-fit: contain;
+                                object-position: top center;
+                                border-radius: 8px;
+                            "
+                        />
+                    </div>
+                    <div class="text-center mb-2">
+                        <p class="mb-1"><MDBIcon icon="phone" class="me-2" />218-209-5056</p>
+                        <p class="mb-1"><MDBIcon icon="envelope" class="me-2" />melissa_m_24@yahoo.com</p>
+                        <p class="mb-1">
+                            <MDBIcon iconStyle="fab" icon="github" class="me-2" /><a
+                                href="https://github.com/melissapula"
+                                >github.com/melissapula</a
+                            >
+                        </p>
+                        <p class="mb-1">
+                            <MDBIcon iconStyle="fab" icon="linkedin" class="me-2" /><a
+                                href="https://www.linkedin.com/in/melissa-pula-833748172"
+                                >LinkedIn</a
+                            >
+                        </p>
+                        <p class="mb-1"><MDBIcon icon="map-marker-alt" class="me-2" />Bemidji, MN</p>
+                    </div>
+                </div>
+            </MDBCol>
+            <MDBCol lg="8" sm="12" id="experience">
+                <h4 class="cyan-text mt-4">PROFESSIONAL SUMMARY</h4>
+                <p>
+                    Full-Stack Software Engineer and Marine Corps veteran with 6+ years building and maintaining web
+                    libraries and enterprise applications. Expert in design systems, build tooling, and developer
+                    experience. Architected a 50+ component library with comprehensive documentation, CI/CD pipelines
+                    for automated publishing, and cross-browser compatibility testing. Passionate about creating tools
+                    that improve developer productivity. M.S. in Software Engineering.
+                </p>
+                <h4 class="cyan-text mt-4">TECHNICAL EXPERTISE</h4>
                 <ul>
-                  <li>Full-stack Development</li>
-                  <li>Testing and Debugging</li>
+                    <li>
+                        <b>Languages &amp; Frameworks:</b> TypeScript, JavaScript (ES6+), Angular, StencilJS, Vue.js,
+                        Node.js, NestJS
+                    </li>
+                    <li>
+                        <b>Library Development:</b> Web Components, Storybook, npm package publishing, semantic
+                        versioning, API design
+                    </li>
+                    <li>
+                        <b>Build Tools &amp; Bundlers:</b> Webpack, Vite, Rollup, pnpm monorepos, tree-shaking, code
+                        splitting
+                    </li>
+                    <li>
+                        <b>CI/CD &amp; Release:</b> GitLab CI/CD, Docker, automated testing pipelines, GitOps,
+                        zero-downtime deployments
+                    </li>
+                    <li>
+                        <b>Testing &amp; Quality:</b> Jest, Vitest, Pact (contract testing), cross-browser testing,
+                        MegaLinter, ESLint
+                    </li>
+                    <li>
+                        <b>Documentation:</b> Storybook, MDX, OpenAPI/Swagger, technical writing for developer audiences
+                    </li>
                 </ul>
-              </mdb-col>
-              <mdb-col col="3">
+                <h4 class="cyan-text mt-4">PROFESSIONAL EXPERIENCE</h4>
+                <p class="mb-1"><b>SOFTWARE ENGINEER, TRANSIMPACT (FEB 2020 - PRESENT)</b></p>
                 <ul>
-                  <li>Git</li>
-                  <li>Learning and openness to new technologies</li>
+                    <li>
+                        Built and maintained a Stencil-based design system library with 50+ reusable Web Components,
+                        managing semantic versioning, backwards compatibility, and breaking change documentation
+                    </li>
+                    <li>
+                        Created comprehensive Storybook documentation with interactive examples and usage guidelines,
+                        reducing developer onboarding time and support requests across consuming teams
+                    </li>
+                    <li>
+                        Configured Webpack and build pipelines for library bundling, tree-shaking, and multiple output
+                        formats (ESM, CommonJS, UMD) to support diverse consumer environments
+                    </li>
+                    <li>
+                        Architected pnpm monorepo managing 15+ packages with shared tooling, improving build times by
+                        35% and enabling consistent versioning across interdependent libraries
+                    </li>
+                    <li>
+                        Developed GitLab CI/CD pipelines for automated testing, linting, and npm publishing,
+                        accelerating release cycles from weekly to daily deployments
+                    </li>
+                    <li>
+                        Resolved cross-browser compatibility issues across Chrome, Firefox, Safari, and Edge, ensuring
+                        consistent behavior for library consumers on multiple platforms
+                    </li>
+                    <li>
+                        Provided technical support to internal development teams adopting the design system, triaging
+                        issues, debugging integration problems, and contributing fixes
+                    </li>
+                    <li>
+                        Achieved 85% code coverage through Jest and Vitest unit tests plus Pact contract testing,
+                        reducing production defects by 60%
+                    </li>
+                    <li>
+                        Integrated ag-Grid Enterprise with custom TypeScript cell renderers and complex state management
+                        patterns for data visualization dashboards
+                    </li>
                 </ul>
-              </mdb-col>
-              <mdb-col col="3">
+                <p class="mb-1"><b>WEB DEVELOPER INTERN, BIG ROCK SPORTS (FEB 2018 - NOV 2018)</b></p>
                 <ul>
-                  <li>Communicating</li>
-                  <li>Team Player</li>
+                    <li>
+                        Built responsive Angular interfaces following WCAG accessibility standards, collaborating with
+                        designers and backend teams
+                    </li>
+                    <li>
+                        Practiced Git workflows, code review, and documentation standards contributing to team knowledge
+                        sharing
+                    </li>
                 </ul>
-              </mdb-col>
-              <mdb-col col="3">
+                <h4 class="cyan-text mt-4">MILITARY SERVICE</h4>
+                <p class="mb-1"><b>UNITED STATES MARINE CORPS — VETERAN</b></p>
                 <ul>
-                  <li>Problem Solving</li>
-                  <li>Analytical Thinking</li>
+                    <li>
+                        Completed two combat deployments to Iraq with additional service in Okinawa, Japan and the
+                        Philippines
+                    </li>
+                    <li>
+                        Developed discipline, adaptability, and clear communication through mission-focused leadership
+                        in high-pressure environments
+                    </li>
                 </ul>
-              </mdb-col>
-            </mdb-row>
-            <h4 class="cyan-text">ACTIVITIES</h4>
-            <p>I enjoy reading, lifting weights, kayaking, camping, hunting, fishing, and doing anything with my husband and two daughters.  I live
-            on a ten-acre hobby farm and love the outdoors.</p>
-          </mdb-col>
-        </mdb-row>
-      </mdb-col>
-    </mdb-row>
-  </mdb-container>
+                <h4 class="cyan-text mt-4">EDUCATION</h4>
+                <p class="mb-1">M.S., Software Engineering — St. Cloud State University, 2023</p>
+                <p class="mb-1">B.S., Mathematics; Minor in Computer Science — Bemidji State University, 2020</p>
+                <h4 class="cyan-text mt-4">CERTIFICATIONS</h4>
+                <ul>
+                    <li>PCEP Certified Python Programmer</li>
+                    <li>Microsoft Azure Fundamentals</li>
+                    <li>NestJS Certified: Fundamentals, Advanced Concepts, and Architecture Patterns</li>
+                </ul>
+            </MDBCol>
+        </MDBRow>
+    </MDBContainer>
 </template>
 
 <script>
-import image from '../assets/profilePic.jpg';
-export default {
-  name: "Resume",
-  data() {
-    return {
-      profile: image,
-    }
-  },
-}
+    import { MDBContainer, MDBRow, MDBCol, MDBIcon } from 'mdb-vue-ui-kit';
+    import image from '../assets/resumePhoto.jpg';
+    export default {
+        name: 'Resume',
+        components: {
+            MDBContainer,
+            MDBRow,
+            MDBCol,
+            MDBIcon
+        },
+        data() {
+            return {
+                profile: image
+            };
+        }
+    };
 </script>
 
 <style scoped>
-#pic{
-  background-color: white;
-  min-height: 100vh;
-}
-#picRow{
-  min-height: 100vh;
-}
-#experience{
-  background-color: slategrey;
-  min-height: 100vh;
-}
-#experienceRow {
-  min-height: 100vh;
-}
-.scrollable {
-  overflow-y: scroll;
-}
+    #pic {
+        background-color: white;
+        position: fixed;
+        top: 56px;
+        left: 0;
+        width: 33.333%;
+        height: calc(100vh - 56px);
+        overflow: hidden;
+    }
+    #picInner {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    #experience {
+        background-color: #f0f2f5;
+        color: #333;
+        margin-left: 33.333%;
+        min-height: calc(100vh - 56px);
+        padding: 2rem;
+    }
+    .cyan-text {
+        color: #2980b9 !important;
+    }
+    @media (max-width: 991px) {
+        #pic {
+            position: relative;
+            top: 0;
+            width: 100%;
+            height: auto;
+            padding: 2rem 0;
+        }
+        #experience {
+            margin-left: 0;
+        }
+    }
 </style>

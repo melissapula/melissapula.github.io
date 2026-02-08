@@ -1,80 +1,70 @@
 <template>
-    <mdb-container class="h-100 mt-0 pt-0" fluid>
-        <mdb-row class="pt-4" style="min-height: 100vh; background-color:#42a7f5">
-            <mdb-col>
-                <mdb-row v-if="wordCount">
-                    <mdb-col>
-                        <mdb-row class="justify-content-center pb-4">
-                            <codemirror class="CodeMirror" style="width: 75%" v-model="wordCount" :options="wordCountOptions"></codemirror>
-                        </mdb-row>
-                        <mdb-row class="justify-content-center align-items-center pb-4">
-                            <mdb-col lg="12" sm="12">
-                                <mdb-row class="justify-content-center">
-                                    <mdb-col col="11">
-                                        <img src="../assets/wordCount1.png" class="img-fluid">
-                                    </mdb-col>
-                                </mdb-row>
-                            </mdb-col>
-                                        <p>Image(1): The first five rows of the imported csv file.</p>
-                        </mdb-row>
-                        <mdb-row class="justify-content-center align-items-center pb-4">
-                            <mdb-col lg="6" sm="12">
-                                <mdb-row class="justify-content-center">
-                                        <img src="../assets/wordCount2.png" class="img-fluid">
-                                </mdb-row>
-                                <mdb-row class="justify-content-center">
-                                        <p>Image(2): The word count of each word in the file, listed by number of appearance in descending order and limited to the top 20.</p>
-                                </mdb-row>
-                            </mdb-col>
-                        </mdb-row>
-                        <mdb-row class="justify-content-center align-items-center pb-4">
-                            <mdb-col lg="6" sm="12">
-                                <mdb-row class="justify-content-center">
-                                        <img src="../assets/wordCount3.png" class="img-fluid">
-                                </mdb-row>
-                                <mdb-row class="justify-content-center">
-                                        <p>Image(3):  The word count of the top three words as well as the time it took to find these counts.</p>
-                                </mdb-row>
-                            </mdb-col>
-                        </mdb-row>
-                    </mdb-col>
-                </mdb-row>
-            </mdb-col>
-        </mdb-row>
-    </mdb-container>
+    <MDBContainer class="h-100 mt-0 pt-0" fluid>
+        <MDBRow v-if="wordCount" style="height: calc(100vh - 56px); background-color: #f0f2f5" class="pt-4">
+            <MDBCol lg="7" sm="12">
+                <Codemirror
+                    class="CodeMirror"
+                    style="width: 100%"
+                    :value="wordCount"
+                    :options="wordCountOptions"
+                ></Codemirror>
+            </MDBCol>
+            <MDBCol
+                lg="5"
+                sm="12"
+                class="pb-4 d-flex flex-column align-items-center"
+                style="overflow-y: auto; height: calc(100vh - 90px)"
+            >
+                <img src="../assets/wordCount1.png" class="img-fluid" />
+                <p class="mt-2">Image(1): The first five rows of the imported csv file.</p>
+                <img src="../assets/wordCount2.png" class="img-fluid mt-3" />
+                <p class="mt-2">
+                    Image(2): The word count of each word in the file, listed by number of appearance in descending
+                    order and limited to the top 20.
+                </p>
+                <img src="../assets/wordCount3.png" class="img-fluid mt-3" />
+                <p class="mt-2">
+                    Image(3): The word count of the top three words as well as the time it took to find these counts.
+                </p>
+            </MDBCol>
+        </MDBRow>
+    </MDBContainer>
 </template>
 
 <script>
-import {codemirror} from 'vue-codemirror'
-import 'codemirror/lib/codemirror.css'
-import 'codemirror/mode/python/python.js'
-export default {
-    name: "WordCount",
-    components: {
-        codemirror
-    },
-    data() {
-        return {
-            wordCount: null,
-            spaces: '    ',
-            tab: '        ',
-            wordCountOptions: {
-                tabSize: 4,
-                mode: 'text/x-python',
-                lineNumbers: true,
-                line: true,
-                smartIndent: true,
-                indentUnit: 4,
-                indentWithTabs: true,
-                readOnly: true,
-                foldGutter: true,
-            },
-        }
-    },
-    methods: {
-        init() {
-            this.wordCount =
-                `from pyspark.sql import SparkSession
+    import Codemirror from 'codemirror-editor-vue3';
+    import 'codemirror/lib/codemirror.css';
+    import 'codemirror/mode/python/python.js';
+    import { MDBContainer, MDBRow, MDBCol } from 'mdb-vue-ui-kit';
+    export default {
+        name: 'WordCount',
+        components: {
+            MDBContainer,
+            MDBRow,
+            MDBCol,
+            Codemirror
+        },
+        data() {
+            return {
+                wordCount: null,
+                spaces: '    ',
+                tab: '        ',
+                wordCountOptions: {
+                    tabSize: 4,
+                    mode: 'text/x-python',
+                    lineNumbers: true,
+                    line: true,
+                    smartIndent: true,
+                    indentUnit: 4,
+                    indentWithTabs: true,
+                    readOnly: true,
+                    foldGutter: true
+                }
+            };
+        },
+        methods: {
+            init() {
+                this.wordCount = `from pyspark.sql import SparkSession
 from pyspark.sql.functions import col, desc, lower
 from datetime import datetime
 import pyspark.sql.functions as f
@@ -107,15 +97,17 @@ end_time = datetime.now()
 
 print('Total time: ', end_time - start_time)
 
-#see image(3) for resulting word count and time it took to achieve`
+#see image(3) for resulting word count and time it took to achieve`;
+            }
+        },
+        mounted() {
+            this.init();
         }
-    },
-    mounted() {
-        this.init();
-    }
-}
+    };
 </script>
 
 <style scoped>
-
+    .CodeMirror {
+        height: calc(100vh - 90px) !important;
+    }
 </style>

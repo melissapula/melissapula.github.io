@@ -1,109 +1,78 @@
 <template>
-    <mdb-container class="h-100 mt-0 pt-0" fluid>
-        <mdb-row class="pt-4" style="min-height: 100vh; background-color:#42a7f5">
-            <mdb-col>
-                <mdb-row v-if="imageClustering">
-                    <mdb-col>
-                        <mdb-row class="justify-content-center pb-4">
-                            <codemirror class="CodeMirror" style="width: 75%" v-model="imageClustering" :options="imageClusteringOptions"></codemirror>
-                            <p>This code imports an unlabeled dataset of drone images and then sorts them into clusters based on their features.</p>
-                        </mdb-row>
-                        <mdb-row class="justify-content-center align-items-center pb-4">
-                            <mdb-col lg="12" sm="12">
-                                <mdb-row class="justify-content-center">
-                                        <img src="../assets/imageClusteringPCA.png" class="img-fluid">
-                                </mdb-row>
-                            </mdb-col>
-                            <p>Image(1): PCA scatterplot</p>
-                        </mdb-row>
-                        <mdb-row class="justify-content-center align-items-center pb-4">
-                            <mdb-col lg="12" sm="12">
-                                <mdb-row class="justify-content-center">
-                                        <img src="../assets/imageClusteringPCA3D.png" class="img-fluid">
-                                </mdb-row>
-                            </mdb-col>
-                            <p>Image(2): 3D PCA scatterplot</p>
-                        </mdb-row>
-                        <mdb-row class="justify-content-center align-items-center pb-4">
-                            <mdb-col lg="12" sm="12">
-                                <mdb-row class="justify-content-center">
-                                        <img src="../assets/imageClusteringElbow.png" class="img-fluid">
-                                </mdb-row>
-                            </mdb-col>
-                            <p>Image(3): Elbow method</p>
-                        </mdb-row>
-                        <mdb-row class="justify-content-center align-items-center pb-4">
-                            <mdb-col lg="12" sm="12">
-                                <mdb-row class="justify-content-center">
-                                        <img src="../assets/imageClusteringYellowbrick.png" class="img-fluid">
-                                </mdb-row>
-                            </mdb-col>
-                            <p>Image(4): Yellowbrick method</p>
-                        </mdb-row>
-                        <mdb-row class="justify-content-center align-items-center pb-4">
-                            <mdb-col lg="12" sm="12">
-                                <mdb-row class="justify-content-center">
-                                        <img src="../assets/imageClusteringKmeans.png" class="img-fluid">
-                                </mdb-row>
-                            </mdb-col>
-                            <p>Image(5): KMeans Clustering</p>
-                        </mdb-row>
-                        <mdb-row class="justify-content-center align-items-center pb-4">
-                            <mdb-col lg="12" sm="12">
-                                <mdb-row class="justify-content-center">
-                                        <img src="../assets/imageClusteringSilhouette.png" class="img-fluid">
-                                </mdb-row>
-                            </mdb-col>
-                            <p>Image(6): Silhouette</p>
-                        </mdb-row>
-                        <mdb-row class="justify-content-center align-items-center pb-4">
-                            <mdb-col lg="12" sm="12">
-                                <mdb-row class="justify-content-center">
-                                        <img src="../assets/imageClusteringViewCluster.png" class="img-fluid">
-                                </mdb-row>
-                            </mdb-col>
-                            <p>Image(7): View Cluster 0</p>
-                        </mdb-row>
-                    </mdb-col>
-                </mdb-row>
-            </mdb-col>
-        </mdb-row>
-    </mdb-container>
-
+    <MDBContainer class="h-100 mt-0 pt-0" fluid>
+        <MDBRow v-if="imageClustering" style="height: calc(100vh - 56px); background-color: #f0f2f5" class="pt-4">
+            <MDBCol lg="7" sm="12">
+                <Codemirror
+                    class="CodeMirror"
+                    style="width: 100%"
+                    :value="imageClustering"
+                    :options="imageClusteringOptions"
+                ></Codemirror>
+            </MDBCol>
+            <MDBCol
+                lg="5"
+                sm="12"
+                class="pb-4 d-flex flex-column align-items-center"
+                style="overflow-y: auto; height: calc(100vh - 90px)"
+            >
+                <p>
+                    This code imports an unlabeled dataset of drone images and then sorts them into clusters based on
+                    their features.
+                </p>
+                <img src="../assets/imageClusteringPCA.png" class="img-fluid mt-3" />
+                <p class="mt-2">Image(1): PCA scatterplot</p>
+                <img src="../assets/imageClusteringPCA3D.png" class="img-fluid mt-3" />
+                <p class="mt-2">Image(2): 3D PCA scatterplot</p>
+                <img src="../assets/imageClusteringElbow.png" class="img-fluid mt-3" />
+                <p class="mt-2">Image(3): Elbow method</p>
+                <img src="../assets/imageClusteringYellowbrick.png" class="img-fluid mt-3" />
+                <p class="mt-2">Image(4): Yellowbrick method</p>
+                <img src="../assets/imageClusteringKmeans.png" class="img-fluid mt-3" />
+                <p class="mt-2">Image(5): KMeans Clustering</p>
+                <img src="../assets/imageClusteringSilhouette.png" class="img-fluid mt-3" />
+                <p class="mt-2">Image(6): Silhouette</p>
+                <img src="../assets/imageClusteringViewCluster.png" class="img-fluid mt-3" />
+                <p class="mt-2">Image(7): View Cluster 0</p>
+            </MDBCol>
+        </MDBRow>
+    </MDBContainer>
 </template>
 
 <script>
-import {codemirror} from 'vue-codemirror'
-import 'codemirror/lib/codemirror.css'
-import 'codemirror/mode/python/python.js'
+    import Codemirror from 'codemirror-editor-vue3';
+    import 'codemirror/lib/codemirror.css';
+    import 'codemirror/mode/python/python.js';
+    import { MDBContainer, MDBRow, MDBCol } from 'mdb-vue-ui-kit';
 
-export default {
-    name: "ImageClustering",
-    components: {
-        codemirror
-    },
-    data() {
-        return {
-            imageClustering: null,
-            spaces: '    ',
-            tab: '        ',
-            imageClusteringOptions: {
-                tabSize: 4,
-                mode: 'text/x-python',
-                lineNumbers: true,
-                line: true,
-                smartIndent: true,
-                indentUnit: 4,
-                indentWithTabs: true,
-                readOnly: true,
-                foldGutter: true,
-            },
-        }
-    },
-    methods: {
-        init() {
-            this.imageClustering =
-                `# for loading/processing the images
+    export default {
+        name: 'ImageClustering',
+        components: {
+            MDBContainer,
+            MDBRow,
+            MDBCol,
+            Codemirror
+        },
+        data() {
+            return {
+                imageClustering: null,
+                spaces: '    ',
+                tab: '        ',
+                imageClusteringOptions: {
+                    tabSize: 4,
+                    mode: 'text/x-python',
+                    lineNumbers: true,
+                    line: true,
+                    smartIndent: true,
+                    indentUnit: 4,
+                    indentWithTabs: true,
+                    readOnly: true,
+                    foldGutter: true
+                }
+            };
+        },
+        methods: {
+            init() {
+                this.imageClustering = `# for loading/processing the images
 from keras.utils import load_img
 from keras.applications.vgg16 import preprocess_input
 
@@ -390,16 +359,17 @@ def view_cluster(cluster):
 
 view_cluster(0)
 
-#see image(7) for cluster 0 results`
+#see image(7) for cluster 0 results`;
+            }
+        },
+        mounted() {
+            this.init();
         }
-    },
-    mounted() {
-        this.init();
-    }
-}
-
+    };
 </script>
 
 <style scoped>
-
+    .CodeMirror {
+        height: calc(100vh - 90px) !important;
+    }
 </style>

@@ -1,58 +1,57 @@
 <template>
-  <mdb-container class="h-100 mt-0 pt-0" fluid>
-    <mdb-row class="pt-4" style="min-height: 100vh; background-color:#42a7f5">
-      <mdb-col>
-        <mdb-row v-if="code">
-          <mdb-col>
-            <mdb-row class="justify-content-center pb-4">
-              <codemirror class="CodeMirror" style="width: 75%" v-model="code" :options="codeOptions"></codemirror>
-            </mdb-row>
-            <mdb-row class="justify-content-center align-items-center pb-4">
-              <mdb-col col="8">
-                <p>This code will create a game called Game of Pig.  The game is played as follows:</p>
+    <MDBContainer class="h-100 mt-0 pt-0" fluid>
+        <MDBRow v-if="code" style="height: calc(100vh - 56px); background-color: #f0f2f5" class="pt-4">
+            <MDBCol lg="7" sm="12">
+                <Codemirror class="CodeMirror" style="width: 100%" :value="code" :options="codeOptions"></Codemirror>
+            </MDBCol>
+            <MDBCol lg="5" sm="12" class="pb-4 d-flex flex-column justify-content-center align-items-center">
+                <p>This code will create a game called Game of Pig. The game is played as follows:</p>
                 <p>Each turn starts with the player making the choice to play or hold.</p>
-                <p class="ml-4">If they play the player rolls a single die and looking at the results.</p>
-                <p class="ml-4 pl-4">If a 1 was rolled the player scores no points and their turn is over.</p>
-                <p class="ml-4 pl-4">If any other number is rolled the player adds the number rolled to the player’s turn total.</p>
-                <p class="ml-4">If they hold their turn points are added to their score and it becomes the opponent’s turn.</p>
-              </mdb-col>
-            </mdb-row>
-          </mdb-col>
-        </mdb-row>
-      </mdb-col>
-    </mdb-row>
-  </mdb-container>
+                <p class="ms-4">If they play the player rolls a single die and looking at the results.</p>
+                <p class="ms-4 ps-4">If a 1 was rolled the player scores no points and their turn is over.</p>
+                <p class="ms-4 ps-4">
+                    If any other number is rolled the player adds the number rolled to the player's turn total.
+                </p>
+                <p class="ms-4">
+                    If they hold their turn points are added to their score and it becomes the opponent's turn.
+                </p>
+            </MDBCol>
+        </MDBRow>
+    </MDBContainer>
 </template>
 
 <script>
-import {codemirror} from 'vue-codemirror'
-import 'codemirror/lib/codemirror.css'
-import 'codemirror/mode/python/python.js'
-export default {
-  name: "Pig",
-  components: {
-    codemirror
-  },
-  data() {
-    return {
-      code: null,
-      codeOptions: {
-        tabSize: 4,
-        mode: 'text/x-python',
-        lineNumbers: true,
-        line: true,
-        smartIndent: true,
-        indentUnit: 4,
-        indentWithTabs: true,
-        readOnly: true,
-        foldGutter: true,
-      },
-    }
-  },
-  methods: {
-    init() {
-      this.code =
-          `totalone = 0
+    import Codemirror from 'codemirror-editor-vue3';
+    import 'codemirror/lib/codemirror.css';
+    import 'codemirror/mode/python/python.js';
+    import { MDBContainer, MDBRow, MDBCol } from 'mdb-vue-ui-kit';
+    export default {
+        name: 'Pig',
+        components: {
+            MDBContainer,
+            MDBRow,
+            MDBCol,
+            Codemirror
+        },
+        data() {
+            return {
+                code: null,
+                codeOptions: {
+                    tabSize: 4,
+                    mode: 'text/x-python',
+                    lineNumbers: true,
+                    line: true,
+                    smartIndent: true,
+                    indentUnit: 4,
+                    indentWithTabs: true,
+                    readOnly: true,
+                    foldGutter: true
+                }
+            };
+        },
+        methods: {
+            init() {
+                this.code = `totalone = 0
 totaltwo = 0
 while True:
     rollfirst = 0
@@ -110,15 +109,17 @@ while True:
     print("Your total score for the game is " + str(totaltwo))
     if (totaltwo >= 100):
         print("Congratulations Second Player, you won!!")
-        break`
-    }
-  },
-  mounted() {
-    this.init();
-  }
-}
+        break`;
+            }
+        },
+        mounted() {
+            this.init();
+        }
+    };
 </script>
 
 <style scoped>
-
+    .CodeMirror {
+        height: calc(100vh - 90px) !important;
+    }
 </style>

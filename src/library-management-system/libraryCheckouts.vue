@@ -1,13 +1,11 @@
 <template>
-<p>this is the library checkouts page</p>
+    <p>this is the library checkouts page</p>
 </template>
 
 <script>
-export default {
-  name: "LibraryCheckouts"
-}
+    export default {
+        name: 'LibraryCheckouts'
+    };
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

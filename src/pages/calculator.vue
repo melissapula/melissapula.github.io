@@ -1,61 +1,60 @@
 <template>
-  <mdb-container class="h-100 mt-0 pt-0" fluid>
-    <mdb-row class="pt-4" style="min-height: 100vh; background-color:#42a7f5">
-      <mdb-col>
-        <mdb-row v-if="calculator">
-          <mdb-col>
-            <mdb-row class="justify-content-center pb-4">
-              <codemirror class="CodeMirror" style="width: 75%" v-model="calculator" :options="calculatorOptions"></codemirror>
-            </mdb-row>
-            <mdb-row class="justify-content-center align-items-center pb-4">
-              <mdb-col lg="3" sm="12">
-                <mdb-row class="justify-content-center">
-                <img src="../assets/calculator.png" class="img-fluid">
-                </mdb-row>
-              </mdb-col>
-              <mdb-col lg="3" sm="12">
-                <mdb-row class="justify-content-center">
-                <p>This code will create a grid for a calculator, as shown here.</p>
-                </mdb-row>
-              </mdb-col>
-            </mdb-row>
-          </mdb-col>
-        </mdb-row>
-      </mdb-col>
-    </mdb-row>
-  </mdb-container>
+    <MDBContainer class="h-100 mt-0 pt-0" fluid>
+        <MDBRow v-if="calculator" style="height: calc(100vh - 56px); background-color: #f0f2f5" class="pt-4">
+            <MDBCol lg="7" sm="12">
+                <Codemirror
+                    class="CodeMirror"
+                    style="width: 100%"
+                    :value="calculator"
+                    :options="calculatorOptions"
+                ></Codemirror>
+            </MDBCol>
+            <MDBCol
+                lg="5"
+                sm="12"
+                class="pb-4 d-flex flex-column align-items-center"
+                style="overflow-y: auto; height: calc(100vh - 90px)"
+            >
+                <img src="../assets/calculator.png" class="img-fluid" />
+                <p class="mt-3">This code will create a grid for a calculator, as shown here.</p>
+            </MDBCol>
+        </MDBRow>
+    </MDBContainer>
 </template>
 
 <script>
-import {codemirror} from 'vue-codemirror'
-import 'codemirror/lib/codemirror.css'
-import 'codemirror/mode/python/python.js'
+    import Codemirror from 'codemirror-editor-vue3';
+    import 'codemirror/lib/codemirror.css';
+    import 'codemirror/mode/python/python.js';
+    import { MDBContainer, MDBRow, MDBCol } from 'mdb-vue-ui-kit';
 
-export default {
-  name: "Calculator",
-  components: {
-    codemirror
-  },
-  data() {
-    return {
-      calculator: null,
-      calculatorOptions: {
-        tabSize: 4,
-        mode: 'text/x-python',
-        lineNumbers: true,
-        line: true,
-        smartIndent: true,
-        indentUnit: 4,
-        indentWithTabs: true,
-        readOnly: true,
-        foldGutter: true,
-      },
-    }
-  },
-  methods: {
-    init() {
-      this.calculator =
-          `from tkinter import *
+    export default {
+        name: 'Calculator',
+        components: {
+            MDBContainer,
+            MDBRow,
+            MDBCol,
+            Codemirror
+        },
+        data() {
+            return {
+                calculator: null,
+                calculatorOptions: {
+                    tabSize: 4,
+                    mode: 'text/x-python',
+                    lineNumbers: true,
+                    line: true,
+                    smartIndent: true,
+                    indentUnit: 4,
+                    indentWithTabs: true,
+                    readOnly: true,
+                    foldGutter: true
+                }
+            };
+        },
+        methods: {
+            init() {
+                this.calculator = `from tkinter import *
 
 class Calculator(Frame):
     def __init__(self):
@@ -120,17 +119,17 @@ class Calculator(Frame):
 
 
 if __name__ == "__main__":
-    Calculator().mainloop()`
-    },
-  },
-  mounted() {
-    this.init();
-  }
-}
+    Calculator().mainloop()`;
+            }
+        },
+        mounted() {
+            this.init();
+        }
+    };
 </script>
 
 <style scoped>
-.CodeMirror {
-  height: auto;
-}
+    .CodeMirror {
+        height: calc(100vh - 90px) !important;
+    }
 </style>

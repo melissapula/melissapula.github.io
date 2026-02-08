@@ -1,64 +1,58 @@
 <template>
-  <mdb-container class="h-100 mt-0 pt-0" fluid>
-    <mdb-row class="pt-4" style="min-height: 100vh; background-color:#42a7f5">
-      <mdb-col>
-        <mdb-row v-if="code">
-          <mdb-col>
-            <mdb-row class="justify-content-center pb-4">
-              <codemirror class="CodeMirror" style="width: 75%" v-model="code" :options="codeOptions"></codemirror>
-            </mdb-row>
-            <mdb-row class="justify-content-center align-items-center pb-4">
-              <mdb-col lg="4" sm="12">
-                <mdb-row class="justify-content-center">
-                  <mdb-col col="8">
-                <img src="../assets/pygame.png" class="img-fluid">
-                  </mdb-col>
-                </mdb-row>
-              </mdb-col>
-              <mdb-col lg="4" sm="12">
-                <mdb-row class="justify-content-center">
-                <p>This code will create a pygame program as shown.</p>
-                <p>You import a list of movies to choose from, then you enter a number in the input box and the
-                program will randomly choose a movie for you.</p>
-                </mdb-row>
-              </mdb-col>
-            </mdb-row>
-          </mdb-col>
-        </mdb-row>
-      </mdb-col>
-    </mdb-row>
-  </mdb-container>
+    <MDBContainer class="h-100 mt-0 pt-0" fluid>
+        <MDBRow v-if="code" style="height: calc(100vh - 56px); background-color: #f0f2f5" class="pt-4">
+            <MDBCol lg="7" sm="12">
+                <Codemirror class="CodeMirror" style="width: 100%" :value="code" :options="codeOptions"></Codemirror>
+            </MDBCol>
+            <MDBCol
+                lg="5"
+                sm="12"
+                class="pb-4 d-flex flex-column align-items-center"
+                style="overflow-y: auto; height: calc(100vh - 90px)"
+            >
+                <img src="../assets/pygame.png" class="img-fluid" style="max-width: 60%" />
+                <p class="mt-3">This code will create a pygame program as shown.</p>
+                <p>
+                    You import a list of movies to choose from, then you enter a number in the input box and the program
+                    will randomly choose a movie for you.
+                </p>
+            </MDBCol>
+        </MDBRow>
+    </MDBContainer>
 </template>
 
 <script>
-import {codemirror} from 'vue-codemirror'
-import 'codemirror/lib/codemirror.css'
-import 'codemirror/mode/python/python.js'
-export default {
-  name: "Pygame",
-  components: {
-    codemirror
-  },
-  data() {
-    return {
-      code: null,
-      codeOptions: {
-        tabSize: 4,
-        mode: 'text/x-python',
-        lineNumbers: true,
-        line: true,
-        smartIndent: true,
-        indentUnit: 4,
-        indentWithTabs: true,
-        readOnly: true,
-        foldGutter: true,
-      },
-    }
-  },
-  methods: {
-    init() {
-      this.code =
-          `import pygame
+    import Codemirror from 'codemirror-editor-vue3';
+    import 'codemirror/lib/codemirror.css';
+    import 'codemirror/mode/python/python.js';
+    import { MDBContainer, MDBRow, MDBCol } from 'mdb-vue-ui-kit';
+    export default {
+        name: 'Pygame',
+        components: {
+            MDBContainer,
+            MDBRow,
+            MDBCol,
+            Codemirror
+        },
+        data() {
+            return {
+                code: null,
+                codeOptions: {
+                    tabSize: 4,
+                    mode: 'text/x-python',
+                    lineNumbers: true,
+                    line: true,
+                    smartIndent: true,
+                    indentUnit: 4,
+                    indentWithTabs: true,
+                    readOnly: true,
+                    foldGutter: true
+                }
+            };
+        },
+        methods: {
+            init() {
+                this.code = `import pygame
 import sys
 import random
 
@@ -193,15 +187,17 @@ while True:
     input_rect.w = max(200, text_surface.get_width() + 10)
 
     pygame.display.update()
-    clock.tick(60)`
-    }
-  },
-  mounted() {
-    this.init();
-  }
-}
+    clock.tick(60)`;
+            }
+        },
+        mounted() {
+            this.init();
+        }
+    };
 </script>
 
 <style scoped>
-
+    .CodeMirror {
+        height: calc(100vh - 90px) !important;
+    }
 </style>

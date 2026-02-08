@@ -1,116 +1,150 @@
 <template>
-  <mdb-container class="h-100 mt-0 pt-0" fluid>
-    <mdb-row class="align-items-center justify-content-center" style="min-height: 100vh; background-color:#EFC9AF">
-      <mdb-col col="4">
-        <mdb-card v-if="showQuestionOne" class="card-body">
-          <mdb-card-title>This or That?</mdb-card-title>
-          <mdb-card-text>
-            <mdb-row class="justify-content-center">
-              <mdb-col col="12">
-                <p>Select what you would like most ...</p>
-              </mdb-col>
-            </mdb-row>
-            <mdb-row>
-              <mdb-col col="6">
-                <mdb-btn @click.native="showEat = true" color="primary"><img src="../assets/eatSign.jpg" class="img-fluid"></mdb-btn>
-              </mdb-col>
-              <mdb-col col="6">
-                <mdb-btn @click.native="showTravel = true" color="primary"><img src="../assets/travelSign.jpg" class="img-fluid"></mdb-btn>
-              </mdb-col>
-            </mdb-row>
-          </mdb-card-text>
-        </mdb-card>
-        <mdb-card v-if="showQuestionTwo" class="card-body">
-          <mdb-card-title>This or That?</mdb-card-title>
-          <mdb-card-text>
-            <mdb-row class="justify-content-center">
-              <mdb-col col="12">
-                <p>Would you rather be Batman or Spiderman?</p>
-              </mdb-col>
-            </mdb-row>
-            <mdb-row>
-              <mdb-col col="6">
-                <mdb-btn @click.native="showBatman = true" color="primary"><img src="../assets/batmanLogo.jpg" class="img-fluid"></mdb-btn>
-              </mdb-col>
-              <mdb-col col="6">
-                <mdb-btn @click.native="showSpiderman = true" color="primary"><img src="../assets/spidermanLogo.jpg" class="img-fluid"></mdb-btn>
-              </mdb-col>
-            </mdb-row>
-          </mdb-card-text>
-        </mdb-card>
-      </mdb-col>
-    </mdb-row>
-    <mdb-modal :show="showEat" @close="showNextQuestion" success>
-      <mdb-modal-header>
-        <mdb-modal-title>You chose eat!</mdb-modal-title>
-      </mdb-modal-header>
-      <mdb-modal-body><img src="../assets/eat.jpg" class="img-fluid"></mdb-modal-body>
-      <mdb-modal-footer>
-        <mdb-btn outline="success" @click.native="showNextQuestion">Close</mdb-btn>
-      </mdb-modal-footer>
-    </mdb-modal>
-    <mdb-modal :show="showTravel" @close="showNextQuestion" success>
-      <mdb-modal-header>
-        <mdb-modal-title>You chose travel!</mdb-modal-title>
-      </mdb-modal-header>
-      <mdb-modal-body><img src="../assets/travel.jpg" class="img-fluid"></mdb-modal-body>
-      <mdb-modal-footer>
-        <mdb-btn outline="success" @click.native="showNextQuestion">Close</mdb-btn>
-      </mdb-modal-footer>
-    </mdb-modal>
-    <mdb-modal :show="showBatman" @close="restartQuestions" success>
-      <mdb-modal-header>
-        <mdb-modal-title>You chose Batman!</mdb-modal-title>
-      </mdb-modal-header>
-      <mdb-modal-body><img src="../assets/batman.jpg" class="img-fluid"></mdb-modal-body>
-      <mdb-modal-footer>
-        <mdb-btn outline="success" @click.native="restartQuestions">Close</mdb-btn>
-      </mdb-modal-footer>
-    </mdb-modal>
-    <mdb-modal :show="showSpiderman" @close="restartQuestions" success>
-      <mdb-modal-header>
-        <mdb-modal-title>You chose Spiderman!</mdb-modal-title>
-      </mdb-modal-header>
-      <mdb-modal-body><img src="../assets/spiderman.png" class="img-fluid"></mdb-modal-body>
-      <mdb-modal-footer>
-        <mdb-btn outline="success" @click.native="restartQuestions">Close</mdb-btn>
-      </mdb-modal-footer>
-    </mdb-modal>
-  </mdb-container>
+    <MDBContainer class="h-100 mt-0 pt-0" fluid>
+        <MDBRow class="align-items-center justify-content-center" style="min-height: 100vh; background-color: #f8f9fa">
+            <MDBCol col="4">
+                <MDBCard v-if="showQuestionOne" class="card-body">
+                    <MDBCardTitle>This or That?</MDBCardTitle>
+                    <MDBCardText>
+                        <MDBRow class="justify-content-center">
+                            <MDBCol col="12">
+                                <p>Select what you would like most ...</p>
+                            </MDBCol>
+                        </MDBRow>
+                        <MDBRow>
+                            <MDBCol col="6">
+                                <MDBBtn @click="showEat = true" color="primary"
+                                    ><img src="../assets/eatSign.jpg" class="img-fluid"
+                                /></MDBBtn>
+                            </MDBCol>
+                            <MDBCol col="6">
+                                <MDBBtn @click="showTravel = true" color="primary"
+                                    ><img src="../assets/travelSign.jpg" class="img-fluid"
+                                /></MDBBtn>
+                            </MDBCol>
+                        </MDBRow>
+                    </MDBCardText>
+                </MDBCard>
+                <MDBCard v-if="showQuestionTwo" class="card-body">
+                    <MDBCardTitle>This or That?</MDBCardTitle>
+                    <MDBCardText>
+                        <MDBRow class="justify-content-center">
+                            <MDBCol col="12">
+                                <p>Would you rather be Batman or Spiderman?</p>
+                            </MDBCol>
+                        </MDBRow>
+                        <MDBRow>
+                            <MDBCol col="6">
+                                <MDBBtn @click="showBatman = true" color="primary"
+                                    ><img src="../assets/batmanLogo.jpg" class="img-fluid"
+                                /></MDBBtn>
+                            </MDBCol>
+                            <MDBCol col="6">
+                                <MDBBtn @click="showSpiderman = true" color="primary"
+                                    ><img src="../assets/spidermanLogo.jpg" class="img-fluid"
+                                /></MDBBtn>
+                            </MDBCol>
+                        </MDBRow>
+                    </MDBCardText>
+                </MDBCard>
+            </MDBCol>
+        </MDBRow>
+        <MDBModal v-model="showEat" success>
+            <MDBModalHeader>
+                <MDBModalTitle>You chose eat!</MDBModalTitle>
+            </MDBModalHeader>
+            <MDBModalBody><img src="../assets/eat.jpg" class="img-fluid" /></MDBModalBody>
+            <MDBModalFooter>
+                <MDBBtn outline="success" @click="showNextQuestion">Close</MDBBtn>
+            </MDBModalFooter>
+        </MDBModal>
+        <MDBModal v-model="showTravel" success>
+            <MDBModalHeader>
+                <MDBModalTitle>You chose travel!</MDBModalTitle>
+            </MDBModalHeader>
+            <MDBModalBody><img src="../assets/travel.jpg" class="img-fluid" /></MDBModalBody>
+            <MDBModalFooter>
+                <MDBBtn outline="success" @click="showNextQuestion">Close</MDBBtn>
+            </MDBModalFooter>
+        </MDBModal>
+        <MDBModal v-model="showBatman" success>
+            <MDBModalHeader>
+                <MDBModalTitle>You chose Batman!</MDBModalTitle>
+            </MDBModalHeader>
+            <MDBModalBody><img src="../assets/batman.jpg" class="img-fluid" /></MDBModalBody>
+            <MDBModalFooter>
+                <MDBBtn outline="success" @click="restartQuestions">Close</MDBBtn>
+            </MDBModalFooter>
+        </MDBModal>
+        <MDBModal v-model="showSpiderman" success>
+            <MDBModalHeader>
+                <MDBModalTitle>You chose Spiderman!</MDBModalTitle>
+            </MDBModalHeader>
+            <MDBModalBody><img src="../assets/spiderman.png" class="img-fluid" /></MDBModalBody>
+            <MDBModalFooter>
+                <MDBBtn outline="success" @click="restartQuestions">Close</MDBBtn>
+            </MDBModalFooter>
+        </MDBModal>
+    </MDBContainer>
 </template>
 
 <script>
-export default {
-  name: "Midterm",
-  data() {
-    return {
-      showQuestionOne: true,
-      showQuestionTwo: false,
-      showEat: false,
-      showTravel: false,
-      showBatman: false,
-      showSpiderman: false
+    import {
+        MDBContainer,
+        MDBRow,
+        MDBCol,
+        MDBCard,
+        MDBCardTitle,
+        MDBCardText,
+        MDBBtn,
+        MDBModal,
+        MDBModalHeader,
+        MDBModalTitle,
+        MDBModalBody,
+        MDBModalFooter
+    } from 'mdb-vue-ui-kit';
+    export default {
+        name: 'Midterm',
+        components: {
+            MDBContainer,
+            MDBRow,
+            MDBCol,
+            MDBCard,
+            MDBCardTitle,
+            MDBCardText,
+            MDBBtn,
+            MDBModal,
+            MDBModalHeader,
+            MDBModalTitle,
+            MDBModalBody,
+            MDBModalFooter
+        },
+        data() {
+            return {
+                showQuestionOne: true,
+                showQuestionTwo: false,
+                showEat: false,
+                showTravel: false,
+                showBatman: false,
+                showSpiderman: false
+            };
+        },
+        methods: {
+            showNextQuestion() {
+                this.showEat = false;
+                this.showTravel = false;
+                this.showQuestionOne = false;
+                this.showQuestionTwo = true;
+            },
+            restartQuestions() {
+                this.showEat = false;
+                this.showTravel = false;
+                this.showBatman = false;
+                this.showSpiderman = false;
+                this.showQuestionTwo = false;
+                this.showQuestionOne = true;
+            }
+        }
     };
-  },
-  methods: {
-    showNextQuestion() {
-      this.showEat = false;
-      this.showTravel = false;
-      this.showQuestionOne = false;
-      this.showQuestionTwo = true;
-    },
-    restartQuestions() {
-      this.showEat = false;
-      this.showTravel = false;
-      this.showBatman = false;
-      this.showSpiderman = false;
-      this.showQuestionTwo = false;
-      this.showQuestionOne = true;
-    }
-  }
-}
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>
