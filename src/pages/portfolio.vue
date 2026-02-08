@@ -1,9 +1,6 @@
 <template>
     <MDBContainer class="mt-0 pt-0" fluid>
-        <MDBRow
-            style="background-color: #f0f2f5; min-height: calc(100vh - 56px)"
-            class="justify-content-center pt-5"
-        >
+        <MDBRow style="background-color: #f0f2f5; min-height: calc(100vh - 56px)" class="justify-content-center pt-5">
             <MDBCol md="10" lg="8">
                 <h2 class="text-center mb-4" style="color: #1a2744; font-weight: bold">Portfolio</h2>
                 <MDBRow class="justify-content-center">
@@ -18,9 +15,9 @@
                             <div class="project-info">
                                 <h4 style="color: #1a2744">Four Seasons Studio</h4>
                                 <p>
-                                    Portfolio and e-commerce site for a fine art studio, featuring original
-                                    acrylic and oil landscape paintings. Built with a gallery-style design
-                                    emphasizing elegant typography and a warm, neutral color palette.
+                                    Portfolio and e-commerce site for a fine art studio, featuring original acrylic and
+                                    oil landscape paintings. Built with a gallery-style design emphasizing elegant
+                                    typography and a warm, neutral color palette.
                                 </p>
                                 <div class="tech-tags mb-3">
                                     <span class="tech-tag">Nuxt</span>
