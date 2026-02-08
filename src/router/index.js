@@ -32,6 +32,7 @@ import TicTacToe from '../pages/ticTacToe.vue';
 import WordCount from '../pages/wordcount.vue';
 import ImageClustering from '../pages/imageClustering.vue';
 import RandomForestClassifier from '../pages/randomForestClassifier.vue';
+import Portfolio from '../pages/portfolio.vue';
 
 const routes = [
     {
@@ -198,6 +199,11 @@ const routes = [
         path: '/randomforestclassifier',
         name: 'RandomForestClassifier',
         component: RandomForestClassifier
+    },
+    {
+        path: '/portfolio',
+        name: 'Portfolio',
+        component: Portfolio
     }
 ];
 
