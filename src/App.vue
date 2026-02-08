@@ -25,6 +25,9 @@
                         <li class="nav-item">
                             <router-link to="/portfolio" class="nav-link" @click="closeAll">Freelance</router-link>
                         </li>
+                        <li class="nav-item">
+                            <router-link to="/blockly" class="nav-link" @click="closeAll">Blockly</router-link>
+                        </li>
                         <li class="nav-item dropdown">
                             <a
                                 class="nav-link dropdown-toggle"

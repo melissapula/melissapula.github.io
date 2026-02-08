@@ -33,6 +33,7 @@ import WordCount from '../pages/wordcount.vue';
 import ImageClustering from '../pages/imageClustering.vue';
 import RandomForestClassifier from '../pages/randomForestClassifier.vue';
 import Portfolio from '../pages/portfolio.vue';
+import Blockly from '../pages/blockly.vue';
 
 const routes = [
     {
@@ -204,6 +205,11 @@ const routes = [
         path: '/portfolio',
         name: 'Portfolio',
         component: Portfolio
+    },
+    {
+        path: '/blockly',
+        name: 'Blockly',
+        component: Blockly
     }
 ];
 
