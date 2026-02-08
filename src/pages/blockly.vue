@@ -73,7 +73,7 @@ function runCode() {
 
 <style scoped>
 .blockly-layout {
-  width: 100%; height: 100vh; display: flex; flex-direction: column;
+  width: 100%; height: calc(100vh - 56px); display: flex; flex-direction: column;
   background: #0f172a; font-family: 'DM Sans', sans-serif;
 }
 .main-content { flex: 1; display: flex; overflow: hidden; }

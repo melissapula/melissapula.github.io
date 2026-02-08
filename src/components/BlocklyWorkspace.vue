@@ -9,12 +9,15 @@
       <span>Loading Blockly...</span>
     </div>
     <div ref="blocklyDiv" class="blockly-div" />
+    <div v-if="badgeEnabled && loaded" :class="['block-badge', { over: blockCount > maxBlocks }]">
+      Blocks: {{ blockCount }} / {{ maxBlocks }}
+      <span v-if="blockCount > maxBlocks"> ⚠️</span>
+    </div>
   </div>
 </template>
 
 <script setup>
-import { ref, onMounted, onBeforeUnmount, watch } from 'vue';
-import { WorkspaceBlockCountBadge } from '@/blockly/WorkspaceBlockCountBadge';
+import { ref, onMounted, onBeforeUnmount } from 'vue';
 import { defineCustomBlocks } from '@/blockly/customBlocks';
 import { toolbox, starterBlocksXml } from '@/blockly/toolbox';
 
@@ -24,6 +27,7 @@ const props = defineProps({
 });
 
 const emit = defineEmits(['code-changed', 'block-count-changed']);
+const blockCount = ref(0);
 
 const blocklyDiv = ref(null);
 const container = ref(null);
@@ -31,7 +35,6 @@ const loaded = ref(false);
 const loadError = ref(null);
 
 let workspace = null;
-let badge = null;
 
 function loadScript(src) {
   return new Promise((resolve, reject) => {
@@ -91,20 +94,13 @@ async function initBlockly() {
         }),
       });
 
-      badge = new WorkspaceBlockCountBadge(workspace, {
-        maxBlocks: props.maxBlocks,
-        label: 'Blocks',
-      });
-      badge.init();
-      badge.onCountChange((count) => {
-        emit('block-count-changed', count);
-      });
-
       workspace.addChangeListener(() => {
         try {
           const code = Blockly.JavaScript.workspaceToCode(workspace);
+          const count = workspace.getAllBlocks(false).length;
+          blockCount.value = count;
           emit('code-changed', code);
-          emit('block-count-changed', workspace.getAllBlocks(false).length);
+          emit('block-count-changed', count);
         } catch (e) {}
       });
 
@@ -125,24 +121,27 @@ function clearWorkspace() {
   }
 }
 
-watch(() => props.maxBlocks, (newMax) => { if (badge) badge.setMaxBlocks(newMax); });
-watch(() => props.badgeEnabled, (enabled) => {
-  if (badge) { if (enabled) badge.enable(); else badge.disable(); }
-});
-
 defineExpose({ clearWorkspace });
 onMounted(() => { initBlockly(); });
 onBeforeUnmount(() => {
-  if (badge) badge.dispose();
   if (workspace) workspace.dispose();
   workspace = null;
-  badge = null;
 });
 </script>
 
 <style scoped>
 .workspace-container { flex: 1; position: relative; overflow: hidden; }
 .blockly-div { width: 100%; height: 100%; }
+.block-badge {
+  position: absolute; bottom: 12px; right: 12px; padding: 8px 14px;
+  border-radius: 999px; font: 600 13px 'DM Sans', sans-serif;
+  background: #1e293b; color: #e2e8f0; z-index: 9999;
+  opacity: 0.9; user-select: none; pointer-events: none;
+  transition: all 0.3s ease; box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+.block-badge.over {
+  background: #dc2626; color: #fff; transform: scale(1.05);
+}
 .workspace-overlay {
   position: absolute; inset: 0; display: flex; align-items: center;
   justify-content: center; flex-direction: column; gap: 8px;
