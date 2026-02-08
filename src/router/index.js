@@ -34,6 +34,7 @@ import ImageClustering from '../pages/imageClustering.vue';
 import RandomForestClassifier from '../pages/randomForestClassifier.vue';
 import Portfolio from '../pages/portfolio.vue';
 import Blockly from '../pages/blockly.vue';
+import Contact from '../pages/contact.vue';
 
 const routes = [
     {
@@ -210,6 +211,11 @@ const routes = [
         path: '/blockly',
         name: 'Blockly',
         component: Blockly
+    },
+    {
+        path: '/contact',
+        name: 'Contact',
+        component: Contact
     }
 ];
 

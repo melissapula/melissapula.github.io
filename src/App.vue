@@ -152,6 +152,11 @@
                             </ul>
                         </li>
                     </ul>
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <router-link to="/contact" class="nav-link" @click="closeAll">Contact</router-link>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </nav>
