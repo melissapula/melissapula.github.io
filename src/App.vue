@@ -23,7 +23,7 @@
                             <router-link to="/resume" class="nav-link" @click="closeAll">Resume</router-link>
                         </li>
                         <li class="nav-item">
-                            <router-link to="/portfolio" class="nav-link" @click="closeAll">Portfolio</router-link>
+                            <router-link to="/portfolio" class="nav-link" @click="closeAll">Freelance</router-link>
                         </li>
                         <li class="nav-item dropdown">
                             <a

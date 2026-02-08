@@ -41,7 +41,7 @@
                 </div>
             </MDBCol>
             <MDBCol lg="8" sm="12" id="experience">
-                <h4 class="cyan-text mt-4">PROFESSIONAL SUMMARY</h4>
+                <h4 class="cyan-text mt-2">PROFESSIONAL SUMMARY</h4>
                 <p>
                     Full-Stack Software Engineer and Marine Corps veteran with 6+ years building and maintaining web
                     libraries and enterprise applications. Expert in design systems, build tooling, and developer
@@ -193,7 +193,7 @@
         color: #333;
         margin-left: 33.333%;
         min-height: calc(100vh - 56px);
-        padding: 2rem;
+        padding: 1rem 2rem 2rem;
     }
     .cyan-text {
         color: #2980b9 !important;
