@@ -94,7 +94,6 @@ async function initBlockly() {
       badge = new WorkspaceBlockCountBadge(workspace, {
         maxBlocks: props.maxBlocks,
         label: 'Blocks',
-        debugShowBlockType: true,
       });
       badge.init();
       badge.onCountChange((count) => {

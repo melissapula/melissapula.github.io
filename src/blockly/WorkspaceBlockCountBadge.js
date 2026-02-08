@@ -15,34 +15,25 @@ const BADGE_STYLES = {
   boxShadow: '0 2px 8px rgba(0,0,0,0.15)',
 };
 
-const RELEVANT_EVENTS = new Set(['create', 'delete', 'move']);
-
 export class WorkspaceBlockCountBadge {
   constructor(workspace, options = {}) {
     this.workspace = workspace;
     this.options = {
       maxBlocks: options.maxBlocks ?? Infinity,
       label: options.label ?? 'Blocks',
-      debugShowBlockType: options.debugShowBlockType ?? false,
     };
     this.badgeEl = null;
     this.blockCount = 0;
     this.enabled = false;
 
-    this.onWorkspaceChange = (event) => {
-      if (!RELEVANT_EVENTS.has(event.type)) return;
-      this.blockCount = this.workspace.getAllBlocks(false).length;
-      let annotation;
-      if (
-        this.options.debugShowBlockType &&
-        event.type === 'create' &&
-        event.json?.type
-      ) {
-        annotation = event.json.type;
-      }
-      this.update(annotation);
-      if (this._onCountChange) {
-        this._onCountChange(this.blockCount);
+    this.onWorkspaceChange = () => {
+      const newCount = this.workspace.getAllBlocks(false).length;
+      if (newCount !== this.blockCount) {
+        this.blockCount = newCount;
+        this.update();
+        if (this._onCountChange) {
+          this._onCountChange(this.blockCount);
+        }
       }
     };
   }
@@ -91,14 +82,13 @@ export class WorkspaceBlockCountBadge {
     return this.blockCount;
   }
 
-  update(annotation) {
+  update() {
     if (!this.badgeEl) return;
     const { maxBlocks, label } = this.options;
     const tooMany = Number.isFinite(maxBlocks) && this.blockCount > maxBlocks;
     let text = `${label}: ${this.blockCount}`;
     if (Number.isFinite(maxBlocks)) text += ` / ${maxBlocks}`;
     if (tooMany) text += ' ⚠️';
-    if (annotation) text += ` (${annotation})`;
     this.badgeEl.textContent = text;
     this.badgeEl.style.background = tooMany ? '#dc2626' : '#1e293b';
     this.badgeEl.style.color = tooMany ? '#fff' : '#e2e8f0';
