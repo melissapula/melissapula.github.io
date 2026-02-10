@@ -9,7 +9,7 @@
                     @click="collapse = !collapse"
                     aria-label="Toggle navigation"
                 >
-                    <span class="navbar-toggler-icon"></span>
+                    <i class="fas fa-bars" style="color: white; font-size: 1.25rem"></i>
                 </button>
                 <div class="collapse navbar-collapse" :class="{ show: collapse }">
                     <ul class="navbar-nav me-auto">
@@ -214,8 +214,5 @@
     }
     .navbar-toggler {
         border-color: rgba(255, 255, 255, 0.5);
-    }
-    .navbar-toggler-icon {
-        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='white' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
     }
 </style>
