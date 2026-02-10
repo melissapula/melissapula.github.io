@@ -11,7 +11,7 @@
                 >
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="navbar-collapse" :class="{ collapse: !collapse }">
+                <div class="collapse navbar-collapse" :class="{ show: collapse }">
                     <ul class="navbar-nav me-auto">
                         <li class="nav-item">
                             <router-link to="/" class="nav-link" @click="closeAll">Home</router-link>

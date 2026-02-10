@@ -26985,34 +26985,34 @@ table.vgt-table tr.clickable:hover {
         flex-direction: column;
     }
 }
-.contact-card[data-v-b352bef9] {
+.contact-card[data-v-f1d4f3ce] {
     background: #fff;
     border-radius: 12px;
     padding: 3rem 2.5rem;
     box-shadow: 0 2px 12px #00000014;
 }
-.contact-items[data-v-b352bef9] {
+.contact-items[data-v-f1d4f3ce] {
     display: flex;
     flex-direction: column;
     gap: 1.25rem;
 }
-.contact-item[data-v-b352bef9] {
+.contact-item[data-v-f1d4f3ce] {
     display: flex;
     align-items: center;
     gap: 1rem;
     font-size: 1.1rem;
     color: #333;
 }
-.contact-icon[data-v-b352bef9] {
+.contact-icon[data-v-f1d4f3ce] {
     width: 24px;
     text-align: center;
     color: #2980b9;
     font-size: 1.2rem;
 }
-.contact-item a[data-v-b352bef9] {
+.contact-item a[data-v-f1d4f3ce] {
     color: #2980b9;
     text-decoration: none;
 }
-.contact-item a[data-v-b352bef9]:hover {
+.contact-item a[data-v-f1d4f3ce]:hover {
     text-decoration: underline;
 }
