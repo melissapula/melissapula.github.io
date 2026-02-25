@@ -18,6 +18,9 @@
             <MDBCol lg="5" sm="12">
                 <MDBRow class="mb-4">
                     <MDBCol col="12">
+                        <div class="d-flex justify-content-center mb-4">
+                            <div ref="spinnerRef"></div>
+                        </div>
                         <h1 class="text-center text-nowrap" style="color: #1a2744">
                             <b>M E L I S S A</b>
                         </h1>
@@ -34,12 +37,30 @@
 
 <script>
     import { MDBContainer, MDBRow, MDBCol } from 'mdb-vue-ui-kit';
+    import { createSpinner } from 'love-is-love-spinners';
     export default {
         name: 'Home',
         components: {
             MDBContainer,
             MDBRow,
             MDBCol
+        },
+        data() {
+            return {
+                spinner: null
+            };
+        },
+        mounted() {
+            this.spinner = createSpinner(this.$refs.spinnerRef, {
+                size: 'lg',
+                speed: 5,
+                ringText: 'cycle',
+                ringColor: 'rainbow',
+                shuffle: true
+            });
+        },
+        beforeUnmount() {
+            this.spinner?.destroy();
         }
     };
 </script>
