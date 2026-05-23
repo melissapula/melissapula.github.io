@@ -1,55 +1,76 @@
-<template>
-    <MDBContainer class="h-100 mt-0 pt-0" fluid>
-        <MDBRow v-if="imageClustering" style="height: calc(100vh - 56px); background-color: #f0f2f5" class="pt-4">
-            <MDBCol lg="7" sm="12">
+﻿<template>
+    <div class="container-fluid h-100 mt-0 pt-0">
+        <div class="row pt-4" v-if="imageClustering" style="height: calc(100vh - 56px); background-color: #f0f2f5">
+            <div class="col-lg-7 col-sm-12">
                 <Codemirror
                     class="CodeMirror"
                     style="width: 100%"
                     :value="imageClustering"
                     :options="imageClusteringOptions"
                 ></Codemirror>
-            </MDBCol>
-            <MDBCol
-                lg="5"
-                sm="12"
-                class="pb-4 d-flex flex-column align-items-center"
+            </div>
+            <div
+                class="col-lg-5 col-sm-12 pb-4 d-flex flex-column align-items-center"
                 style="overflow-y: auto; height: calc(100vh - 90px)"
             >
                 <p>
                     This code imports an unlabeled dataset of drone images and then sorts them into clusters based on
                     their features.
                 </p>
-                <img src="../assets/imageClusteringPCA.png" class="img-fluid mt-3" />
+                <img
+                    src="../assets/imageClusteringPCA.jpg"
+                    class="img-fluid mt-3"
+                    alt="PCA scatterplot reducing drone-image features to two dimensions, showing visible clusters"
+                />
                 <p class="mt-2">Image(1): PCA scatterplot</p>
-                <img src="../assets/imageClusteringPCA3D.png" class="img-fluid mt-3" />
+                <img
+                    src="../assets/imageClusteringPCA3D.png"
+                    class="img-fluid mt-3"
+                    alt="3D PCA scatterplot of drone image features"
+                />
                 <p class="mt-2">Image(2): 3D PCA scatterplot</p>
-                <img src="../assets/imageClusteringElbow.png" class="img-fluid mt-3" />
+                <img
+                    src="../assets/imageClusteringElbow.png"
+                    class="img-fluid mt-3"
+                    alt="Elbow plot for choosing optimal number of K-means clusters"
+                />
                 <p class="mt-2">Image(3): Elbow method</p>
-                <img src="../assets/imageClusteringYellowbrick.png" class="img-fluid mt-3" />
+                <img
+                    src="../assets/imageClusteringYellowbrick.png"
+                    class="img-fluid mt-3"
+                    alt="Yellowbrick library cluster evaluation chart"
+                />
                 <p class="mt-2">Image(4): Yellowbrick method</p>
-                <img src="../assets/imageClusteringKmeans.png" class="img-fluid mt-3" />
+                <img
+                    src="../assets/imageClusteringKmeans.png"
+                    class="img-fluid mt-3"
+                    alt="K-means clustering result projected on principal components"
+                />
                 <p class="mt-2">Image(5): KMeans Clustering</p>
-                <img src="../assets/imageClusteringSilhouette.png" class="img-fluid mt-3" />
+                <img
+                    src="../assets/imageClusteringSilhouette.png"
+                    class="img-fluid mt-3"
+                    alt="Silhouette analysis plot showing how well points fit their assigned cluster"
+                />
                 <p class="mt-2">Image(6): Silhouette</p>
-                <img src="../assets/imageClusteringViewCluster.png" class="img-fluid mt-3" />
+                <img
+                    src="../assets/imageClusteringViewCluster.jpg"
+                    class="img-fluid mt-3"
+                    alt="Grid of drone images belonging to cluster 0 after K-means classification"
+                />
                 <p class="mt-2">Image(7): View Cluster 0</p>
-            </MDBCol>
-        </MDBRow>
-    </MDBContainer>
+            </div>
+        </div>
+    </div>
 </template>
 
 <script>
     import Codemirror from 'codemirror-editor-vue3';
     import 'codemirror/lib/codemirror.css';
     import 'codemirror/mode/python/python.js';
-    import { MDBContainer, MDBRow, MDBCol } from 'mdb-vue-ui-kit';
-
     export default {
         name: 'ImageClustering',
         components: {
-            MDBContainer,
-            MDBRow,
-            MDBCol,
             Codemirror
         },
         data() {

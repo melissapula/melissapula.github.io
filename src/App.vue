@@ -23,133 +23,13 @@
                             <router-link to="/resume" class="nav-link" @click="closeAll">Resume</router-link>
                         </li>
                         <li class="nav-item">
-                            <router-link to="/portfolio" class="nav-link" @click="closeAll">Freelance</router-link>
+                            <router-link to="/portfolio" class="nav-link" @click="closeAll">Projects</router-link>
                         </li>
                         <li class="nav-item">
-                            <router-link to="/blockly" class="nav-link" @click="closeAll">Blockly</router-link>
+                            <router-link to="/python" class="nav-link" @click="closeAll">Python</router-link>
                         </li>
-                        <li class="nav-item dropdown">
-                            <a
-                                class="nav-link dropdown-toggle"
-                                href="#"
-                                role="button"
-                                @click.prevent="toggleDrop('python')"
-                            >
-                                Python Code
-                            </a>
-                            <ul class="dropdown-menu" :class="{ show: pythonDrop }">
-                                <li>
-                                    <router-link to="/calculator" class="dropdown-item" @click="closeAll"
-                                        >Calculator</router-link
-                                    >
-                                </li>
-                                <li>
-                                    <router-link to="/macbeth" class="dropdown-item" @click="closeAll"
-                                        >Macbeth Game</router-link
-                                    >
-                                </li>
-                                <li>
-                                    <router-link to="/bullsCows" class="dropdown-item" @click="closeAll"
-                                        >Bulls and Cows Game</router-link
-                                    >
-                                </li>
-                                <li>
-                                    <router-link to="/sticks" class="dropdown-item" @click="closeAll"
-                                        >Game of Sticks</router-link
-                                    >
-                                </li>
-                                <li>
-                                    <router-link to="/pig" class="dropdown-item" @click="closeAll"
-                                        >Game of Pig</router-link
-                                    >
-                                </li>
-                                <li>
-                                    <router-link to="/turtle" class="dropdown-item" @click="closeAll"
-                                        >Turtle Graphics</router-link
-                                    >
-                                </li>
-                                <li>
-                                    <router-link to="/pygame" class="dropdown-item" @click="closeAll"
-                                        >Pygame</router-link
-                                    >
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a
-                                class="nav-link dropdown-toggle"
-                                href="#"
-                                role="button"
-                                @click.prevent="toggleDrop('data')"
-                            >
-                                Data Analysis
-                            </a>
-                            <ul class="dropdown-menu" :class="{ show: dataDrop }">
-                                <li>
-                                    <router-link to="/wordcount" class="dropdown-item" @click="closeAll"
-                                        >Word Count</router-link
-                                    >
-                                </li>
-                                <li>
-                                    <router-link to="/imageclustering" class="dropdown-item" @click="closeAll"
-                                        >Image Clustering</router-link
-                                    >
-                                </li>
-                                <li>
-                                    <router-link to="/randomforestclassifier" class="dropdown-item" @click="closeAll"
-                                        >Random Forest Classifier</router-link
-                                    >
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a
-                                class="nav-link dropdown-toggle"
-                                href="#"
-                                role="button"
-                                @click.prevent="toggleDrop('examples')"
-                            >
-                                Games
-                            </a>
-                            <ul class="dropdown-menu" :class="{ show: examplesDrop }">
-                                <li>
-                                    <router-link to="/hangman" class="dropdown-item" @click="closeAll"
-                                        >Hangman</router-link
-                                    >
-                                </li>
-                                <li>
-                                    <router-link to="/bugsGame" class="dropdown-item" @click="closeAll"
-                                        >Bugs Game</router-link
-                                    >
-                                </li>
-                                <li>
-                                    <router-link to="/verify" class="dropdown-item" @click="closeAll"
-                                        >Simple Calculator</router-link
-                                    >
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a
-                                class="nav-link dropdown-toggle"
-                                href="#"
-                                role="button"
-                                @click.prevent="toggleDrop('blog')"
-                            >
-                                Blog
-                            </a>
-                            <ul class="dropdown-menu" :class="{ show: blogDrop }">
-                                <li>
-                                    <router-link to="/parentingBlog" class="dropdown-item" @click="closeAll"
-                                        >Parenting</router-link
-                                    >
-                                </li>
-                                <li>
-                                    <router-link to="/fitnessBlog" class="dropdown-item" @click="closeAll"
-                                        >Fitness</router-link
-                                    >
-                                </li>
-                            </ul>
+                        <li class="nav-item">
+                            <router-link to="/data" class="nav-link" @click="closeAll">Data Analysis</router-link>
                         </li>
                     </ul>
                     <ul class="navbar-nav ms-auto">
@@ -161,6 +41,32 @@
             </div>
         </nav>
         <router-view />
+        <footer class="site-footer">
+            <div class="container-fluid d-flex flex-wrap justify-content-between align-items-center px-4">
+                <span class="footer-copy">&copy; {{ currentYear }} Melissa Freundschuh-Pula</span>
+                <div class="footer-links">
+                    <a
+                        href="https://github.com/melissapula"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="GitHub"
+                    >
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a
+                        href="https://www.linkedin.com/in/melissa-pula-833748172"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="LinkedIn"
+                    >
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="mailto:melissa_m_24@yahoo.com" aria-label="Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+        </footer>
     </div>
 </template>
 
@@ -170,26 +76,11 @@
         data() {
             return {
                 collapse: false,
-                pythonDrop: false,
-                dataDrop: false,
-                examplesDrop: false,
-                blogDrop: false
+                currentYear: new Date().getFullYear()
             };
         },
         methods: {
-            toggleDrop(name) {
-                const wasOpen = this[name + 'Drop'];
-                this.closeDropdowns();
-                this[name + 'Drop'] = !wasOpen;
-            },
-            closeDropdowns() {
-                this.pythonDrop = false;
-                this.dataDrop = false;
-                this.examplesDrop = false;
-                this.blogDrop = false;
-            },
             closeAll() {
-                this.closeDropdowns();
                 this.collapse = false;
             }
         }
@@ -214,5 +105,23 @@
     }
     .navbar-toggler {
         border-color: rgba(255, 255, 255, 0.5);
+    }
+    .site-footer {
+        background-color: #1a2744;
+        color: rgba(255, 255, 255, 0.85);
+        padding: 14px 0;
+        font-size: 13px;
+    }
+    .site-footer .footer-copy {
+        letter-spacing: 0.3px;
+    }
+    .site-footer .footer-links a {
+        color: rgba(255, 255, 255, 0.85);
+        margin-left: 16px;
+        font-size: 18px;
+        transition: color 0.15s ease;
+    }
+    .site-footer .footer-links a:hover {
+        color: #fff;
     }
 </style>

@@ -1,103 +1,53 @@
 # melissapula.github.io
 
-Personal portfolio website showcasing freelance work, interactive projects, games, data analysis, blog posts, and a resume.
+Personal portfolio website for Melissa Freundschuh-Pula — Full-Stack Software Engineer.
 
 **Live site:** [melissapula.github.io](https://melissapula.github.io)
 
 ## Tech Stack
 
-- **Vue 3.4** with **Vue Router 4** (hash-based routing for GitHub Pages)
-- **Vite 5** build tool
-- **MDB Vue UI Kit** (Material Design Bootstrap 5) for layout and components
-- **Blockly 11** (loaded from CDN) for the visual code builder
-- **CodeMirror** (`codemirror-editor-vue3`) for read-only Python code display
-- **vue-good-table-next** for data tables in the library system demo
+- **Vue 3.4** + **Vue Router 4** (hash-based routing for GitHub Pages)
+- **Vite 5** build tool, with route-level dynamic imports for code splitting
+- **Bootstrap 5** (CSS only) for layout primitives and utility classes
 - **Font Awesome 7** for icons
+- **CodeMirror** (`codemirror-editor-vue3`) for read-only Python code display
+- **Blockly 11** (loaded from CDN) for the visual code-builder sandbox
+- **love-is-love-spinners** — own npm package, live-demoed on the Projects page
 - **Google Analytics** via `vue-gtag`
-- **Husky** + **lint-staged** for pre-commit hooks (ESLint + Prettier)
+- **Husky** + **lint-staged** for pre-commit ESLint + Prettier
 
 ## Pages
 
-### Core
+| Path               | Page                                                                               |
+| ------------------ | ---------------------------------------------------------------------------------- |
+| `/`                | Home — name, photo, professional intro, CTAs                                       |
+| `/about`           | About — bio, education, certifications, work history, military service             |
+| `/resume`          | Resume — full professional summary, skills, experience, selected projects          |
+| `/portfolio`       | Projects — card grid (Engineering + Personal sections)                             |
+| `/python`          | Python — card grid of Python coursework (calculator, games, turtle, pygame)        |
+| `/data`            | Data Analysis — card grid (word count, image clustering, random forest classifier) |
+| `/contact`         | Contact — email, GitHub, LinkedIn, location                                        |
+| `/:pathMatch(.*)*` | 404 — friendly catch-all with CTAs back into the site                              |
 
-- **Home** `/` - Landing page
-- **About** `/about` - Personal background and photos
-- **Resume** `/resume` - Professional experience and skills
-- **Freelance** `/portfolio` - Showcase of client work (Four Seasons Studio)
+### Swap pattern
 
-### Blockly Visual Code Builder
-
-- **Blockly** `/blockly` - Drag-and-drop visual programming environment
-    - Custom blocks (print, wait, random number, variables, repeat)
-    - Live JavaScript code generation
-    - In-browser code execution with console output
-    - Block count badge with configurable limits
-
-### Python Code Examples
-
-Read-only CodeMirror displays of Python projects:
-
-- **Calculator** `/calculator`
-- **Macbeth Game** `/macbeth` - Text adventure game
-- **Bulls and Cows** `/bullsCows`
-- **Game of Sticks** `/sticks`
-- **Game of Pig** `/pig`
-- **Turtle Graphics** `/turtle`
-- **Pygame** `/pygame`
-
-### Data Analysis
-
-- **Word Count** `/wordcount`
-- **Image Clustering** `/imageclustering` - KMeans clustering with PCA visualization
-- **Random Forest Classifier** `/randomforestclassifier` - PySpark ML pipeline
-
-### Games
-
-- **Hangman** `/hangman`
-- **Bugs Bunny Board Game** `/bugsGame`
-- **Simple Calculator** `/verify`
-- **Tic Tac Toe** `/tictactoe`
-
-### Web Design Projects
-
-- **Fish Creek** `/fishcreek`
-- **Pacific Trail** `/pacific`
-- **JavaJam Coffee House** `/javaJam`
-- **Veterans Home Page** `/VeteransHomePage`
-- **Kids Book** `/kidsBook`
-- **Training Session** `/trainingSession`
-- **Midterm** `/midterm`
-- **Final Practice** `/finalPractice`
-- **Final** `/final`
-
-### Blog
-
-- **Parenting** `/parentingBlog`
-- **Fitness** `/fitnessBlog`
-
-### Library Management System
-
-Demo app using `vue-good-table-next` for CRUD operations:
-
-- **Home** `/libraryhome`
-- **Books** `/librarybooks`
-- **Users** `/libraryusers`
-- **Checkouts** `/librarycheckouts`
-- **Returns** `/libraryreturns`
+The Projects, Python, and Data Analysis pages show a grid of cards. Clicking a card swaps the view to that project's full content with a floating "Back" button. State is driven by the route query (`?project=blockly`) so the browser back button works naturally.
 
 ## Project Structure
 
 ```
 src/
-  main.js                  # App entry point (Vue app + router + analytics)
-  App.vue                  # Root component with navbar and router-view
-  router/index.js          # 34 routes using createWebHashHistory
-  pages/                   # 30 page-level components
-  components/              # Shared components (BlocklyHeader, BlocklyWorkspace, CodePanel)
-  blockly/                 # Blockly config (custom blocks, toolbox, badge plugin)
-  library-management-system/  # Library demo components (5 pages)
-  assets/                  # Images used by page components
-docs/                      # Production build output (served by GitHub Pages)
+  main.js              # App entry — Vue app + router + GA + Bootstrap CSS
+  App.vue              # Root component — navbar + <router-view> + footer
+  router/index.js      # 8 routes; all but Home use dynamic import() for code splitting
+  pages/               # Page-level components
+  components/          # Shared (BlocklyHeader, BlocklyWorkspace, CodePanel)
+  blockly/             # Blockly config (custom blocks, toolbox, badge plugin)
+  assets/              # Images used by pages
+public/
+  favicon.ico
+  og-image.jpg         # 1200x630 social-share preview image
+docs/                  # Production build output (committed; served by GitHub Pages)
 ```
 
 ## Setup
@@ -127,11 +77,11 @@ npm run lint       # ESLint check and auto-fix
 npm run format     # Prettier format all source files
 ```
 
-A pre-commit hook automatically runs ESLint and Prettier on staged files via Husky and lint-staged.
+Pre-commit hooks run ESLint + Prettier on staged files via Husky and lint-staged.
 
 ## Deployment
 
-The site is deployed to GitHub Pages from the `docs/` directory on the `main` branch. After making changes:
+GitHub Pages serves from `docs/` on the `main` branch. To deploy:
 
 ```bash
 npm run build

@@ -1,69 +1,369 @@
-<template>
-    <MDBContainer class="mt-0 pt-0" fluid>
-        <MDBRow style="background-color: #f0f2f5; min-height: calc(100vh - 56px)" class="justify-content-center pt-5">
-            <MDBCol md="10" lg="8">
-                <h2 class="text-center mb-4" style="color: #1a2744; font-weight: bold">Portfolio</h2>
-                <MDBRow class="justify-content-center">
-                    <MDBCol md="6" lg="5" class="mb-4">
-                        <div class="project-card">
-                            <div class="project-preview">
-                                <div class="preview-content">
-                                    <span class="preview-title">Four Seasons Studio</span>
-                                    <span class="preview-subtitle">Fine Art by Christine</span>
+﻿<template>
+    <div>
+        <div class="container-fluid mt-0 pt-0" v-show="!selectedProject">
+            <div
+                class="row justify-content-center pt-5 pb-5"
+                style="background-color: #f0f2f5; min-height: calc(100vh - 56px)"
+            >
+                <div class="col-lg-10 col-md-11">
+                    <h2 class="text-center mb-2" style="color: #1a2744; font-weight: bold">Projects</h2>
+                    <h5 class="text-center section-label mb-4">Engineering</h5>
+                    <div class="row justify-content-center">
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <a
+                                href="https://frulahomes.com"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="card-link"
+                            >
+                                <div class="project-card">
+                                    <div class="project-preview frula-preview">
+                                        <div class="preview-content">
+                                            <span class="frula-title">Frula Homes</span>
+                                            <span class="frula-subtitle">Sell your home. Keep the commission.</span>
+                                        </div>
+                                    </div>
+                                    <div class="project-info">
+                                        <h4 style="color: #1a2744">Frula Homes</h4>
+                                        <p>
+                                            A nationwide For Sale By Owner platform with map search, structured offers,
+                                            buyer/seller messaging, a ZIP-level Market Snapshot from Zillow ZHVI, and a
+                                            custom Dream Home Finder that match-scores listings to a buyer's wish list.
+                                        </p>
+                                        <div class="tech-tags mb-3">
+                                            <span class="tech-tag">Nuxt 3</span>
+                                            <span class="tech-tag">NestJS</span>
+                                            <span class="tech-tag">Supabase</span>
+                                            <span class="tech-tag">PostGIS</span>
+                                            <span class="tech-tag">Mapbox</span>
+                                        </div>
+                                        <span
+                                            class="btn btn-primary"
+                                            style="background-color: #1a2744; border-color: #1a2744"
+                                        >
+                                            Visit Site
+                                        </span>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="project-info">
-                                <h4 style="color: #1a2744">Four Seasons Studio</h4>
-                                <p>
-                                    Portfolio and e-commerce site for a fine art studio, featuring original acrylic and
-                                    oil landscape paintings. Built with a gallery-style design emphasizing elegant
-                                    typography and a warm, neutral color palette.
-                                </p>
-                                <div class="tech-tags mb-3">
-                                    <span class="tech-tag">Nuxt</span>
-                                    <span class="tech-tag">Vue</span>
-                                    <span class="tech-tag">Sanity CMS</span>
-                                    <span class="tech-tag">CSS Grid</span>
+                            </a>
+                        </div>
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <a
+                                href="https://garagesaletracker.app"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="card-link"
+                            >
+                                <div class="project-card">
+                                    <div class="project-preview gst-preview">
+                                        <div class="preview-content">
+                                            <span class="gst-title">Garage Sale Tracker</span>
+                                            <span class="gst-subtitle">Find. Save. Route.</span>
+                                        </div>
+                                    </div>
+                                    <div class="project-info">
+                                        <h4 style="color: #1a2744">Garage Sale Tracker</h4>
+                                        <p>
+                                            A map-based PWA for browsing and routing between local garage sales, in
+                                            active use by real users. Mapbox Optimization API plans multi-stop
+                                            day-routes; Supabase handles auth, row-level security, realtime messaging,
+                                            and scheduled cleanup jobs.
+                                        </p>
+                                        <div class="tech-tags mb-3">
+                                            <span class="tech-tag">Nuxt 4</span>
+                                            <span class="tech-tag">TypeScript</span>
+                                            <span class="tech-tag">Supabase</span>
+                                            <span class="tech-tag">Mapbox</span>
+                                            <span class="tech-tag">Tailwind</span>
+                                        </div>
+                                        <span
+                                            class="btn btn-primary"
+                                            style="background-color: #1a2744; border-color: #1a2744"
+                                        >
+                                            Visit Site
+                                        </span>
+                                    </div>
                                 </div>
-                                <a
-                                    href="https://fourseasonsstudio.com/"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    class="btn btn-primary"
-                                    style="background-color: #1a2744; border-color: #1a2744"
-                                >
-                                    Visit Site
-                                </a>
+                            </a>
+                        </div>
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <a
+                                href="https://fourseasonsstudio.com/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="card-link"
+                            >
+                                <div class="project-card">
+                                    <div class="project-preview fss-preview">
+                                        <div class="preview-content">
+                                            <span class="preview-title">Four Seasons Studio</span>
+                                            <span class="preview-subtitle">Fine Art by Christine</span>
+                                        </div>
+                                    </div>
+                                    <div class="project-info">
+                                        <h4 style="color: #1a2744">Four Seasons Studio</h4>
+                                        <p>
+                                            Portfolio and e-commerce site for a fine art studio, featuring original
+                                            acrylic and oil landscape paintings. Sanity-powered catalog the artist
+                                            manages independently, with Stripe Checkout and webhook-driven post-purchase
+                                            email automation.
+                                        </p>
+                                        <div class="tech-tags mb-3">
+                                            <span class="tech-tag">Nuxt 4</span>
+                                            <span class="tech-tag">Vue 3</span>
+                                            <span class="tech-tag">Sanity CMS</span>
+                                            <span class="tech-tag">Stripe</span>
+                                        </div>
+                                        <span
+                                            class="btn btn-primary"
+                                            style="background-color: #1a2744; border-color: #1a2744"
+                                        >
+                                            Visit Site
+                                        </span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <a
+                                href="https://github.com/melissapula/lessonforge"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="card-link"
+                            >
+                                <div class="project-card">
+                                    <div class="project-preview lf-preview">
+                                        <div class="preview-content">
+                                            <span class="lf-title">LessonForge</span>
+                                            <span class="lf-subtitle">Human-in-the-loop lesson generation</span>
+                                        </div>
+                                    </div>
+                                    <div class="project-info">
+                                        <h4 style="color: #1a2744">LessonForge</h4>
+                                        <p>
+                                            An agentic, spec-driven lesson generator for the Modern Classrooms
+                                            self-paced, mastery-based instructional model. A LangGraph pipeline drafts a
+                                            lesson, scores its own work against a rubric, and pauses for the teacher to
+                                            approve, revise, or reject before anything is finalized.
+                                        </p>
+                                        <div class="tech-tags mb-3">
+                                            <span class="tech-tag">Python</span>
+                                            <span class="tech-tag">LangGraph</span>
+                                            <span class="tech-tag">Anthropic API</span>
+                                            <span class="tech-tag">Pydantic</span>
+                                        </div>
+                                        <span
+                                            class="btn btn-primary"
+                                            style="background-color: #1a2744; border-color: #1a2744"
+                                        >
+                                            View on GitHub
+                                        </span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <a
+                                href="https://www.npmjs.com/package/love-is-love-spinners"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="card-link"
+                            >
+                                <div class="project-card">
+                                    <div class="project-preview spinner-preview">
+                                        <div ref="spinnerRef"></div>
+                                    </div>
+                                    <div class="project-info">
+                                        <h4 style="color: #1a2744">love-is-love-spinners</h4>
+                                        <p>
+                                            A framework-agnostic TypeScript package of 32+ LGBTQ+ pride-flag CSS loading
+                                            spinners, distributed via npm with full type definitions. Zero dependencies
+                                            — each spinner pulses a flag from a dot to full size while a
+                                            counter-rotating text ring cycles through built-in or custom sayings.
+                                        </p>
+                                        <div class="tech-tags mb-3">
+                                            <span class="tech-tag">TypeScript</span>
+                                            <span class="tech-tag">npm</span>
+                                            <span class="tech-tag">CSS Animations</span>
+                                        </div>
+                                        <span
+                                            class="btn btn-primary"
+                                            style="background-color: #1a2744; border-color: #1a2744"
+                                        >
+                                            View on npm
+                                        </span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <div
+                                class="project-card"
+                                @click="selectedProject = 'blockly'"
+                                tabindex="0"
+                                role="button"
+                                @keyup.enter="selectedProject = 'blockly'"
+                            >
+                                <div class="project-preview blockly-preview">
+                                    <div class="preview-content">
+                                        <span class="blockly-title">Blockly Sandbox</span>
+                                        <span class="blockly-subtitle">Visual programming workspace</span>
+                                    </div>
+                                </div>
+                                <div class="project-info">
+                                    <h4 style="color: #1a2744">Blockly Sandbox</h4>
+                                    <p>
+                                        An interactive block-based programming workspace built on Google's Blockly
+                                        library. Drag blocks to compose logic, run the generated JavaScript live, and
+                                        see console output in a side panel — with configurable block limits and badge
+                                        rewards.
+                                    </p>
+                                    <div class="tech-tags mb-3">
+                                        <span class="tech-tag">Vue 3</span>
+                                        <span class="tech-tag">Blockly</span>
+                                        <span class="tech-tag">JavaScript</span>
+                                    </div>
+                                    <span
+                                        class="btn btn-primary"
+                                        style="background-color: #1a2744; border-color: #1a2744"
+                                    >
+                                        Open Sandbox
+                                    </span>
+                                </div>
                             </div>
                         </div>
-                    </MDBCol>
-                </MDBRow>
-            </MDBCol>
-        </MDBRow>
-    </MDBContainer>
+                    </div>
+
+                    <h5 class="text-center section-label mt-5 mb-4">Personal</h5>
+                    <div class="row justify-content-center">
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <div
+                                class="project-card"
+                                @click="selectedProject = 'fitness'"
+                                tabindex="0"
+                                role="button"
+                                @keyup.enter="selectedProject = 'fitness'"
+                            >
+                                <div class="project-preview fitness-preview">
+                                    <div class="preview-content">
+                                        <span class="fitness-title">Fitness</span>
+                                        <span class="fitness-subtitle">Believe it. Achieve it.</span>
+                                    </div>
+                                </div>
+                                <div class="project-info">
+                                    <h4 style="color: #1a2744">Fitness</h4>
+                                    <p>
+                                        My weekly training split, how I structure workouts across chest, back, legs,
+                                        delts, and arms, and the mindset that keeps me showing up six days a week.
+                                    </p>
+                                    <span
+                                        class="btn btn-primary"
+                                        style="background-color: #1a2744; border-color: #1a2744"
+                                    >
+                                        Read Blog
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div
+            v-show="selectedProject"
+            :class="['project-view', selectedProject ? 'project-view--' + selectedProject : '']"
+        >
+            <button class="back-button" @click="selectedProject = null">
+                <i class="fas fa-arrow-left me-2"></i>Back to Projects
+            </button>
+            <FitnessBlog v-if="selectedProject === 'fitness'" />
+            <Blockly v-if="selectedProject === 'blockly'" />
+        </div>
+    </div>
 </template>
 
 <script>
-    import { MDBContainer, MDBRow, MDBCol } from 'mdb-vue-ui-kit';
+    import { createSpinner } from 'love-is-love-spinners';
+    import FitnessBlog from './fitnessBlog.vue';
+    import Blockly from './blockly.vue';
     export default {
         name: 'Portfolio',
         components: {
-            MDBContainer,
-            MDBRow,
-            MDBCol
+            FitnessBlog,
+            Blockly
+        },
+        data() {
+            return {
+                spinner: null,
+                validProjects: ['blockly', 'fitness']
+            };
+        },
+        computed: {
+            selectedProject: {
+                get() {
+                    const q = this.$route.query.project;
+                    return this.validProjects.includes(q) ? q : null;
+                },
+                set(value) {
+                    if (value) {
+                        this.$router.push({ query: { project: value } });
+                    } else {
+                        this.$router.push({ query: {} });
+                    }
+                }
+            }
+        },
+        mounted() {
+            this.spinner = createSpinner(this.$refs.spinnerRef, {
+                size: 'lg',
+                speed: 5,
+                ringText: 'cycle',
+                ringColor: 'rainbow',
+                shuffle: true
+            });
+        },
+        beforeUnmount() {
+            this.spinner?.destroy();
         }
     };
 </script>
 
 <style scoped>
+    .section-label {
+        color: #6c757d;
+        font-weight: 500;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        font-size: 0.85rem;
+    }
+    .card-link {
+        text-decoration: none;
+        color: inherit;
+        display: block;
+        height: 100%;
+    }
     .project-card {
         background-color: #fff;
         border-radius: 12px;
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
         overflow: hidden;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
+        transition:
+            transform 0.15s ease,
+            box-shadow 0.15s ease;
+    }
+    .project-card:hover,
+    .project-card:focus,
+    .card-link:hover .project-card,
+    .card-link:focus .project-card {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 28px rgba(0, 0, 0, 0.15);
+        outline: none;
     }
     .project-preview {
-        background: linear-gradient(135deg, #f5f0eb 0%, #e8ddd4 100%);
         height: 200px;
         display: flex;
         align-items: center;
@@ -71,6 +371,10 @@
     }
     .preview-content {
         text-align: center;
+        padding: 0 1rem;
+    }
+    .fss-preview {
+        background: linear-gradient(135deg, #f5f0eb 0%, #e8ddd4 100%);
     }
     .preview-title {
         display: block;
@@ -87,12 +391,70 @@
         margin-top: 8px;
         letter-spacing: 1px;
     }
+    .frula-preview {
+        background: linear-gradient(135deg, #1a2744 0%, #2c4068 100%);
+    }
+    .frula-title {
+        display: block;
+        font-family: Georgia, 'Times New Roman', serif;
+        font-size: 24px;
+        color: #fff;
+        letter-spacing: 2px;
+    }
+    .frula-subtitle {
+        display: block;
+        font-size: 13px;
+        color: #cbd5e1;
+        margin-top: 8px;
+        letter-spacing: 0.5px;
+    }
+    .gst-preview {
+        background: linear-gradient(135deg, #fffbeb 0%, #fde8c8 100%);
+    }
+    .gst-title {
+        display: block;
+        font-family: 'Playfair Display', Georgia, serif;
+        font-size: 24px;
+        color: #c2410c;
+        letter-spacing: 1px;
+    }
+    .gst-subtitle {
+        display: block;
+        font-size: 13px;
+        color: #92400e;
+        margin-top: 8px;
+        letter-spacing: 0.5px;
+    }
+    .lf-preview {
+        background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
+    }
+    .lf-title {
+        display: block;
+        font-family: Georgia, 'Times New Roman', serif;
+        font-size: 24px;
+        color: #065f46;
+        letter-spacing: 2px;
+    }
+    .lf-subtitle {
+        display: block;
+        font-size: 13px;
+        color: #047857;
+        margin-top: 8px;
+        letter-spacing: 0.5px;
+    }
+    .spinner-preview {
+        background: linear-gradient(135deg, #fafafa 0%, #f0f0f0 100%);
+    }
     .project-info {
         padding: 1.5rem;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
     }
     .project-info p {
         color: #555;
         line-height: 1.6;
+        flex: 1;
     }
     .tech-tags {
         display: flex;
@@ -105,5 +467,78 @@
         padding: 4px 10px;
         border-radius: 4px;
         font-size: 12px;
+    }
+    .btn {
+        align-self: flex-start;
+    }
+    .fitness-preview {
+        background: linear-gradient(135deg, #1e293b 0%, #475569 100%);
+    }
+    .fitness-title {
+        display: block;
+        font-family: Georgia, 'Times New Roman', serif;
+        font-size: 24px;
+        color: #fff;
+        letter-spacing: 2px;
+    }
+    .fitness-subtitle {
+        display: block;
+        font-size: 13px;
+        color: rgba(255, 255, 255, 0.9);
+        margin-top: 8px;
+        letter-spacing: 0.5px;
+        font-style: italic;
+    }
+    .blockly-preview {
+        background: linear-gradient(135deg, #0f172a 0%, #334155 100%);
+    }
+    .blockly-title {
+        display: block;
+        font-family: 'DM Sans', Georgia, sans-serif;
+        font-size: 22px;
+        color: #fff;
+        letter-spacing: 1.5px;
+    }
+    .blockly-subtitle {
+        display: block;
+        font-size: 13px;
+        color: rgba(255, 255, 255, 0.85);
+        margin-top: 8px;
+        letter-spacing: 0.5px;
+    }
+    .project-view {
+        padding-top: 56px;
+    }
+    .project-view--fitness {
+        background-color: #f8f9fa;
+    }
+    .project-view--blockly {
+        background-color: #0f172a;
+        padding-top: 72px;
+    }
+    .project-view--blockly :deep(.blockly-layout) {
+        height: calc(100vh - 128px);
+    }
+    .back-button {
+        position: fixed;
+        top: 72px;
+        left: 16px;
+        z-index: 1000;
+        background-color: #fff;
+        color: #1a2744;
+        border: 2px solid #1a2744;
+        padding: 8px 16px;
+        border-radius: 8px;
+        font-size: 14px;
+        font-weight: 600;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
+        cursor: pointer;
+        transition:
+            background-color 0.15s ease,
+            color 0.15s ease;
+    }
+    .back-button:hover {
+        background-color: #1a2744;
+        color: #fff;
     }
 </style>

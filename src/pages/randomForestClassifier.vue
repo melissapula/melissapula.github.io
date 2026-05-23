@@ -1,54 +1,72 @@
-<template>
-    <MDBContainer class="h-100 mt-0 pt-0" fluid>
-        <MDBRow v-if="rfc" style="height: calc(100vh - 56px); background-color: #f0f2f5" class="pt-4">
-            <MDBCol lg="7" sm="12">
+﻿<template>
+    <div class="container-fluid h-100 mt-0 pt-0">
+        <div class="row pt-4" v-if="rfc" style="height: calc(100vh - 56px); background-color: #f0f2f5">
+            <div class="col-lg-7 col-sm-12">
                 <Codemirror class="CodeMirror" style="width: 100%" :value="rfc" :options="rfcOptions"></Codemirror>
-            </MDBCol>
-            <MDBCol
-                lg="5"
-                sm="12"
-                class="pb-4 d-flex flex-column align-items-center"
+            </div>
+            <div
+                class="col-lg-5 col-sm-12 pb-4 d-flex flex-column align-items-center"
                 style="overflow-y: auto; height: calc(100vh - 90px)"
             >
                 <p>This code imports a 1TB dataset and then performs predictive analysis on it.</p>
-                <img src="../assets/rfcInitial.png" class="img-fluid mt-3" />
+                <img src="../assets/rfcInitial.png" class="img-fluid mt-3" alt="Initial table from imported dataset" />
                 <p class="mt-2">Image(1): Initial table.</p>
-                <img src="../assets/rfcDropNull.png" class="img-fluid mt-3" />
+                <img src="../assets/rfcDropNull.png" class="img-fluid mt-3" alt="Table after null values dropped" />
                 <p class="mt-2">Image(2): Table after null values have been dropped.</p>
-                <img src="../assets/rfcGroupBy.png" class="img-fluid mt-3" />
+                <img src="../assets/rfcGroupBy.png" class="img-fluid mt-3" alt="Boolean target counts grouped" />
                 <p class="mt-2">Image(3): Boolean counts.</p>
-                <img src="../assets/rfcPipelineFit.png" class="img-fluid mt-3" />
+                <img
+                    src="../assets/rfcPipelineFit.png"
+                    class="img-fluid mt-3"
+                    alt="Table after running through preprocessing pipeline"
+                />
                 <p class="mt-2">Image(4): Table after running through pipeline.</p>
-                <img src="../assets/rfcTrain.png" class="img-fluid mt-3" />
+                <img src="../assets/rfcTrain.png" class="img-fluid mt-3" alt="Sample rows from the training dataset" />
                 <p class="mt-2">Image(5): Table showing some of the values in the train dataset.</p>
-                <img src="../assets/rfcTrainGroupBy.png" class="img-fluid mt-3" />
+                <img
+                    src="../assets/rfcTrainGroupBy.png"
+                    class="img-fluid mt-3"
+                    alt="Boolean target counts in the training dataset"
+                />
                 <p class="mt-2">Image(6): Boolean count for train dataset.</p>
-                <img src="../assets/rfcTest.png" class="img-fluid mt-3" />
+                <img src="../assets/rfcTest.png" class="img-fluid mt-3" alt="Sample rows from the test dataset" />
                 <p class="mt-2">Image(7): Table showing some of the values in the test dataset.</p>
-                <img src="../assets/rfcTestGroupBy.png" class="img-fluid mt-3" />
+                <img
+                    src="../assets/rfcTestGroupBy.png"
+                    class="img-fluid mt-3"
+                    alt="Boolean target counts in the test dataset"
+                />
                 <p class="mt-2">Image(8): Boolean count for test dataset.</p>
-                <img src="../assets/rfcPredictionsTransform.png" class="img-fluid mt-3" />
+                <img
+                    src="../assets/rfcPredictionsTransform.png"
+                    class="img-fluid mt-3"
+                    alt="Random Forest prediction model output"
+                />
                 <p class="mt-2">Image(9): Prediction model.</p>
-                <img src="../assets/rfcPredictionSelect.png" class="img-fluid mt-3" />
+                <img
+                    src="../assets/rfcPredictionSelect.png"
+                    class="img-fluid mt-3"
+                    alt="Table comparing predicted values against actual values"
+                />
                 <p class="mt-2">Image(10): Predictions vs actual.</p>
-                <img src="../assets/rfcAccuracy.png" class="img-fluid mt-3" />
+                <img
+                    src="../assets/rfcAccuracy.png"
+                    class="img-fluid mt-3"
+                    alt="Final accuracy score of the trained model"
+                />
                 <p class="mt-2">Image(11): Accuracy of predictions.</p>
-            </MDBCol>
-        </MDBRow>
-    </MDBContainer>
+            </div>
+        </div>
+    </div>
 </template>
 
 <script>
     import Codemirror from 'codemirror-editor-vue3';
     import 'codemirror/lib/codemirror.css';
     import 'codemirror/mode/python/python.js';
-    import { MDBContainer, MDBRow, MDBCol } from 'mdb-vue-ui-kit';
     export default {
         name: 'RandomForestClassifier',
         components: {
-            MDBContainer,
-            MDBRow,
-            MDBCol,
             Codemirror
         },
         data() {

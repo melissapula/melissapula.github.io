@@ -14,12 +14,11 @@
     },
     "dependencies": {
         "@fortawesome/fontawesome-free": "^7.1.0",
+        "bootstrap": "^5.3.8",
         "codemirror": "^5.65.0",
         "codemirror-editor-vue3": "^2.8.0",
         "love-is-love-spinners": "^1.0.0",
-        "mdb-vue-ui-kit": "^7.0.0",
         "vue": "^3.4.0",
-        "vue-good-table-next": "^0.2.1",
         "vue-gtag": "^2.0.1",
         "vue-router": "^4.3.0"
     },

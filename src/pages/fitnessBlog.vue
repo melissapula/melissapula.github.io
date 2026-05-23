@@ -1,198 +1,186 @@
 <template>
-    <MDBContainer class="h-100 mt-0 pt-0 mb-0" fluid>
-        <MDBRow style="background-color: #f8f9fa; color: #333; min-height: calc(100vh - 56px)">
-            <MDBCol col="12">
-                <MDBRow class="justify-content-center align-items-center pt-4">
-                    <MDBCol lg="2" sm="3">
-                        <img src="../assets/backPhoto.png" class="img-fluid" />
-                    </MDBCol>
-                    <MDBCol lg="4" sm="6">
-                        <MDBRow
-                            class="justify-content-center align-items-center"
+    <div class="container-fluid h-100 mt-0 pt-0 mb-0">
+        <div class="row" style="background-color: #f8f9fa; color: #333; min-height: calc(100vh - 56px)">
+            <div class="col-12">
+                <div class="row justify-content-center align-items-center pt-4">
+                    <div class="col-3 col-lg-2">
+                        <img src="../assets/backPhoto.jpg" class="img-fluid" alt="Back muscle pose" />
+                    </div>
+                    <div class="col-6 col-lg-4">
+                        <div
+                            class="row justify-content-center align-items-center"
                             style="font-size: 80px; color: #1a2744"
                         >
                             Believe It.<br />
                             Acheive It.
-                        </MDBRow>
-                    </MDBCol>
-                    <MDBCol lg="2" sm="3">
-                        <img src="../assets/meFitness.jpg" class="img-fluid" />
-                    </MDBCol>
-                </MDBRow>
-                <MDBRow class="justify-content-center mt-4">
-                    <MDBCol lg="9" sm="12">
-                        <MDBCardGroup>
-                            <MDBCard>
-                                <MDBCardHeader style="background-color: #2c3e50; color: white"
-                                    ><h4>My Routine</h4></MDBCardHeader
-                                >
-                                <MDBCardBody>
-                                    <MDBCardTitle tag="h5" style="color: #1a2744"
-                                        ><b>I workout 6 days a week.</b></MDBCardTitle
-                                    >
-                                    <MDBCardText style="color: #333; font-size: 14px">
+                        </div>
+                    </div>
+                    <div class="col-3 col-lg-2">
+                        <img src="../assets/meFitness.jpg" class="img-fluid" alt="Melissa flexing after a workout" />
+                    </div>
+                </div>
+
+                <div class="row justify-content-center mt-4">
+                    <div class="col-12 col-lg-9">
+                        <div class="card-group">
+                            <div class="card">
+                                <div class="card-header" style="background-color: #2c3e50; color: white">
+                                    <h4>My Routine</h4>
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title" style="color: #1a2744"><b>I workout 6 days a week.</b></h5>
+                                    <p class="card-text" style="color: #333; font-size: 14px">
                                         Monday - Chest and Delts<br />
                                         Tuesday - Back<br />
                                         Wednesday - Legs (Quads)<br />
                                         Thursday - Delts<br />
                                         Friday - Arms and Abs<br />
                                         Saturday - Legs (Hams/Glutes)
-                                    </MDBCardText>
-                                    <MDBCardText small muted>Last updated Sept 26 2021</MDBCardText>
-                                </MDBCardBody>
-                            </MDBCard>
-                            <MDBCard>
-                                <MDBCardHeader style="background-color: #2c3e50; color: white"
-                                    ><h4>My Inspirations</h4></MDBCardHeader
-                                >
-                                <MDBCardBody>
-                                    <MDBCardTitle tag="h5" style="color: #1a2744"
-                                        ><b>These women are fxing BEASTS!</b></MDBCardTitle
-                                    >
-                                    <MDBCardText style="color: #333; font-size: 14px">
-                                        <a href="https://danalinnbailey.com/" target="_blank">Dana Linn Bailey</a> -
+                                    </p>
+                                    <small class="text-muted">Last updated Sept 26 2021</small>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header" style="background-color: #2c3e50; color: white">
+                                    <h4>My Inspirations</h4>
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title" style="color: #1a2744">
+                                        <b>These women are fxing BEASTS!</b>
+                                    </h5>
+                                    <p class="card-text" style="color: #333; font-size: 14px">
+                                        <a href="https://danalinnbailey.com/" target="_blank">Dana Linn Bailey</a> —
                                         Professional Bodybuilder<br />
-                                        <a
-                                            href="https://www.nakedtraining.app/?utm_source=google&utm_medium=cpc&gclid=Cj0KCQjwtMCKBhDAARIsAG-2Eu-WtPfdvGdHI6L4CQcRtov4WCT4q3LYbIE6p-HoGvRdGRIDdOM8YCQaAh9pEALw_wcB"
-                                            target="_blank"
-                                        >
-                                            Brooke Ence</a
-                                        >
-                                        - Professional Crossfit Trainer
-                                    </MDBCardText>
-                                    <MDBCardText small muted>Last updated Sept 26 2021</MDBCardText>
-                                </MDBCardBody>
-                            </MDBCard>
-                            <MDBCard>
-                                <MDBCardHeader style="background-color: #2c3e50; color: white"
-                                    ><h4>My Gear</h4></MDBCardHeader
-                                >
-                                <MDBCardBody>
-                                    <MDBCardTitle tag="h5" style="color: #1a2744"
-                                        ><b>Some of the gear I love.</b></MDBCardTitle
-                                    >
-                                    <MDBCardText style="color: #333; font-size: 14px">
-                                        <a href="https://www.repfitness.com/" target="_blank">Rep Fitness</a> - Rack<br />
-                                        <a href="https://www.bowflex.com/" target="_blank">Bowflex</a> - Treadmill and
+                                        <a href="https://www.nakedtraining.app/" target="_blank">Brooke Ence</a> —
+                                        Professional Crossfit Trainer
+                                    </p>
+                                    <small class="text-muted">Last updated Sept 26 2021</small>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header" style="background-color: #2c3e50; color: white">
+                                    <h4>My Gear</h4>
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title" style="color: #1a2744"><b>Some of the gear I love.</b></h5>
+                                    <p class="card-text" style="color: #333; font-size: 14px">
+                                        <a href="https://www.repfitness.com/" target="_blank">Rep Fitness</a> — Rack<br />
+                                        <a href="https://www.bowflex.com/" target="_blank">Bowflex</a> — Treadmill and
                                         Dumbbells<br />
                                         <a href="https://www.centurymartialarts.com/" target="_blank"
                                             >Century Martial Arts</a
                                         >
-                                        - Punching Bag<br />
-                                        <a href="https://flagnorfail.com/" target="_blank">Flag Nor Fail</a> - Clothing
-                                    </MDBCardText>
-                                    <MDBCardText small muted>Last updated Sept 26 2021</MDBCardText>
-                                </MDBCardBody>
-                            </MDBCard>
-                        </MDBCardGroup>
-                    </MDBCol>
-                </MDBRow>
-                <MDBRow class="justify-content-center mt-4">
-                    <MDBCol lg="8" sm="12">
-                        <MDBCard>
-                            <MDBCardHeader style="background-color: #2c3e50; color: white"
-                                ><h4>Family Fitness</h4></MDBCardHeader
-                            >
-                            <MDBCardBody>
-                                <MDBCardTitle tag="h5" style="color: #1a2744"
-                                    ><b>My kids and I often do our workouts together.</b></MDBCardTitle
-                                >
-                                <MDBRow>
-                                    <MDBCol lg="4">
-                                        <img src="../assets/familyFitness.jpg" class="img-fluid" />
-                                    </MDBCol>
-                                    <MDBCol lg="8">
-                                        <MDBRow style="color: #333; font-size: 14px" class="mx-4"
-                                            >I absolutely love working out with my kiddos! It's so much fun and it is so
+                                        — Punching Bag<br />
+                                        <a href="https://flagnorfail.com/" target="_blank">Flag Nor Fail</a> — Clothing
+                                    </p>
+                                    <small class="text-muted">Last updated Sept 26 2021</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row justify-content-center mt-4">
+                    <div class="col-12 col-lg-8">
+                        <div class="card">
+                            <div class="card-header" style="background-color: #2c3e50; color: white">
+                                <h4>Family Fitness</h4>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title" style="color: #1a2744">
+                                    <b>My kids and I often do our workouts together.</b>
+                                </h5>
+                                <div class="row">
+                                    <div class="col-lg-4">
+                                        <img
+                                            src="../assets/familyFitness.jpg"
+                                            class="img-fluid"
+                                            alt="Melissa working out with the family"
+                                        />
+                                    </div>
+                                    <div class="col-lg-8">
+                                        <div class="row mx-4" style="color: #333; font-size: 14px">
+                                            I absolutely love working out with my kiddos! It's so much fun and it is so
                                             good for them! Typically, we just do the workout that I would be doing for
                                             the day, and then I modify it as needed for their fitness levels. They love
-                                            doing pull-ups (crazy kids) and anything with the cable machine.</MDBRow
-                                        >
-                                        <MDBRow style="color: #333; font-size: 14px" class="mx-4 mt-2"
-                                            >We homeschool, so it's very easy for me to work it into our daily schedule.
+                                            doing pull-ups (crazy kids) and anything with the cable machine.
+                                        </div>
+                                        <div class="row mx-4 mt-2" style="color: #333; font-size: 14px">
+                                            We homeschool, so it's very easy for me to work it into our daily schedule.
                                             They lift weights around 11:00am five days a week and then cardio around
                                             2:30pm four days a week. We alternate between walking on the treadmill and
-                                            doing a boxing workout with the punching bag.</MDBRow
-                                        >
-                                    </MDBCol>
-                                </MDBRow>
-                                <MDBCardText small muted>Last updated Sept 26 2021</MDBCardText>
-                            </MDBCardBody>
-                        </MDBCard>
-                    </MDBCol>
-                </MDBRow>
-                <MDBRow class="justify-content-center">
-                    <MDBCol col="12">
-                        <MDBRow
-                            class="justify-content-center mt-4"
+                                            doing a boxing workout with the punching bag.
+                                        </div>
+                                    </div>
+                                </div>
+                                <small class="text-muted">Last updated Sept 26 2021</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row justify-content-center">
+                    <div class="col-12">
+                        <div
+                            class="row justify-content-center mt-4"
                             style="font-size: 16px; background-color: #1a2744; color: white"
-                            >Sample Workouts</MDBRow
                         >
-                        <MDBRow style="color: #333" class="mb-4 mt-4 justify-content-center">
-                            <MDBCol lg="4" sm="12">
-                                <MDBAccordion class="mb-4" style="width: 100%">
-                                    <MDBAccordionItem
-                                        v-for="(pane, i) in panesOne"
-                                        :key="i"
-                                        :headerTitle="pane.title"
-                                        :collapseId="'pane1-' + i"
-                                    >
-                                        <span v-html="pane.content"></span>
-                                    </MDBAccordionItem>
-                                </MDBAccordion>
-                            </MDBCol>
-                            <MDBCol lg="4" sm="12">
-                                <MDBAccordion style="width: 100%">
-                                    <MDBAccordionItem
-                                        v-for="(pane, i) in panesTwo"
-                                        :key="i"
-                                        :headerTitle="pane.title"
-                                        :collapseId="'pane2-' + i"
-                                    >
-                                        <span v-html="pane.content"></span>
-                                    </MDBAccordionItem>
-                                </MDBAccordion>
-                            </MDBCol>
-                        </MDBRow>
-                    </MDBCol>
-                </MDBRow>
-            </MDBCol>
-        </MDBRow>
-    </MDBContainer>
+                            Sample Workouts
+                        </div>
+                        <div class="row mb-4 mt-4 justify-content-center" style="color: #333">
+                            <div class="col-12 col-lg-4">
+                                <div class="accordion mb-4">
+                                    <div v-for="(pane, i) in panesOne" :key="'p1-' + i" class="accordion-item">
+                                        <h2 class="accordion-header">
+                                            <button
+                                                class="accordion-button"
+                                                :class="{ collapsed: openOne !== i }"
+                                                type="button"
+                                                @click="openOne = openOne === i ? -1 : i"
+                                            >
+                                                {{ pane.title }}
+                                            </button>
+                                        </h2>
+                                        <div v-show="openOne === i" class="accordion-body">
+                                            <span v-html="pane.content"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-lg-4">
+                                <div class="accordion">
+                                    <div v-for="(pane, i) in panesTwo" :key="'p2-' + i" class="accordion-item">
+                                        <h2 class="accordion-header">
+                                            <button
+                                                class="accordion-button"
+                                                :class="{ collapsed: openTwo !== i }"
+                                                type="button"
+                                                @click="openTwo = openTwo === i ? -1 : i"
+                                            >
+                                                {{ pane.title }}
+                                            </button>
+                                        </h2>
+                                        <div v-show="openTwo === i" class="accordion-body">
+                                            <span v-html="pane.content"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </template>
 
 <script>
-    import {
-        MDBContainer,
-        MDBRow,
-        MDBCol,
-        MDBCard,
-        MDBCardGroup,
-        MDBCardHeader,
-        MDBCardBody,
-        MDBCardTitle,
-        MDBCardText,
-        MDBAccordion,
-        MDBAccordionItem
-    } from 'mdb-vue-ui-kit';
-
     export default {
         name: 'FitnessBlog',
-        components: {
-            MDBContainer,
-            MDBRow,
-            MDBCol,
-            MDBCard,
-            MDBCardGroup,
-            MDBCardHeader,
-            MDBCardBody,
-            MDBCardTitle,
-            MDBCardText,
-            MDBAccordion,
-            MDBAccordionItem
-        },
         data() {
             return {
+                openOne: -1,
+                openTwo: -1,
                 panesOne: [
                     {
                         title: 'Mondays - Chest and Delts',

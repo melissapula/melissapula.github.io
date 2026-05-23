@@ -1,10 +1,10 @@
-<template>
-    <MDBContainer class="h-100 mt-0 pt-0" fluid>
-        <MDBRow v-if="code" style="height: calc(100vh - 56px); background-color: #f0f2f5" class="pt-4">
-            <MDBCol lg="7" sm="12">
+﻿<template>
+    <div class="container-fluid h-100 mt-0 pt-0">
+        <div class="row pt-4" v-if="code" style="height: calc(100vh - 56px); background-color: #f0f2f5">
+            <div class="col-lg-7 col-sm-12">
                 <Codemirror class="CodeMirror" style="width: 100%" :value="code" :options="codeOptions"></Codemirror>
-            </MDBCol>
-            <MDBCol lg="5" sm="12" class="pb-4 d-flex flex-column justify-content-center align-items-center">
+            </div>
+            <div class="col-lg-5 col-sm-12 pb-4 d-flex flex-column justify-content-center align-items-center">
                 <p>This code will create a game called Game of Pig. The game is played as follows:</p>
                 <p>Each turn starts with the player making the choice to play or hold.</p>
                 <p class="ms-4">If they play the player rolls a single die and looking at the results.</p>
@@ -15,22 +15,18 @@
                 <p class="ms-4">
                     If they hold their turn points are added to their score and it becomes the opponent's turn.
                 </p>
-            </MDBCol>
-        </MDBRow>
-    </MDBContainer>
+            </div>
+        </div>
+    </div>
 </template>
 
 <script>
     import Codemirror from 'codemirror-editor-vue3';
     import 'codemirror/lib/codemirror.css';
     import 'codemirror/mode/python/python.js';
-    import { MDBContainer, MDBRow, MDBCol } from 'mdb-vue-ui-kit';
     export default {
         name: 'Pig',
         components: {
-            MDBContainer,
-            MDBRow,
-            MDBCol,
             Codemirror
         },
         data() {

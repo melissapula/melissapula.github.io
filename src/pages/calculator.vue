@@ -1,39 +1,36 @@
-<template>
-    <MDBContainer class="h-100 mt-0 pt-0" fluid>
-        <MDBRow v-if="calculator" style="height: calc(100vh - 56px); background-color: #f0f2f5" class="pt-4">
-            <MDBCol lg="7" sm="12">
+﻿<template>
+    <div class="container-fluid h-100 mt-0 pt-0">
+        <div class="row pt-4" v-if="calculator" style="height: calc(100vh - 56px); background-color: #f0f2f5">
+            <div class="col-lg-7 col-sm-12">
                 <Codemirror
                     class="CodeMirror"
                     style="width: 100%"
                     :value="calculator"
                     :options="calculatorOptions"
                 ></Codemirror>
-            </MDBCol>
-            <MDBCol
-                lg="5"
-                sm="12"
-                class="pb-4 d-flex flex-column align-items-center"
+            </div>
+            <div
+                class="col-lg-5 col-sm-12 pb-4 d-flex flex-column align-items-center"
                 style="overflow-y: auto; height: calc(100vh - 90px)"
             >
-                <img src="../assets/calculator.png" class="img-fluid" />
+                <img
+                    src="../assets/calculator.png"
+                    class="img-fluid"
+                    alt="Screenshot of the resulting calculator GUI"
+                />
                 <p class="mt-3">This code will create a grid for a calculator, as shown here.</p>
-            </MDBCol>
-        </MDBRow>
-    </MDBContainer>
+            </div>
+        </div>
+    </div>
 </template>
 
 <script>
     import Codemirror from 'codemirror-editor-vue3';
     import 'codemirror/lib/codemirror.css';
     import 'codemirror/mode/python/python.js';
-    import { MDBContainer, MDBRow, MDBCol } from 'mdb-vue-ui-kit';
-
     export default {
         name: 'Calculator',
         components: {
-            MDBContainer,
-            MDBRow,
-            MDBCol,
             Codemirror
         },
         data() {

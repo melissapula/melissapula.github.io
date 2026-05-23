@@ -1,68 +1,79 @@
 <template>
-    <MDBContainer class="mt-0 pt-0" fluid>
-        <MDBRow
-            class="align-items-center justify-content-center"
-            style="height: calc(100vh - 56px); background-color: #f8f9fa; overflow: hidden"
+    <div class="container-fluid mt-0 pt-0">
+        <div
+            class="row align-items-center justify-content-center"
+            style="min-height: calc(100vh - 56px); background-color: #f8f9fa; overflow: hidden"
         >
-            <MDBCol lg="5" sm="12">
-                <MDBRow class="justify-content-center">
-                    <MDBCol col="12">
-                        <img
-                            src="../assets/Family.jpeg"
-                            class="img-fluid rounded"
-                            style="max-height: calc(100vh - 100px); object-fit: contain; width: 100%"
-                        />
-                    </MDBCol>
-                </MDBRow>
-            </MDBCol>
-            <MDBCol lg="5" sm="12">
-                <MDBRow class="mb-4">
-                    <MDBCol col="12">
-                        <div class="d-flex justify-content-center mb-4">
-                            <div ref="spinnerRef"></div>
-                        </div>
-                        <h1 class="text-center text-nowrap" style="color: #1a2744">
-                            <b>M E L I S S A</b>
-                        </h1>
-                        <h1 class="text-center text-nowrap" style="color: #1a2744">
-                            <b>F R E U N D S C H U H - P U L A</b>
-                        </h1>
-                        <h5 class="text-center text-nowrap" style="color: #1a2744">Wife. Mother. Nerd.</h5>
-                    </MDBCol>
-                </MDBRow>
-            </MDBCol>
-        </MDBRow>
-    </MDBContainer>
+            <div class="col-12 col-md-6 col-lg-5 text-center">
+                <img
+                    src="../assets/Family.jpeg"
+                    class="img-fluid rounded shadow"
+                    style="max-height: calc(100vh - 120px); object-fit: contain"
+                    alt="Melissa with her wife and four kids"
+                />
+            </div>
+            <div class="col-12 col-md-6 col-lg-5 ps-md-5 mt-4 mt-md-0">
+                <h1 class="hero-name" style="color: #1a2744">Melissa Freundschuh-Pula</h1>
+                <h4 class="hero-title mt-2" style="color: #1a2744">Full-Stack Software Engineer</h4>
+                <p class="hero-intro mt-3" style="color: #2c3e50">
+                    Six-plus years building enterprise web apps by day and live products on the side. Wife, mom of four,
+                    Marine Corps veteran, and a believer that the best software is shipped, not just shipped on paper.
+                </p>
+                <div class="mt-4">
+                    <router-link to="/portfolio" class="btn me-2 mb-2" style="background-color: #1a2744; color: white">
+                        See Projects
+                    </router-link>
+                    <router-link
+                        to="/resume"
+                        class="btn me-2 mb-2"
+                        style="background-color: #fff; color: #1a2744; border: 2px solid #1a2744"
+                    >
+                        Resume
+                    </router-link>
+                    <router-link
+                        to="/contact"
+                        class="btn mb-2"
+                        style="background-color: #fff; color: #1a2744; border: 2px solid #1a2744"
+                    >
+                        Get In Touch
+                    </router-link>
+                </div>
+            </div>
+        </div>
+    </div>
 </template>
 
 <script>
-    import { MDBContainer, MDBRow, MDBCol } from 'mdb-vue-ui-kit';
-    import { createSpinner } from 'love-is-love-spinners';
     export default {
-        name: 'Home',
-        components: {
-            MDBContainer,
-            MDBRow,
-            MDBCol
-        },
-        data() {
-            return {
-                spinner: null
-            };
-        },
-        mounted() {
-            this.spinner = createSpinner(this.$refs.spinnerRef, {
-                size: 'lg',
-                speed: 5,
-                ringText: 'cycle',
-                ringColor: 'rainbow',
-                shuffle: true
-            });
-        },
-        beforeUnmount() {
-            this.spinner?.destroy();
-        }
+        name: 'Home'
     };
 </script>
 
-<style scoped></style>
+<style scoped>
+    .hero-name {
+        font-size: 2.5rem;
+        font-weight: bold;
+        line-height: 1.1;
+    }
+    .hero-title {
+        font-size: 1.25rem;
+        font-weight: 500;
+        letter-spacing: 1px;
+    }
+    .hero-intro {
+        font-size: 1.05rem;
+        line-height: 1.6;
+    }
+    @media (max-width: 767px) {
+        .hero-name {
+            font-size: 2rem;
+            text-align: center;
+        }
+        .hero-title {
+            text-align: center;
+        }
+        .hero-intro {
+            text-align: center;
+        }
+    }
+</style>
