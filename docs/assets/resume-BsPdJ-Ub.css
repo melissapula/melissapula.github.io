@@ -1,0 +1,88 @@
+#pic[data-v-3f823c0f] {
+    background-color: #fff;
+    position: fixed;
+    top: 56px;
+    left: 0;
+    width: 33.333%;
+    height: calc(100vh - 56px);
+    overflow: hidden;
+}
+#picInner[data-v-3f823c0f] {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#experience[data-v-3f823c0f] {
+    background-color: #f0f2f5;
+    color: #333;
+    margin-left: 33.333%;
+    min-height: calc(100vh - 56px);
+    padding: 1rem 2rem 2rem;
+}
+.cyan-text[data-v-3f823c0f] {
+    color: #2980b9 !important;
+}
+@media (max-width: 991px) {
+    #pic[data-v-3f823c0f] {
+        position: relative;
+        top: 0;
+        width: 100%;
+        height: auto;
+        padding: 2rem 0;
+    }
+    #experience[data-v-3f823c0f] {
+        margin-left: 0;
+    }
+}
+@media print {
+    #pic[data-v-3f823c0f] {
+        position: static;
+        width: 100%;
+        height: auto;
+        padding: 0 0 1rem;
+        background-color: #fff !important;
+        overflow: visible;
+    }
+    #picInner[data-v-3f823c0f] {
+        display: block;
+        text-align: center;
+    }
+    #picInner img[data-v-3f823c0f] {
+        max-width: 200px !important;
+        height: auto !important;
+    }
+    #experience[data-v-3f823c0f] {
+        margin-left: 0;
+        padding: 0;
+        background-color: #fff !important;
+        color: #000 !important;
+        min-height: 0;
+    }
+    .cyan-text[data-v-3f823c0f] {
+        color: #1a2744 !important;
+        border-bottom: 1px solid #1a2744;
+        padding-bottom: 4px;
+        margin-top: 1rem !important;
+    }
+    h1[data-v-3f823c0f] {
+        font-size: 22pt;
+        margin-bottom: 4px;
+    }
+    h4[data-v-3f823c0f] {
+        font-size: 11pt;
+    }
+    p[data-v-3f823c0f],
+    li[data-v-3f823c0f] {
+        font-size: 10pt;
+        line-height: 1.4;
+    }
+    ul[data-v-3f823c0f] {
+        margin-bottom: 6px;
+        padding-left: 18px;
+    }
+    @page {
+        margin: 0.5in;
+    }
+}

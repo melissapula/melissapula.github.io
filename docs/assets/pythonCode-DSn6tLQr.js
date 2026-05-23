@@ -1,4 +1,4 @@
-import{R as f}from"./python-DBSsqI-0.js";import{_ as l,o as i,c as r,a as e,d as p,j as c,r as h,b as g,F as E,f as O,e as L,m as y,p as v,l as w,n as R,t as u}from"./index-COzgNooS.js";const A="/assets/calculator-C-5QCe61.png",S={name:"Calculator",components:{Codemirror:f},data(){return{calculator:null,calculatorOptions:{tabSize:4,mode:"text/x-python",lineNumbers:!0,line:!0,smartIndent:!0,indentUnit:4,indentWithTabs:!0,readOnly:!0,foldGutter:!0}}},methods:{init(){this.calculator=`from tkinter import *
+import{R as f}from"./python-CFXrRiu3.js";import{_ as l,o as i,c as r,a as e,d as p,j as c,r as h,b as g,F as E,f as O,e as L,m as y,p as v,l as w,n as R,t as u}from"./index-UomLzrZK.js";const A="/assets/calculator-C-5QCe61.png",S={name:"Calculator",components:{Codemirror:f},data(){return{calculator:null,calculatorOptions:{tabSize:4,mode:"text/x-python",lineNumbers:!0,line:!0,smartIndent:!0,indentUnit:4,indentWithTabs:!0,readOnly:!0,foldGutter:!0}}},methods:{init(){this.calculator=`from tkinter import *
 
 class Calculator(Frame):
     def __init__(self):
