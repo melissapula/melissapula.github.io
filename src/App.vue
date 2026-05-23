@@ -40,7 +40,18 @@
                 </div>
             </div>
         </nav>
-        <router-view />
+        <router-view v-slot="{ Component }">
+            <Transition name="fade" mode="out-in">
+                <Suspense>
+                    <component :is="Component" />
+                    <template #fallback>
+                        <div class="route-loading">
+                            <div class="route-loading-spinner"></div>
+                        </div>
+                    </template>
+                </Suspense>
+            </Transition>
+        </router-view>
         <footer class="site-footer">
             <div class="container-fluid d-flex flex-wrap justify-content-between align-items-center px-4">
                 <span class="footer-copy">&copy; {{ currentYear }} Melissa Freundschuh-Pula</span>
@@ -123,5 +134,58 @@
     }
     .site-footer .footer-links a:hover {
         color: #fff;
+    }
+
+    /* Route fade transition */
+    .fade-enter-active,
+    .fade-leave-active {
+        transition: opacity 0.2s ease;
+    }
+    .fade-enter-from,
+    .fade-leave-to {
+        opacity: 0;
+    }
+
+    /* Loading state for lazy route chunks */
+    .route-loading {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: calc(100vh - 56px);
+        background-color: #f0f2f5;
+    }
+    .route-loading-spinner {
+        width: 48px;
+        height: 48px;
+        border: 4px solid rgba(26, 39, 68, 0.15);
+        border-top-color: #1a2744;
+        border-radius: 50%;
+        animation: route-spin 0.8s linear infinite;
+    }
+    @keyframes route-spin {
+        to {
+            transform: rotate(360deg);
+        }
+    }
+
+    /* Print styles — hide chrome, drop backgrounds */
+    @media print {
+        .navbar,
+        .site-footer,
+        .back-button {
+            display: none !important;
+        }
+        body {
+            background: white !important;
+            color: black !important;
+        }
+        .fade-enter-active,
+        .fade-leave-active {
+            transition: none !important;
+        }
+        a {
+            color: black !important;
+            text-decoration: none !important;
+        }
     }
 </style>

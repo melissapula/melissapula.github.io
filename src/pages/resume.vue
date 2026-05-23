@@ -234,4 +234,55 @@
             margin-left: 0;
         }
     }
+
+    @media print {
+        #pic {
+            position: static;
+            width: 100%;
+            height: auto;
+            padding: 0 0 1rem 0;
+            background-color: white !important;
+            overflow: visible;
+        }
+        #picInner {
+            display: block;
+            text-align: center;
+        }
+        #picInner img {
+            max-width: 200px !important;
+            height: auto !important;
+        }
+        #experience {
+            margin-left: 0;
+            padding: 0;
+            background-color: white !important;
+            color: black !important;
+            min-height: 0;
+        }
+        .cyan-text {
+            color: #1a2744 !important;
+            border-bottom: 1px solid #1a2744;
+            padding-bottom: 4px;
+            margin-top: 1rem !important;
+        }
+        h1 {
+            font-size: 22pt;
+            margin-bottom: 4px;
+        }
+        h4 {
+            font-size: 11pt;
+        }
+        p,
+        li {
+            font-size: 10pt;
+            line-height: 1.4;
+        }
+        ul {
+            margin-bottom: 6px;
+            padding-left: 18px;
+        }
+        @page {
+            margin: 0.5in;
+        }
+    }
 </style>
