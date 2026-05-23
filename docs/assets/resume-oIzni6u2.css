@@ -1,0 +1,38 @@
+#pic[data-v-bb52a386] {
+    background-color: #fff;
+    position: fixed;
+    top: 56px;
+    left: 0;
+    width: 33.333%;
+    height: calc(100vh - 56px);
+    overflow: hidden;
+}
+#picInner[data-v-bb52a386] {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#experience[data-v-bb52a386] {
+    background-color: #f0f2f5;
+    color: #333;
+    margin-left: 33.333%;
+    min-height: calc(100vh - 56px);
+    padding: 1rem 2rem 2rem;
+}
+.cyan-text[data-v-bb52a386] {
+    color: #2980b9 !important;
+}
+@media (max-width: 991px) {
+    #pic[data-v-bb52a386] {
+        position: relative;
+        top: 0;
+        width: 100%;
+        height: auto;
+        padding: 2rem 0;
+    }
+    #experience[data-v-bb52a386] {
+        margin-left: 0;
+    }
+}

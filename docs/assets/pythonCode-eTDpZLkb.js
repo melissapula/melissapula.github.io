@@ -1,0 +1,2419 @@
+import{R as f}from"./python-DBSsqI-0.js";import{_ as l,o as i,c as r,a as e,d as p,j as c,r as h,b as g,F as E,f as O,e as L,m as y,p as v,l as w,n as R,t as u}from"./index-COzgNooS.js";const A="/assets/calculator-C-5QCe61.png",S={name:"Calculator",components:{Codemirror:f},data(){return{calculator:null,calculatorOptions:{tabSize:4,mode:"text/x-python",lineNumbers:!0,line:!0,smartIndent:!0,indentUnit:4,indentWithTabs:!0,readOnly:!0,foldGutter:!0}}},methods:{init(){this.calculator=`from tkinter import *
+
+class Calculator(Frame):
+    def __init__(self):
+        Frame.__init__(self)
+        self.master.title("CS2321 Integer Calculator")
+        self.grid()
+        self.displayString = ""
+
+        self.displayVar = IntVar()
+        self.displayVar.set(0)
+        self.displayEntry = Entry(self, textvariable = self.displayVar, state = DISABLED, width = 40, justify = RIGHT)
+        self.displayEntry.grid(row = 0, column = 0, columnspan = 4)
+
+        self.sevenButton = Button(self, text = "7", height = 3, width = 7, command = lambda: self.click(7))
+        self.sevenButton.grid(row = 1, column = 0)
+
+        self.eightButton = Button(self, text = "8", height = 3, width = 7, command = lambda: self.click(8))
+        self.eightButton.grid(row = 1, column = 1)
+
+        self.nineButton = Button(self, text = "9", height = 3, width = 7, command = lambda: self.click(9))
+        self.nineButton.grid(row = 1, column = 2)
+
+        self.divisionButton = Button(self, text = "/", height = 3, width = 7)
+        self.divisionButton.grid(row = 1, column = 3)
+
+        self.fourButton = Button(self, text = "4", height = 3, width = 7, command = lambda: self.click(4))
+        self.fourButton.grid(row = 2, column = 0)
+
+        self.fiveButton = Button(self, text = "5", height = 3, width = 7, command = lambda: self.click(5))
+        self.fiveButton.grid(row = 2, column = 1)
+
+        self.sixButton = Button(self, text = "6", height = 3, width = 7, command = lambda: self.click(6))
+        self.sixButton.grid(row = 2, column = 2)
+
+        self.multiplyButton = Button(self, text = "*", height = 3, width = 7)
+        self.multiplyButton.grid(row = 2, column = 3)
+
+        self.oneButton = Button(self, text = "1", height = 3, width = 7, command = lambda: self.click(1))
+        self.oneButton.grid(row = 3, column = 0)
+
+        self.twoButton = Button(self, text = "2", height = 3, width = 7, command = lambda: self.click(2))
+        self.twoButton.grid(row = 3, column = 1)
+
+        self.threeButton = Button(self, text = "3", height = 3, width = 7, command = lambda: self.click(3))
+        self.threeButton.grid(row = 3, column = 2)
+
+        self.subtractButton = Button(self, text = "-", height = 3, width = 7)
+        self.subtractButton.grid(row = 3, column = 3)
+
+        self.zeroButton = Button(self, text = "0", height = 3, width = 16, command = lambda: self.click(0))
+        self.zeroButton.grid(row = 4, column = 0, columnspan = 2)
+
+        self.addButton = Button(self, text = "+", height = 3, width = 7)
+        self.addButton.grid(row = 4, column = 3)
+
+        self.equalButton = Button(self, text = "=", height = 3, width = 7)
+        self.equalButton.grid(row = 4, column = 2)
+
+    def click(self, number):
+        self.displayString += str(number)
+        self.displayVar.set(self.displayString)
+
+
+if __name__ == "__main__":
+    Calculator().mainloop()`}},mounted(){this.init()}},G={class:"container-fluid h-100 mt-0 pt-0"},F={key:0,class:"row pt-4",style:{height:"calc(100vh - 56px)","background-color":"#f0f2f5"}},I={class:"col-lg-7 col-sm-12"};function b(s,t,d,m,o,a){const n=h("Codemirror");return i(),r("div",G,[o.calculator?(i(),r("div",F,[e("div",I,[p(n,{class:"CodeMirror",style:{width:"100%"},value:o.calculator,options:o.calculatorOptions},null,8,["value","options"])]),t[0]||(t[0]=e("div",{class:"col-lg-5 col-sm-12 pb-4 d-flex flex-column align-items-center",style:{"overflow-y":"auto",height:"calc(100vh - 90px)"}},[e("img",{src:A,class:"img-fluid",alt:"Screenshot of the resulting calculator GUI"}),e("p",{class:"mt-3"},"This code will create a grid for a calculator, as shown here.")],-1))])):c("",!0)])}const W=l(S,[["render",b],["__scopeId","data-v-39978a40"]]),N="/assets/macbethMap-DjhSotSc.png",k={name:"macbeth",components:{Codemirror:f},data(){return{macbeth:null,spaces:"    ",tab:"        ",macbethOptions:{tabSize:4,mode:"text/x-python",lineNumbers:!0,line:!0,smartIndent:!0,indentUnit:4,indentWithTabs:!0,readOnly:!0,foldGutter:!0}}},methods:{init(){this.macbeth=`from turtle import Turtle
+class playGame():
+
+    def __init__(self):
+        self.score = 0
+        self.currentRoom = ""
+        self.potionList = []
+        self.eye = 0
+        self.leg = 0
+        self.wing = 0
+        self.frog = 0
+        self.hair = 0
+        self.roomOneToThree = 0
+        self.roomOneToSix = 0
+        self.roomOneToEight = 0
+        self.roomOneToFive = 0
+        self.roomTwoToTwoWest = 0
+        self.roomTwoToTwoSouth = 0
+        self.roomTwoToThree = 0
+        self.roomThreeToFour = 0
+        self.roomThreeToOne = 0
+        self.roomThreeToTwo = 0
+        self.roomFourToSixEast = 0
+        self.roomFourToSixSouth = 0
+        self.roomFiveToSeven = 0
+        self.roomFiveToOne = 0
+        self.roomSixToEight = 0
+        self.roomSixToNine = 0
+        self.roomSixToOne = 0
+        self.roomSixToFour = 0
+        self.roomSevenToTwo = 0
+        self.roomSevenToFive = 0
+        self.roomEightToSix = 0
+        self.roomNineToTen = 0
+        self.roomNineToSix = 0
+        self.roomTenToNine = 0
+        self.roomOneCount = 0
+        self.roomTwoCount = 0
+        self.roomThreeCount = 0
+        self.roomFourCount = 0
+        self.roomFiveCount = 0
+        self.roomSixCount = 0
+        self.roomSevenCount = 0
+        self.roomEightCount = 0
+        self.roomNineCount = 0
+        self.roomTenCount = 0
+        self.roomOnePotionList = []
+        self.roomTwoList = ["EYE OF NEWT"]
+        self.roomThreeList = []
+        self.roomFourList = ["LIZARD'S LEG"]
+        self.roomFiveList = []
+        self.roomSixList = []
+        self.roomSevenList = ["TOE OF FROG"]
+        self.roomEightList = ["OWLET'S WING"]
+        self.roomNineList = []
+        self.roomTenList = ["CAT HAIR"]
+        self.difficultyLevel = ""
+        self.gameOptions()
+
+    def gameOptions(self):
+        options = int(input('''Welcome to the game "In The Middle, A Cauldron Boiling".
+To win, you must find all five ingredients the witches need for their potion,
+and then deliver them to the room the witches are in.  The commands to
+be used are:
+
+Draw: draws a map
+Go (direction), move (direction), or (direction): used to travel
+    - directions are north, south, east, and west
+Take (item): adds the item to your inventory
+Drop (item): drops the item to the room you are in
+Inventory: displays all items currently in your inventory
+Look: displays the room description
+Score: displays your score
+Quit: quits the game
+
+Please choose your difficulty level:
+1. Easy
+2. Normal
+3. Hard
+'''))
+        if options == 1:
+            self.difficultyLevel = "Easy"
+        elif options == 2:
+            self.difficultyLevel = "Normal"
+        else:
+            self.difficultyLevel = "Hard"
+        print('''
+Thank you!  Enjoy the game!
+''')
+        self.roomOne()
+
+    def roomOne(self):
+        self.roomOneCount += 1
+        print("You are in room one.")
+        print('''
+You are in a dark cave.  In the middle, there is a cauldron boiling.
+With a clasp of thunder, three witches suddenly appear before you.
+''')
+        if self.roomOneCount == 1:
+            self.score += 1
+            print('''The witches speak in unison:
+"Mortal, we have summoned thee, make haste!
+And go forth into the farrow'd waste.
+Find eye of newt, and toe of frog,
+And deliver thus to this Scottish bog.
+Lizard's leg, and owlet's wing,
+And hair of cat that used to sing.
+These things we need t' brew our charm;
+Bring them forth -and suffer no 'arm.
+Leave us and go!
+'Tis no more to be said,
+Save if you fail, then thou be stricken, dead.
+''')
+        else:
+            print('''The witches stand before you, glaring; they seem to be
+exspecting something from you.
+''')
+        while True:
+            if self.isWinner():
+                print('''The witches look at your items with suspicion, but decide to go
+through with the incantation of the spell:
+
+"Take lizard's leg and owlet's wing,
+And hair of cat that used to sing.
+In the cauldron they all shall go;
+Stirring briskly, to and fro.
+When the color is of a hog,
+Add eye of newt and toe of frog.
+Bubble all i' the charmed pot;
+Bubble all 'til good and hot.
+Pour the broth into a cup of stone,
+And stir it well with a mummy's bone.
+
+You take the resulting broth offered to you and drink ...
+As the fog clears, you find yourself at a computer terminal;
+your adventure is at an end.
+''')
+                self.congrats()
+            command = input("Please enter a command. ").upper()
+            if command == "DRAW":
+                self.drawMap()
+            elif command == "QUIT":
+                quit()
+            elif command == "LOOK":
+                self.score -+ 1
+                self.roomOne()
+            elif command == "INVENTORY":
+                count = 1
+                if self.potionList == []:
+                    print("There is nothing in your inventory.")
+                else:
+                    for i in self.potionList:
+                        print(str(count) + ". " + str(i))
+                        count += 1
+            elif command == "SCORE":
+                print(self.score)
+            elif command == "DROP HAIR":
+                if "CAT HAIR" in self.potionList:
+                    self.potionList.remove("CAT HAIR")
+                    self.roomOnePotionList.append("CAT HAIR")
+                    self.score += 1
+                    print("CAT HAIR has been succesfully dropped to room one.")
+                else:
+                    print("You do not have a CAT HAIR to drop.")
+            elif command == "DROP EYE":
+                if "EYE OF NEWT" in self.potionList:
+                    self.potionList.remove("EYE OF NEWT")
+                    self.roomOnePotionList.append("EYE OF NEWT")
+                    self.score += 1
+                    print("EYE OF NEWT has been successfully dropped to room one.")
+                else:
+                    print("You do not have an EYE OF NEWT to drop.")
+            elif command == "DROP TOE" or command == "DROP FROG":
+                if "TOE OF FROG" in self.potionList:
+                    self.potionList.remove("TOE OF FROG")
+                    self.roomOnePotionList.append("TOE OF FROG")
+                    self.score += 1
+                    print("TOE OF FROG has been successfully dropped to room one.")
+                else:
+                    print("You do not have a TOE OF FROG to drop.")
+            elif command == "DROP LEG":
+                if "LIZARD'S LEG" in self.potionList:
+                    self.potionList.remove("LIZARD'S LEG")
+                    self.roomOnePotionList.append("LIZARD'S LEG")
+                    self.score += 1
+                    print("LIZARD'S LEG has been successfully dropped to room one.")
+                else:
+                    print("You do not have a LIZARD'S LEG to drop.")
+            elif command == "DROP WING":
+                if "OWLET'S WING" in self.potionList:
+                    self.potionList.remove("OWLET'S WING")
+                    self.roomOnePotionList.append("OWLET'S WING")
+                    self.score += 1
+                    print("OWLET'S WING has been successfully dropped to room one.")
+                else:
+                    print("You do not have an OWLET'S WING to drop.")
+            elif command == "TAKE HAIR":
+                if "CAT HAIR" in self.roomOnePotionList:
+                    self.roomOnePotionList.remove("CAT HAIR")
+                    self.potionList.append("CAT HAIR")
+                    self.score -= 1
+                    print("You have taken CAT HAIR from the room and added it to your inventory.")
+                else:
+                    print("There is no CAT HAIR to take from this room.")
+            elif command == "TAKE EYE":
+                if "EYE OF NEWT" in self.roomOnePotionList:
+                    self.roomOnePotionList.remove("EYE OF NEWT")
+                    self.potionList.append("EYE OF NEWT")
+                    self.score -= 1
+                    print("You have taken EYE OF NEWT from the room and added it to your inventory.")
+                else:
+                    print("There is no EYE OF NEWT to take from this room.")
+            elif command == "TAKE TOE" or command == "TAKE FROG":
+                if "TOE OF FROG" in self.roomOnePotionList:
+                    self.roomOnePotionList.remove("TOE OF FROG")
+                    self.potionList.append("TOE OF FROG")
+                    self.score -= 1
+                    print("You have taken TOE OF FROG from the room and added it to your inventory.")
+                else:
+                    print("There is no TOE OF FROG to take from this room.")
+            elif command == "TAKE LEG":
+                if "LIZARD'S LEG" in self.roomOnePotionList:
+                    self.roomOnePotionList.remove("LIZARD'S LEG")
+                    self.potionList.append("LIZARD'S LEG")
+                    self.score -= 1
+                    print("You have taken LIZARD'S LEG from the room and added it to your inventory.")
+                else:
+                    print("There is no LIZARD'S LEG to take from this room.")
+            elif command == "TAKE WING":
+                if "OWLET'S WING" in self.roomOnePotionList:
+                    self.roomOnePotionList.remove("OWLET'S WING")
+                    self.potionList.append("OWLET'S WING")
+                    self.score -= 1
+                    print("You have taken OWLET'S WING from the room and added it to your inventory.")
+                else:
+                    print("There is no OWLET'S WING to take from this room.")
+            elif command == "MOVE NORTH" or command == "GO NORTH" or command == "NORTH":
+                self.roomOneToThree = 1
+                self.roomThree()
+            elif command == "MOVE SOUTH" or command == "GO SOUTH" or command == "SOUTH":
+                self.roomOneToEight = 1
+                self.roomEight()
+            elif command == "MOVE WEST" or command == "GO WEST" or command == "WEST":
+                self.roomOneToFive = 1
+                self.roomFive()
+            elif command == "MOVE EAST" or command == "GO EAST" or command == "EAST":
+                self.roomOneToSix = 1
+                self.roomSix()
+            else:
+                print("That is not a valid command for this room.")
+
+    def roomTwo(self):
+        self.roomTwoCount += 1
+        if self.roomTwoCount == 1:
+            self.score += 1
+        print("You are in room Two")
+        print('''
+You're transported back in time ... you find yourself in Georgia during
+the midst of a congressional campaign.
+''')
+        if self.eye == 0:
+            print('''There is a campaign poster of Newt Gingrich, the
+Speaker of the House of Representatives, on the wall, with his large eyes looking right at you.
+''')
+        else:
+            print('''There is a defaced poster of Newt Gingrich on the wall.
+''')
+        while True:
+            command = input("Please Please enter a command. ").upper()
+            if command == "DRAW":
+                self.drawMap()
+            elif command == "QUIT":
+                quit()
+            elif command == "LOOK":
+                self.roomTwo()
+            elif command == "INVENTORY":
+                count = 1
+                if self.potionList == []:
+                    print("There is nothing in your inventory.")
+                else:
+                    for i in self.potionList:
+                        print(str(count) + ". " + str(i))
+                        count += 1
+            elif command == "SCORE":
+                print(self.score)
+            elif command == "DROP HAIR":
+                if "CAT HAIR" in self.potionList:
+                    self.potionList.remove("CAT HAIR")
+                    self.roomTwoList.append("CAT HAIR")
+                    print("CAT HAIR has been succesfully dropped to room two.")
+                else:
+                    print("You do not have a CAT HAIR to drop.")
+            elif command == "DROP EYE":
+                if "EYE OF NEWT" in self.potionList:
+                    self.potionList.remove("EYE OF NEWT")
+                    self.roomTwoList.append("EYE OF NEWT")
+                    self.eye = 0
+                    print("EYE OF NEWT has been successfully dropped to room two.")
+                else:
+                    print("You do not have an EYE OF NEWT to drop.")
+            elif command == "DROP TOE" or command == "DROP FROG":
+                if "TOE OF FROG" in self.potionList:
+                    self.potionList.remove("TOE OF FROG")
+                    self.roomTwoList.append("TOE OF FROG")
+                    print("TOE OF FROG has been successfully dropped to room two.")
+                else:
+                    print("You do not have a TOE OF FROG to drop.")
+            elif command == "DROP LEG":
+                if "LIZARD'S LEG" in self.potionList:
+                    self.potionList.remove("LIZARD'S LEG")
+                    self.roomTwoList.append("LIZARD'S LEG")
+                    print("LIZARD'S LEG has been successfully dropped to room two.")
+                else:
+                    print("You do not have a LIZARD'S LEG to drop.")
+            elif command == "DROP WING":
+                if "OWLET'S WING" in self.potionList:
+                    self.potionList.remove("OWLET'S WING")
+                    self.roomTwoList.append("OWLET'S WING")
+                    print("OWLET'S WING has been successfully dropped to room two.")
+                else:
+                    print("You do not have an OWLET'S WING to drop.")
+            elif command == "TAKE HAIR":
+                if "CAT HAIR" in self.roomTwoList:
+                    self.roomTwoList.remove("CAT HAIR")
+                    self.potionList.append("CAT HAIR")
+                    print("You have taken CAT HAIR from the room and added it to your inventory.")
+                else:
+                    print("There is no CAT HAIR to take from this room.")
+            elif command == "TAKE TOE" or command == "TAKE FROG":
+                if "TOE OF FROG" in self.roomTwoList:
+                    self.roomTwoList.remove("TOE OF FROG")
+                    self.potionList.append("TOE OF FROG")
+                    print("You have taken TOE OF FROG from the room and added it to your inventory.")
+                else:
+                    print("There is no TOE OF FROG to take from this room.")
+            elif command == "TAKE LEG":
+                if "LIZARD'S LEG" in self.roomTwoList:
+                    self.roomTwoList.remove("LIZARD'S LEG")
+                    self.potionList.append("LIZARD'S LEG")
+                    print("You have taken LIZARD'S LEG from the room and added it to your inventory.")
+                else:
+                    print("There is no LIZARD'S LEG to take from this room.")
+            elif command == "TAKE WING":
+                if "OWLET'S WING" in self.roomTwoList:
+                    self.roomTwoList.remove("OWLET'S WING")
+                    self.potionList.append("OWLET'S WING")
+                    print("You have taken OWLET'S WING from the room and added it to your inventory.")
+                else:
+                    print("There is no OWLET'S WING to take from this room.")
+            elif command == "TAKE EYE":
+                if "EYE OF NEWT" in self.roomTwoList:
+                    self.roomTwoList.remove("EYE OF NEWT")
+                    self.potionList.append("EYE OF NEWT")
+                    self.eye = 1
+                    print("You have added EYE OF NEWT to your inventory.")
+                else:
+                    print("You have already taken EYE OF NEWT from this room.")
+            elif command == "MOVE NORTH" or command == "GO NORTH" or command == "NORTH":
+                print("You bump into a wall. ")
+            elif command == "MOVE SOUTH" or command == "GO SOUTH" or command == "SOUTH":
+                print("You travel through a dark tunnel that winds around and brings you back to the same room. ")
+                self.roomTwoToTwoSouth = 1
+                self.roomTwo()
+            elif command == "MOVE WEST" or command == "GO WEST" or command == "WEST":
+                print("You travel through a dark tunnel that winds around and brings you back to the same room. ")
+                self.roomTwoToTwoWest = 1
+                self.roomTwo()
+            elif command == "MOVE EAST" or command == "GO EAST" or command == "EAST":
+                self.roomTwoToThree = 1
+                self.roomThree()
+            else:
+                print("That is not a valid command for this room.")
+
+    def roomThree(self):
+        self.roomThreeCount += 1
+        if self.roomThreeCount == 1:
+            self.score += 1
+        print('''You are in room three.
+
+The first thing you notice upon entering this room is the overabundance of
+sunshine and joy.  Everywhere you look, there is a young girl in a brightly flowing
+dress, singing about true love's kiss and finding her prince.  With all the
+sweetness in this room, you start feeling slightly nauseous and run for the
+next door.
+''')
+        while True:
+            command = input("Please Please enter a command. ").upper()
+            if command == "DRAW":
+                self.drawMap()
+            elif command == "QUIT":
+                quit()
+            elif command == "LOOK":
+                self.roomThree()
+            elif command == "INVENTORY":
+                count = 1
+                if self.potionList == []:
+                    print("There is nothing in your inventory.")
+                else:
+                    for i in self.potionList:
+                        print(str(count) + ". " + str(i))
+                        count += 1
+            elif command == "SCORE":
+                print(self.score)
+            elif command == "DROP HAIR":
+                if "CAT HAIR" in self.potionList:
+                    self.potionList.remove("CAT HAIR")
+                    self.roomThreeList.append("CAT HAIR")
+                    print("CAT HAIR has been succesfully dropped to room three.")
+                else:
+                    print("You do not have a CAT HAIR to drop.")
+            elif command == "DROP EYE":
+                if "EYE OF NEWT" in self.potionList:
+                    self.potionList.remove("EYE OF NEWT")
+                    self.roomThreeList.append("EYE OF NEWT")
+                    print("EYE OF NEWT has been successfully dropped to room three.")
+                else:
+                    print("You do not have an EYE OF NEWT to drop.")
+            elif command == "DROP TOE" or command == "DROP FROG":
+                if "TOE OF FROG" in self.potionList:
+                    self.potionList.remove("TOE OF FROG")
+                    self.roomThreeList.append("TOE OF FROG")
+                    print("TOE OF FROG has been successfully dropped to room three.")
+                else:
+                    print("You do not have a TOE OF FROG to drop.")
+            elif command == "DROP LEG":
+                if "LIZARD'S LEG" in self.potionList:
+                    self.potionList.remove("LIZARD'S LEG")
+                    self.roomThreeList.append("LIZARD'S LEG")
+                    print("LIZARD'S LEG has been successfully dropped to room three.")
+                else:
+                    print("You do not have a LIZARD'S LEG to drop.")
+            elif command == "DROP WING":
+                if "OWLET'S WING" in self.potionList:
+                    self.potionList.remove("OWLET'S WING")
+                    self.roomThreeList.append("OWLET'S WING")
+                    print("OWLET'S WING has been successfully dropped to room three.")
+                else:
+                    print("You do not have an OWLET'S WING to drop.")
+            elif command == "TAKE HAIR":
+                if "CAT HAIR" in self.roomThreeList:
+                    self.roomThreeList.remove("CAT HAIR")
+                    self.potionList.append("CAT HAIR")
+                    print("You have taken CAT HAIR from the room and added it to your inventory.")
+                else:
+                    print("There is no CAT HAIR to take from this room.")
+            elif command == "TAKE EYE":
+                if "EYE OF NEWT" in self.roomThreeList:
+                    self.roomThreeList.remove("EYE OF NEWT")
+                    self.potionList.append("EYE OF NEWT")
+                    print("You have taken EYE OF NEWT from the room and added it to your inventory.")
+                else:
+                    print("There is no EYE OF NEWT to take from this room.")
+            elif command == "TAKE TOE" or command == "TAKE FROG":
+                if "TOE OF FROG" in self.roomThreeList:
+                    self.roomThreeList.remove("TOE OF FROG")
+                    self.potionList.append("TOE OF FROG")
+                    print("You have taken TOE OF FROG from the room and added it to your inventory.")
+                else:
+                    print("There is no TOE OF FROG to take from this room.")
+            elif command == "TAKE LEG":
+                if "LIZARD'S LEG" in self.roomThreeList:
+                    self.roomThreeList.remove("LIZARD'S LEG")
+                    self.potionList.append("LIZARD'S LEG")
+                    print("You have taken LIZARD'S LEG from the room and added it to your inventory.")
+                else:
+                    print("There is no LIZARD'S LEG to take from this room.")
+            elif command == "TAKE WING":
+                if "OWLET'S WING" in self.roomThreeList:
+                    self.roomThreeList.remove("OWLET'S WING")
+                    self.potionList.append("OWLET'S WING")
+                    print("You have taken OWLET'S WING from the room and added it to your inventory.")
+                else:
+                    print("There is no OWLET'S WING to take from this room.")
+            elif command == "MOVE NORTH" or command == "GO NORTH" or command == "NORTH":
+                print("You bump into a wall. ")
+            elif command == "MOVE SOUTH" or command == "GO SOUTH" or command == "SOUTH":
+                self.roomThreeToOne = 1
+                self.roomOne()
+            elif command == "MOVE WEST" or command == "GO WEST" or command == "WEST":
+                self.roomThreeToTwo = 1
+                self.roomTwo()
+            elif command == "MOVE EAST" or command == "GO EAST" or command == "EAST":
+                self.roomThreeToFour = 1
+                self.roomFour()
+            else:
+                print("That is not a valid command for this room.")
+
+    def roomFour(self):
+        self.roomFourCount += 1
+        if self.roomFourCount == 1:
+            self.score += 1
+        print("You are in room four.")
+        if self.leg == 0:
+            if self.wing == 0:
+                print('''
+The ceiling in this room is quite high and the walls are set many feet apart.
+In the center of the room, there is a Jedi Knight battling a dragon who, upon close inspection, is
+wearing a collar with the word Owlet written upon the nametag.  The dragon is currently circling the height
+of the room.  As you stand transfixed, the dragon suddenly folds in its wings and dives toward the awaiting
+Jedi.  Fire shoots from the dragon's mouth and engulfs the Jedi.  Or rather, it engulfs the space where the
+Jedi had been standing only moments before, for now the Jedi, presumably using the Force, is astride the
+dragon, holding his lightsaber high overhead.  The dragon screetches her ire and the Jedi makes a quick
+downward slash, slicing one of the dragon's legs clean off.  Screaming in pain and fury, the dragon uses
+a powerful spin manuever to shake the Jedi from her back, and then quickly heads for an exit.  The Jedi,
+once again using the powers of the Force, lands softly and pursues.  The room is now empty, save for the
+dragon's leg lying amidst a puddle of blood and the Jedi's scorched robe.
+''')
+            else:
+                print('''
+The ceiling in this room is quite high and the walls are set many feet apart.
+In the center of the room, there is a Jedi Knight battling a dragon who, upon close inpection, is missing
+a wing and wearing a collar with the word Owlet written upon the nametag.  The dragon is currently
+circling the height of the room.  As you stand transfixed, the dragon suddenly folds in its wings and
+dives toward the awaiting Jedi.  Fire shoots from the dragon's mouth and engulfs the Jedi.  Or rather, it
+engulfs the space where the Jedi had been standing only moments before, for now the Jedi, presumably using
+the Force, is astride the dragon, holding his lightsaber high overhead.  The dragon screetches her ire and
+the Jedi makes a quick downward slash, slicing one of the dragon's legs clean off.  Screaming in pain and
+fury, the dragon uses a powerful spin manuever to shake the Jedi from her back, and then quickly heads for
+an exit.  The Jedi, once again using the powers of the Force, lands softly and pursues.  The room is now
+empty, save for the dragon's leg lying amidst a puddle of blood and the Jedi's scorched robe.
+''')
+        else:
+            print('''You seem to remember a great battle between a Jedi and a dragon taking place in this room.
+''')
+        while True:
+            command = input("Please Please enter a command. ").upper()
+            if command == "DRAW":
+                self.drawMap()
+            elif command == "QUIT":
+                quit()
+            elif command == "LOOK":
+                self.roomFour()
+            elif command == "INVENTORY":
+                count = 1
+                if self.potionList == []:
+                    print("There is nothing in your inventory.")
+                else:
+                    for i in self.potionList:
+                        print(str(count) + ". " + str(i))
+                        count += 1
+            elif command == "SCORE":
+                print(self.score)
+            elif command == "DROP HAIR":
+                if "CAT HAIR" in self.potionList:
+                    self.potionList.remove("CAT HAIR")
+                    self.roomFourList.append("CAT HAIR")
+                    print("CAT HAIR has been succesfully dropped to room four.")
+                else:
+                    print("You do not have a CAT HAIR to drop.")
+            elif command == "DROP EYE":
+                if "EYE OF NEWT" in self.potionList:
+                    self.potionList.remove("EYE OF NEWT")
+                    self.roomFourList.append("EYE OF NEWT")
+                    print("EYE OF NEWT has been successfully dropped to room four.")
+                else:
+                    print("You do not have an EYE OF NEWT to drop.")
+            elif command == "DROP TOE" or command == "DROP FROG":
+                if "TOE OF FROG" in self.potionList:
+                    self.potionList.remove("TOE OF FROG")
+                    self.roomFourList.append("TOE OF FROG")
+                    print("TOE OF FROG has been successfully dropped to room four.")
+                else:
+                    print("You do not have a TOE OF FROG to drop.")
+            elif command == "DROP LEG":
+                if "LIZARD'S LEG" in self.potionList:
+                    self.potionList.remove("LIZARD'S LEG")
+                    self.roomFourList.append("LIZARD'S LEG")
+                    print("LIZARD'S LEG has been successfully dropped to room four.")
+                    self.leg = 0
+                else:
+                    print("You do not have a LIZARD'S LEG to drop.")
+            elif command == "DROP WING":
+                if "OWLET'S WING" in self.potionList:
+                    self.potionList.remove("OWLET'S WING")
+                    self.roomFourList.append("OWLET'S WING")
+                    print("OWLET'S WING has been successfully dropped to room four.")
+                else:
+                    print("You do not have an OWLET'S WING to drop.")
+            elif command == "TAKE HAIR":
+                if "CAT HAIR" in self.roomFourList:
+                    self.roomFourList.remove("CAT HAIR")
+                    self.potionList.append("CAT HAIR")
+                    print("You have taken CAT HAIR from the room and added it to your inventory.")
+                else:
+                    print("There is no CAT HAIR to take from this room.")
+            elif command == "TAKE EYE":
+                if "EYE OF NEWT" in self.roomFourList:
+                    self.roomFourList.remove("EYE OF NEWT")
+                    self.potionList.append("EYE OF NEWT")
+                    print("You have taken EYE OF NEWT from the room and added it to your inventory.")
+                else:
+                    print("There is no EYE OF NEWT to take from this room.")
+            elif command == "TAKE TOE" or command == "TAKE FROG":
+                if "TOE OF FROG" in self.roomFourList:
+                    self.roomFourList.remove("TOE OF FROG")
+                    self.potionList.append("TOE OF FROG")
+                    print("You have taken TOE OF FROG from the room and added it to your inventory.")
+                else:
+                    print("There is no TOE OF FROG to take from this room.")
+            elif command == "TAKE LEG":
+                if "LIZARD'S LEG" in self.roomFourList:
+                    self.roomFourList.remove("LIZARD'S LEG")
+                    self.potionList.append("LIZARD'S LEG")
+                    print("You have taken LIZARD'S LEG from the room and added it to your inventory.")
+                    self.leg = 1
+                else:
+                    print("There is no LIZARD'S LEG to take from this room.")
+            elif command == "TAKE WING":
+                if "OWLET'S WING" in self.roomFourList:
+                    self.roomFourList.remove("OWLET'S WING")
+                    self.potionList.append("OWLET'S WING")
+                    print("You have taken OWLET'S WING from the room and added it to your inventory.")
+                else:
+                    print("There is no OWLET'S WING to take from this room.")
+            elif command == "MOVE NORTH" or command == "GO NORTH" or command == "NORTH":
+                print("You bump into a wall. ")
+            elif command == "MOVE SOUTH" or command == "GO SOUTH" or command == "SOUTH":
+                self.roomFourToSixSouth = 1
+                self.roomSix()
+            elif command == "MOVE WEST" or command == "GO WEST" or command == "WEST":
+                print("You try to open the door to travel WEST but find that it is locked. ")
+            elif command == "MOVE EAST" or command == "GO EAST" or command == "EAST":
+                self.roomFourToSixEast = 1
+                self.roomSix()
+            else:
+                print("That is not a valid command for this room.")
+
+    def roomFive(self):
+        self.roomFiveCount += 1
+        if self.roomFiveCount == 1:
+            self.score += 1
+        print('''You are in room five.
+
+The first thing you notice upon entering this room is the unashamed fear displayed by
+grown men cowering in the dark spaces throughout.  The trembling in their bodies is so
+fierce that the crowns atop their heads are slowly being shaken right off.  Amidst the
+inconsistent "clangs" piercing the otherwise silent room, made as each crown encounters
+the floor, you quietly tiptoe toward your exit of choice.
+''')
+        while True:
+            command = input("Please Please enter a command. ").upper()
+            if command == "DRAW":
+                self.drawMap()
+            elif command == "QUIT":
+                quit()
+            elif command == "LOOK":
+                self.roomFive()
+            elif command == "INVENTORY":
+                count = 1
+                if self.potionList == []:
+                    print("There is nothing in your inventory.")
+                else:
+                    for i in self.potionList:
+                        print(str(count) + ". " + str(i))
+                        count += 1
+            elif command == "SCORE":
+                print(self.score)
+            elif command == "DROP HAIR":
+                if "CAT HAIR" in self.potionList:
+                    self.potionList.remove("CAT HAIR")
+                    self.roomFiveList.append("CAT HAIR")
+                    print("CAT HAIR has been succesfully dropped to room five.")
+                else:
+                    print("You do not have a CAT HAIR to drop.")
+            elif command == "DROP EYE":
+                if "EYE OF NEWT" in self.potionList:
+                    self.potionList.remove("EYE OF NEWT")
+                    self.roomFiveList.append("EYE OF NEWT")
+                    print("EYE OF NEWT has been successfully dropped to room five.")
+                else:
+                    print("You do not have an EYE OF NEWT to drop.")
+            elif command == "DROP TOE" or command == "DROP FROG":
+                if "TOE OF FROG" in self.potionList:
+                    self.potionList.remove("TOE OF FROG")
+                    self.roomFiveList.append("TOE OF FROG")
+                    print("TOE OF FROG has been successfully dropped to room five.")
+                else:
+                    print("You do not have a TOE OF FROG to drop.")
+            elif command == "DROP LEG":
+                if "LIZARD'S LEG" in self.potionList:
+                    self.potionList.remove("LIZARD'S LEG")
+                    self.roomFiveList.append("LIZARD'S LEG")
+                    print("LIZARD'S LEG has been successfully dropped to room five.")
+                else:
+                    print("You do not have a LIZARD'S LEG to drop.")
+            elif command == "DROP WING":
+                if "OWLET'S WING" in self.potionList:
+                    self.potionList.remove("OWLET'S WING")
+                    self.roomFiveList.append("OWLET'S WING")
+                    print("OWLET'S WING has been successfully dropped to room five.")
+                else:
+                    print("You do not have an OWLET'S WING to drop.")
+            elif command == "TAKE HAIR":
+                if "CAT HAIR" in self.roomFiveList:
+                    self.roomFiveList.remove("CAT HAIR")
+                    self.potionList.append("CAT HAIR")
+                    print("You have taken CAT HAIR from the room and added it to your inventory.")
+                else:
+                    print("There is no CAT HAIR to take from this room.")
+            elif command == "TAKE EYE":
+                if "EYE OF NEWT" in self.roomFiveList:
+                    self.roomFiveList.remove("EYE OF NEWT")
+                    self.potionList.append("EYE OF NEWT")
+                    print("You have taken EYE OF NEWT from the room and added it to your inventory.")
+                else:
+                    print("There is no EYE OF NEWT to take from this room.")
+            elif command == "TAKE TOE" or command == "TAKE FROG":
+                if "TOE OF FROG" in self.roomFiveList:
+                    self.roomFiveList.remove("TOE OF FROG")
+                    self.potionList.append("TOE OF FROG")
+                    print("You have taken TOE OF FROG from the room and added it to your inventory.")
+                else:
+                    print("There is no TOE OF FROG to take from this room.")
+            elif command == "TAKE LEG":
+                if "LIZARD'S LEG" in self.roomFiveList:
+                    self.roomFiveList.remove("LIZARD'S LEG")
+                    self.potionList.append("LIZARD'S LEG")
+                    print("You have taken LIZARD'S LEG from the room and added it to your inventory.")
+                else:
+                    print("There is no LIZARD'S LEG to take from this room.")
+            elif command == "TAKE WING":
+                if "OWLET'S WING" in self.roomFiveList:
+                    self.roomFiveList.remove("OWLET'S WING")
+                    self.potionList.append("OWLET'S WING")
+                    print("You have taken OWLET'S WING from the room and added it to your inventory.")
+                else:
+                    print("There is no OWLET'S WING to take from this room.")
+            elif command == "MOVE NORTH" or command == "GO NORTH" or command == "NORTH":
+                print("You bump into a wall. ")
+            elif command == "MOVE SOUTH" or command == "GO SOUTH" or command == "SOUTH":
+                print("You bump into a wall. ")
+            elif command == "MOVE WEST" or command == "GO WEST" or command == "WEST":
+                self.roomFiveToSeven = 1
+                self.roomSeven()
+            elif command == "MOVE EAST" or command == "GO EAST" or command == "EAST":
+                self.roomFiveToOne = 1
+                self.roomOne()
+            else:
+                print("That is not a valid command for this room.")
+
+    def roomSix(self):
+        self.roomSixCount += 1
+        if self.roomSixCount == 1:
+            self.score += 1
+        print("You are in room six.")
+        if self.wing == 1:
+            if self.leg == 1:
+                print('''
+In the center of the room is a huge nest filled with jewels and gold.  If not for the
+many bones surrounding the nest, not to mention the dragon with the missing wing and leg
+apparently recovering in the middle of it, you would be tempted to take a handful for yourself.
+As it is, you best be on your way before the creature that calls this nest "home" realizes
+she has company.
+''')
+        else:
+            print('''
+In the center of the room is a huge nest filled with jewels and gold.  If not for the
+many bones surrounding the nest, you would be tempted to take a handful for yourself.
+As it is, you best be on your way before the creature that calls this nest "home" comes
+back.
+''')
+        while True:
+            command = input("Please enter a command. ").upper()
+            if command == "DRAW":
+                self.drawMap()
+            elif command == "QUIT":
+                quit()
+            elif command == "LOOK":
+                self.roomSix()
+            elif command == "INVENTORY":
+                count = 1
+                if self.potionList == []:
+                    print("There is nothing in your inventory.")
+                else:
+                    for i in self.potionList:
+                        print(str(count) + ". " + str(i))
+                        count += 1
+            elif command == "SCORE":
+                print(self.score)
+            elif command == "DROP HAIR":
+                if "CAT HAIR" in self.potionList:
+                    self.potionList.remove("CAT HAIR")
+                    self.roomSixList.append("CAT HAIR")
+                    print("CAT HAIR has been succesfully dropped to room six.")
+                else:
+                    print("You do not have a CAT HAIR to drop.")
+            elif command == "DROP EYE":
+                if "EYE OF NEWT" in self.potionList:
+                    self.potionList.remove("EYE OF NEWT")
+                    self.roomSixList.append("EYE OF NEWT")
+                    print("EYE OF NEWT has been successfully dropped to room six.")
+                else:
+                    print("You do not have an EYE OF NEWT to drop.")
+            elif command == "DROP TOE" or command == "DROP FROG":
+                if "TOE OF FROG" in self.potionList:
+                    self.potionList.remove("TOE OF FROG")
+                    self.roomSixList.append("TOE OF FROG")
+                    print("TOE OF FROG has been successfully dropped to room six.")
+                else:
+                    print("You do not have a TOE OF FROG to drop.")
+            elif command == "DROP LEG":
+                if "LIZARD'S LEG" in self.potionList:
+                    self.potionList.remove("LIZARD'S LEG")
+                    self.roomSixList.append("LIZARD'S LEG")
+                    print("LIZARD'S LEG has been successfully dropped to room six.")
+                else:
+                    print("You do not have a LIZARD'S LEG to drop.")
+            elif command == "DROP WING":
+                if "OWLET'S WING" in self.potionList:
+                    self.potionList.remove("OWLET'S WING")
+                    self.roomSixList.append("OWLET'S WING")
+                    print("OWLET'S WING has been successfully dropped to room six.")
+                else:
+                    print("You do not have an OWLET'S WING to drop.")
+            elif command == "TAKE HAIR":
+                if "CAT HAIR" in self.roomSixList:
+                    self.roomSixList.remove("CAT HAIR")
+                    self.potionList.append("CAT HAIR")
+                    print("You have taken CAT HAIR from the room and added it to your inventory.")
+                else:
+                    print("There is no CAT HAIR to take from this room.")
+            elif command == "TAKE EYE":
+                if "EYE OF NEWT" in self.roomSixList:
+                    self.roomSixList.remove("EYE OF NEWT")
+                    self.potionList.append("EYE OF NEWT")
+                    print("You have taken EYE OF NEWT from the room and added it to your inventory.")
+                else:
+                    print("There is no EYE OF NEWT to take from this room.")
+            elif command == "TAKE TOE" or command == "TAKE FROG":
+                if "TOE OF FROG" in self.roomSixList:
+                    self.roomSixList.remove("TOE OF FROG")
+                    self.potionList.append("TOE OF FROG")
+                    print("You have taken TOE OF FROG from the room and added it to your inventory.")
+                else:
+                    print("There is no TOE OF FROG to take from this room.")
+            elif command == "TAKE LEG":
+                if "LIZARD'S LEG" in self.roomSixList:
+                    self.roomSixList.remove("LIZARD'S LEG")
+                    self.potionList.append("LIZARD'S LEG")
+                    print("You have taken LIZARD'S LEG from the room and added it to your inventory.")
+                else:
+                    print("There is no LIZARD'S LEG to take from this room.")
+            elif command == "TAKE WING":
+                if "OWLET'S WING" in self.roomSixList:
+                    self.roomSixList.remove("OWLET'S WING")
+                    self.potionList.append("OWLET'S WING")
+                    print("You have taken OWLET'S WING from the room and added it to your inventory.")
+                else:
+                    print("There is no OWLET'S WING to take from this room.")
+            elif command == "MOVE NORTH" or command == "GO NORTH" or command == "NORTH":
+                self.roomSixToFour = 1
+                self.roomFour()
+            elif command == "MOVE SOUTH" or command == "GO SOUTH" or command == "SOUTH":
+                self.roomSixToEight = 1
+                self.roomEight()
+            elif command == "MOVE WEST" or command == "GO WEST" or command == "WEST":
+                self.roomSixToOne = 1
+                self.roomOne()
+            elif command == "MOVE EAST" or command == "GO EAST" or command == "EAST":
+                self.roomSixToNine = 1
+                self.roomNine()
+            else:
+                print("That is not a valid command for this room.")
+
+    def roomSeven(self):
+        self.roomSevenCount += 1
+        if self.roomSevenCount == 1:
+            self.score += 1
+        print("You are in room seven.")
+        if self.frog == 0:
+            print('''
+You find yourself walking into a scene where the cast of Monty
+Python's Flying Circus is performing the "Crunchy Frog" sketch.  You
+see the confectioner as he replies, "If we took the bones out it
+wouldn't be crunchy now, would it?" You see a box of "Crunchy Frog"
+chocolates, the contents of which contains a dozen nicely cleaned
+whole frogs that have been carefully hand-dipped in the finest
+chocolate.
+''')
+        else:
+            print('''
+The Monty Python crew has moved on to reinacting a scene from the Holy Grail.
+The Green Knight and the Black Knight seemed to be locked in a very important
+battle.  The Black Knight is down to one leg and is hopping around on it,
+trying to prevent the Green Knight from crossing the river by way of the bridge,
+which consists of a single plank of wood connecting both banks of a tiny stream.
+As the Black Knight continues to valiantly stand his guard, you step across
+the trickle of flowing water and make your way to the exit.
+''')
+        while True:
+            command = input("Please enter a command. ").upper()
+            if command == "DRAW":
+                self.drawMap()
+            elif command == "QUIT":
+                quit()
+            elif command == "LOOK":
+                self.roomSeven()
+            elif command == "INVENTORY":
+                count = 1
+                if self.potionList == []:
+                    print("There is nothing in your inventory.")
+                else:
+                    for i in self.potionList:
+                        print(str(count) + ". " + str(i))
+                        count += 1
+            elif command == "SCORE":
+                print(self.score)
+            elif command == "DROP HAIR":
+                if "CAT HAIR" in self.potionList:
+                    self.potionList.remove("CAT HAIR")
+                    self.roomSevenList.append("CAT HAIR")
+                    print("CAT HAIR has been succesfully dropped to room seven.")
+                else:
+                    print("You do not have a CAT HAIR to drop.")
+            elif command == "DROP EYE":
+                if "EYE OF NEWT" in self.potionList:
+                    self.potionList.remove("EYE OF NEWT")
+                    self.roomSevenList.append("EYE OF NEWT")
+                    print("EYE OF NEWT has been successfully dropped to room seven.")
+                else:
+                    print("You do not have an EYE OF NEWT to drop.")
+            elif command == "DROP TOE" or command == "DROP FROG":
+                if "TOE OF FROG" in self.potionList:
+                    self.potionList.remove("TOE OF FROG")
+                    self.roomSevenList.append("TOE OF FROG")
+                    print("TOE OF FROG has been successfully dropped to room seven.")
+                    self.frog = 0
+                else:
+                    print("You do not have a TOE OF FROG to drop.")
+            elif command == "DROP LEG":
+                if "LIZARD'S LEG" in self.potionList:
+                    self.potionList.remove("LIZARD'S LEG")
+                    self.roomSevenList.append("LIZARD'S LEG")
+                    print("LIZARD'S LEG has been successfully dropped to room seven.")
+                else:
+                    print("You do not have a LIZARD'S LEG to drop.")
+            elif command == "DROP WING":
+                if "OWLET'S WING" in self.potionList:
+                    self.potionList.remove("OWLET'S WING")
+                    self.roomSevenList.append("OWLET'S WING")
+                    print("OWLET'S WING has been successfully dropped to room seven.")
+                else:
+                    print("You do not have an OWLET'S WING to drop.")
+            elif command == "TAKE HAIR":
+                if "CAT HAIR" in self.roomSevenList:
+                    self.roomSevenList.remove("CAT HAIR")
+                    self.potionList.append("CAT HAIR")
+                    print("You have taken CAT HAIR from the room and added it to your inventory.")
+                else:
+                    print("There is no CAT HAIR to take from this room.")
+            elif command == "TAKE EYE":
+                if "EYE OF NEWT" in self.roomSevenList:
+                    self.roomSevenList.remove("EYE OF NEWT")
+                    self.potionList.append("EYE OF NEWT")
+                    print("You have taken EYE OF NEWT from the room and added it to your inventory.")
+                else:
+                    print("There is no EYE OF NEWT to take from this room.")
+            elif command == "TAKE TOE" or command == "TAKE FROG":
+                if "TOE OF FROG" in self.roomSevenList:
+                    self.roomSevenList.remove("TOE OF FROG")
+                    self.potionList.append("TOE OF FROG")
+                    print("You have taken TOE OF FROG from the room and added it to your inventory.")
+                    self.frog = 1
+                else:
+                    print("There is no TOE OF FROG to take from this room.")
+            elif command == "TAKE LEG":
+                if "LIZARD'S LEG" in self.roomSevenList:
+                    self.roomSevenList.remove("LIZARD'S LEG")
+                    self.potionList.append("LIZARD'S LEG")
+                    print("You have taken LIZARD'S LEG from the room and added it to your inventory.")
+                else:
+                    print("There is no LIZARD'S LEG to take from this room.")
+            elif command == "TAKE WING":
+                if "OWLET'S WING" in self.roomSevenList:
+                    self.roomSevenList.remove("OWLET'S WING")
+                    self.potionList.append("OWLET'S WING")
+                    print("You have taken OWLET'S WING from the room and added it to your inventory.")
+                else:
+                    print("There is no OWLET'S WING to take from this room.")
+            elif command == "MOVE NORTH" or command == "GO NORTH" or command == "NORTH":
+                self.roomSevenToTwo = 1
+                self.roomTwo()
+            elif command == "MOVE SOUTH" or command == "GO SOUTH" or command == "SOUTH":
+                print("You bump into a wall. ")
+            elif command == "MOVE WEST" or command == "GO WEST" or command == "WEST":
+                self.roomSevenToFive = 1
+                self.roomFive()
+            elif command == "MOVE EAST" or command == "GO EAST" or command == "EAST":
+                print("You bump into a wall")
+            else:
+                print("That is not a valid command for this room.")
+
+    def roomEight(self):
+        self.roomEightCount += 1
+        if self.roomEightCount == 1:
+            self.score += 1
+        if self.wing == 0:
+            if self.leg == 0:
+                print('''You are in room eight.
+
+This room is vast in size and has amazing accoustics, made apparent by the impressive echoes of a great battle
+happening before your eyes.  A young boy with a stick in his hand is facing off with a fearsome dragon, whose
+name, going by the collar around her neck, is Owlet. As the dragon begins her decent from near the ceiling of
+the room, the boy shouts "Accio Firebolt!"  From the doorway behind you, a broom suddenly whooshes through the
+air, barely missing you, and heads straight for the boy's outstretched hand.  The boy (is that a scar on his
+forehead?) mounts the broom and barely escapes the ensuing spout of fire, courtesy of the dragon.  As the pair
+loop and dive around the room, the dragon eventually seems to tire.  Taking advantage of this, the boy pulls a
+miraculous manuever that puts him right above the momentarily confused dragon.  With a sudden cry of "Sectumsempra!"
+the boy slashes his stick toward the dragon, and in fact, slashes the dragon's wing right off.  With a cry of
+pain and fury, the dragon falls to the floor and scurries to the exit, the boy hot on her heels.  The room is
+now void, save for the severed wing lying on the floor.
+''')
+            else:
+                print('''You are in room eight.
+
+This room is vast in size and has amazing accoustics, made apparent by the impressive echoes of a great battle
+happening before your eyes.  A young boy with a stick in his hand is facing off with a fearsome dragon with a
+missing leg, whose name, going by the collar around her neck, is Owlet.  As the dragon begins her decent from
+near the ceiling of the room, the boy shouts "Accio Firebolt!"  From the doorway behind you, a broom suddenly
+whooshes through the air, barely missing you, and heads straight for the boy's outstretched hand.  The boy (is
+that a scar on his forehead?) mounts the broom and barely escapes the ensuing spout of fire, courtesy of the dragon.
+As the pair loop and dive around the room, the dragon eventually seems to tire.  Taking advantage of this, the boy
+pulls a miraculous manuever that puts him right above the momentarily confused dragon.  With a sudden cry of
+"Sectumsempra!" the boy slashes his stick toward the dragon, and in fact, slashes the dragon's wing right off.
+With a cry of pain and fury, the dragon falls to the floor and scurries to the exit, the boy hot on her heels.
+The room is now void, save for the severed wing lying on the floor.
+''')
+        else:
+            print('''You are in room eight.
+
+You seem to remember picking up Owlet's wing from this room earlier.
+''')
+        while True:
+            command = input("Please enter a command. ").upper()
+            if command == "DRAW":
+                self.drawMap()
+            elif command == "QUIT":
+                quit()
+            elif command == "LOOK":
+                self.roomEight()
+            elif command == "INVENTORY":
+                count = 1
+                if self.potionList == []:
+                    print("There is nothing in your inventory.")
+                else:
+                    for i in self.potionList:
+                        print(str(count) + ". " + str(i))
+                        count += 1
+            elif command == "SCORE":
+                print(self.score)
+            elif command == "DROP HAIR":
+                if "CAT HAIR" in self.potionList:
+                    self.potionList.remove("CAT HAIR")
+                    self.roomEightList.append("CAT HAIR")
+                    print("CAT HAIR has been succesfully dropped to room eight.")
+                else:
+                    print("You do not have a CAT HAIR to drop.")
+            elif command == "DROP EYE":
+                if "EYE OF NEWT" in self.potionList:
+                    self.potionList.remove("EYE OF NEWT")
+                    self.roomEightList.append("EYE OF NEWT")
+                    print("EYE OF NEWT has been successfully dropped to room eight.")
+                else:
+                    print("You do not have an EYE OF NEWT to drop.")
+            elif command == "DROP TOE" or command == "DROP FROG":
+                if "TOE OF FROG" in self.potionList:
+                    self.potionList.remove("TOE OF FROG")
+                    self.roomEightList.append("TOE OF FROG")
+                    print("TOE OF FROG has been successfully dropped to room eight.")
+                else:
+                    print("You do not have a TOE OF FROG to drop.")
+            elif command == "DROP LEG":
+                if "LIZARD'S LEG" in self.potionList:
+                    self.potionList.remove("LIZARD'S LEG")
+                    self.roomEightList.append("LIZARD'S LEG")
+                    print("LIZARD'S LEG has been successfully dropped to room eight.")
+                else:
+                    print("You do not have a LIZARD'S LEG to drop.")
+            elif command == "DROP WING":
+                if "OWLET'S WING" in self.potionList:
+                    self.potionList.remove("OWLET'S WING")
+                    self.roomEightList.append("OWLET'S WING")
+                    print("OWLET'S WING has been successfully dropped to room eight.")
+                    self.wing = 0
+                else:
+                    print("You do not have an OWLET'S WING to drop.")
+            elif command == "TAKE HAIR":
+                if "CAT HAIR" in self.roomEightList:
+                    self.roomEightList.remove("CAT HAIR")
+                    self.potionList.append("CAT HAIR")
+                    print("You have taken CAT HAIR from the room and added it to your inventory.")
+                else:
+                    print("There is no CAT HAIR to take from this room.")
+            elif command == "TAKE EYE":
+                if "EYE OF NEWT" in self.roomEightList:
+                    self.roomEightList.remove("EYE OF NEWT")
+                    self.potionList.append("EYE OF NEWT")
+                    print("You have taken EYE OF NEWT from the room and added it to your inventory.")
+                else:
+                    print("There is no EYE OF NEWT to take from this room.")
+            elif command == "TAKE TOE" or command == "TAKE FROG":
+                if "TOE OF FROG" in self.roomEightList:
+                    self.roomEightList.remove("TOE OF FROG")
+                    self.potionList.append("TOE OF FROG")
+                    print("You have taken TOE OF FROG from the room and added it to your inventory.")
+                else:
+                    print("There is no TOE OF FROG to take from this room.")
+            elif command == "TAKE LEG":
+                if "LIZARD'S LEG" in self.roomEightList:
+                    self.roomEightList.remove("LIZARD'S LEG")
+                    self.potionList.append("LIZARD'S LEG")
+                    print("You have taken LIZARD'S LEG from the room and added it to your inventory.")
+                else:
+                    print("There is no LIZARD'S LEG to take from this room.")
+            elif command == "TAKE WING":
+                if "OWLET'S WING" in self.roomEightList:
+                    self.roomEightList.remove("OWLET'S WING")
+                    self.potionList.append("OWLET'S WING")
+                    print("You have taken OWLET'S WING from the room and added it to your inventory.")
+                    self.wing = 1
+                else:
+                    print("There is no OWLET'S WING to take from this room.")
+            elif command == "MOVE NORTH" or command == "GO NORTH" or command == "NORTH":
+                print("You bump into a wall. ")
+            elif command == "MOVE SOUTH" or command == "GO SOUTH" or command == "SOUTH":
+                print("You bump into a wall. ")
+            elif command == "MOVE WEST" or command == "GO WEST" or command == "WEST":
+                print("You try to open the door to travel WEST but find that it is locked. ")
+            elif command == "MOVE EAST" or command == "GO EAST" or command == "EAST":
+                self.roomEightToSix = 1
+                self.roomSix()
+            else:
+                print("That is not a valid command for this room.")
+
+    def roomNine(self):
+        self.roomNineCount += 1
+        if self.roomNineCount == 1:
+            self.score += 1
+            print("You are in room nine.")
+            print('''
+As you step through the time portal, your head begins to spin you're
+disoriented and then awaken.  You find yourself at the outside door of
+a dormitory kitchen.  Listening, you hear the Chef yelling, "Stop!
+Stop!" while several cats inside are singing a serenade of the "Meow
+Mix" commercial theme.  Suddently, the repeated thump of a cleaver puts
+an abrupt end to the music.
+''')
+        else:
+            print('''You are in room nine.
+
+Where it was once filled with music in the form of cats meowing, it is now silent.  You find yourself humming
+the theme to the Meow Mix commercial as you ponder your next move.
+''')
+        while True:
+            command = input("Please enter a command. ").upper()
+            if command == "DRAW":
+                self.drawMap()
+            elif command == "QUIT":
+                quit()
+            elif command == "LOOK":
+                self.roomNine()
+            elif command == "INVENTORY":
+                count = 1
+                if self.potionList == []:
+                    print("There is nothing in your inventory.")
+                else:
+                    for i in self.potionList:
+                        print(str(count) + ". " + str(i))
+                        count += 1
+            elif command == "SCORE":
+                print(self.score)
+            elif command == "DROP HAIR":
+                if "CAT HAIR" in self.potionList:
+                    self.potionList.remove("CAT HAIR")
+                    self.roomNineList.append("CAT HAIR")
+                    print("CAT HAIR has been succesfully dropped to room nine.")
+                else:
+                    print("You do not have a CAT HAIR to drop.")
+            elif command == "DROP EYE":
+                if "EYE OF NEWT" in self.potionList:
+                    self.potionList.remove("EYE OF NEWT")
+                    self.roomNineList.append("EYE OF NEWT")
+                    print("EYE OF NEWT has been successfully dropped to room nine.")
+                else:
+                    print("You do not have an EYE OF NEWT to drop.")
+            elif command == "DROP TOE" or command == "DROP FROG":
+                if "TOE OF FROG" in self.potionList:
+                    self.potionList.remove("TOE OF FROG")
+                    self.roomNineList.append("TOE OF FROG")
+                    print("TOE OF FROG has been successfully dropped to room nine.")
+                else:
+                    print("You do not have a TOE OF FROG to drop.")
+            elif command == "DROP LEG":
+                if "LIZARD'S LEG" in self.potionList:
+                    self.potionList.remove("LIZARD'S LEG")
+                    self.roomNineList.append("LIZARD'S LEG")
+                    print("LIZARD'S LEG has been successfully dropped to room nine.")
+                else:
+                    print("You do not have a LIZARD'S LEG to drop.")
+            elif command == "DROP WING":
+                if "OWLET'S WING" in self.potionList:
+                    self.potionList.remove("OWLET'S WING")
+                    self.roomNineList.append("OWLET'S WING")
+                    print("OWLET'S WING has been successfully dropped to room nine.")
+                else:
+                    print("You do not have an OWLET'S WING to drop.")
+            elif command == "TAKE HAIR":
+                if "CAT HAIR" in self.roomNineList:
+                    self.roomNineList.remove("CAT HAIR")
+                    self.potionList.append("CAT HAIR")
+                    print("You have taken CAT HAIR from the room and added it to your inventory.")
+                else:
+                    print("There is no CAT HAIR to take from this room.")
+            elif command == "TAKE EYE":
+                if "EYE OF NEWT" in self.roomNineList:
+                    self.roomNineList.remove("EYE OF NEWT")
+                    self.potionList.append("EYE OF NEWT")
+                    print("You have taken EYE OF NEWT from the room and added it to your inventory.")
+                else:
+                    print("There is no EYE OF NEWT to take from this room.")
+            elif command == "TAKE TOE" or command == "TAKE FROG":
+                if "TOE OF FROG" in self.roomNineList:
+                    self.roomNineList.remove("TOE OF FROG")
+                    self.potionList.append("TOE OF FROG")
+                    print("You have taken TOE OF FROG from the room and added it to your inventory.")
+                else:
+                    print("There is no TOE OF FROG to take from this room.")
+            elif command == "TAKE LEG":
+                if "LIZARD'S LEG" in self.roomNineList:
+                    self.roomNineList.remove("LIZARD'S LEG")
+                    self.potionList.append("LIZARD'S LEG")
+                    print("You have taken LIZARD'S LEG from the room and added it to your inventory.")
+                else:
+                    print("There is no LIZARD'S LEG to take from this room.")
+            elif command == "TAKE WING":
+                if "OWLET'S WING" in self.roomNineList:
+                    self.roomNineList.remove("OWLET'S WING")
+                    self.potionList.append("OWLET'S WING")
+                    print("You have taken OWLET'S WING from the room and added it to your inventory.")
+                else:
+                    print("There is no OWLET'S WING to take from this room.")
+            elif command == "MOVE NORTH" or command == "GO NORTH" or command == "NORTH":
+                self.roomNineToSix = 1
+                self.roomSix()
+            elif command == "MOVE SOUTH" or command == "GO SOUTH" or command == "SOUTH":
+                print("You bump into a wall. ")
+            elif command == "MOVE WEST" or command == "GO WEST" or command == "WEST":
+                self.roomNineToTen = 1
+                self.roomTen()
+            elif command == "MOVE EAST" or command == "GO EAST" or command == "EAST":
+                print("You bump into a wall")
+            else:
+                print("That is not a valid command for this room.")
+
+    def roomTen(self):
+        self.roomTenCount += 1
+        if self.roomTenCount == 1:
+            self.score += 1
+        print("You are in room Ten.")
+        if self.hair == 0:
+            print('''
+You are in the kitchen.  Looking out into the cafeteria, you see
+students reaching for Pepto-Bismol while trying to stomach the latest
+version of the Chef's Surprise.  You see the Chef as he finishes
+dumping fresh meat into his 50-quart stewing pot.  There are clumps of
+cat hair on the butcher's block.  You hear the Chef muttering to
+himself, "Prepared properly, cat tastes much like chicken ...
+''')
+        else:
+            print('''The cafeteria is now void of all students.  They were, however, gracious
+enough to leave behind faint traces of vomit wafting through the air.  Trying to steady your
+rebelling stomache, you turn your eyes to the kitchen.  This proves to be a mistake, however,
+for one glimpse of the still-bloody butcher's block has you immediately adding to the aroma.  I think it
+would be best if you hurried along ...
+''')
+        while True:
+            command = input("Please enter a command. ").upper()
+            if command == "DRAW":
+                self.drawMap()
+            elif command == "QUIT":
+                quit()
+            elif command == "LOOK":
+                self.roomTen()
+            elif command == "INVENTORY":
+                count = 1
+                if self.potionList == []:
+                    print("There is nothing in your inventory.")
+                else:
+                    for i in self.potionList:
+                        print(str(count) + ". " + str(i))
+                        count += 1
+            elif command == "SCORE":
+                print(self.score)
+            elif command == "DROP HAIR":
+                if "CAT HAIR" in self.potionList:
+                    self.potionList.remove("CAT HAIR")
+                    self.roomTenList.append("CAT HAIR")
+                    print("CAT HAIR has been succesfully dropped to room ten.")
+                    self.hair = 0
+                else:
+                    print("You do not have a CAT HAIR to drop.")
+            elif command == "DROP EYE":
+                if "EYE OF NEWT" in self.potionList:
+                    self.potionList.remove("EYE OF NEWT")
+                    self.roomTenList.append("EYE OF NEWT")
+                    print("EYE OF NEWT has been successfully dropped to room ten.")
+                else:
+                    print("You do not have an EYE OF NEWT to drop.")
+            elif command == "DROP TOE" or command == "DROP FROG":
+                if "TOE OF FROG" in self.potionList:
+                    self.potionList.remove("TOE OF FROG")
+                    self.roomTenList.append("TOE OF FROG")
+                    print("TOE OF FROG has been successfully dropped to room ten.")
+                else:
+                    print("You do not have a TOE OF FROG to drop.")
+            elif command == "DROP LEG":
+                if "LIZARD'S LEG" in self.potionList:
+                    self.potionList.remove("LIZARD'S LEG")
+                    self.roomTenList.append("LIZARD'S LEG")
+                    print("LIZARD'S LEG has been successfully dropped to room ten.")
+                else:
+                    print("You do not have a LIZARD'S LEG to drop.")
+            elif command == "DROP WING":
+                if "OWLET'S WING" in self.potionList:
+                    self.potionList.remove("OWLET'S WING")
+                    self.roomTenList.append("OWLET'S WING")
+                    print("OWLET'S WING has been successfully dropped to room ten.")
+                else:
+                    print("You do not have an OWLET'S WING to drop.")
+            elif command == "TAKE HAIR":
+                if "CAT HAIR" in self.roomTenList:
+                    self.roomTenList.remove("CAT HAIR")
+                    self.potionList.append("CAT HAIR")
+                    print("You have taken CAT HAIR from the room and added it to your inventory.")
+                    self.hair = 1
+                else:
+                    print("There is no CAT HAIR to take from this room.")
+            elif command == "TAKE EYE":
+                if "EYE OF NEWT" in self.roomTenList:
+                    self.roomTenList.remove("EYE OF NEWT")
+                    self.potionList.append("EYE OF NEWT")
+                    print("You have taken EYE OF NEWT from the room and added it to your inventory.")
+                else:
+                    print("There is no EYE OF NEWT to take from this room.")
+            elif command == "TAKE TOE" or command == "TAKE FROG":
+                if "TOE OF FROG" in self.roomTenList:
+                    self.roomTenList.remove("TOE OF FROG")
+                    self.potionList.append("TOE OF FROG")
+                    print("You have taken TOE OF FROG from the room and added it to your inventory.")
+                else:
+                    print("There is no TOE OF FROG to take from this room.")
+            elif command == "TAKE LEG":
+                if "LIZARD'S LEG" in self.roomTenList:
+                    self.roomTenList.remove("LIZARD'S LEG")
+                    self.potionList.append("LIZARD'S LEG")
+                    print("You have taken LIZARD'S LEG from the room and added it to your inventory.")
+                else:
+                    print("There is no LIZARD'S LEG to take from this room.")
+            elif command == "TAKE WING":
+                if "OWLET'S WING" in self.roomTenList:
+                    self.roomTenList.remove("OWLET'S WING")
+                    self.potionList.append("OWLET'S WING")
+                    print("You have taken OWLET'S WING from the room and added it to your inventory.")
+                else:
+                    print("There is no OWLET'S WING to take from this room.")
+            elif command == "MOVE NORTH" or command == "GO NORTH" or command == "NORTH":
+                print("You bump into a wall. ")
+            elif command == "MOVE SOUTH" or command == "GO SOUTH" or command == "SOUTH":
+                print("You bump into a wall. ")
+            elif command == "MOVE WEST" or command == "GO WEST" or command == "WEST":
+                print("You bump into a wall. ")
+            elif command == "MOVE EAST" or command == "GO EAST" or command == "EAST":
+                self.roomTenToNine = 1
+                self.roomNine()
+            else:
+                print("That is not a valid command for this room.")
+
+    def isWinner(self):
+        if "CAT HAIR" in self.roomOnePotionList and "EYE OF NEWT" in self.roomOnePotionList and "TOE OF FROG" in self.roomOnePotionList and "LIZARD'S LEG" in self.roomOnePotionList and "OWLET'S WING" in self.roomOnePotionList:
+            return True
+        return False
+    def congrats(self):
+        print("Congratulations, you have won the game!!  Your score is " + str(self.score) + ".")
+        while True:
+            playAgain = int(input('''Would you like to play again?  Please enter a number:
+1. Yes
+2. No
+'''))
+            if playAgain == 1:
+                playGame()
+            elif playAgain == 2:
+                quit()
+            else:
+                print("That is not a valid entry.")
+
+    def drawMap(self):
+        if self.difficultyLevel != "Hard":
+            t = Turtle()
+            t.pensize(4)
+            t.speed(10)
+            t.circle(30)
+            t.penup()
+            t.goto(0, 50)
+            t.pendown()
+            t.goto(0,10)
+            t.penup()
+
+            if self.roomOneToThree > 0 or self.difficultyLevel == "Easy":
+                t.goto(0, 60)
+                t.setheading(90)
+                t.pendown()
+                t.goto(0, 200)
+                t.setheading(315)
+                t.forward(20)
+                t.goto(0, 200)
+                t.setheading(215)
+                t.forward(20)
+                t.penup()
+
+            if self.roomOneToSix > 0 or self.difficultyLevel == "Easy":
+                t.goto(30, 30)
+                t.setheading(0)
+                t.pendown()
+                t.goto(170, 30)
+                t.setheading(135)
+                t.forward(20)
+                t.goto(170, 30)
+                t.setheading(225)
+                t.forward(20)
+                t.penup()
+
+            if self.roomOneToEight > 0 or self.difficultyLevel == "Easy":
+                t.goto(0, 0)
+                t.setheading(270)
+                t.pendown()
+                t.forward(40)
+                t.circle(30, 90)
+                t.goto(70, -70)
+                t.setheading(135)
+                t.forward(20)
+                t.goto(70, -70)
+                t.setheading(225)
+                t.forward(20)
+                t.penup()
+
+            if self.roomOneToFive > 0 or self.difficultyLevel == "Easy":
+                t.goto(-30, 30)
+                t.pendown()
+                t.goto(-270, 30)
+                t.setheading(45)
+                t.forward(20)
+                t.goto(-270, 30)
+                t.setheading(315)
+                t.forward(20)
+                t.penup()
+
+            if self.roomTwoCount > 0 or self.difficultyLevel == "Easy":
+                t.goto(-200, 200)
+                t.setheading(0)
+                t.pendown()
+                t.circle(30)
+                t.penup()
+                t.goto(-210, 240)
+                t.setheading(90)
+                t.pendown()
+                t.circle(-10, 180)
+                t.goto(-210, 210)
+                t.goto(-190, 210)
+                t.penup()
+
+            if self.roomTwoToTwoWest > 0 or self.difficultyLevel == "Easy":
+                t.goto(-230, 230)
+                t.setheading(180)
+                t.pendown()
+                t.forward(15)
+                t.circle(45, 270)
+                t.goto(-200, 200)
+                t.setheading(225)
+                t.forward(20)
+                t.goto(-200, 200)
+                t.setheading(315)
+                t.forward(20)
+                t.penup()
+
+            if self.roomTwoToTwoSouth > 0 or self.difficultyLevel == "Easy":
+                t.goto(-230, 230)
+                t.setheading(180)
+                t.pendown()
+                t.forward(15)
+                t.circle(45, 270)
+                t.goto(-200, 200)
+                t.penup()
+                t.goto(-230, 230)
+                t.pendown()
+                t.setheading(135)
+                t.forward(20)
+                t.goto(-230, 230)
+                t.setheading(225)
+                t.forward(20)
+                t.penup()
+
+            if self.roomTwoToThree > 0 or self.difficultyLevel == "Easy":
+                t.goto(-170, 230)
+                t.setheading(0)
+                t.pendown()
+                t.goto(-30, 230)
+                t.setheading(125)
+                t.forward(20)
+                t.goto(-30, 230)
+                t.setheading(225)
+                t.forward(20)
+                t.penup()
+
+            if self.roomThreeCount > 0 or self.difficultyLevel == "Easy":
+                t.goto(0, 200)
+                t.setheading(0)
+                t.pendown()
+                t.circle(30)
+                t.penup()
+                t.goto(-10, 240)
+                t.setheading(90)
+                t.pendown()
+                t.circle(-10, 270)
+                t.setheading(0)
+                t.circle(-10, 270)
+                t.penup()
+
+            if self.roomThreeToFour > 0 or self.difficultyLevel == "Easy":
+                t.goto(30, 230)
+                t.pendown()
+                t.goto(170, 230)
+                t.setheading(125)
+                t.forward(20)
+                t.goto(170, 230)
+                t.setheading(235)
+                t.forward(20)
+                t.penup()
+
+            if self.roomThreeToOne > 0 or self.difficultyLevel == "Easy":
+                t.goto(0, 170)
+                t.pendown()
+                t.goto(0, 60)
+                t.setheading(45)
+                t.forward(20)
+                t.goto(0, 60)
+                t.setheading(135)
+                t.forward(20)
+                t.penup()
+
+            if self.roomThreeToTwo > 0 or self.difficultyLevel == "Easy":
+                t.goto(-30, 230)
+                t.pendown()
+                t.goto(-170, 230)
+                t.setheading(45)
+                t.forward(20)
+                t.goto(-170, 230)
+                t.setheading(315)
+                t.forward(20)
+                t.penup()
+
+            if self.roomFourCount > 0 or self.difficultyLevel == "Easy":
+                t.goto(200, 200)
+                t.setheading(0)
+                t.pendown()
+                t.circle(30)
+                t.penup()
+                t.goto(190, 250)
+                t.pendown()
+                t.setheading(270)
+                t.forward(20)
+                t.setheading(0)
+                t.forward(20)
+                t.setheading(90)
+                t.forward(20)
+                t.setheading(270)
+                t.forward(40)
+                t.penup()
+
+            if self.roomFourToSixEast > 0 or self.difficultyLevel == "Easy":
+                t.goto(230, 230)
+                t.setheading(0)
+                t.pendown()
+                t.forward(20)
+                t.circle(-20, 130)
+                t.goto(220, 50)
+                t.setheading(45)
+                t.forward(20)
+                t.goto(220, 50)
+                t.setheading(90)
+                t.forward(20)
+                t.penup()
+
+            if self.roomFourToSixSouth > 0 or self.difficultyLevel == "Easy":
+                t.goto(200, 200)
+                t.setheading(270)
+                t.pendown()
+                t.goto(200, 60)
+                t.setheading(45)
+                t.forward(20)
+                t.goto(200, 60)
+                t.setheading(135)
+                t.forward(20)
+                t.penup()
+
+            if self.roomFiveCount > 0 or self.difficultyLevel == "Easy":
+                t.goto(-300, 0)
+                t.pendown()
+                t.setheading(0)
+                t.circle(30)
+                t.penup()
+                t.goto(-290, 50)
+                t.pendown()
+                t.setheading(180)
+                t.forward(20)
+                t.setheading(270)
+                t.forward(20)
+                t.setheading(0)
+                t.forward(10)
+                t.circle(-10, 180)
+                t.forward(10)
+                t.penup()
+
+            if self.roomFiveToSeven > 0 or self.difficultyLevel == "Easy":
+                t.goto(-330, 30)
+                t.setheading(180)
+                t.pendown()
+                for i in range(20):
+                    t.forward(7)
+                    t.circle(9, 10)
+                t.goto(-130, -70)
+                t.setheading(135)
+                t.forward(20)
+                t.goto(-130, -70)
+                t.setheading(225)
+                t.forward(20)
+                t.penup()
+
+            if self.roomFiveToOne > 0 or self.difficultyLevel == "Easy":
+                t.goto(-270, 30)
+                t.setheading(0)
+                t.pendown()
+                t.goto(-30, 30)
+                t.setheading(135)
+                t.forward(20)
+                t.goto(-30, 30)
+                t.setheading(225)
+                t.forward(20)
+                t.penup()
+
+            if self.roomSixCount > 0 or self.difficultyLevel == "Easy":
+                t.goto(200, 0)
+                t.setheading(0)
+                t.pendown()
+                t.circle(30)
+                t.penup()
+                t.goto(210, 40)
+                t.pendown()
+                t.setheading(90)
+                t.circle(10, 180)
+                t.forward(20)
+                t.setheading(270)
+                t.circle(10)
+                t.penup()
+
+            if self.roomSixToEight > 0 or self.difficultyLevel == "Easy":
+                t.goto(200, 0)
+                t.setheading(270)
+                t.pendown()
+                t.forward(40)
+                t.circle(-30, 90)
+                t.goto(130, -70)
+                t.setheading(45)
+                t.forward(20)
+                t.goto(130, -70)
+                t.setheading(315)
+                t.forward(20)
+                t.penup()
+
+            if self.roomSixToNine > 0 or self.difficultyLevel == "Easy":
+                t.goto(230, 30)
+                t.setheading(0)
+                t.pendown()
+                t.forward(30)
+                t.circle(-40, 90)
+                t.goto(300, -240)
+                t.setheading(45)
+                t.forward(20)
+                t.goto(300, -240)
+                t.setheading(135)
+                t.forward(20)
+                t.penup()
+
+            if self.roomSixToOne > 0 or self.difficultyLevel == "Easy":
+                t.goto(170, 30)
+                t.setheading(180)
+                t.pendown()
+                t.goto(30, 30)
+                t.setheading(45)
+                t.forward(20)
+                t.goto(30, 30)
+                t.setheading(315)
+                t.forward(20)
+                t.penup()
+
+            if self.roomSixToFour > 0 or self.difficultyLevel == "Easy":
+                t.goto(200, 60)
+                t.pendown()
+                t.goto(200, 200)
+                t.setheading(225)
+                t.forward(20)
+                t.goto(200, 200)
+                t.setheading(315)
+                t.forward(20)
+                t.penup()
+
+            if self.roomSevenCount > 0 or self.difficultyLevel == "Easy":
+                t.goto(-100, -100)
+                t.setheading(0)
+                t.pendown()
+                t.circle(30)
+                t.penup()
+                t.goto(-110, -55)
+                t.pendown()
+                t.setheading(0)
+                t.forward(20)
+                t.goto(-100, -90)
+                t.penup()
+
+            if self.roomSevenToTwo > 0 or self.difficultyLevel == "Easy":
+                t.goto(-100, -40)
+                t.pendown()
+                t.setheading(90)
+                t.forward(100)
+                t.circle(20, 45)
+                t.goto(-180, 210)
+                t.setheading(270)
+                t.forward(20)
+                t.goto(-180, 210)
+                t.setheading(0)
+                t.forward(20)
+                t.penup()
+
+            if self.roomSevenToFive > 0 or self.difficultyLevel == "Easy":
+                t.goto(-330, 30)
+                t.setheading(180)
+                t.pendown()
+                for i in range(20):
+                    t.forward(7)
+                    t.circle(9, 10)
+                t.goto(-130, -70)
+                t.setheading(135)
+                t.forward(20)
+                t.goto(-130, -70)
+                t.setheading(225)
+                t.forward(20)
+                t.penup()
+                t.goto(-330, 30)
+                t.pendown()
+                t.setheading(135)
+                t.forward(20)
+                t.goto(-330, 30)
+                t.setheading(225)
+                t.forward(20)
+                t.penup()
+
+            if self.roomEightCount > 0 or self.difficultyLevel == "Easy":
+                t.goto(100, -100)
+                t.setheading(0)
+                t.pendown()
+                t.circle(30)
+                t.penup()
+                t.goto(100, -70)
+                t.pendown()
+                t.setheading(0)
+                t.circle(10)
+                t.circle(-10)
+                t.penup()
+
+            if self.roomEightToSix > 0 or self.difficultyLevel == "Easy":
+                t.goto(200, 0)
+                t.setheading(270)
+                t.pendown()
+                t.forward(40)
+                t.circle(-30, 90)
+                t.goto(130, -70)
+                t.penup()
+                t.goto(200, 0)
+                t.pendown()
+                t.setheading(225)
+                t.forward(20)
+                t.goto(200, 0)
+                t.setheading(315)
+                t.forward(20)
+                t.penup()
+
+            if self.roomNineCount > 0 or self.difficultyLevel == "Easy":
+                t.goto(300, -300)
+                t.setheading(0)
+                t.pendown()
+                t.circle(30)
+                t.penup()
+                t.goto(300, -270)
+                t.setheading(0)
+                t.pendown()
+                t.circle(10)
+                t.penup()
+                t.goto(310, -260)
+                t.setheading(270)
+                t.pendown()
+                t.forward(20)
+                t.circle(-10, 180)
+                t.penup()
+
+            if self.roomNineToTen > 0 or self.difficultyLevel == "Easy":
+                t.goto(270, -270)
+                t.pendown()
+                t.goto(30, -270)
+                t.setheading(45)
+                t.forward(20)
+                t.goto(30, -270)
+                t.setheading(315)
+                t.forward(20)
+                t.penup()
+
+            if self.roomNineToSix > 0 or self.difficultyLevel == "Easy":
+                t.goto(230, 30)
+                t.setheading(0)
+                t.pendown()
+                t.forward(30)
+                t.circle(-40, 90)
+                t.goto(300, -240)
+                t.penup()
+                t.goto(230, 30)
+                t.pendown()
+                t.setheading(45)
+                t.forward(20)
+                t.goto(230, 30)
+                t.setheading(315)
+                t.forward(20)
+                t.penup()
+
+            if self.roomTenCount > 0 or self.difficultyLevel == "Easy":
+                t.goto(0, -300)
+                t.setheading(0)
+                t.pendown()
+                t.circle(30)
+                t.penup()
+                t.goto(-10, -250)
+                t.pendown()
+                t.setheading(270)
+                t.forward(40)
+                t.penup()
+                t.goto(10, -250)
+                t.setheading(0)
+                t.pendown()
+                t.circle(-10, 90)
+                t.setheading(270)
+                t.forward(20)
+                t.circle(-10, 180)
+                t.setheading(90)
+                t.forward(20)
+                t.circle(-10, 90)
+                t.penup()
+
+            if self.roomTenToNine > 0 or self.difficultyLevel == "Easy":
+                t.goto(30, -270)
+                t.pendown()
+                t.goto(270, -270)
+                t.setheading(135)
+                t.forward(20)
+                t.goto(270, -270)
+                t.setheading(225)
+                t.forward(20)
+                t.penup()
+
+playGame()`}},mounted(){this.init()}},Y={class:"container-fluid h-100 mt-0 pt-0"},_={key:0,class:"row pt-4",style:{height:"calc(100vh - 56px)","background-color":"#f0f2f5"}},C={class:"col-lg-7 col-sm-12"};function H(s,t,d,m,o,a){const n=h("Codemirror");return i(),r("div",Y,[o.macbeth?(i(),r("div",_,[e("div",C,[p(n,{class:"CodeMirror",style:{width:"100%"},value:o.macbeth,options:o.macbethOptions},null,8,["value","options"])]),t[0]||(t[0]=e("div",{class:"col-lg-5 col-sm-12 pb-4 d-flex flex-column align-items-center",style:{"overflow-y":"auto",height:"calc(100vh - 90px)"}},[e("img",{src:N,class:"img-fluid",alt:"Map of the rooms the player can navigate in the Macbeth adventure game"}),e("p",{class:"mt-3"}," This code is for a game. The goal of the game is to navigate through various rooms, collecting items as you go, and then bringing them all to the last room. Depending on the level of difficulty the user chooses, there is a map that can be drawn as well (as shown). ")],-1))])):c("",!0)])}const x=l(k,[["render",H],["__scopeId","data-v-922c3a87"]]),D={name:"BullsCows",components:{Codemirror:f},data(){return{code:null,codeOptions:{tabSize:4,mode:"text/x-python",lineNumbers:!0,line:!0,smartIndent:!0,indentUnit:4,indentWithTabs:!0,readOnly:!0,foldGutter:!0}}},methods:{init(){this.code=`def main():
+    import random
+    print("Welcome to the game Bulls and Cows!")
+    while True:
+        scores = ""
+        secretNumber = ""
+        count = 0
+        while True:
+            number = str(random.randint(0,9))
+            if number not in secretNumber:
+                secretNumber += number
+                count += 1
+                if count == 4:
+                    break
+        secretList = list(secretNumber)
+        while True:
+            scores = ""
+            while True:
+                bull = 0
+                cow = 0
+                cow2 = 0
+                print("I have picked a random four-digit number.  Please guess what it is: ")
+                print("Bull".rjust(10) + "Cow".rjust(10) + "Guess".rjust(10))
+                print(scores)
+                guess = input("")
+                if len(guess) != 4:
+                    print("ERROR: the number you entered is the wrong length.")
+
+                else:
+                    if guess.isdigit():
+                        bull = 0
+                        cow = 0
+                        cow2 = 0
+                        guessList = list(guess)
+
+                        for digit in guessList:
+                            if digit in secretNumber:
+                                cow += 1
+
+                        for index in range(4):
+                            if guessList[index] == secretList[index]:
+                                bull += 1
+
+                        cow2 = cow - bull
+                        scores += str(bull).rjust(10) + str(cow2).rjust(10) + str(guess).rjust(10) + "\\n"
+                        if bull == 4:
+                            playAgain = int(input('''You guessed right!  Would you like to play again?  Please enter a number:
+    1. Yes
+    2. No
+    '''))
+                            if playAgain == 1:
+                                break
+                            else:
+                                exit()
+                    else:
+                        print("ERROR: the characters you entered are not all integers.")
+
+main()  `}},mounted(){this.init()}},P={class:"container-fluid h-100 mt-0 pt-0"},Z={key:0,class:"row pt-4",style:{height:"calc(100vh - 56px)","background-color":"#f0f2f5"}},M={class:"col-lg-7 col-sm-12"};function K(s,t,d,m,o,a){const n=h("Codemirror");return i(),r("div",P,[o.code?(i(),r("div",Z,[e("div",M,[p(n,{class:"CodeMirror",style:{width:"100%"},value:o.code,options:o.codeOptions},null,8,["value","options"])]),t[0]||(t[0]=e("div",{class:"col-lg-5 col-sm-12 pb-4 d-flex flex-column justify-content-center align-items-center"},[e("p",null,"This code will create a game called Bulls and Cows. The game is played as follows:"),e("p",null,"1. The computer picks a four-digit number with no repeating digits. This is the secret number."),e("p",null,"2. The user makes a guess."),e("p",null,"3. The computer determines the number of bulls and the number of cows."),e("p",{class:"ms-4"},"a. Bulls are digits which are in the correct position."),e("p",{class:"ms-4"},"b. Cows are digits that are in the secret number but are in the wrong position."),e("p",null," 4. The computer then prints out all the guesses and their bull and cow counts. NOTE: These numbers added together should never be more than four. "),e("p",null,"5. If all the digits are bulls, the game is over, otherwise go to step 2."),e("p",null,"6. When the game is over the computer will ask you if you want to play again.")],-1))])):c("",!0)])}const B=l(D,[["render",K],["__scopeId","data-v-d96a7cbf"]]),V={name:"Sticks",components:{Codemirror:f},data(){return{code:null,codeOptions:{tabSize:4,mode:"text/x-python",lineNumbers:!0,line:!0,smartIndent:!0,indentUnit:4,indentWithTabs:!0,readOnly:!0,foldGutter:!0}}},methods:{init(){this.code=`class gameOfSticks():
+    def __init__(self):
+        self.currentPlayer = "Player 1"
+        self.numberTaken = 0
+        print("Welcome to the game of sticks!")
+        while True:
+            self.numberOfSticks = int(input("How many sticks are there on the table initially (10-100)? "))
+            if self.numberOfSticks > 9 and self.numberOfSticks < 101:
+                self.play()
+            else:
+                print("Please enter a number between 10 and 100.")
+
+    def play(self):
+        print("There are " + str(self.numberOfSticks) + " sticks on the table.")
+        self.numberTaken = int(input(str(self.currentPlayer) + ": How many sticks do you take (1-3)? "))
+        self.numberOfSticks -= self.numberTaken
+        print(self.numberTaken)
+        print(self.numberOfSticks)
+        if self.numberOfSticks < 1:
+            print(str(self.currentPlayer) + ", you lose.")
+        else:
+            self.changePlayer()
+
+    def changePlayer(self):
+        if self.currentPlayer == "Player 1":
+            self.currentPlayer = "Player 2"
+        else:
+            self.currentPlayer = "Player 1"
+        self.play()
+
+if __name__ == "__main__":
+    gameOfSticks()`}},mounted(){this.init()}},U={class:"container-fluid h-100 mt-0 pt-0"},$={key:0,class:"row pt-4",style:{height:"calc(100vh - 56px)","background-color":"#f0f2f5"}},j={class:"col-lg-7 col-sm-12"};function q(s,t,d,m,o,a){const n=h("Codemirror");return i(),r("div",U,[o.code?(i(),r("div",$,[e("div",j,[p(n,{class:"CodeMirror",style:{width:"100%"},value:o.code,options:o.codeOptions},null,8,["value","options"])]),t[0]||(t[0]=e("div",{class:"col-lg-5 col-sm-12 pb-4 d-flex flex-column justify-content-center align-items-center"},[e("p",null,"This code will create a game called Game of Sticks. The game is played as follows:"),e("p",null,"1. The computer asks how many sticks you would like to start with (10-100)."),e("p",null,"2. The two players then take turns reducing the number of sticks (1-3)."),e("p",null,"3. The player who takes the last stick loses.")],-1))])):c("",!0)])}const z=l(V,[["render",q],["__scopeId","data-v-bd6958b2"]]),J={name:"Pig",components:{Codemirror:f},data(){return{code:null,codeOptions:{tabSize:4,mode:"text/x-python",lineNumbers:!0,line:!0,smartIndent:!0,indentUnit:4,indentWithTabs:!0,readOnly:!0,foldGutter:!0}}},methods:{init(){this.code=`totalone = 0
+totaltwo = 0
+while True:
+    rollfirst = 0
+    while True:
+        print ("First Player score is " + str(totalone) + ".")
+        print ("Second Player score is " + str(totaltwo) + ".")
+        rollone = int(input('''First Player, would you like to roll or hold?
+        1. Roll
+        2. Hold
+        Please make a choice. '''))
+        if rollone == 1:
+            import random
+            diceone = random.randint(1,6)
+            if diceone == 1:
+                print("You rolled a 1.  Your score is zero for this round.")
+                rollfirst = 0
+                break
+            else:
+                rollfirst += diceone
+                print("You rolled a " + str(diceone))
+                print ("Your total for this turn is " + str(rollfirst))
+                print ("Your total score for the game would be " + str(totalone + rollfirst))
+        elif rollone == 2:
+            print("Your total score for this roll is " + str(rollfirst))
+            break
+    totalone += rollfirst
+    print("Your total score for the game is " + str(totalone))
+    if (totalone >= 100):
+        print("Congratulations First Player, you won!!")
+        break
+    rollsecond = 0
+    while True:
+        print ("First Player score is " + str(totalone) + ".")
+        print ("Second Player score is " + str(totaltwo) + ".")
+        rolltwo = int(input('''Second Player, would you like to roll or hold?
+        1. Roll
+        2. Hold
+        Please make a choice. '''))
+        if rolltwo == 1:
+            import random
+            dicetwo = random.randint(1,6)
+            if dicetwo == 1:
+                print("You rolled a 1.  Your score is zero for this round.")
+                rollsecond = 0
+                break
+            else:
+                rollsecond += dicetwo
+                print("You rolled a " + str(dicetwo))
+                print ("Your total for this turn is " + str(rollsecond))
+                print ("Your total score for the game would be " + str(totaltwo + rollsecond))
+        elif rolltwo == 2:
+            print("Your total score for this roll is " + str(rollsecond))
+            break
+    totaltwo += rollsecond
+    print("Your total score for the game is " + str(totaltwo))
+    if (totaltwo >= 100):
+        print("Congratulations Second Player, you won!!")
+        break`}},mounted(){this.init()}},Q={class:"container-fluid h-100 mt-0 pt-0"},X={key:0,class:"row pt-4",style:{height:"calc(100vh - 56px)","background-color":"#f0f2f5"}},ee={class:"col-lg-7 col-sm-12"};function oe(s,t,d,m,o,a){const n=h("Codemirror");return i(),r("div",Q,[o.code?(i(),r("div",X,[e("div",ee,[p(n,{class:"CodeMirror",style:{width:"100%"},value:o.code,options:o.codeOptions},null,8,["value","options"])]),t[0]||(t[0]=g('<div class="col-lg-5 col-sm-12 pb-4 d-flex flex-column justify-content-center align-items-center" data-v-7593d82b><p data-v-7593d82b>This code will create a game called Game of Pig. The game is played as follows:</p><p data-v-7593d82b>Each turn starts with the player making the choice to play or hold.</p><p class="ms-4" data-v-7593d82b>If they play the player rolls a single die and looking at the results.</p><p class="ms-4 ps-4" data-v-7593d82b>If a 1 was rolled the player scores no points and their turn is over.</p><p class="ms-4 ps-4" data-v-7593d82b> If any other number is rolled the player adds the number rolled to the player&#39;s turn total. </p><p class="ms-4" data-v-7593d82b> If they hold their turn points are added to their score and it becomes the opponent&#39;s turn. </p></div>',1))])):c("",!0)])}const te=l(J,[["render",oe],["__scopeId","data-v-7593d82b"]]),ne="/assets/turtleGraphics-C3QNb8Io.png",ie={name:"Turtle",components:{Codemirror:f},data(){return{code:null,codeOptions:{tabSize:4,mode:"text/x-python",lineNumbers:!0,line:!0,smartIndent:!0,indentUnit:4,indentWithTabs:!0,readOnly:!0,foldGutter:!0}}},methods:{init(){this.code=`from turtle import Turtle
+def main():
+    t = Turtle()
+    t.pensize(2)
+    roof(t)
+    houseFrame(t)
+    chimney(t)
+    door(t)
+    window(t)
+    sun(t)
+    yard(t)
+    tree(t)
+
+def roof(t):
+    t.fillcolor("green")
+    t.begin_fill()
+    t.forward(200)
+    t.goto(100, 100)
+    t.goto(0,0)
+    t.end_fill()
+
+def houseFrame(t):
+    t.penup()
+    t.goto(20, 0)
+    t.pendown()
+    t.fillcolor("red")
+    t.begin_fill()
+    t.right(90)
+    t.forward(150)
+    t.left(90)
+    t.forward(160)
+    t.left(90)
+    t.forward(150)
+    t.left(90)
+    t.forward(160)
+    t.end_fill()
+
+def chimney(t):
+    t.penup()
+    t.goto(20, 20)
+    t.pendown()
+    t.fillcolor("green")
+    t.begin_fill()
+    t.goto(20, 80)
+    t.goto(40, 80)
+    t.goto(40, 40)
+    t.goto(20, 20)
+    t.end_fill()
+
+def door(t):
+    t.penup()
+    t.goto(160, -150)
+    t.pendown()
+    t.setheading(90)
+    t.fillcolor("yellow")
+    t.begin_fill()
+    t.forward(60)
+    t.left(90)
+    t.forward(40)
+    t.left(90)
+    t.forward(60)
+    t.left(90)
+    t.forward(40)
+    t.end_fill()
+
+def window(t):
+    t.penup()
+    t.goto(40, -40)
+    t.setheading(0)
+    t.pendown()
+    t.fillcolor("white")
+    t.begin_fill()
+    t.forward(40)
+    t.right(90)
+    t.forward(40)
+    t.right(90)
+    t.forward(40)
+    t.right(90)
+    t.forward(40)
+    t.end_fill()
+    t.right(90)
+    t.forward(20)
+    t.right(90)
+    t.forward(40)
+    t.right(90)
+    t.forward(20)
+    t.right(90)
+    t.forward(20)
+    t.right(90)
+    t.forward(40)
+
+def sun(t):
+    t.penup()
+    t.goto(-75, 250)
+    t.pendown()
+    t.fillcolor("yellow")
+    t.begin_fill()
+    t.circle(50)
+    t.end_fill()
+    t.penup()
+    t.goto(-135, 300)
+    t.pendown()
+    t.pencolor("yellow")
+    t.setheading(180)
+    t.pensize(4)
+    t.forward(60)
+    t.penup()
+    t.goto(-75, 360)
+    t.pendown()
+    t.setheading(90)
+    t.forward(60)
+    t.penup()
+    t.goto(-15, 300)
+    t.pendown()
+    t.setheading(0)
+    t.forward(60)
+    t.penup()
+    t.goto(-75, 240)
+    t.pendown()
+    t.setheading(270)
+    t.forward(60)
+    t.penup()
+    t.goto(-75, 300)
+    t.setheading(225)
+    t.forward(60)
+    t.pendown()
+    t.forward(60)
+    t.penup()
+    t.goto(-75,300)
+    t.setheading(135)
+    t.forward(60)
+    t.pendown()
+    t.forward(60)
+    t.penup()
+    t.goto(-75, 300)
+    t.setheading(45)
+    t.forward(60)
+    t.pendown()
+    t.forward(60)
+    t.penup()
+    t.goto(-75, 300)
+    t.setheading(315)
+    t.forward(60)
+    t.pendown()
+    t.forward(60)
+    t.pensize(2)
+    t.pencolor("black")
+
+def yard(t):
+    t.penup()
+    t.goto(20, -150)
+    t.pendown()
+    t.setheading(180)
+    t.fillcolor("#608038")
+    t.begin_fill()
+    t.forward(500)
+    t.left(90)
+    t.forward(300)
+    t.left(90)
+    t.forward(1000)
+    t.left(90)
+    t.forward(300)
+    t.left(90)
+    t.forward(500)
+    t.end_fill()
+
+def tree(t):
+    t.penup()
+    t.goto(-200, -150)
+    t.pendown()
+    t.setheading(90)
+    t.fillcolor("brown")
+    t.begin_fill()
+    t.forward(200)
+    t.left(90)
+    t.forward(20)
+    t.left(90)
+    t.forward(200)
+    t.left(90)
+    t.forward(20)
+    t.end_fill()
+    t.penup()
+    t.left(90)
+    t.forward(200)
+    t.pendown()
+    t.right(90)
+    t.fillcolor("#608038")
+    t.begin_fill()
+    t.forward(20)
+    for i in range(7):
+        t.circle(40, 90)
+        t.right(45)
+    t.goto(- 200, 50)
+    t.end_fill()
+    t.penup()
+
+if __name__ == "__main__":
+    main()`}},mounted(){this.init()}},re={class:"container-fluid h-100 mt-0 pt-0"},se={key:0,class:"row pt-4",style:{height:"calc(100vh - 56px)","background-color":"#f0f2f5"}},ae={class:"col-lg-7 col-sm-12"};function le(s,t,d,m,o,a){const n=h("Codemirror");return i(),r("div",re,[o.code?(i(),r("div",se,[e("div",ae,[p(n,{class:"CodeMirror",style:{width:"100%"},value:o.code,options:o.codeOptions},null,8,["value","options"])]),t[0]||(t[0]=e("div",{class:"col-lg-5 col-sm-12 pb-4 d-flex flex-column align-items-center",style:{"overflow-y":"auto",height:"calc(100vh - 90px)"}},[e("img",{src:ne,class:"img-fluid",alt:"Generated picture from the Turtle Graphics program"}),e("p",{class:"mt-3"},"This code will create a picture (as shown) using Turtle Graphics.")],-1))])):c("",!0)])}const de=l(ie,[["render",le],["__scopeId","data-v-ac404649"]]),me="/assets/pygame-C5S-2IfS.png",fe={name:"Pygame",components:{Codemirror:f},data(){return{code:null,codeOptions:{tabSize:4,mode:"text/x-python",lineNumbers:!0,line:!0,smartIndent:!0,indentUnit:4,indentWithTabs:!0,readOnly:!0,foldGutter:!0}}},methods:{init(){this.code=`import pygame
+import sys
+import random
+
+pygame.init()
+clock = pygame.time.Clock()
+screen = pygame.display.set_mode([800, 1000])
+white = (255, 255, 255)
+green = (0, 255, 0)
+blue = (0, 0, 128)
+stack_odd = []
+stack_even = []
+count = 1
+
+file = open("input.txt", "r")
+lines = file.readlines()
+
+for line in lines:
+    if count % 2 == 0:
+        stack_even.append(line)
+    else:
+        stack_odd.append(line)
+    count += 1
+
+pygame.display.set_caption("Movie Night")
+icon = pygame.image.load('clapperboard.png')
+pygame.display.set_icon(icon)
+
+cinemaImg = pygame.image.load('cinema.jpg')
+cinemaImg = pygame.transform.scale(cinemaImg, (400, 400))
+
+orderBtn = pygame.image.load('orderBtn.jpg')
+orderBtn = pygame.transform.scale(orderBtn, (100, 100))
+btnPosition = pygame.Rect(550, 525, 100, 100)
+
+exitBtn = pygame.image.load('exit.png')
+exitBtn = pygame.transform.scale(exitBtn, (50, 50))
+exitBtnPos = pygame.Rect(575, 700, 50, 50)
+
+arrows = pygame.image.load('arrowDown.png')
+arrows = pygame.transform.scale(arrows, (150, 150))
+
+base_font = pygame.font.Font(None, 32)
+
+text = base_font.render('Enter a number:', True, green, blue)
+textRect = text.get_rect()
+textRect.center = (400, 500)
+
+randMovie = 'What movie will you watch tonight?'
+movie = base_font.render(randMovie, True, green, blue)
+movieRect = movie.get_rect()
+movieRect.center = (400, 900)
+
+user_text = ''
+input_rect = pygame.Rect(250, 565, 200, 32)
+color_active = pygame.Color('lightskyblue3')
+color_passive = pygame.Color('chartreuse4')
+color = color_passive
+active = False
+
+def showMovie():
+    try:
+        int(user_text)
+        if int(user_text):
+            if int(user_text) % 2 == 0:
+                if len(stack_even) > 0:
+                    randMovie = random.choice(stack_even)
+                    stack_even.remove(randMovie)
+                else:
+                    if len(stack_odd) > 0:
+                        randMovie = random.choice(stack_odd)
+                        stack_odd.remove(randMovie)
+                    else:
+                        randMovie = 'No other available films'
+            else:
+                if len(stack_odd) > 0:
+                    randMovie = random.choice(stack_odd)
+                    stack_odd.remove(randMovie)
+                else:
+                    if len(stack_even) > 0:
+                        randMovie = random.choice(stack_even)
+                        stack_even.remove(randMovie)
+                    else:
+                        randMovie = 'No other available films'
+            return base_font.render(randMovie, True, green, blue)
+    except:
+        randMovie = 'Please enter an integer'
+        return base_font.render(randMovie, True, green, blue)
+
+while True:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            pygame.quit()
+            sys.exit()
+        if event.type == pygame.MOUSEBUTTONDOWN:
+            if exitBtnPos.collidepoint(event.pos):
+                pygame.quit()
+                sys.exit()
+            if btnPosition.collidepoint(event.pos):
+                movie = showMovie()
+                user_text = ''
+            if input_rect.collidepoint(event.pos):
+                active = True
+            else:
+                active = False
+        if event.type == pygame.KEYDOWN:
+            if int(event.key) == pygame.K_RETURN or int(event.key) == pygame.K_KP_ENTER:
+                movie = showMovie()
+                user_text = ''
+            elif event.key == pygame.K_BACKSPACE:
+                user_text = user_text[:-1]
+            else:
+                user_text += event.unicode
+
+    screen.fill((255, 255, 255))
+
+    if active:
+        color = color_active
+    else:
+        color = color_passive
+
+    screen.blit(cinemaImg, (200, 50))
+    screen.blit(orderBtn, (550, 525))
+    screen.blit(arrows, (325, 650))
+    screen.blit(exitBtn, (575, 700))
+    screen.blit(text, textRect)
+    screen.blit(movie, movieRect)
+
+    pygame.draw.rect(screen, color, input_rect)
+
+    text_surface = base_font.render(user_text, True, (255, 255, 255))
+    screen.blit(text_surface, (input_rect.x + 5, input_rect.y + 5))
+    input_rect.w = max(200, text_surface.get_width() + 10)
+
+    pygame.display.update()
+    clock.tick(60)`}},mounted(){this.init()}},pe={class:"container-fluid h-100 mt-0 pt-0"},ce={key:0,class:"row pt-4",style:{height:"calc(100vh - 56px)","background-color":"#f0f2f5"}},he={class:"col-lg-7 col-sm-12"};function ue(s,t,d,m,o,a){const n=h("Codemirror");return i(),r("div",pe,[o.code?(i(),r("div",ce,[e("div",he,[p(n,{class:"CodeMirror",style:{width:"100%"},value:o.code,options:o.codeOptions},null,8,["value","options"])]),t[0]||(t[0]=e("div",{class:"col-lg-5 col-sm-12 pb-4 d-flex flex-column align-items-center",style:{"overflow-y":"auto",height:"calc(100vh - 90px)"}},[e("img",{src:me,class:"img-fluid",style:{"max-width":"60%"},alt:"Screenshot of the Pygame movie-picker window"}),e("p",{class:"mt-3"},"This code will create a pygame program as shown."),e("p",null," You import a list of movies to choose from, then you enter a number in the input box and the program will randomly choose a movie for you. ")],-1))])):c("",!0)])}const Te=l(fe,[["render",ue],["__scopeId","data-v-2284bed2"]]),Ee={name:"PythonCode",components:{Calculator:W,Macbeth:x,BullsCows:B,Sticks:z,Pig:te,Turtle:de,Pygame:Te},computed:{selectedProject:{get(){const s=this.$route.query.project;return s&&this.projectComponents[s]?s:null},set(s){s?this.$router.push({query:{project:s}}):this.$router.push({query:{}})}}},data(){return{projectComponents:{calculator:"Calculator",macbeth:"Macbeth",bullsCows:"BullsCows",sticks:"Sticks",pig:"Pig",turtle:"Turtle",pygame:"Pygame"},projects:[{key:"calculator",title:"Calculator",subtitle:"Tkinter grid layout",description:"A four-function calculator built with Python and Tkinter, demonstrating grid-based widget layout and event handling.",tags:["Python","Tkinter","GUI"],previewClass:"preview-blue"},{key:"macbeth",title:"Macbeth Game",subtitle:"Text-based adventure",description:"A text-based adventure game set in the world of Shakespeare's Macbeth, with map navigation between locations.",tags:["Python","Game","CLI"],previewClass:"preview-burgundy"},{key:"bullsCows",title:"Bulls and Cows",subtitle:"Number-guessing game",description:"A classic deduction game — guess the computer's four-digit secret number using feedback on how many digits are correct and in the right position.",tags:["Python","Game","Logic"],previewClass:"preview-amber"},{key:"sticks",title:"Game of Sticks",subtitle:"Two-player strategy",description:"A two-player turn-based game starting with 10–100 sticks. Each player removes 1–3 per turn; whoever takes the last stick loses.",tags:["Python","Game","Strategy"],previewClass:"preview-green"},{key:"pig",title:"Game of Pig",subtitle:"Push-your-luck dice",description:"A push-your-luck dice game. Roll to rack up points, but rolling a 1 wipes the turn's score. First to the target total wins.",tags:["Python","Game","Dice"],previewClass:"preview-purple"},{key:"turtle",title:"Turtle Graphics",subtitle:"Generative drawing",description:"A generative graphics program built on Python's Turtle library, producing a layered geometric drawing from primitive turtle commands.",tags:["Python","Turtle","Graphics"],previewClass:"preview-teal"},{key:"pygame",title:"Pygame",subtitle:"Interactive game loop",description:"An interactive Pygame demo showing sprite rendering, the event loop, and frame-based animation patterns.",tags:["Python","Pygame","Game"],previewClass:"preview-orange"}]}}},Oe={key:0,class:"container-fluid mt-0 pt-0"},ge={class:"row justify-content-center pt-5",style:{"background-color":"#f0f2f5","min-height":"calc(100vh - 56px)"}},Le={class:"col-lg-10 col-md-11"},ye={class:"row justify-content-center"},ve=["onClick","onKeyup"],we={class:"preview-content"},Re={class:"preview-title"},Ae={class:"preview-subtitle"},Se={class:"project-info"},Ge={style:{color:"#1a2744"}},Fe={class:"tech-tags mb-3"},Ie={key:1,class:"project-view"};function be(s,t,d,m,o,a){return i(),r("div",null,[a.selectedProject?(i(),r("div",Ie,[e("button",{class:"back-button",onClick:t[0]||(t[0]=n=>a.selectedProject=null)},[...t[3]||(t[3]=[e("i",{class:"fas fa-arrow-left me-2"},null,-1),L("Back to Python Project ",-1)])]),(i(),y(v(o.projectComponents[a.selectedProject])))])):(i(),r("div",Oe,[e("div",ge,[e("div",Le,[t[2]||(t[2]=e("h2",{class:"text-center mb-4",style:{color:"#1a2744","font-weight":"bold"}},"Python Project",-1)),e("div",ye,[(i(!0),r(E,null,O(o.projects,n=>(i(),r("div",{class:"col-lg-4 col-md-6 mb-4",key:n.key},[e("div",{class:"project-card",onClick:T=>a.selectedProject=n.key,tabindex:"0",role:"button",onKeyup:w(T=>a.selectedProject=n.key,["enter"])},[e("div",{class:R(["project-preview",n.previewClass])},[e("div",we,[e("span",Re,u(n.title),1),e("span",Ae,u(n.subtitle),1)])],2),e("div",Se,[e("h4",Ge,u(n.title),1),e("p",null,u(n.description),1),e("div",Fe,[(i(!0),r(E,null,O(n.tags,T=>(i(),r("span",{key:T,class:"tech-tag"},u(T),1))),128))]),t[1]||(t[1]=e("span",{class:"btn btn-primary",style:{"background-color":"#1a2744","border-color":"#1a2744"}}," View Project ",-1))])],40,ve)]))),128))])])])]))])}const ke=l(Ee,[["render",be],["__scopeId","data-v-665a36c9"]]);export{ke as default};
