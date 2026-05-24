@@ -25,8 +25,8 @@
             >
                 Badge {{ badgeEnabled ? 'ON' : 'OFF' }}
             </button>
-            <button class="control-btn clear-btn" @click="$emit('clear')">Clear</button>
-            <button class="control-btn run-btn" @click="$emit('run')">▶ Run Code</button>
+            <mfp-button variant="secondary" size="sm" @click="$emit('clear')">Clear</mfp-button>
+            <mfp-button variant="primary" size="sm" @click="$emit('run')">▶ Run Code</mfp-button>
         </div>
     </header>
 </template>
