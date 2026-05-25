@@ -2,7 +2,7 @@
     <div class="container-fluid mt-0 pt-0">
         <div
             class="row justify-content-center align-items-center text-center"
-            style="background-color: #f0f2f5; min-height: calc(100vh - 56px)"
+            style="background-color: #f0f2f5; min-height: calc(100vh - var(--site-nav-height, 56px))"
         >
             <div class="col-md-8 col-lg-6">
                 <h1 style="color: #1a2744; font-size: 6rem; font-weight: bold">404</h1>

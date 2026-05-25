@@ -3,7 +3,7 @@
         <div class="container-fluid mt-0 pt-0" v-if="!selectedProject">
             <div
                 class="row justify-content-center pt-5"
-                style="background-color: #f0f2f5; min-height: calc(100vh - 56px)"
+                style="background-color: #f0f2f5; min-height: calc(100vh - var(--site-nav-height, 56px))"
             >
                 <div class="col-lg-10 col-md-11">
                     <h2 class="text-center mb-4" style="color: #1a2744; font-weight: bold">Python Project</h2>

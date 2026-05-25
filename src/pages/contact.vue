@@ -2,7 +2,7 @@
     <div class="container-fluid mt-0 pt-0">
         <div
             class="row justify-content-center align-items-center"
-            style="background-color: #f0f2f5; min-height: calc(100vh - 56px)"
+            style="background-color: #f0f2f5; min-height: calc(100vh - var(--site-nav-height, 56px))"
         >
             <div class="col-md-6 col-lg-4">
                 <mfp-card class="contact-card" variant="elevated" padding="roomy">

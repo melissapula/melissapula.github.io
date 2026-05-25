@@ -1,6 +1,10 @@
 ﻿<template>
     <div class="container-fluid h-100 mt-0 pt-0">
-        <div class="row pt-4" v-if="code" style="height: calc(100vh - 56px); background-color: #f0f2f5">
+        <div
+            class="row pt-4"
+            v-if="code"
+            style="height: calc(100vh - var(--site-nav-height, 56px)); background-color: #f0f2f5"
+        >
             <div class="col-lg-7 col-sm-12">
                 <Codemirror class="CodeMirror" style="width: 100%" :value="code" :options="codeOptions"></Codemirror>
             </div>

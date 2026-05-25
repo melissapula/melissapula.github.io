@@ -199,10 +199,10 @@
     #pic {
         background-color: white;
         position: fixed;
-        top: 56px;
+        top: var(--site-nav-height, 56px);
         left: 0;
         width: 33.333%;
-        height: calc(100vh - 56px);
+        height: calc(100vh - var(--site-nav-height, 56px));
         overflow: hidden;
     }
     #picInner {
@@ -216,7 +216,7 @@
         background-color: #f0f2f5;
         color: #333;
         margin-left: 33.333%;
-        min-height: calc(100vh - 56px);
+        min-height: calc(100vh - var(--site-nav-height, 56px));
         padding: 1rem 2rem 2rem;
     }
     .cyan-text {

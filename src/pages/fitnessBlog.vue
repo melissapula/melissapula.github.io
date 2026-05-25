@@ -1,6 +1,9 @@
 <template>
     <div class="container-fluid h-100 mt-0 pt-0 mb-0">
-        <div class="row" style="background-color: #f8f9fa; color: #333; min-height: calc(100vh - 56px)">
+        <div
+            class="row"
+            style="background-color: #f8f9fa; color: #333; min-height: calc(100vh - var(--site-nav-height, 56px))"
+        >
             <div class="col-12">
                 <div class="row justify-content-center align-items-center pt-4">
                     <div class="col-3 col-lg-2">

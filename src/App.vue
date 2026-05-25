@@ -1,6 +1,6 @@
 <template>
     <div class="h-100 m-0 p-0">
-        <mfp-nav-bar sticky variant="brand">
+        <mfp-nav-bar ref="navBar" sticky variant="brand">
             <router-link slot="brand" to="/" class="brand-link">Melissa Freundschuh-Pula</router-link>
 
             <mfp-nav-item
@@ -89,7 +89,19 @@
                     setTheme(value);
                     this.activeTheme = value;
                 }
+            },
+            syncNavHeight() {
+                const h = this.$refs.navBar?.offsetHeight;
+                if (h) document.documentElement.style.setProperty('--site-nav-height', `${h}px`);
             }
+        },
+        mounted() {
+            this.syncNavHeight();
+            this._navResizeObserver = new ResizeObserver(() => this.syncNavHeight());
+            this._navResizeObserver.observe(this.$refs.navBar);
+        },
+        beforeUnmount() {
+            this._navResizeObserver?.disconnect();
         }
     };
 </script>
@@ -153,7 +165,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        min-height: calc(100vh - 56px);
+        min-height: calc(100vh - var(--site-nav-height, 56px));
         background-color: #f0f2f5;
         color: #1a2744;
     }

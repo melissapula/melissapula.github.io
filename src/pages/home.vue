@@ -2,7 +2,7 @@
     <div class="container-fluid mt-0 pt-0">
         <div
             class="row align-items-center justify-content-center"
-            style="min-height: calc(100vh - 56px); background-color: #f8f9fa; overflow: hidden"
+            style="min-height: calc(100vh - var(--site-nav-height, 56px)); background-color: #f8f9fa; overflow: hidden"
         >
             <div class="col-12 col-md-6 col-lg-5 text-center">
                 <img
