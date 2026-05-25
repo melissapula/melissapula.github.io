@@ -273,9 +273,9 @@
             v-show="selectedProject"
             :class="['project-view', selectedProject ? 'project-view--' + selectedProject : '']"
         >
-            <button class="back-button" @click="selectedProject = null">
+            <mfp-button class="back-button" variant="secondary" @click="selectedProject = null">
                 <i class="fas fa-arrow-left me-2"></i>Back to Projects
-            </button>
+            </mfp-button>
             <FitnessBlog v-if="selectedProject === 'fitness'" />
             <Blockly v-if="selectedProject === 'blockly'" />
         </div>
@@ -517,21 +517,8 @@
         top: 72px;
         left: 16px;
         z-index: 1000;
-        background-color: #fff;
-        color: #1a2744;
-        border: 2px solid #1a2744;
-        padding: 8px 16px;
-        border-radius: 8px;
-        font-size: 14px;
-        font-weight: 600;
-        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
-        cursor: pointer;
-        transition:
-            background-color 0.15s ease,
-            color 0.15s ease;
     }
-    .back-button:hover {
-        background-color: #1a2744;
-        color: #fff;
+    .back-button::part(button) {
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
     }
 </style>

@@ -42,9 +42,9 @@
             </div>
         </div>
         <div v-else class="project-view">
-            <button class="back-button" @click="selectedProject = null">
+            <mfp-button class="back-button" variant="secondary" @click="selectedProject = null">
                 <i class="fas fa-arrow-left me-2"></i>Back to Python Project
-            </button>
+            </mfp-button>
             <component :is="projectComponents[selectedProject]" />
         </div>
     </div>
@@ -259,18 +259,8 @@
         top: 72px;
         left: 16px;
         z-index: 1000;
-        background-color: #1a2744;
-        color: white;
-        border: none;
-        padding: 8px 16px;
-        border-radius: 8px;
-        font-size: 14px;
-        font-weight: 500;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-        cursor: pointer;
-        transition: background-color 0.15s ease;
     }
-    .back-button:hover {
-        background-color: #2c4068;
+    .back-button::part(button) {
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
     }
 </style>
