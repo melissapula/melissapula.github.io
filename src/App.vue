@@ -37,32 +37,25 @@
                 </Suspense>
             </Transition>
         </router-view>
-        <footer class="site-footer">
-            <div class="container-fluid d-flex flex-wrap justify-content-between align-items-center px-4">
-                <span class="footer-copy">&copy; {{ currentYear }} Melissa Freundschuh-Pula</span>
-                <div class="footer-links">
-                    <a
-                        href="https://github.com/melissapula"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label="GitHub"
-                    >
-                        <i class="fab fa-github"></i>
-                    </a>
-                    <a
-                        href="https://www.linkedin.com/in/melissa-pula-833748172"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label="LinkedIn"
-                    >
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                    <a href="mailto:melissa_m_24@yahoo.com" aria-label="Email">
-                        <i class="fas fa-envelope"></i>
-                    </a>
-                </div>
+        <mfp-footer variant="brand">
+            <span class="footer-copy">&copy; {{ currentYear }} Melissa Freundschuh-Pula</span>
+            <div class="footer-links">
+                <a href="https://github.com/melissapula" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a
+                    href="https://www.linkedin.com/in/melissa-pula-833748172"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="LinkedIn"
+                >
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="mailto:melissa_m_24@yahoo.com" aria-label="Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
             </div>
-        </footer>
+        </mfp-footer>
     </div>
 </template>
 
@@ -130,23 +123,19 @@
     .theme-switcher {
         min-width: 11rem;
     }
-    .site-footer {
-        background-color: #1a2744;
-        color: rgba(255, 255, 255, 0.85);
-        padding: 14px 0;
+    .footer-copy {
+        letter-spacing: 0.3px;
         font-size: 13px;
     }
-    .site-footer .footer-copy {
-        letter-spacing: 0.3px;
-    }
-    .site-footer .footer-links a {
-        color: rgba(255, 255, 255, 0.85);
+    .footer-links a {
+        color: inherit;
         margin-left: 16px;
         font-size: 18px;
-        transition: color 0.15s ease;
+        opacity: 0.85;
+        transition: opacity 0.15s ease;
     }
-    .site-footer .footer-links a:hover {
-        color: #fff;
+    .footer-links a:hover {
+        opacity: 1;
     }
 
     /* Route fade transition */
@@ -171,8 +160,8 @@
 
     /* Print styles — hide chrome, drop backgrounds */
     @media print {
-        .navbar,
-        .site-footer,
+        mfp-nav-bar,
+        mfp-footer,
         .back-button {
             display: none !important;
         }
