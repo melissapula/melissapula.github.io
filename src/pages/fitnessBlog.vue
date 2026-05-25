@@ -109,42 +109,26 @@
                         </div>
                         <div class="row mb-4 mt-4 justify-content-center" style="color: #333">
                             <div class="col-12 col-lg-4">
-                                <div class="accordion mb-4">
-                                    <div v-for="(pane, i) in panesOne" :key="'p1-' + i" class="accordion-item">
-                                        <h2 class="accordion-header">
-                                            <button
-                                                class="accordion-button"
-                                                :class="{ collapsed: openOne !== i }"
-                                                type="button"
-                                                @click="openOne = openOne === i ? -1 : i"
-                                            >
-                                                {{ pane.title }}
-                                            </button>
-                                        </h2>
-                                        <div v-show="openOne === i" class="accordion-body">
-                                            <span v-html="pane.content"></span>
-                                        </div>
-                                    </div>
-                                </div>
+                                <mfp-accordion exclusive class="mb-4">
+                                    <mfp-accordion-item
+                                        v-for="(pane, i) in panesOne"
+                                        :key="'p1-' + i"
+                                        :label="pane.title"
+                                    >
+                                        <span v-html="pane.content"></span>
+                                    </mfp-accordion-item>
+                                </mfp-accordion>
                             </div>
                             <div class="col-12 col-lg-4">
-                                <div class="accordion">
-                                    <div v-for="(pane, i) in panesTwo" :key="'p2-' + i" class="accordion-item">
-                                        <h2 class="accordion-header">
-                                            <button
-                                                class="accordion-button"
-                                                :class="{ collapsed: openTwo !== i }"
-                                                type="button"
-                                                @click="openTwo = openTwo === i ? -1 : i"
-                                            >
-                                                {{ pane.title }}
-                                            </button>
-                                        </h2>
-                                        <div v-show="openTwo === i" class="accordion-body">
-                                            <span v-html="pane.content"></span>
-                                        </div>
-                                    </div>
-                                </div>
+                                <mfp-accordion exclusive>
+                                    <mfp-accordion-item
+                                        v-for="(pane, i) in panesTwo"
+                                        :key="'p2-' + i"
+                                        :label="pane.title"
+                                    >
+                                        <span v-html="pane.content"></span>
+                                    </mfp-accordion-item>
+                                </mfp-accordion>
                             </div>
                         </div>
                     </div>
@@ -159,8 +143,6 @@
         name: 'FitnessBlog',
         data() {
             return {
-                openOne: -1,
-                openTwo: -1,
                 panesOne: [
                     {
                         title: 'Mondays - Chest and Delts',
