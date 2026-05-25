@@ -2,14 +2,17 @@ import { createApp } from 'vue';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import '@mfp-design-system/tokens/css';
-import '@mfp-design-system/tokens/themes/portfolio';
 import '@mfp-design-system/badge';
 import '@mfp-design-system/button';
 import '@mfp-design-system/card';
 import '@mfp-design-system/icon-button';
 import '@mfp-design-system/input';
+import '@mfp-design-system/select';
 import '@mfp-design-system/spinner';
+import { initTheme } from './themeManager';
 import App from './App.vue';
+
+initTheme();
 import router from './router';
 import VueGtag from 'vue-gtag';
 

@@ -19,6 +19,7 @@
         "@mfp-design-system/card": "^2.0.0",
         "@mfp-design-system/icon-button": "^2.1.0",
         "@mfp-design-system/input": "^2.0.0",
+        "@mfp-design-system/select": "^2.0.1",
         "@mfp-design-system/spinner": "^0.1.1",
         "@mfp-design-system/tokens": "^0.4.0",
         "bootstrap": "^5.3.8",

@@ -32,9 +32,14 @@
                             <router-link to="/data" class="nav-link" @click="closeAll">Data Analysis</router-link>
                         </li>
                     </ul>
-                    <ul class="navbar-nav ms-auto">
+                    <ul class="navbar-nav ms-auto align-items-lg-center">
                         <li class="nav-item">
                             <router-link to="/contact" class="nav-link" @click="closeAll">Contact</router-link>
+                        </li>
+                        <li class="nav-item theme-switcher">
+                            <mfp-select size="sm" aria-label="Theme" :value="activeTheme" @change="onThemeChange">
+                                <option v-for="(t, key) in themes" :key="key" :value="key">{{ t.label }}</option>
+                            </mfp-select>
                         </li>
                     </ul>
                 </div>
@@ -82,17 +87,28 @@
 </template>
 
 <script>
+    import { THEMES, getActiveTheme, setTheme } from './themeManager';
+
     export default {
         name: 'App',
         data() {
             return {
                 collapse: false,
-                currentYear: new Date().getFullYear()
+                currentYear: new Date().getFullYear(),
+                themes: THEMES,
+                activeTheme: getActiveTheme()
             };
         },
         methods: {
             closeAll() {
                 this.collapse = false;
+            },
+            onThemeChange(event) {
+                const value = event.detail?.value;
+                if (value) {
+                    setTheme(value);
+                    this.activeTheme = value;
+                }
             }
         }
     };
@@ -116,6 +132,13 @@
     }
     .navbar-toggler {
         border-color: rgba(255, 255, 255, 0.5);
+    }
+    .theme-switcher {
+        margin-left: 0.5rem;
+        min-width: 11rem;
+    }
+    .theme-switcher mfp-select {
+        width: 100%;
     }
     .site-footer {
         background-color: #1a2744;
