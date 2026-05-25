@@ -24,9 +24,7 @@
                     <div class="col-12 col-lg-9">
                         <div class="fitness-card-group">
                             <mfp-card class="fitness-card">
-                                <template v-slot:header>
-                                    <h4 class="fitness-card-header">My Routine</h4>
-                                </template>
+                                <h4 slot="header" class="fitness-card-header">My Routine</h4>
                                 <h5 class="card-title"><b>I workout 6 days a week.</b></h5>
                                 <p class="card-text">
                                     Monday - Chest and Delts<br />
@@ -36,14 +34,10 @@
                                     Friday - Arms and Abs<br />
                                     Saturday - Legs (Hams/Glutes)
                                 </p>
-                                <template v-slot:footer>
-                                    <small class="text-muted">Last updated Sept 26 2021</small>
-                                </template>
+                                <small slot="footer" class="text-muted">Last updated Sept 26 2021</small>
                             </mfp-card>
                             <mfp-card class="fitness-card">
-                                <template v-slot:header>
-                                    <h4 class="fitness-card-header">My Inspirations</h4>
-                                </template>
+                                <h4 slot="header" class="fitness-card-header">My Inspirations</h4>
                                 <h5 class="card-title"><b>These women are fxing BEASTS!</b></h5>
                                 <p class="card-text">
                                     <a href="https://danalinnbailey.com/" target="_blank">Dana Linn Bailey</a> —
@@ -51,14 +45,10 @@
                                     <a href="https://www.nakedtraining.app/" target="_blank">Brooke Ence</a> —
                                     Professional Crossfit Trainer
                                 </p>
-                                <template v-slot:footer>
-                                    <small class="text-muted">Last updated Sept 26 2021</small>
-                                </template>
+                                <small slot="footer" class="text-muted">Last updated Sept 26 2021</small>
                             </mfp-card>
                             <mfp-card class="fitness-card">
-                                <template v-slot:header>
-                                    <h4 class="fitness-card-header">My Gear</h4>
-                                </template>
+                                <h4 slot="header" class="fitness-card-header">My Gear</h4>
                                 <h5 class="card-title"><b>Some of the gear I love.</b></h5>
                                 <p class="card-text">
                                     <a href="https://www.repfitness.com/" target="_blank">Rep Fitness</a> — Rack<br />
@@ -70,9 +60,7 @@
                                     — Punching Bag<br />
                                     <a href="https://flagnorfail.com/" target="_blank">Flag Nor Fail</a> — Clothing
                                 </p>
-                                <template v-slot:footer>
-                                    <small class="text-muted">Last updated Sept 26 2021</small>
-                                </template>
+                                <small slot="footer" class="text-muted">Last updated Sept 26 2021</small>
                             </mfp-card>
                         </div>
                     </div>
@@ -81,9 +69,7 @@
                 <div class="row justify-content-center mt-4">
                     <div class="col-12 col-lg-8">
                         <mfp-card class="fitness-card">
-                            <template v-slot:header>
-                                <h4 class="fitness-card-header">Family Fitness</h4>
-                            </template>
+                            <h4 slot="header" class="fitness-card-header">Family Fitness</h4>
                             <h5 class="card-title"><b>My kids and I often do our workouts together.</b></h5>
                             <div class="row">
                                 <div class="col-lg-4">
@@ -108,9 +94,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <template v-slot:footer>
-                                <small class="text-muted">Last updated Sept 26 2021</small>
-                            </template>
+                            <small slot="footer" class="text-muted">Last updated Sept 26 2021</small>
                         </mfp-card>
                     </div>
                 </div>

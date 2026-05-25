@@ -6,9 +6,7 @@
         >
             <div class="col-md-6 col-lg-4">
                 <mfp-card class="contact-card" variant="elevated" padding="roomy">
-                    <template v-slot:header>
-                        <h2 class="contact-heading">Get In Touch</h2>
-                    </template>
+                    <h2 slot="header" class="contact-heading">Get In Touch</h2>
                     <div class="contact-items">
                         <div class="contact-item">
                             <i class="fas fa-envelope contact-icon"></i>
