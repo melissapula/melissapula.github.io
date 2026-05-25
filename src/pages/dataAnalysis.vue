@@ -26,7 +26,7 @@
                                     <h4 style="color: #1a2744">{{ project.title }}</h4>
                                     <p>{{ project.description }}</p>
                                     <div class="tech-tags mb-3">
-                                        <span v-for="tag in project.tags" :key="tag" class="tech-tag">{{ tag }}</span>
+                                        <mfp-badge v-for="tag in project.tags" :key="tag">{{ tag }}</mfp-badge>
                                     </div>
                                     <span
                                         class="btn btn-primary"
@@ -186,13 +186,6 @@
         display: flex;
         flex-wrap: wrap;
         gap: 8px;
-    }
-    .tech-tag {
-        background-color: #e9ecef;
-        color: #495057;
-        padding: 4px 10px;
-        border-radius: 4px;
-        font-size: 12px;
     }
     .btn {
         align-self: flex-start;

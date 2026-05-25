@@ -31,11 +31,11 @@
                                             custom Dream Home Finder that match-scores listings to a buyer's wish list.
                                         </p>
                                         <div class="tech-tags mb-3">
-                                            <span class="tech-tag">Nuxt 3</span>
-                                            <span class="tech-tag">NestJS</span>
-                                            <span class="tech-tag">Supabase</span>
-                                            <span class="tech-tag">PostGIS</span>
-                                            <span class="tech-tag">Mapbox</span>
+                                            <mfp-badge>Nuxt 3</mfp-badge>
+                                            <mfp-badge>NestJS</mfp-badge>
+                                            <mfp-badge>Supabase</mfp-badge>
+                                            <mfp-badge>PostGIS</mfp-badge>
+                                            <mfp-badge>Mapbox</mfp-badge>
                                         </div>
                                         <span
                                             class="btn btn-primary"
@@ -70,11 +70,11 @@
                                             and scheduled cleanup jobs.
                                         </p>
                                         <div class="tech-tags mb-3">
-                                            <span class="tech-tag">Nuxt 4</span>
-                                            <span class="tech-tag">TypeScript</span>
-                                            <span class="tech-tag">Supabase</span>
-                                            <span class="tech-tag">Mapbox</span>
-                                            <span class="tech-tag">Tailwind</span>
+                                            <mfp-badge>Nuxt 4</mfp-badge>
+                                            <mfp-badge>TypeScript</mfp-badge>
+                                            <mfp-badge>Supabase</mfp-badge>
+                                            <mfp-badge>Mapbox</mfp-badge>
+                                            <mfp-badge>Tailwind</mfp-badge>
                                         </div>
                                         <span
                                             class="btn btn-primary"
@@ -109,10 +109,10 @@
                                             email automation.
                                         </p>
                                         <div class="tech-tags mb-3">
-                                            <span class="tech-tag">Nuxt 4</span>
-                                            <span class="tech-tag">Vue 3</span>
-                                            <span class="tech-tag">Sanity CMS</span>
-                                            <span class="tech-tag">Stripe</span>
+                                            <mfp-badge>Nuxt 4</mfp-badge>
+                                            <mfp-badge>Vue 3</mfp-badge>
+                                            <mfp-badge>Sanity CMS</mfp-badge>
+                                            <mfp-badge>Stripe</mfp-badge>
                                         </div>
                                         <span
                                             class="btn btn-primary"
@@ -147,10 +147,10 @@
                                             approve, revise, or reject before anything is finalized.
                                         </p>
                                         <div class="tech-tags mb-3">
-                                            <span class="tech-tag">Python</span>
-                                            <span class="tech-tag">LangGraph</span>
-                                            <span class="tech-tag">Anthropic API</span>
-                                            <span class="tech-tag">Pydantic</span>
+                                            <mfp-badge>Python</mfp-badge>
+                                            <mfp-badge>LangGraph</mfp-badge>
+                                            <mfp-badge>Anthropic API</mfp-badge>
+                                            <mfp-badge>Pydantic</mfp-badge>
                                         </div>
                                         <span
                                             class="btn btn-primary"
@@ -182,9 +182,9 @@
                                             counter-rotating text ring cycles through built-in or custom sayings.
                                         </p>
                                         <div class="tech-tags mb-3">
-                                            <span class="tech-tag">TypeScript</span>
-                                            <span class="tech-tag">npm</span>
-                                            <span class="tech-tag">CSS Animations</span>
+                                            <mfp-badge>TypeScript</mfp-badge>
+                                            <mfp-badge>npm</mfp-badge>
+                                            <mfp-badge>CSS Animations</mfp-badge>
                                         </div>
                                         <span
                                             class="btn btn-primary"
@@ -219,9 +219,9 @@
                                         rewards.
                                     </p>
                                     <div class="tech-tags mb-3">
-                                        <span class="tech-tag">Vue 3</span>
-                                        <span class="tech-tag">Blockly</span>
-                                        <span class="tech-tag">JavaScript</span>
+                                        <mfp-badge>Vue 3</mfp-badge>
+                                        <mfp-badge>Blockly</mfp-badge>
+                                        <mfp-badge>JavaScript</mfp-badge>
                                     </div>
                                     <span
                                         class="btn btn-primary"
@@ -460,13 +460,6 @@
         display: flex;
         flex-wrap: wrap;
         gap: 8px;
-    }
-    .tech-tag {
-        background-color: #e9ecef;
-        color: #495057;
-        padding: 4px 10px;
-        border-radius: 4px;
-        font-size: 12px;
     }
     .btn {
         align-self: flex-start;

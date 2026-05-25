@@ -6,7 +6,7 @@
             </button>
             <button :class="['tab-btn', { active: activeTab === 'console' }]" @click="activeTab = 'console'">
                 Console
-                <span v-if="consoleOutput.length > 0" class="badge">{{ consoleOutput.length }}</span>
+                <mfp-badge v-if="consoleOutput.length > 0" variant="success">{{ consoleOutput.length }}</mfp-badge>
             </button>
         </div>
         <div class="panel-content">
@@ -91,12 +91,7 @@
         color: #60a5fa;
         border-bottom-color: #60a5fa;
     }
-    .badge {
-        background: #059669;
-        color: white;
-        border-radius: 10px;
-        padding: 1px 7px;
-        font-size: 10px;
+    mfp-badge {
         margin-left: 6px;
     }
     .panel-content {
