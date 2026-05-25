@@ -133,23 +133,15 @@
                 </div>
 
                 <div class="row justify-content-center mt-4">
-                    <div class="col-md-auto text-center">
-                        <router-link to="/resume" class="btn me-2 mb-2" style="background-color: #1a2744; color: white">
-                            See Resume
+                    <div class="col-md-auto text-center about-actions">
+                        <router-link to="/resume" custom v-slot="{ navigate }">
+                            <mfp-button variant="primary" @click="navigate">See Resume</mfp-button>
                         </router-link>
-                        <router-link
-                            to="/portfolio"
-                            class="btn me-2 mb-2"
-                            style="background-color: #1a2744; color: white"
-                        >
-                            See Projects
+                        <router-link to="/portfolio" custom v-slot="{ navigate }">
+                            <mfp-button variant="primary" @click="navigate">See Projects</mfp-button>
                         </router-link>
-                        <router-link
-                            to="/contact"
-                            class="btn mb-2"
-                            style="background-color: #fff; color: #1a2744; border: 2px solid #1a2744"
-                        >
-                            Get In Touch
+                        <router-link to="/contact" custom v-slot="{ navigate }">
+                            <mfp-button variant="secondary" @click="navigate">Get In Touch</mfp-button>
                         </router-link>
                     </div>
                 </div>
@@ -188,5 +180,11 @@
     .lead {
         font-size: 1.15rem;
         font-weight: 500;
+    }
+    .about-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        justify-content: center;
     }
 </style>

@@ -19,12 +19,13 @@
                     class="max-blocks-input"
                 />
             </div>
-            <button
-                :class="['toggle-btn', badgeEnabled ? 'toggle-on' : 'toggle-off']"
+            <mfp-button
+                :variant="badgeEnabled ? 'primary' : 'ghost'"
+                size="sm"
                 @click="$emit('update:badgeEnabled', !badgeEnabled)"
             >
                 Badge {{ badgeEnabled ? 'ON' : 'OFF' }}
-            </button>
+            </mfp-button>
             <mfp-button variant="secondary" size="sm" @click="$emit('clear')">Clear</mfp-button>
             <mfp-button variant="primary" size="sm" @click="$emit('run')">▶ Run Code</mfp-button>
         </div>
@@ -106,57 +107,6 @@
     .max-blocks-input:focus {
         outline: none;
         border-color: #3b82f6;
-    }
-    .toggle-btn {
-        padding: 6px 14px;
-        border-radius: 6px;
-        font-family: 'DM Sans', sans-serif;
-        font-size: 11px;
-        font-weight: 600;
-        cursor: pointer;
-        letter-spacing: 0.5px;
-        transition: all 0.2s;
-        text-transform: uppercase;
-    }
-    .toggle-on {
-        background: #1e40af;
-        color: #93c5fd;
-        border: 1px solid #2563eb;
-    }
-    .toggle-off {
-        background: #1e293b;
-        color: #64748b;
-        border: 1px solid #334155;
-    }
-    .control-btn {
-        padding: 8px 18px;
-        border: none;
-        border-radius: 6px;
-        font-family: 'DM Sans', sans-serif;
-        font-size: 12px;
-        font-weight: 600;
-        cursor: pointer;
-        letter-spacing: 0.5px;
-        transition: all 0.2s;
-        text-transform: uppercase;
-    }
-    .control-btn:hover {
-        transform: translateY(-1px);
-    }
-    .clear-btn {
-        background: #334155;
-        color: #94a3b8;
-    }
-    .clear-btn:hover {
-        background: #475569;
-        color: #e2e8f0;
-    }
-    .run-btn {
-        background: #059669;
-        color: white;
-    }
-    .run-btn:hover {
-        background: #047857;
     }
     @media (max-width: 900px) {
         .app-header {

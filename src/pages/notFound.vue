@@ -10,23 +10,15 @@
                 <p class="lead mt-3" style="color: #555">
                     The page you're looking for doesn't exist or has moved. Let's get you back to somewhere useful.
                 </p>
-                <div class="mt-4">
-                    <router-link to="/" class="btn me-2 mb-2" style="background-color: #1a2744; color: white">
-                        Back to Home
+                <div class="mt-4 nf-actions">
+                    <router-link to="/" custom v-slot="{ navigate }">
+                        <mfp-button variant="primary" @click="navigate">Back to Home</mfp-button>
                     </router-link>
-                    <router-link
-                        to="/portfolio"
-                        class="btn me-2 mb-2"
-                        style="background-color: #fff; color: #1a2744; border: 2px solid #1a2744"
-                    >
-                        See Projects
+                    <router-link to="/portfolio" custom v-slot="{ navigate }">
+                        <mfp-button variant="secondary" @click="navigate">See Projects</mfp-button>
                     </router-link>
-                    <router-link
-                        to="/contact"
-                        class="btn mb-2"
-                        style="background-color: #fff; color: #1a2744; border: 2px solid #1a2744"
-                    >
-                        Get In Touch
+                    <router-link to="/contact" custom v-slot="{ navigate }">
+                        <mfp-button variant="secondary" @click="navigate">Get In Touch</mfp-button>
                     </router-link>
                 </div>
             </div>
@@ -39,3 +31,12 @@
         name: 'NotFound'
     };
 </script>
+
+<style scoped>
+    .nf-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        justify-content: center;
+    }
+</style>

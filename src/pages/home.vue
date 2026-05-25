@@ -19,23 +19,15 @@
                     Six-plus years building enterprise web apps by day and live products on the side. Wife, mom of four,
                     Marine Corps veteran, and a believer that the best software is shipped, not just shipped on paper.
                 </p>
-                <div class="mt-4">
-                    <router-link to="/portfolio" class="btn me-2 mb-2" style="background-color: #1a2744; color: white">
-                        See Projects
+                <div class="mt-4 hero-actions">
+                    <router-link to="/portfolio" custom v-slot="{ navigate }">
+                        <mfp-button variant="primary" @click="navigate">See Projects</mfp-button>
                     </router-link>
-                    <router-link
-                        to="/resume"
-                        class="btn me-2 mb-2"
-                        style="background-color: #fff; color: #1a2744; border: 2px solid #1a2744"
-                    >
-                        Resume
+                    <router-link to="/resume" custom v-slot="{ navigate }">
+                        <mfp-button variant="secondary" @click="navigate">Resume</mfp-button>
                     </router-link>
-                    <router-link
-                        to="/contact"
-                        class="btn mb-2"
-                        style="background-color: #fff; color: #1a2744; border: 2px solid #1a2744"
-                    >
-                        Get In Touch
+                    <router-link to="/contact" custom v-slot="{ navigate }">
+                        <mfp-button variant="secondary" @click="navigate">Get In Touch</mfp-button>
                     </router-link>
                 </div>
             </div>
@@ -64,6 +56,11 @@
         font-size: 1.05rem;
         line-height: 1.6;
     }
+    .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
     @media (max-width: 767px) {
         .hero-name {
             font-size: 2rem;
@@ -74,6 +71,9 @@
         }
         .hero-intro {
             text-align: center;
+        }
+        .hero-actions {
+            justify-content: center;
         }
     }
 </style>
