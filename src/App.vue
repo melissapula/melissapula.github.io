@@ -1,50 +1,30 @@
 <template>
     <div class="h-100 m-0 p-0">
-        <nav class="navbar navbar-expand-lg navbar-dark sticky-top" style="background-color: #1a2744">
-            <div class="container-fluid">
-                <router-link class="navbar-brand" to="/">Melissa Freundschuh-Pula</router-link>
-                <button
-                    class="navbar-toggler"
-                    type="button"
-                    @click="collapse = !collapse"
-                    aria-label="Toggle navigation"
+        <mfp-nav-bar sticky variant="brand">
+            <router-link slot="brand" to="/" class="brand-link">Melissa Freundschuh-Pula</router-link>
+
+            <mfp-nav-item
+                v-for="link in navLinks"
+                :key="link.to"
+                :active="$route.path === link.to"
+                @click="go(link.to)"
+            >
+                {{ link.label }}
+            </mfp-nav-item>
+
+            <div slot="actions" class="navbar-actions">
+                <mfp-nav-item :active="$route.path === '/contact'" @click="go('/contact')">Contact</mfp-nav-item>
+                <mfp-select
+                    class="theme-switcher"
+                    size="sm"
+                    aria-label="Theme"
+                    :value="activeTheme"
+                    @change="onThemeChange"
                 >
-                    <i class="fas fa-bars" style="color: white; font-size: 1.25rem"></i>
-                </button>
-                <div class="collapse navbar-collapse" :class="{ show: collapse }">
-                    <ul class="navbar-nav me-auto">
-                        <li class="nav-item">
-                            <router-link to="/" class="nav-link" @click="closeAll">Home</router-link>
-                        </li>
-                        <li class="nav-item">
-                            <router-link to="/about" class="nav-link" @click="closeAll">About</router-link>
-                        </li>
-                        <li class="nav-item">
-                            <router-link to="/resume" class="nav-link" @click="closeAll">Resume</router-link>
-                        </li>
-                        <li class="nav-item">
-                            <router-link to="/portfolio" class="nav-link" @click="closeAll">Projects</router-link>
-                        </li>
-                        <li class="nav-item">
-                            <router-link to="/python" class="nav-link" @click="closeAll">Python</router-link>
-                        </li>
-                        <li class="nav-item">
-                            <router-link to="/data" class="nav-link" @click="closeAll">Data Analysis</router-link>
-                        </li>
-                    </ul>
-                    <ul class="navbar-nav ms-auto align-items-lg-center">
-                        <li class="nav-item">
-                            <router-link to="/contact" class="nav-link" @click="closeAll">Contact</router-link>
-                        </li>
-                        <li class="nav-item theme-switcher">
-                            <mfp-select size="sm" aria-label="Theme" :value="activeTheme" @change="onThemeChange">
-                                <option v-for="(t, key) in themes" :key="key" :value="key">{{ t.label }}</option>
-                            </mfp-select>
-                        </li>
-                    </ul>
-                </div>
+                    <option v-for="(t, key) in themes" :key="key" :value="key">{{ t.label }}</option>
+                </mfp-select>
             </div>
-        </nav>
+        </mfp-nav-bar>
         <router-view v-slot="{ Component }">
             <Transition name="fade" mode="out-in">
                 <Suspense>
@@ -93,15 +73,22 @@
         name: 'App',
         data() {
             return {
-                collapse: false,
                 currentYear: new Date().getFullYear(),
                 themes: THEMES,
-                activeTheme: getActiveTheme()
+                activeTheme: getActiveTheme(),
+                navLinks: [
+                    { to: '/', label: 'Home' },
+                    { to: '/about', label: 'About' },
+                    { to: '/resume', label: 'Resume' },
+                    { to: '/portfolio', label: 'Projects' },
+                    { to: '/python', label: 'Python' },
+                    { to: '/data', label: 'Data Analysis' }
+                ]
             };
         },
         methods: {
-            closeAll() {
-                this.collapse = false;
+            go(path) {
+                if (this.$route.path !== path) this.$router.push(path);
             },
             onThemeChange(event) {
                 const value = event.detail?.value;
@@ -130,15 +117,18 @@
     .white-text {
         color: white !important;
     }
-    .navbar-toggler {
-        border-color: rgba(255, 255, 255, 0.5);
+    .brand-link {
+        color: inherit;
+        text-decoration: none;
+        font-weight: 600;
+    }
+    .navbar-actions {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
     }
     .theme-switcher {
-        margin-left: 0.5rem;
         min-width: 11rem;
-    }
-    .theme-switcher mfp-select {
-        width: 100%;
     }
     .site-footer {
         background-color: #1a2744;
