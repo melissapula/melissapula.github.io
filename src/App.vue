@@ -46,7 +46,7 @@
                     <component :is="Component" />
                     <template #fallback>
                         <div class="route-loading">
-                            <div class="route-loading-spinner"></div>
+                            <mfp-spinner size="lg" label="Loading page"></mfp-spinner>
                         </div>
                     </template>
                 </Suspense>
@@ -153,19 +153,7 @@
         justify-content: center;
         min-height: calc(100vh - 56px);
         background-color: #f0f2f5;
-    }
-    .route-loading-spinner {
-        width: 48px;
-        height: 48px;
-        border: 4px solid rgba(26, 39, 68, 0.15);
-        border-top-color: #1a2744;
-        border-radius: 50%;
-        animation: route-spin 0.8s linear infinite;
-    }
-    @keyframes route-spin {
-        to {
-            transform: rotate(360deg);
-        }
+        color: #1a2744;
     }
 
     /* Print styles — hide chrome, drop backgrounds */

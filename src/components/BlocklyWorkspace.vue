@@ -5,7 +5,7 @@
             <span>{{ loadError }}</span>
         </div>
         <div v-else-if="!loaded" class="workspace-overlay loading">
-            <div class="spinner" />
+            <mfp-spinner label="Loading Blockly"></mfp-spinner>
             <span>Loading Blockly...</span>
         </div>
         <div ref="blocklyDiv" class="blockly-div" />
@@ -182,28 +182,16 @@
         z-index: 10;
     }
     .workspace-overlay.loading {
-        color: #64748b;
+        color: #60a5fa;
     }
     .workspace-overlay.loading span {
         font-size: 13px;
+        color: #64748b;
     }
     .workspace-overlay.error {
         color: #ef4444;
     }
     .overlay-icon {
         font-size: 24px;
-    }
-    .spinner {
-        width: 24px;
-        height: 24px;
-        border: 3px solid #334155;
-        border-top-color: #3b82f6;
-        border-radius: 50%;
-        animation: spin 0.8s linear infinite;
-    }
-    @keyframes spin {
-        to {
-            transform: rotate(360deg);
-        }
     }
 </style>
