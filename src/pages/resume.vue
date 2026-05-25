@@ -198,41 +198,34 @@
 <style scoped>
     #pic {
         background-color: white;
-        position: fixed;
-        top: var(--site-nav-height, 56px);
-        left: 0;
-        width: 33.333%;
-        height: calc(100vh - var(--site-nav-height, 56px));
-        overflow: hidden;
+        padding: 2rem 1.5rem;
     }
     #picInner {
-        height: 100%;
         display: flex;
         flex-direction: column;
-        justify-content: center;
         align-items: center;
     }
     #experience {
         background-color: #f0f2f5;
         color: #333;
-        margin-left: 33.333%;
-        min-height: calc(100vh - var(--site-nav-height, 56px));
         padding: 1rem 2rem 2rem;
+        min-height: calc(100vh - var(--site-nav-height, 56px));
+    }
+    @media (min-width: 992px) {
+        #pic {
+            position: sticky;
+            top: var(--site-nav-height, 56px);
+            height: calc(100vh - var(--site-nav-height, 56px));
+            overflow: auto;
+            padding: 1.5rem 1rem;
+        }
+        #picInner {
+            height: 100%;
+            justify-content: center;
+        }
     }
     .cyan-text {
         color: #2980b9 !important;
-    }
-    @media (max-width: 991px) {
-        #pic {
-            position: relative;
-            top: 0;
-            width: 100%;
-            height: auto;
-            padding: 2rem 0;
-        }
-        #experience {
-            margin-left: 0;
-        }
     }
 
     @media print {
@@ -247,13 +240,13 @@
         #picInner {
             display: block;
             text-align: center;
+            height: auto;
         }
         #picInner img {
             max-width: 200px !important;
             height: auto !important;
         }
         #experience {
-            margin-left: 0;
             padding: 0;
             background-color: white !important;
             color: black !important;
