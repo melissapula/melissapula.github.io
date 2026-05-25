@@ -37,12 +37,7 @@
                                             <mfp-badge>PostGIS</mfp-badge>
                                             <mfp-badge>Mapbox</mfp-badge>
                                         </div>
-                                        <span
-                                            class="btn btn-primary"
-                                            style="background-color: #1a2744; border-color: #1a2744"
-                                        >
-                                            Visit Site
-                                        </span>
+                                        <mfp-button class="card-cta" variant="primary">Visit Site</mfp-button>
                                     </div>
                                 </div>
                             </a>
@@ -76,12 +71,7 @@
                                             <mfp-badge>Mapbox</mfp-badge>
                                             <mfp-badge>Tailwind</mfp-badge>
                                         </div>
-                                        <span
-                                            class="btn btn-primary"
-                                            style="background-color: #1a2744; border-color: #1a2744"
-                                        >
-                                            Visit Site
-                                        </span>
+                                        <mfp-button class="card-cta" variant="primary">Visit Site</mfp-button>
                                     </div>
                                 </div>
                             </a>
@@ -114,12 +104,7 @@
                                             <mfp-badge>Sanity CMS</mfp-badge>
                                             <mfp-badge>Stripe</mfp-badge>
                                         </div>
-                                        <span
-                                            class="btn btn-primary"
-                                            style="background-color: #1a2744; border-color: #1a2744"
-                                        >
-                                            Visit Site
-                                        </span>
+                                        <mfp-button class="card-cta" variant="primary">Visit Site</mfp-button>
                                     </div>
                                 </div>
                             </a>
@@ -152,12 +137,7 @@
                                             <mfp-badge>Anthropic API</mfp-badge>
                                             <mfp-badge>Pydantic</mfp-badge>
                                         </div>
-                                        <span
-                                            class="btn btn-primary"
-                                            style="background-color: #1a2744; border-color: #1a2744"
-                                        >
-                                            View on GitHub
-                                        </span>
+                                        <mfp-button class="card-cta" variant="primary">View on GitHub</mfp-button>
                                     </div>
                                 </div>
                             </a>
@@ -186,12 +166,7 @@
                                             <mfp-badge>npm</mfp-badge>
                                             <mfp-badge>CSS Animations</mfp-badge>
                                         </div>
-                                        <span
-                                            class="btn btn-primary"
-                                            style="background-color: #1a2744; border-color: #1a2744"
-                                        >
-                                            View on npm
-                                        </span>
+                                        <mfp-button class="card-cta" variant="primary">View on npm</mfp-button>
                                     </div>
                                 </div>
                             </a>
@@ -223,12 +198,7 @@
                                         <mfp-badge>Blockly</mfp-badge>
                                         <mfp-badge>JavaScript</mfp-badge>
                                     </div>
-                                    <span
-                                        class="btn btn-primary"
-                                        style="background-color: #1a2744; border-color: #1a2744"
-                                    >
-                                        Open Sandbox
-                                    </span>
+                                    <mfp-button class="card-cta" variant="primary">Open Sandbox</mfp-button>
                                 </div>
                             </div>
                         </div>
@@ -256,12 +226,7 @@
                                         My weekly training split, how I structure workouts across chest, back, legs,
                                         delts, and arms, and the mindset that keeps me showing up six days a week.
                                     </p>
-                                    <span
-                                        class="btn btn-primary"
-                                        style="background-color: #1a2744; border-color: #1a2744"
-                                    >
-                                        Read Blog
-                                    </span>
+                                    <mfp-button class="card-cta" variant="primary">Read Blog</mfp-button>
                                 </div>
                             </div>
                         </div>
@@ -461,8 +426,9 @@
         flex-wrap: wrap;
         gap: 8px;
     }
-    .btn {
+    .card-cta {
         align-self: flex-start;
+        pointer-events: none;
     }
     .fitness-preview {
         background: linear-gradient(135deg, #1e293b 0%, #475569 100%);

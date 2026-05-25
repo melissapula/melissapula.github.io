@@ -28,12 +28,7 @@
                                     <div class="tech-tags mb-3">
                                         <mfp-badge v-for="tag in project.tags" :key="tag">{{ tag }}</mfp-badge>
                                     </div>
-                                    <span
-                                        class="btn btn-primary"
-                                        style="background-color: #1a2744; border-color: #1a2744"
-                                    >
-                                        View Project
-                                    </span>
+                                    <mfp-button class="card-cta" variant="primary">View Project</mfp-button>
                                 </div>
                             </div>
                         </div>
@@ -247,8 +242,9 @@
         flex-wrap: wrap;
         gap: 8px;
     }
-    .btn {
+    .card-cta {
         align-self: flex-start;
+        pointer-events: none;
     }
     .project-view {
         background-color: #f0f2f5;
