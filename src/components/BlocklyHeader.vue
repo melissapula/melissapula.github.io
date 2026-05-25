@@ -12,12 +12,13 @@
         <div class="header-controls">
             <div class="max-blocks-control">
                 <label class="control-label">Max blocks</label>
-                <input
-                    type="number"
-                    :value="maxBlocks"
-                    @input="$emit('update:maxBlocks', parseInt($event.target.value) || 20)"
+                <mfp-input
                     class="max-blocks-input"
-                />
+                    type="number"
+                    size="sm"
+                    :value="String(maxBlocks)"
+                    @input="$emit('update:maxBlocks', parseInt($event.detail.value) || 20)"
+                ></mfp-input>
             </div>
             <mfp-button
                 :variant="badgeEnabled ? 'primary' : 'ghost'"
@@ -94,19 +95,11 @@
         letter-spacing: 1px;
     }
     .max-blocks-input {
-        width: 60px;
-        padding: 6px 8px;
-        background: #0f172a;
-        border: 1px solid #334155;
-        border-radius: 6px;
-        color: #e2e8f0;
-        font-family: 'JetBrains Mono', monospace;
-        font-size: 13px;
-        text-align: center;
+        width: 80px;
     }
-    .max-blocks-input:focus {
-        outline: none;
-        border-color: #3b82f6;
+    .max-blocks-input::part(input) {
+        font-family: 'JetBrains Mono', monospace;
+        text-align: center;
     }
     @media (max-width: 900px) {
         .app-header {
