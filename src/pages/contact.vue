@@ -5,8 +5,10 @@
             style="background-color: #f0f2f5; min-height: calc(100vh - 56px)"
         >
             <div class="col-md-6 col-lg-4">
-                <div class="contact-card text-center">
-                    <h2 class="mb-4" style="color: #1a2744; font-weight: bold">Get In Touch</h2>
+                <mfp-card class="contact-card" variant="elevated" padding="roomy">
+                    <template v-slot:header>
+                        <h2 class="contact-heading">Get In Touch</h2>
+                    </template>
                     <div class="contact-items">
                         <div class="contact-item">
                             <i class="fas fa-envelope contact-icon"></i>
@@ -27,7 +29,7 @@
                             <span>Bemidji, MN</span>
                         </div>
                     </div>
-                </div>
+                </mfp-card>
             </div>
         </div>
     </div>
@@ -41,10 +43,12 @@
 
 <style scoped>
     .contact-card {
-        background: white;
-        border-radius: 12px;
-        padding: 3rem 2.5rem;
-        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+        text-align: center;
+    }
+    .contact-heading {
+        color: #1a2744;
+        font-weight: bold;
+        margin: 0;
     }
     .contact-items {
         display: flex;

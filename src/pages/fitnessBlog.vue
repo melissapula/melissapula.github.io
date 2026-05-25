@@ -22,100 +22,96 @@
 
                 <div class="row justify-content-center mt-4">
                     <div class="col-12 col-lg-9">
-                        <div class="card-group">
-                            <div class="card">
-                                <div class="card-header" style="background-color: #2c3e50; color: white">
-                                    <h4>My Routine</h4>
-                                </div>
-                                <div class="card-body">
-                                    <h5 class="card-title" style="color: #1a2744"><b>I workout 6 days a week.</b></h5>
-                                    <p class="card-text" style="color: #333; font-size: 14px">
-                                        Monday - Chest and Delts<br />
-                                        Tuesday - Back<br />
-                                        Wednesday - Legs (Quads)<br />
-                                        Thursday - Delts<br />
-                                        Friday - Arms and Abs<br />
-                                        Saturday - Legs (Hams/Glutes)
-                                    </p>
+                        <div class="fitness-card-group">
+                            <mfp-card class="fitness-card">
+                                <template v-slot:header>
+                                    <h4 class="fitness-card-header">My Routine</h4>
+                                </template>
+                                <h5 class="card-title"><b>I workout 6 days a week.</b></h5>
+                                <p class="card-text">
+                                    Monday - Chest and Delts<br />
+                                    Tuesday - Back<br />
+                                    Wednesday - Legs (Quads)<br />
+                                    Thursday - Delts<br />
+                                    Friday - Arms and Abs<br />
+                                    Saturday - Legs (Hams/Glutes)
+                                </p>
+                                <template v-slot:footer>
                                     <small class="text-muted">Last updated Sept 26 2021</small>
-                                </div>
-                            </div>
-                            <div class="card">
-                                <div class="card-header" style="background-color: #2c3e50; color: white">
-                                    <h4>My Inspirations</h4>
-                                </div>
-                                <div class="card-body">
-                                    <h5 class="card-title" style="color: #1a2744">
-                                        <b>These women are fxing BEASTS!</b>
-                                    </h5>
-                                    <p class="card-text" style="color: #333; font-size: 14px">
-                                        <a href="https://danalinnbailey.com/" target="_blank">Dana Linn Bailey</a> —
-                                        Professional Bodybuilder<br />
-                                        <a href="https://www.nakedtraining.app/" target="_blank">Brooke Ence</a> —
-                                        Professional Crossfit Trainer
-                                    </p>
+                                </template>
+                            </mfp-card>
+                            <mfp-card class="fitness-card">
+                                <template v-slot:header>
+                                    <h4 class="fitness-card-header">My Inspirations</h4>
+                                </template>
+                                <h5 class="card-title"><b>These women are fxing BEASTS!</b></h5>
+                                <p class="card-text">
+                                    <a href="https://danalinnbailey.com/" target="_blank">Dana Linn Bailey</a> —
+                                    Professional Bodybuilder<br />
+                                    <a href="https://www.nakedtraining.app/" target="_blank">Brooke Ence</a> —
+                                    Professional Crossfit Trainer
+                                </p>
+                                <template v-slot:footer>
                                     <small class="text-muted">Last updated Sept 26 2021</small>
-                                </div>
-                            </div>
-                            <div class="card">
-                                <div class="card-header" style="background-color: #2c3e50; color: white">
-                                    <h4>My Gear</h4>
-                                </div>
-                                <div class="card-body">
-                                    <h5 class="card-title" style="color: #1a2744"><b>Some of the gear I love.</b></h5>
-                                    <p class="card-text" style="color: #333; font-size: 14px">
-                                        <a href="https://www.repfitness.com/" target="_blank">Rep Fitness</a> — Rack<br />
-                                        <a href="https://www.bowflex.com/" target="_blank">Bowflex</a> — Treadmill and
-                                        Dumbbells<br />
-                                        <a href="https://www.centurymartialarts.com/" target="_blank"
-                                            >Century Martial Arts</a
-                                        >
-                                        — Punching Bag<br />
-                                        <a href="https://flagnorfail.com/" target="_blank">Flag Nor Fail</a> — Clothing
-                                    </p>
+                                </template>
+                            </mfp-card>
+                            <mfp-card class="fitness-card">
+                                <template v-slot:header>
+                                    <h4 class="fitness-card-header">My Gear</h4>
+                                </template>
+                                <h5 class="card-title"><b>Some of the gear I love.</b></h5>
+                                <p class="card-text">
+                                    <a href="https://www.repfitness.com/" target="_blank">Rep Fitness</a> — Rack<br />
+                                    <a href="https://www.bowflex.com/" target="_blank">Bowflex</a> — Treadmill and
+                                    Dumbbells<br />
+                                    <a href="https://www.centurymartialarts.com/" target="_blank"
+                                        >Century Martial Arts</a
+                                    >
+                                    — Punching Bag<br />
+                                    <a href="https://flagnorfail.com/" target="_blank">Flag Nor Fail</a> — Clothing
+                                </p>
+                                <template v-slot:footer>
                                     <small class="text-muted">Last updated Sept 26 2021</small>
-                                </div>
-                            </div>
+                                </template>
+                            </mfp-card>
                         </div>
                     </div>
                 </div>
 
                 <div class="row justify-content-center mt-4">
                     <div class="col-12 col-lg-8">
-                        <div class="card">
-                            <div class="card-header" style="background-color: #2c3e50; color: white">
-                                <h4>Family Fitness</h4>
-                            </div>
-                            <div class="card-body">
-                                <h5 class="card-title" style="color: #1a2744">
-                                    <b>My kids and I often do our workouts together.</b>
-                                </h5>
-                                <div class="row">
-                                    <div class="col-lg-4">
-                                        <img
-                                            src="../assets/familyFitness.jpg"
-                                            class="img-fluid"
-                                            alt="Melissa working out with the family"
-                                        />
+                        <mfp-card class="fitness-card">
+                            <template v-slot:header>
+                                <h4 class="fitness-card-header">Family Fitness</h4>
+                            </template>
+                            <h5 class="card-title"><b>My kids and I often do our workouts together.</b></h5>
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <img
+                                        src="../assets/familyFitness.jpg"
+                                        class="img-fluid"
+                                        alt="Melissa working out with the family"
+                                    />
+                                </div>
+                                <div class="col-lg-8">
+                                    <div class="row mx-4 card-text">
+                                        I absolutely love working out with my kiddos! It's so much fun and it is so good
+                                        for them! Typically, we just do the workout that I would be doing for the day,
+                                        and then I modify it as needed for their fitness levels. They love doing
+                                        pull-ups (crazy kids) and anything with the cable machine.
                                     </div>
-                                    <div class="col-lg-8">
-                                        <div class="row mx-4" style="color: #333; font-size: 14px">
-                                            I absolutely love working out with my kiddos! It's so much fun and it is so
-                                            good for them! Typically, we just do the workout that I would be doing for
-                                            the day, and then I modify it as needed for their fitness levels. They love
-                                            doing pull-ups (crazy kids) and anything with the cable machine.
-                                        </div>
-                                        <div class="row mx-4 mt-2" style="color: #333; font-size: 14px">
-                                            We homeschool, so it's very easy for me to work it into our daily schedule.
-                                            They lift weights around 11:00am five days a week and then cardio around
-                                            2:30pm four days a week. We alternate between walking on the treadmill and
-                                            doing a boxing workout with the punching bag.
-                                        </div>
+                                    <div class="row mx-4 mt-2 card-text">
+                                        We homeschool, so it's very easy for me to work it into our daily schedule. They
+                                        lift weights around 11:00am five days a week and then cardio around 2:30pm four
+                                        days a week. We alternate between walking on the treadmill and doing a boxing
+                                        workout with the punching bag.
                                     </div>
                                 </div>
-                                <small class="text-muted">Last updated Sept 26 2021</small>
                             </div>
-                        </div>
+                            <template v-slot:footer>
+                                <small class="text-muted">Last updated Sept 26 2021</small>
+                            </template>
+                        </mfp-card>
                     </div>
                 </div>
 
@@ -301,4 +297,28 @@
     };
 </script>
 
-<style scoped></style>
+<style scoped>
+    .fitness-card-group {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 1rem;
+    }
+    .fitness-card::part(header) {
+        background-color: #2c3e50;
+        color: white;
+        padding: 0.75rem 1rem;
+        margin: -1.25rem -1.25rem 0;
+        border-radius: 0.75rem 0.75rem 0 0;
+    }
+    .fitness-card-header {
+        margin: 0;
+        font-size: 1.25rem;
+    }
+    .card-title {
+        color: #1a2744;
+    }
+    .card-text {
+        color: #333;
+        font-size: 14px;
+    }
+</style>
