@@ -10,7 +10,7 @@
             </div>
             <div
                 class="col-lg-5 col-sm-12 pb-4 d-flex flex-column align-items-center"
-                style="overflow-y: auto; height: calc(100vh - 90px)"
+                style="overflow-y: auto; height: calc(100vh - var(--site-nav-height, 56px) - 1.5rem)"
             >
                 <p>This code imports a 1TB dataset and then performs predictive analysis on it.</p>
                 <img src="../assets/rfcInitial.png" class="img-fluid mt-3" alt="Initial table from imported dataset" />
@@ -213,6 +213,6 @@ fig.show()
 
 <style scoped>
     .CodeMirror {
-        height: calc(100vh - 90px) !important;
+        height: calc(100vh - var(--site-nav-height, 56px) - 1.5rem) !important;
     }
 </style>

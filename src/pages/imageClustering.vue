@@ -15,7 +15,7 @@
             </div>
             <div
                 class="col-lg-5 col-sm-12 pb-4 d-flex flex-column align-items-center"
-                style="overflow-y: auto; height: calc(100vh - 90px)"
+                style="overflow-y: auto; height: calc(100vh - var(--site-nav-height, 56px) - 1.5rem)"
             >
                 <p>
                     This code imports an unlabeled dataset of drone images and then sorts them into clusters based on
@@ -395,6 +395,6 @@ view_cluster(0)
 
 <style scoped>
     .CodeMirror {
-        height: calc(100vh - 90px) !important;
+        height: calc(100vh - var(--site-nav-height, 56px) - 1.5rem) !important;
     }
 </style>

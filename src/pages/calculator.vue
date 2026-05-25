@@ -15,7 +15,7 @@
             </div>
             <div
                 class="col-lg-5 col-sm-12 pb-4 d-flex flex-column align-items-center"
-                style="overflow-y: auto; height: calc(100vh - 90px)"
+                style="overflow-y: auto; height: calc(100vh - var(--site-nav-height, 56px) - 1.5rem)"
             >
                 <img
                     src="../assets/calculator.png"
@@ -131,6 +131,6 @@ if __name__ == "__main__":
 
 <style scoped>
     .CodeMirror {
-        height: calc(100vh - 90px) !important;
+        height: calc(100vh - var(--site-nav-height, 56px) - 1.5rem) !important;
     }
 </style>

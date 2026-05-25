@@ -15,7 +15,7 @@
             </div>
             <div
                 class="col-lg-5 col-sm-12 pb-4 d-flex flex-column align-items-center"
-                style="overflow-y: auto; height: calc(100vh - 90px)"
+                style="overflow-y: auto; height: calc(100vh - var(--site-nav-height, 56px) - 1.5rem)"
             >
                 <img src="../assets/wordCount1.png" class="img-fluid" alt="First five rows of the imported CSV file" />
                 <p class="mt-2">Image(1): The first five rows of the imported csv file.</p>
@@ -114,6 +114,6 @@ print('Total time: ', end_time - start_time)
 
 <style scoped>
     .CodeMirror {
-        height: calc(100vh - 90px) !important;
+        height: calc(100vh - var(--site-nav-height, 56px) - 1.5rem) !important;
     }
 </style>

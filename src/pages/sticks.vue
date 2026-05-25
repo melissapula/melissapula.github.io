@@ -87,6 +87,6 @@ if __name__ == "__main__":
 
 <style scoped>
     .CodeMirror {
-        height: calc(100vh - 90px) !important;
+        height: calc(100vh - var(--site-nav-height, 56px) - 1.5rem) !important;
     }
 </style>
