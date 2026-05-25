@@ -252,9 +252,9 @@
     }
     .back-button {
         position: fixed;
-        top: 72px;
+        top: calc(var(--site-nav-height, 56px) + 16px);
         left: 16px;
-        z-index: 1000;
+        z-index: 100;
     }
     .back-button::part(button) {
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
