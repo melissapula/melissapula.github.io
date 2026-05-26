@@ -103,12 +103,7 @@
 
                 <div class="row justify-content-center">
                     <div class="col-12">
-                        <div
-                            class="row justify-content-center mt-4"
-                            style="font-size: 16px; background-color: #1a2744; color: white"
-                        >
-                            Sample Workouts
-                        </div>
+                        <div class="row justify-content-center mt-4 sample-workouts-banner">Sample Workouts</div>
                         <div class="row mb-4 mt-4 justify-content-center" style="color: #333">
                             <div class="col-12 col-lg-4">
                                 <mfp-accordion exclusive class="mb-4">
@@ -267,7 +262,7 @@
 
 <style scoped>
     .fitness-hero {
-        background: linear-gradient(135deg, #7f1d1d 0%, #dc2626 100%);
+        background-color: #7f1d1d;
     }
     .fitness-hero-text {
         font-size: 80px;
@@ -291,7 +286,12 @@
         font-size: 1.25rem;
     }
     .card-title {
-        color: #1a2744;
+        color: var(--color-brand-primary, #1a2744);
+    }
+    .sample-workouts-banner {
+        font-size: 16px;
+        background-color: var(--color-brand-primary, #1a2744);
+        color: var(--color-brand-primary-fg, #ffffff);
     }
     .card-text {
         color: #333;

@@ -189,7 +189,7 @@
         justify-content: center;
         min-height: calc(100vh - var(--site-nav-height, 56px));
         background-color: #f0f2f5;
-        color: #1a2744;
+        color: var(--color-brand-primary, #1a2744);
     }
 
     /* Print styles — hide chrome, drop backgrounds */

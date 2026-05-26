@@ -14,7 +14,7 @@
                         />
                     </div>
                     <div class="col-md-7 ps-md-5">
-                        <h1 style="color: #1a2744; font-weight: bold">About Me</h1>
+                        <h1 class="page-heading">About Me</h1>
                         <p class="lead mt-3" style="color: #2c3e50">
                             Full-stack software engineer, Marine Corps veteran, lifelong learner — and yes, the World's
                             Okayest Mom.
@@ -157,10 +157,14 @@
 </script>
 
 <style scoped>
-    .section-heading {
-        color: #1a2744;
+    .page-heading {
+        color: var(--color-brand-primary, #1a2744);
         font-weight: bold;
-        border-bottom: 2px solid #1a2744;
+    }
+    .section-heading {
+        color: var(--color-brand-primary, #1a2744);
+        font-weight: bold;
+        border-bottom: 2px solid var(--color-brand-primary, #1a2744);
         padding-bottom: 8px;
         margin-bottom: 1rem;
     }

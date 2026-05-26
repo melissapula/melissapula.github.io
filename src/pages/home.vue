@@ -13,8 +13,8 @@
                 />
             </div>
             <div class="col-12 col-md-6 col-lg-5 ps-md-5 mt-4 mt-md-0">
-                <h1 class="hero-name" style="color: #1a2744">Melissa Freundschuh-Pula</h1>
-                <h4 class="hero-title mt-2" style="color: #1a2744">Full-Stack Software Engineer</h4>
+                <h1 class="hero-name">Melissa Freundschuh-Pula</h1>
+                <h4 class="hero-title mt-2">Full-Stack Software Engineer</h4>
                 <p class="hero-intro mt-3" style="color: #2c3e50">
                     Six-plus years building enterprise web apps by day and live products on the side. Wife, mom of four,
                     Marine Corps veteran, and a believer that the best software is shipped, not just shipped on paper.
@@ -46,11 +46,13 @@
         font-size: 2.5rem;
         font-weight: bold;
         line-height: 1.1;
+        color: var(--color-brand-primary, #1a2744);
     }
     .hero-title {
         font-size: 1.25rem;
         font-weight: 500;
         letter-spacing: 1px;
+        color: var(--color-brand-primary, #1a2744);
     }
     .hero-intro {
         font-size: 1.05rem;

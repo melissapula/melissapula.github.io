@@ -6,31 +6,25 @@
                 style="background-color: #f0f2f5; min-height: calc(100vh - var(--site-nav-height, 56px))"
             >
                 <div class="col-lg-10 col-md-11">
-                    <h2 class="text-center mb-4" style="color: #1a2744; font-weight: bold">Data Analysis</h2>
+                    <h2 class="text-center mb-4 page-heading">Data Analysis</h2>
                     <div class="row justify-content-center">
                         <div class="col-lg-4 col-md-6 mb-4" v-for="project in projects" :key="project.key">
-                            <div
-                                class="project-card"
-                                @click="selectedProject = project.key"
-                                tabindex="0"
-                                role="button"
-                                @keyup.enter="selectedProject = project.key"
+                            <ProjectCard
+                                :title="project.title"
+                                :description="project.description"
+                                :tags="project.tags"
+                                cta-text="View Project"
+                                @select="selectedProject = project.key"
                             >
-                                <div class="project-preview" :class="project.previewClass">
-                                    <div class="preview-content">
-                                        <span class="preview-title">{{ project.title }}</span>
-                                        <span class="preview-subtitle">{{ project.subtitle }}</span>
+                                <template #preview>
+                                    <div class="project-preview" :class="project.previewClass">
+                                        <div class="preview-content">
+                                            <span class="preview-title">{{ project.title }}</span>
+                                            <span class="preview-subtitle">{{ project.subtitle }}</span>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="project-info">
-                                    <h4 style="color: #1a2744">{{ project.title }}</h4>
-                                    <p>{{ project.description }}</p>
-                                    <div class="tech-tags mb-3">
-                                        <mfp-badge v-for="tag in project.tags" :key="tag">{{ tag }}</mfp-badge>
-                                    </div>
-                                    <mfp-button class="card-cta" variant="primary">View Project</mfp-button>
-                                </div>
-                            </div>
+                                </template>
+                            </ProjectCard>
                         </div>
                     </div>
                 </div>
@@ -49,13 +43,15 @@
     import WordCount from './wordcount.vue';
     import ImageClustering from './imageClustering.vue';
     import RandomForestClassifier from './randomForestClassifier.vue';
+    import ProjectCard from '@/components/ProjectCard.vue';
 
     export default {
         name: 'DataAnalysis',
         components: {
             WordCount,
             ImageClustering,
-            RandomForestClassifier
+            RandomForestClassifier,
+            ProjectCard
         },
         computed: {
             selectedProject: {
@@ -114,24 +110,9 @@
 </script>
 
 <style scoped>
-    .project-card {
-        background-color: #fff;
-        border-radius: 12px;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-        overflow: hidden;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        cursor: pointer;
-        transition:
-            transform 0.15s ease,
-            box-shadow 0.15s ease;
-    }
-    .project-card:hover,
-    .project-card:focus {
-        transform: translateY(-4px);
-        box-shadow: 0 8px 28px rgba(0, 0, 0, 0.15);
-        outline: none;
+    .page-heading {
+        color: var(--color-brand-primary, #1a2744);
+        font-weight: bold;
     }
     .project-preview {
         height: 160px;
@@ -165,26 +146,6 @@
     }
     .preview-rose {
         background: linear-gradient(135deg, #881337 0%, #e11d48 100%);
-    }
-    .project-info {
-        padding: 1.5rem;
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-    }
-    .project-info p {
-        color: #555;
-        line-height: 1.6;
-        flex: 1;
-    }
-    .tech-tags {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 8px;
-    }
-    .card-cta {
-        align-self: flex-start;
-        pointer-events: none;
     }
     .project-view {
         background-color: #f0f2f5;

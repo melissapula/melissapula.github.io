@@ -44,7 +44,7 @@
         text-align: center;
     }
     .contact-heading {
-        color: #1a2744;
+        color: var(--color-brand-primary, #1a2744);
         font-weight: bold;
         margin: 0;
     }
