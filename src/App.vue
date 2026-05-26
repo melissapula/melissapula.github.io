@@ -131,6 +131,9 @@
         text-decoration: none;
         font-weight: 600;
     }
+    mfp-nav-bar::part(menu-toggle) {
+        color: var(--color-brand-primary-fg, #ffffff);
+    }
     .navbar-actions {
         display: flex;
         align-items: center;
