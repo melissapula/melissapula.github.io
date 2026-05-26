@@ -24,20 +24,20 @@
                     </div>
                     <div class="text-center mb-2">
                         <p class="mb-1">
-                            <i class="fas fa-envelope me-2"></i
+                            <i class="fas fa-envelope me-2" aria-hidden="true"></i
                             ><a href="mailto:melissa_m_24@yahoo.com">melissa_m_24@yahoo.com</a>
                         </p>
                         <p class="mb-1">
-                            <i class="fab fa-github me-2"></i
+                            <i class="fab fa-github me-2" aria-hidden="true"></i
                             ><a href="https://github.com/melissapula" target="_blank" rel="noopener">GitHub</a>
                         </p>
                         <p class="mb-1">
-                            <i class="fab fa-linkedin me-2"></i
+                            <i class="fab fa-linkedin me-2" aria-hidden="true"></i
                             ><a href="https://www.linkedin.com/in/melissa-pula-833748172" target="_blank" rel="noopener"
                                 >LinkedIn</a
                             >
                         </p>
-                        <p class="mb-1"><i class="fas fa-map-marker-alt me-2"></i>Bemidji, MN</p>
+                        <p class="mb-1"><i class="fas fa-map-marker-alt me-2" aria-hidden="true"></i>Bemidji, MN</p>
                     </div>
                 </div>
             </div>

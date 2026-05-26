@@ -38,7 +38,7 @@
         </div>
         <div v-else class="project-view">
             <mfp-button class="back-button" variant="secondary" @click="selectedProject = null">
-                <i class="fas fa-arrow-left me-2"></i>Back to Data Analysis
+                <i class="fas fa-arrow-left me-2" aria-hidden="true"></i>Back to Data Analysis
             </mfp-button>
             <component :is="projectComponents[selectedProject]" />
         </div>

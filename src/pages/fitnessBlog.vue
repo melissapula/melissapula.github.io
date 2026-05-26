@@ -5,21 +5,24 @@
             style="background-color: #f8f9fa; color: #333; min-height: calc(100vh - var(--site-nav-height, 56px))"
         >
             <div class="col-12">
-                <div class="row justify-content-center align-items-center pt-4">
-                    <div class="col-3 col-lg-2">
-                        <img src="../assets/backPhoto.jpg" class="img-fluid" alt="Back muscle pose" />
-                    </div>
-                    <div class="col-6 col-lg-4">
-                        <div
-                            class="row justify-content-center align-items-center"
-                            style="font-size: 80px; color: #1a2744"
-                        >
-                            Believe It.<br />
-                            Acheive It.
+                <div class="fitness-hero">
+                    <div class="row justify-content-center align-items-center pt-4 pb-4 mx-0">
+                        <div class="col-3 col-lg-2">
+                            <img src="../assets/backPhoto.jpg" class="img-fluid" alt="Back muscle pose" />
                         </div>
-                    </div>
-                    <div class="col-3 col-lg-2">
-                        <img src="../assets/meFitness.jpg" class="img-fluid" alt="Melissa flexing after a workout" />
+                        <div class="col-6 col-lg-4">
+                            <div class="row justify-content-center align-items-center fitness-hero-text">
+                                Believe It.<br />
+                                Achieve It.
+                            </div>
+                        </div>
+                        <div class="col-3 col-lg-2">
+                            <img
+                                src="../assets/meFitness.jpg"
+                                class="img-fluid"
+                                alt="Melissa flexing after a workout"
+                            />
+                        </div>
                     </div>
                 </div>
 
@@ -37,7 +40,6 @@
                                     Friday - Arms and Abs<br />
                                     Saturday - Legs (Hams/Glutes)
                                 </p>
-                                <small slot="footer" class="text-muted">Last updated Sept 26 2021</small>
                             </mfp-card>
                             <mfp-card class="fitness-card">
                                 <h4 slot="header" class="fitness-card-header">My Inspirations</h4>
@@ -48,7 +50,6 @@
                                     <a href="https://www.nakedtraining.app/" target="_blank">Brooke Ence</a> —
                                     Professional Crossfit Trainer
                                 </p>
-                                <small slot="footer" class="text-muted">Last updated Sept 26 2021</small>
                             </mfp-card>
                             <mfp-card class="fitness-card">
                                 <h4 slot="header" class="fitness-card-header">My Gear</h4>
@@ -63,7 +64,6 @@
                                     — Punching Bag<br />
                                     <a href="https://flagnorfail.com/" target="_blank">Flag Nor Fail</a> — Clothing
                                 </p>
-                                <small slot="footer" class="text-muted">Last updated Sept 26 2021</small>
                             </mfp-card>
                         </div>
                     </div>
@@ -97,7 +97,6 @@
                                     </div>
                                 </div>
                             </div>
-                            <small slot="footer" class="text-muted">Last updated Sept 26 2021</small>
                         </mfp-card>
                     </div>
                 </div>
@@ -267,6 +266,14 @@
 </script>
 
 <style scoped>
+    .fitness-hero {
+        background: linear-gradient(135deg, #7f1d1d 0%, #dc2626 100%);
+    }
+    .fitness-hero-text {
+        font-size: 80px;
+        color: #fff;
+        text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    }
     .fitness-card-group {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));

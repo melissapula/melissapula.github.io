@@ -269,7 +269,7 @@
             :class="['project-view', selectedProject ? 'project-view--' + selectedProject : '']"
         >
             <mfp-button class="back-button" variant="secondary" @click="selectedProject = null">
-                <i class="fas fa-arrow-left me-2"></i>Back to Projects
+                <i class="fas fa-arrow-left me-2" aria-hidden="true"></i>Back to Projects
             </mfp-button>
             <FitnessBlog v-if="selectedProject === 'fitness'" />
             <Blockly v-if="selectedProject === 'blockly'" />

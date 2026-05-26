@@ -9,21 +9,21 @@
                     <h2 slot="header" class="contact-heading">Get In Touch</h2>
                     <div class="contact-items">
                         <div class="contact-item">
-                            <i class="fas fa-envelope contact-icon"></i>
+                            <i class="fas fa-envelope contact-icon" aria-hidden="true"></i>
                             <a href="mailto:melissa_m_24@yahoo.com">melissa_m_24@yahoo.com</a>
                         </div>
                         <div class="contact-item">
-                            <i class="fab fa-github contact-icon"></i>
+                            <i class="fab fa-github contact-icon" aria-hidden="true"></i>
                             <a href="https://github.com/melissapula" target="_blank" rel="noopener">GitHub</a>
                         </div>
                         <div class="contact-item">
-                            <i class="fab fa-linkedin contact-icon"></i>
+                            <i class="fab fa-linkedin contact-icon" aria-hidden="true"></i>
                             <a href="https://www.linkedin.com/in/melissa-pula-833748172" target="_blank" rel="noopener"
                                 >LinkedIn</a
                             >
                         </div>
                         <div class="contact-item">
-                            <i class="fas fa-map-marker-alt contact-icon"></i>
+                            <i class="fas fa-map-marker-alt contact-icon" aria-hidden="true"></i>
                             <span>Bemidji, MN</span>
                         </div>
                     </div>

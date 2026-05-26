@@ -44,7 +44,7 @@
             <span class="footer-copy">&copy; {{ currentYear }} Melissa Freundschuh-Pula</span>
             <div class="footer-links">
                 <a href="https://github.com/melissapula" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-                    <i class="fab fa-github"></i>
+                    <i class="fab fa-github" aria-hidden="true"></i>
                 </a>
                 <a
                     href="https://www.linkedin.com/in/melissa-pula-833748172"
@@ -52,10 +52,10 @@
                     rel="noopener noreferrer"
                     aria-label="LinkedIn"
                 >
-                    <i class="fab fa-linkedin"></i>
+                    <i class="fab fa-linkedin" aria-hidden="true"></i>
                 </a>
                 <a href="mailto:melissa_m_24@yahoo.com" aria-label="Email">
-                    <i class="fas fa-envelope"></i>
+                    <i class="fas fa-envelope" aria-hidden="true"></i>
                 </a>
             </div>
         </mfp-footer>
