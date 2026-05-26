@@ -405,7 +405,7 @@
         letter-spacing: 1px;
     }
     .frula-preview {
-        background: linear-gradient(135deg, #064e3b 0%, #047857 100%);
+        background: linear-gradient(135deg, #125f46 0%, #1d9e75 100%);
     }
     .frula-title {
         display: block;

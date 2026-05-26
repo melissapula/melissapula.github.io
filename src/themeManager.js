@@ -1,24 +1,29 @@
 import blueTheme from '@mfp-design-system/tokens/themes/blue?raw';
-import warmTheme from '@mfp-design-system/tokens/themes/warm?raw';
+import emeraldTheme from '@mfp-design-system/tokens/themes/emerald?raw';
+import navyTheme from '@mfp-design-system/tokens/themes/navy?raw';
 import orangeTheme from '@mfp-design-system/tokens/themes/orange?raw';
-import earthTheme from '@mfp-design-system/tokens/themes/earth?raw';
-import portfolioTheme from '@mfp-design-system/tokens/themes/portfolio?raw';
+import sandTheme from '@mfp-design-system/tokens/themes/sand?raw';
+import terracottaTheme from '@mfp-design-system/tokens/themes/terracotta?raw';
 
 const STORAGE_KEY = 'mfp-theme';
 const STYLE_ID = 'mfp-active-theme';
 
 export const THEMES = {
     blue: { label: 'Blue', css: blueTheme },
-    warm: { label: 'Warm', css: warmTheme },
+    emerald: { label: 'Emerald', css: emeraldTheme },
     orange: { label: 'Orange', css: orangeTheme },
-    earth: { label: 'Earth', css: earthTheme },
-    portfolio: { label: 'Navy', css: portfolioTheme }
+    sand: { label: 'Sand', css: sandTheme },
+    terracotta: { label: 'Terracotta', css: terracottaTheme },
+    navy: { label: 'Navy', css: navyTheme }
 };
 
-export const DEFAULT_THEME = 'portfolio';
+export const DEFAULT_THEME = 'navy';
+
+const RENAMED = { portfolio: 'navy', warm: 'terracotta', earth: 'sand' };
 
 export function getActiveTheme() {
     const saved = localStorage.getItem(STORAGE_KEY);
+    if (saved && RENAMED[saved]) return RENAMED[saved];
     return saved && saved in THEMES ? saved : DEFAULT_THEME;
 }
 
