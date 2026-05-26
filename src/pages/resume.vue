@@ -54,7 +54,7 @@
                 <ul>
                     <li><b>Languages:</b> TypeScript, JavaScript, Python, C#, HTML, CSS/SCSS</li>
                     <li>
-                        <b>Frontend:</b> Angular, StencilJS, Web Components, Vue, RxJS/Signals, AG Grid Enterprise,
+                        <b>Frontend:</b> Angular, StencilJS, Lit, Web Components, Vue, RxJS/Signals, AG Grid Enterprise,
                         Tailwind, Storybook
                     </li>
                     <li><b>Backend:</b> NestJS, Node.js, REST APIs, JWT/OAuth 2.0, Socket.io</li>
@@ -121,6 +121,21 @@
                 </ul>
                 <h4 class="cyan-text mt-4">SELECTED PROJECTS</h4>
                 <p class="mb-1">
+                    <b>MFP Design System</b> —
+                    <a href="https://github.com/melissapula/design-system" target="_blank" rel="noopener"
+                        >github.com/melissapula/design-system</a
+                    >
+                </p>
+                <ul>
+                    <li>
+                        A monorepo of framework-agnostic Lit web components published to npm under
+                        <code>@mfp-design-system/*</code> with Changesets-driven semver releases. Token-driven theming
+                        via CSS custom properties supports six per-app brand themes and is consumed live by this
+                        portfolio's navbar, footer, cards, buttons, accordion, badges, spinner, select, and theme
+                        switcher.
+                    </li>
+                </ul>
+                <p class="mb-1">
                     <b>Frula Homes</b> —
                     <a href="https://frulahomes.com" target="_blank" rel="noopener">frulahomes.com</a>
                 </p>
@@ -129,16 +144,6 @@
                         A for-sale-by-owner real estate platform built solo on Nuxt 3, NestJS, Supabase (PostGIS), and
                         Mapbox, deployed on Cloudflare Pages, with a custom comparable-sales engine built on public
                         geospatial data.
-                    </li>
-                </ul>
-                <p class="mb-1">
-                    <b>Four Seasons Studio</b> —
-                    <a href="https://fourseasonsstudio.com" target="_blank" rel="noopener">fourseasonsstudio.com</a>
-                </p>
-                <ul>
-                    <li>
-                        A full-stack artist portfolio and e-commerce storefront on Nuxt 3, Sanity CMS, Stripe, and
-                        Cloudinary, built so a non-technical artist can manage their own catalog independently.
                     </li>
                 </ul>
                 <p class="mb-1">
@@ -153,6 +158,16 @@
                     </li>
                 </ul>
                 <p class="mb-1">
+                    <b>Four Seasons Studio</b> —
+                    <a href="https://fourseasonsstudio.com" target="_blank" rel="noopener">fourseasonsstudio.com</a>
+                </p>
+                <ul>
+                    <li>
+                        A full-stack artist portfolio and e-commerce storefront on Nuxt 3, Sanity CMS, Stripe, and
+                        Cloudinary, built so a non-technical artist can manage their own catalog independently.
+                    </li>
+                </ul>
+                <p class="mb-1">
                     <b>love-is-love-spinners</b> —
                     <a href="https://www.npmjs.com/package/love-is-love-spinners" target="_blank" rel="noopener"
                         >npmjs.com/package/love-is-love-spinners</a
@@ -162,6 +177,20 @@
                     <li>
                         A framework-agnostic TypeScript package of 32+ LGBTQ+ pride-flag CSS loading spinners,
                         distributed via npm with full type definitions.
+                    </li>
+                </ul>
+                <p class="mb-1">
+                    <b>LessonForge</b> —
+                    <a href="https://github.com/melissapula/lessonforge" target="_blank" rel="noopener"
+                        >github.com/melissapula/lessonforge</a
+                    >
+                </p>
+                <ul>
+                    <li>
+                        An agentic, spec-driven lesson generator for the Modern Classrooms self-paced instructional
+                        model. A LangGraph pipeline drafts a lesson, scores its own work against a rubric, and pauses
+                        for teacher review before anything is finalized — built on Python, LangGraph, the Anthropic API,
+                        and Pydantic.
                     </li>
                 </ul>
                 <h4 class="cyan-text mt-4">CERTIFICATIONS</h4>
