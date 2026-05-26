@@ -1,5 +1,5 @@
 <template>
-    <div class="h-100 m-0 p-0">
+    <div class="h-100 m-0 p-0" :class="{ 'route-resume': $route.path === '/resume' }">
         <mfp-nav-bar ref="navBar" sticky variant="brand">
             <router-link slot="brand" to="/" class="brand-link">Melissa Freundschuh-Pula</router-link>
 
@@ -118,6 +118,7 @@
         font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
         font-size: 14px;
         line-height: 1.42857143;
+        background-color: #f0f2f5;
     }
     .white-text {
         color: white !important;
@@ -134,6 +135,12 @@
     }
     .theme-switcher {
         min-width: 11rem;
+    }
+    mfp-footer {
+        margin-top: 2rem;
+    }
+    .route-resume mfp-footer {
+        margin-top: 0;
     }
     .footer-copy {
         letter-spacing: 0.3px;
