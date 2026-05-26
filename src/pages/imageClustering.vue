@@ -1,17 +1,8 @@
 ﻿<template>
     <div class="container-fluid h-100 mt-0 pt-0">
-        <div
-            class="row pt-4"
-            v-if="imageClustering"
-            style="height: calc(100vh - var(--site-nav-height, 56px)); background-color: #f0f2f5"
-        >
+        <div class="row pt-4" style="height: calc(100vh - var(--site-nav-height, 56px)); background-color: #f0f2f5">
             <div class="col-lg-7 col-sm-12">
-                <Codemirror
-                    class="CodeMirror"
-                    style="width: 100%"
-                    :value="imageClustering"
-                    :options="imageClusteringOptions"
-                ></Codemirror>
+                <CodeBlock :code="imageClustering" />
             </div>
             <div
                 class="col-lg-5 col-sm-12 pb-4 d-flex flex-column align-items-center"
@@ -69,35 +60,13 @@
 </template>
 
 <script>
-    import Codemirror from 'codemirror-editor-vue3';
-    import 'codemirror/lib/codemirror.css';
-    import 'codemirror/mode/python/python.js';
+    import CodeBlock from '@/components/CodeBlock.vue';
     export default {
         name: 'ImageClustering',
-        components: {
-            Codemirror
-        },
+        components: { CodeBlock },
         data() {
             return {
-                imageClustering: null,
-                spaces: '    ',
-                tab: '        ',
-                imageClusteringOptions: {
-                    tabSize: 4,
-                    mode: 'text/x-python',
-                    lineNumbers: true,
-                    line: true,
-                    smartIndent: true,
-                    indentUnit: 4,
-                    indentWithTabs: true,
-                    readOnly: true,
-                    foldGutter: true
-                }
-            };
-        },
-        methods: {
-            init() {
-                this.imageClustering = `# for loading/processing the images
+                imageClustering: `# for loading/processing the images
 from keras.utils import load_img
 from keras.applications.vgg16 import preprocess_input
 
@@ -384,17 +353,10 @@ def view_cluster(cluster):
 
 view_cluster(0)
 
-#see image(7) for cluster 0 results`;
-            }
-        },
-        mounted() {
-            this.init();
+#see image(7) for cluster 0 results`
+            };
         }
     };
 </script>
 
-<style scoped>
-    .CodeMirror {
-        height: calc(100vh - var(--site-nav-height, 56px) - 1.5rem) !important;
-    }
-</style>
+<style scoped></style>

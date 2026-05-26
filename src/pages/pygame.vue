@@ -1,12 +1,8 @@
 ﻿<template>
     <div class="container-fluid h-100 mt-0 pt-0">
-        <div
-            class="row pt-4"
-            v-if="code"
-            style="height: calc(100vh - var(--site-nav-height, 56px)); background-color: #f0f2f5"
-        >
+        <div class="row pt-4" style="height: calc(100vh - var(--site-nav-height, 56px)); background-color: #f0f2f5">
             <div class="col-lg-7 col-sm-12">
-                <Codemirror class="CodeMirror" style="width: 100%" :value="code" :options="codeOptions"></Codemirror>
+                <CodeBlock :code="code" />
             </div>
             <div
                 class="col-lg-5 col-sm-12 pb-4 d-flex flex-column align-items-center"
@@ -29,33 +25,13 @@
 </template>
 
 <script>
-    import Codemirror from 'codemirror-editor-vue3';
-    import 'codemirror/lib/codemirror.css';
-    import 'codemirror/mode/python/python.js';
+    import CodeBlock from '@/components/CodeBlock.vue';
     export default {
         name: 'Pygame',
-        components: {
-            Codemirror
-        },
+        components: { CodeBlock },
         data() {
             return {
-                code: null,
-                codeOptions: {
-                    tabSize: 4,
-                    mode: 'text/x-python',
-                    lineNumbers: true,
-                    line: true,
-                    smartIndent: true,
-                    indentUnit: 4,
-                    indentWithTabs: true,
-                    readOnly: true,
-                    foldGutter: true
-                }
-            };
-        },
-        methods: {
-            init() {
-                this.code = `import pygame
+                code: `import pygame
 import sys
 import random
 
@@ -190,17 +166,10 @@ while True:
     input_rect.w = max(200, text_surface.get_width() + 10)
 
     pygame.display.update()
-    clock.tick(60)`;
-            }
-        },
-        mounted() {
-            this.init();
+    clock.tick(60)`
+            };
         }
     };
 </script>
 
-<style scoped>
-    .CodeMirror {
-        height: calc(100vh - var(--site-nav-height, 56px) - 1.5rem) !important;
-    }
-</style>
+<style scoped></style>

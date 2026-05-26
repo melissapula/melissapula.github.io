@@ -1,6 +1,7 @@
 import { createApp } from 'vue';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
+import 'highlight.js/styles/atom-one-dark.css';
 import '@mfp-design-system/tokens/css';
 import '@mfp-design-system/accordion';
 import '@mfp-design-system/badge';

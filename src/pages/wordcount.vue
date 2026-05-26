@@ -1,17 +1,8 @@
 ﻿<template>
     <div class="container-fluid h-100 mt-0 pt-0">
-        <div
-            class="row pt-4"
-            v-if="wordCount"
-            style="height: calc(100vh - var(--site-nav-height, 56px)); background-color: #f0f2f5"
-        >
+        <div class="row pt-4" style="height: calc(100vh - var(--site-nav-height, 56px)); background-color: #f0f2f5">
             <div class="col-lg-7 col-sm-12">
-                <Codemirror
-                    class="CodeMirror"
-                    style="width: 100%"
-                    :value="wordCount"
-                    :options="wordCountOptions"
-                ></Codemirror>
+                <CodeBlock :code="wordCount" />
             </div>
             <div
                 class="col-lg-5 col-sm-12 pb-4 d-flex flex-column align-items-center"
@@ -42,35 +33,13 @@
 </template>
 
 <script>
-    import Codemirror from 'codemirror-editor-vue3';
-    import 'codemirror/lib/codemirror.css';
-    import 'codemirror/mode/python/python.js';
+    import CodeBlock from '@/components/CodeBlock.vue';
     export default {
         name: 'WordCount',
-        components: {
-            Codemirror
-        },
+        components: { CodeBlock },
         data() {
             return {
-                wordCount: null,
-                spaces: '    ',
-                tab: '        ',
-                wordCountOptions: {
-                    tabSize: 4,
-                    mode: 'text/x-python',
-                    lineNumbers: true,
-                    line: true,
-                    smartIndent: true,
-                    indentUnit: 4,
-                    indentWithTabs: true,
-                    readOnly: true,
-                    foldGutter: true
-                }
-            };
-        },
-        methods: {
-            init() {
-                this.wordCount = `from pyspark.sql import SparkSession
+                wordCount: `from pyspark.sql import SparkSession
 from pyspark.sql.functions import col, desc, lower
 from datetime import datetime
 import pyspark.sql.functions as f
@@ -103,17 +72,10 @@ end_time = datetime.now()
 
 print('Total time: ', end_time - start_time)
 
-#see image(3) for resulting word count and time it took to achieve`;
-            }
-        },
-        mounted() {
-            this.init();
+#see image(3) for resulting word count and time it took to achieve`
+            };
         }
     };
 </script>
 
-<style scoped>
-    .CodeMirror {
-        height: calc(100vh - var(--site-nav-height, 56px) - 1.5rem) !important;
-    }
-</style>
+<style scoped></style>

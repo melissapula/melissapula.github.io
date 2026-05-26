@@ -1,17 +1,8 @@
 ﻿<template>
     <div class="container-fluid h-100 mt-0 pt-0">
-        <div
-            class="row pt-4"
-            v-if="macbeth"
-            style="height: calc(100vh - var(--site-nav-height, 56px)); background-color: #f0f2f5"
-        >
+        <div class="row pt-4" style="height: calc(100vh - var(--site-nav-height, 56px)); background-color: #f0f2f5">
             <div class="col-lg-7 col-sm-12">
-                <Codemirror
-                    class="CodeMirror"
-                    style="width: 100%"
-                    :value="macbeth"
-                    :options="macbethOptions"
-                ></Codemirror>
+                <CodeBlock :code="macbeth" />
             </div>
             <div
                 class="col-lg-5 col-sm-12 pb-4 d-flex flex-column align-items-center"
@@ -33,35 +24,13 @@
 </template>
 
 <script>
-    import Codemirror from 'codemirror-editor-vue3';
-    import 'codemirror/lib/codemirror.css';
-    import 'codemirror/mode/python/python.js';
+    import CodeBlock from '@/components/CodeBlock.vue';
     export default {
         name: 'macbeth',
-        components: {
-            Codemirror
-        },
+        components: { CodeBlock },
         data() {
             return {
-                macbeth: null,
-                spaces: '    ',
-                tab: '        ',
-                macbethOptions: {
-                    tabSize: 4,
-                    mode: 'text/x-python',
-                    lineNumbers: true,
-                    line: true,
-                    smartIndent: true,
-                    indentUnit: 4,
-                    indentWithTabs: true,
-                    readOnly: true,
-                    foldGutter: true
-                }
-            };
-        },
-        methods: {
-            init() {
-                this.macbeth = `from turtle import Turtle
+                macbeth: `from turtle import Turtle
 class playGame():
 
     def __init__(self):
@@ -1936,17 +1905,10 @@ would be best if you hurried along ...
                 t.forward(20)
                 t.penup()
 
-playGame()`;
-            }
-        },
-        mounted() {
-            this.init();
+playGame()`
+            };
         }
     };
 </script>
 
-<style scoped>
-    .CodeMirror {
-        height: calc(100vh - var(--site-nav-height, 56px) - 1.5rem) !important;
-    }
-</style>
+<style scoped></style>

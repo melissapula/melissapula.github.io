@@ -1,12 +1,8 @@
 ﻿<template>
     <div class="container-fluid h-100 mt-0 pt-0">
-        <div
-            class="row pt-4"
-            v-if="code"
-            style="height: calc(100vh - var(--site-nav-height, 56px)); background-color: #f0f2f5"
-        >
+        <div class="row pt-4" style="height: calc(100vh - var(--site-nav-height, 56px)); background-color: #f0f2f5">
             <div class="col-lg-7 col-sm-12">
-                <Codemirror class="CodeMirror" style="width: 100%" :value="code" :options="codeOptions"></Codemirror>
+                <CodeBlock :code="code" />
             </div>
             <div class="col-lg-5 col-sm-12 pb-4 d-flex flex-column justify-content-center align-items-center">
                 <p>This code will create a game called Game of Pig. The game is played as follows:</p>
@@ -25,33 +21,13 @@
 </template>
 
 <script>
-    import Codemirror from 'codemirror-editor-vue3';
-    import 'codemirror/lib/codemirror.css';
-    import 'codemirror/mode/python/python.js';
+    import CodeBlock from '@/components/CodeBlock.vue';
     export default {
         name: 'Pig',
-        components: {
-            Codemirror
-        },
+        components: { CodeBlock },
         data() {
             return {
-                code: null,
-                codeOptions: {
-                    tabSize: 4,
-                    mode: 'text/x-python',
-                    lineNumbers: true,
-                    line: true,
-                    smartIndent: true,
-                    indentUnit: 4,
-                    indentWithTabs: true,
-                    readOnly: true,
-                    foldGutter: true
-                }
-            };
-        },
-        methods: {
-            init() {
-                this.code = `totalone = 0
+                code: `totalone = 0
 totaltwo = 0
 while True:
     rollfirst = 0
@@ -109,17 +85,10 @@ while True:
     print("Your total score for the game is " + str(totaltwo))
     if (totaltwo >= 100):
         print("Congratulations Second Player, you won!!")
-        break`;
-            }
-        },
-        mounted() {
-            this.init();
+        break`
+            };
         }
     };
 </script>
 
-<style scoped>
-    .CodeMirror {
-        height: calc(100vh - var(--site-nav-height, 56px) - 1.5rem) !important;
-    }
-</style>
+<style scoped></style>
