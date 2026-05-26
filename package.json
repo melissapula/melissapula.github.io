@@ -21,7 +21,7 @@
         "@mfp-design-system/footer": "^1.0.0",
         "@mfp-design-system/icon-button": "^3.0.0",
         "@mfp-design-system/input": "^3.0.0",
-        "@mfp-design-system/nav": "^1.1.1",
+        "@mfp-design-system/nav": "^1.1.2",
         "@mfp-design-system/select": "^3.0.0",
         "@mfp-design-system/spinner": "^1.0.0",
         "@mfp-design-system/tokens": "^0.5.0",
