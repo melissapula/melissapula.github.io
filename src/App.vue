@@ -14,15 +14,18 @@
 
             <div slot="actions" class="navbar-actions">
                 <mfp-nav-item :active="$route.path === '/contact'" @click="go('/contact')">Contact</mfp-nav-item>
-                <mfp-select
-                    class="theme-switcher"
-                    size="sm"
-                    aria-label="Theme"
-                    :value="activeTheme"
-                    @change="onThemeChange"
-                >
-                    <option v-for="(t, key) in themes" :key="key" :value="key">{{ t.label }}</option>
-                </mfp-select>
+                <label class="theme-group">
+                    <span class="theme-label">Theme:</span>
+                    <mfp-select
+                        class="theme-switcher"
+                        size="sm"
+                        aria-label="Theme"
+                        :value="activeTheme"
+                        @change="onThemeChange"
+                    >
+                        <option v-for="(t, key) in themes" :key="key" :value="key">{{ t.label }}</option>
+                    </mfp-select>
+                </label>
             </div>
         </mfp-nav-bar>
         <router-view v-slot="{ Component }">
@@ -133,8 +136,20 @@
         align-items: center;
         gap: 0.75rem;
     }
+    .theme-group {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin: 0;
+    }
+    .theme-label {
+        font-size: 0.875rem;
+        color: inherit;
+        opacity: 0.85;
+        white-space: nowrap;
+    }
     .theme-switcher {
-        min-width: 11rem;
+        min-width: 9rem;
     }
     mfp-footer {
         margin-top: 2rem;

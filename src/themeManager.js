@@ -8,11 +8,11 @@ const STORAGE_KEY = 'mfp-theme';
 const STYLE_ID = 'mfp-active-theme';
 
 export const THEMES = {
-    blue: { label: 'Blue (default)', css: blueTheme },
+    blue: { label: 'Blue', css: blueTheme },
     warm: { label: 'Warm', css: warmTheme },
     orange: { label: 'Orange', css: orangeTheme },
     earth: { label: 'Earth', css: earthTheme },
-    portfolio: { label: 'Portfolio (navy)', css: portfolioTheme }
+    portfolio: { label: 'Navy', css: portfolioTheme }
 };
 
 export const DEFAULT_THEME = 'portfolio';
