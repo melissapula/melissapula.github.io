@@ -45,24 +45,30 @@
                                 <h4 slot="header" class="fitness-card-header">My Inspirations</h4>
                                 <h5 class="card-title"><b>These women are fxing BEASTS!</b></h5>
                                 <p class="card-text">
-                                    <a href="https://danalinnbailey.com/" target="_blank">Dana Linn Bailey</a> —
-                                    Professional Bodybuilder<br />
-                                    <a href="https://www.nakedtraining.app/" target="_blank">Brooke Ence</a> —
-                                    Professional Crossfit Trainer
+                                    <a href="https://danalinnbailey.com/" target="_blank" rel="noopener"
+                                        >Dana Linn Bailey</a
+                                    >
+                                    — Professional Bodybuilder<br />
+                                    <a href="https://www.nakedtraining.app/" target="_blank" rel="noopener"
+                                        >Brooke Ence</a
+                                    >
+                                    — Professional Crossfit Trainer
                                 </p>
                             </mfp-card>
                             <mfp-card class="fitness-card">
                                 <h4 slot="header" class="fitness-card-header">My Gear</h4>
                                 <h5 class="card-title"><b>Some of the gear I love.</b></h5>
                                 <p class="card-text">
-                                    <a href="https://www.repfitness.com/" target="_blank">Rep Fitness</a> — Rack<br />
-                                    <a href="https://www.bowflex.com/" target="_blank">Bowflex</a> — Treadmill and
-                                    Dumbbells<br />
-                                    <a href="https://www.centurymartialarts.com/" target="_blank"
+                                    <a href="https://www.repfitness.com/" target="_blank" rel="noopener">Rep Fitness</a>
+                                    — Rack<br />
+                                    <a href="https://www.bowflex.com/" target="_blank" rel="noopener">Bowflex</a> —
+                                    Treadmill and Dumbbells<br />
+                                    <a href="https://www.centurymartialarts.com/" target="_blank" rel="noopener"
                                         >Century Martial Arts</a
                                     >
                                     — Punching Bag<br />
-                                    <a href="https://flagnorfail.com/" target="_blank">Flag Nor Fail</a> — Clothing
+                                    <a href="https://flagnorfail.com/" target="_blank" rel="noopener">Flag Nor Fail</a>
+                                    — Clothing
                                 </p>
                             </mfp-card>
                         </div>

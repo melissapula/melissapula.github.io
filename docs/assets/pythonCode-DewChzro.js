@@ -1,4 +1,4 @@
-import{C as h}from"./CodeBlock-C7c0M_g6.js";import{_ as d,o as r,c as s,a as e,d as m,r as f,b as T,F as E,e as g,w as O,n as L,t as u,i as v,l as y,m as w}from"./index-DDuWzTvZ.js";import{P as R}from"./ProjectCard-Bv0Z2DPn.js";const A="/assets/calculator-C-5QCe61.png",S={name:"Calculator",components:{CodeBlock:h},data(){return{calculator:`from tkinter import *
+import{C as h}from"./CodeBlock-CRJcVWv-.js";import{_ as d,o as r,c as s,a as e,d as m,r as f,b as T,F as E,e as g,w as O,n as L,t as u,i as v,l as y,m as w}from"./index-Bs1ueM0g.js";import{P as R}from"./ProjectCard-DC13F4cu.js";const A="/assets/calculator-C-5QCe61.png",S={name:"Calculator",components:{CodeBlock:h},data(){return{calculator:`from tkinter import *
 
 class Calculator(Frame):
     def __init__(self):
