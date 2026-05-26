@@ -6,8 +6,7 @@
                 style="background-color: #f0f2f5; min-height: calc(100vh - var(--site-nav-height, 56px))"
             >
                 <div class="col-lg-10 col-md-11">
-                    <h2 class="text-center mb-2" style="color: #1a2744; font-weight: bold">Projects</h2>
-                    <h5 class="text-center section-label mb-4">Engineering</h5>
+                    <h2 class="text-center mb-4" style="color: #1a2744; font-weight: bold">Projects</h2>
                     <div class="row justify-content-center">
                         <div class="col-lg-4 col-md-6 mb-4">
                             <a
@@ -237,10 +236,6 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-
-                    <h5 class="text-center section-label mt-5 mb-4">Personal</h5>
-                    <div class="row justify-content-center">
                         <div class="col-lg-4 col-md-6 mb-4">
                             <div
                                 class="project-card"
@@ -377,24 +372,20 @@
         background: linear-gradient(135deg, #f5f0eb 0%, #e8ddd4 100%);
     }
     .ds-preview {
-        background: linear-gradient(
-            135deg,
-            var(--color-brand-primary, #1a2744) 0%,
-            var(--color-brand-primary-hover, #2c4068) 100%
-        );
+        background: linear-gradient(135deg, #1a2744 0%, #c4622a 50%, #f97316 100%);
     }
     .ds-title {
         display: block;
         font-family: 'DM Sans', Georgia, sans-serif;
         font-size: 22px;
-        color: var(--color-brand-primary-fg, #fff);
+        color: #fff;
         letter-spacing: 1.5px;
     }
     .ds-subtitle {
         display: block;
         font-size: 13px;
-        color: var(--color-brand-primary-fg, #fff);
-        opacity: 0.85;
+        color: #fff;
+        opacity: 0.9;
         margin-top: 8px;
         letter-spacing: 0.5px;
     }
@@ -414,7 +405,7 @@
         letter-spacing: 1px;
     }
     .frula-preview {
-        background: linear-gradient(135deg, #1a2744 0%, #2c4068 100%);
+        background: linear-gradient(135deg, #064e3b 0%, #047857 100%);
     }
     .frula-title {
         display: block;
@@ -448,19 +439,19 @@
         letter-spacing: 0.5px;
     }
     .lf-preview {
-        background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
+        background: linear-gradient(135deg, #fafaf7 0%, #e5e3df 100%);
     }
     .lf-title {
         display: block;
         font-family: Georgia, 'Times New Roman', serif;
         font-size: 24px;
-        color: #065f46;
+        color: #2563eb;
         letter-spacing: 2px;
     }
     .lf-subtitle {
         display: block;
         font-size: 13px;
-        color: #047857;
+        color: #6b6963;
         margin-top: 8px;
         letter-spacing: 0.5px;
     }
@@ -488,7 +479,7 @@
         pointer-events: none;
     }
     .fitness-preview {
-        background: linear-gradient(135deg, #1e293b 0%, #475569 100%);
+        background: linear-gradient(135deg, #7f1d1d 0%, #dc2626 100%);
     }
     .fitness-title {
         display: block;
