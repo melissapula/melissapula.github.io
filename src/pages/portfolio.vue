@@ -354,7 +354,7 @@
         letter-spacing: 0.5px;
     }
     .project-view {
-        padding-top: 56px;
+        padding-top: 88px;
     }
     .project-view--fitness {
         background-color: #f8f9fa;
