@@ -11,6 +11,41 @@
                     <div class="row justify-content-center">
                         <div class="col-lg-4 col-md-6 mb-4">
                             <a
+                                href="https://github.com/melissapula/design-system"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="card-link"
+                            >
+                                <div class="project-card">
+                                    <div class="project-preview ds-preview">
+                                        <div class="preview-content">
+                                            <span class="ds-title">MFP Design System</span>
+                                            <span class="ds-subtitle">Themable Lit web components</span>
+                                        </div>
+                                    </div>
+                                    <div class="project-info">
+                                        <h4 style="color: #1a2744">MFP Design System</h4>
+                                        <p>
+                                            A monorepo of framework-agnostic web components built with Lit and published
+                                            to npm under <code>@mfp-design-system/*</code>. Token-driven theming via CSS
+                                            custom properties, Changesets-managed semver releases, full TypeScript types
+                                            — and consumed live by this portfolio (navbar, footer, buttons, cards,
+                                            badges, spinner, select, accordion, and the theme switcher above are all
+                                            from it).
+                                        </p>
+                                        <div class="tech-tags mb-3">
+                                            <mfp-badge>Lit</mfp-badge>
+                                            <mfp-badge>Web Components</mfp-badge>
+                                            <mfp-badge>TypeScript</mfp-badge>
+                                            <mfp-badge>Changesets</mfp-badge>
+                                        </div>
+                                        <mfp-button class="card-cta" variant="primary">View on GitHub</mfp-button>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <a
                                 href="https://frulahomes.com"
                                 target="_blank"
                                 rel="noopener noreferrer"
@@ -340,6 +375,28 @@
     }
     .fss-preview {
         background: linear-gradient(135deg, #f5f0eb 0%, #e8ddd4 100%);
+    }
+    .ds-preview {
+        background: linear-gradient(
+            135deg,
+            var(--color-brand-primary, #1a2744) 0%,
+            var(--color-brand-primary-hover, #2c4068) 100%
+        );
+    }
+    .ds-title {
+        display: block;
+        font-family: 'DM Sans', Georgia, sans-serif;
+        font-size: 22px;
+        color: var(--color-brand-primary-fg, #fff);
+        letter-spacing: 1.5px;
+    }
+    .ds-subtitle {
+        display: block;
+        font-size: 13px;
+        color: var(--color-brand-primary-fg, #fff);
+        opacity: 0.85;
+        margin-top: 8px;
+        letter-spacing: 0.5px;
     }
     .preview-title {
         display: block;
