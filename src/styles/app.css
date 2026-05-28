@@ -1,0 +1,37 @@
+/*
+ * app.css — utilities mfp-design-system's layout package doesn't ship.
+ *
+ * The numeric spacing scale (mt-3 etc.), Bootstrap grid (row/col-*),
+ * flex helpers (d-flex etc.), and logical-property aliases
+ * (ms-*/
+me-*/ps-*/pe-*) all lived here as a transitional shim during the
+ * Bootstrap → mfp migration. The templates have since been rewritten to
+ * use mfp/layout primitives (<mfp-container>, <mfp-row>, <mfp-col>) and
+ * the official utility names (mt-md, flex, items-center, etc.) — so the
+ * shim is gone. What's left below is the small set of utilities mfp
+ * intentionally doesn't ship, all driven by design tokens so themes
+ * (including dark mode) cascade through.
+ */
+
+.text-center {
+    text-align: center;
+}
+
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
+
+.rounded {
+    border-radius: var(--radius-control);
+}
+
+.shadow {
+    box-shadow: var(--elevation-raised);
+}
+
+.lead {
+    font-size: var(--text-body-lg);
+    font-weight: var(--font-weight-normal, 400);
+    line-height: var(--font-line-height-relaxed, 1.7);
+}

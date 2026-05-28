@@ -1,36 +1,29 @@
 <template>
-    <div class="container-fluid mt-0 pt-0">
-        <div
-            class="row justify-content-center align-items-center"
-            style="background-color: #f0f2f5; min-height: calc(100vh - var(--site-nav-height, 56px))"
-        >
-            <div class="col-md-6 col-lg-4">
-                <mfp-card class="contact-card" variant="elevated" padding="roomy">
-                    <h2 slot="header" class="contact-heading">Get In Touch</h2>
-                    <div class="contact-items">
-                        <div class="contact-item">
-                            <i class="fas fa-envelope contact-icon" aria-hidden="true"></i>
-                            <a href="mailto:melissa_m_24@yahoo.com">melissa_m_24@yahoo.com</a>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fab fa-github contact-icon" aria-hidden="true"></i>
-                            <a href="https://github.com/melissapula" target="_blank" rel="noopener">GitHub</a>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fab fa-linkedin contact-icon" aria-hidden="true"></i>
-                            <a href="https://www.linkedin.com/in/melissa-pula-833748172" target="_blank" rel="noopener"
-                                >LinkedIn</a
-                            >
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-map-marker-alt contact-icon" aria-hidden="true"></i>
-                            <span>Bemidji, MN</span>
-                        </div>
-                    </div>
-                </mfp-card>
+    <mfp-container size="sm" class="contact-page">
+        <mfp-card class="contact-card" variant="elevated" padding="roomy">
+            <h2 slot="header" class="contact-heading">Get In Touch</h2>
+            <div class="contact-items">
+                <div class="contact-item">
+                    <i class="fas fa-envelope contact-icon" aria-hidden="true"></i>
+                    <a href="mailto:melissa_m_24@yahoo.com">melissa_m_24@yahoo.com</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fab fa-github contact-icon" aria-hidden="true"></i>
+                    <a href="https://github.com/melissapula" target="_blank" rel="noopener">GitHub</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fab fa-linkedin contact-icon" aria-hidden="true"></i>
+                    <a href="https://www.linkedin.com/in/melissa-pula-833748172" target="_blank" rel="noopener"
+                        >LinkedIn</a
+                    >
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt contact-icon" aria-hidden="true"></i>
+                    <span>Bemidji, MN</span>
+                </div>
             </div>
-        </div>
-    </div>
+        </mfp-card>
+    </mfp-container>
 </template>
 
 <script>
@@ -40,6 +33,12 @@
 </script>
 
 <style scoped>
+    .contact-page {
+        background-color: #f0f2f5;
+        min-height: calc(100vh - var(--site-nav-height, 56px));
+        display: flex;
+        align-items: center;
+    }
     .contact-card {
         text-align: center;
     }

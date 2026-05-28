@@ -1,30 +1,29 @@
 ﻿<template>
-    <div class="container-fluid h-100 mt-0 pt-0">
-        <div class="row pt-4" style="height: calc(100vh - var(--site-nav-height, 56px)); background-color: #f0f2f5">
-            <div class="col-lg-7 col-sm-12">
-                <CodeBlock :code="code" />
-            </div>
-            <div class="col-lg-5 col-sm-12 pb-4 d-flex flex-column justify-content-center align-items-center">
-                <p>This code will create a game called Game of Pig. The game is played as follows:</p>
-                <p>Each turn starts with the player making the choice to play or hold.</p>
-                <p class="ms-4">If they play the player rolls a single die and looking at the results.</p>
-                <p class="ms-4 ps-4">If a 1 was rolled the player scores no points and their turn is over.</p>
-                <p class="ms-4 ps-4">
-                    If any other number is rolled the player adds the number rolled to the player's turn total.
-                </p>
-                <p class="ms-4">
-                    If they hold their turn points are added to their score and it becomes the opponent's turn.
-                </p>
-            </div>
-        </div>
-    </div>
+    <ProjectShell center-summary>
+        <template #code>
+            <CodeBlock :code="code" />
+        </template>
+        <template #summary>
+            <p>This code will create a game called Game of Pig. The game is played as follows:</p>
+            <p>Each turn starts with the player making the choice to play or hold.</p>
+            <p class="ml-lg">If they play the player rolls a single die and looking at the results.</p>
+            <p class="ml-lg pl-lg">If a 1 was rolled the player scores no points and their turn is over.</p>
+            <p class="ml-lg pl-lg">
+                If any other number is rolled the player adds the number rolled to the player's turn total.
+            </p>
+            <p class="ml-lg">
+                If they hold their turn points are added to their score and it becomes the opponent's turn.
+            </p>
+        </template>
+    </ProjectShell>
 </template>
 
 <script>
     import CodeBlock from '@/components/CodeBlock.vue';
+    import ProjectShell from '@/components/ProjectShell.vue';
     export default {
         name: 'Pig',
-        components: { CodeBlock },
+        components: { CodeBlock, ProjectShell },
         data() {
             return {
                 code: `totalone = 0

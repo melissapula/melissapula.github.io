@@ -1,32 +1,31 @@
 ﻿<template>
-    <div class="container-fluid h-100 mt-0 pt-0">
-        <div class="row pt-4" style="height: calc(100vh - var(--site-nav-height, 56px)); background-color: #f0f2f5">
-            <div class="col-lg-7 col-sm-12">
-                <CodeBlock :code="code" />
-            </div>
-            <div class="col-lg-5 col-sm-12 pb-4 d-flex flex-column justify-content-center align-items-center">
-                <p>This code will create a game called Bulls and Cows. The game is played as follows:</p>
-                <p>1. The computer picks a four-digit number with no repeating digits. This is the secret number.</p>
-                <p>2. The user makes a guess.</p>
-                <p>3. The computer determines the number of bulls and the number of cows.</p>
-                <p class="ms-4">a. Bulls are digits which are in the correct position.</p>
-                <p class="ms-4">b. Cows are digits that are in the secret number but are in the wrong position.</p>
-                <p>
-                    4. The computer then prints out all the guesses and their bull and cow counts. NOTE: These numbers
-                    added together should never be more than four.
-                </p>
-                <p>5. If all the digits are bulls, the game is over, otherwise go to step 2.</p>
-                <p>6. When the game is over the computer will ask you if you want to play again.</p>
-            </div>
-        </div>
-    </div>
+    <ProjectShell center-summary>
+        <template #code>
+            <CodeBlock :code="code" />
+        </template>
+        <template #summary>
+            <p>This code will create a game called Bulls and Cows. The game is played as follows:</p>
+            <p>1. The computer picks a four-digit number with no repeating digits. This is the secret number.</p>
+            <p>2. The user makes a guess.</p>
+            <p>3. The computer determines the number of bulls and the number of cows.</p>
+            <p class="ml-lg">a. Bulls are digits which are in the correct position.</p>
+            <p class="ml-lg">b. Cows are digits that are in the secret number but are in the wrong position.</p>
+            <p>
+                4. The computer then prints out all the guesses and their bull and cow counts. NOTE: These numbers added
+                together should never be more than four.
+            </p>
+            <p>5. If all the digits are bulls, the game is over, otherwise go to step 2.</p>
+            <p>6. When the game is over the computer will ask you if you want to play again.</p>
+        </template>
+    </ProjectShell>
 </template>
 
 <script>
     import CodeBlock from '@/components/CodeBlock.vue';
+    import ProjectShell from '@/components/ProjectShell.vue';
     export default {
         name: 'BullsCows',
-        components: { CodeBlock },
+        components: { CodeBlock, ProjectShell },
         data() {
             return {
                 code: `def main():

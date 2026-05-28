@@ -1,38 +1,31 @@
 ﻿<template>
     <div>
-        <div class="container-fluid mt-0 pt-0" v-if="!selectedProject">
-            <div
-                class="row justify-content-center pt-5"
-                style="background-color: #f0f2f5; min-height: calc(100vh - var(--site-nav-height, 56px))"
-            >
-                <div class="col-lg-10 col-md-11">
-                    <h2 class="text-center mb-4 page-heading">Data Analysis</h2>
-                    <div class="row justify-content-center">
-                        <div class="col-lg-4 col-md-6 mb-4" v-for="project in projects" :key="project.key">
-                            <ProjectCard
-                                :title="project.title"
-                                :description="project.description"
-                                :tags="project.tags"
-                                cta-text="View Project"
-                                @select="selectedProject = project.key"
-                            >
-                                <template #preview>
-                                    <div class="project-preview" :class="project.previewClass">
-                                        <div class="preview-content">
-                                            <span class="preview-title">{{ project.title }}</span>
-                                            <span class="preview-subtitle">{{ project.subtitle }}</span>
-                                        </div>
-                                    </div>
-                                </template>
-                            </ProjectCard>
+        <mfp-container v-if="!selectedProject" size="2xl" class="swap-page">
+            <h2 class="page-heading text-center mb-lg">Data Analysis</h2>
+            <div class="cards-grid">
+                <ProjectCard
+                    v-for="project in projects"
+                    :key="project.key"
+                    :title="project.title"
+                    :description="project.description"
+                    :tags="project.tags"
+                    cta-text="View Project"
+                    @select="selectedProject = project.key"
+                >
+                    <template #preview>
+                        <div class="project-preview" :class="project.previewClass">
+                            <div class="preview-content">
+                                <span class="preview-title">{{ project.title }}</span>
+                                <span class="preview-subtitle">{{ project.subtitle }}</span>
+                            </div>
                         </div>
-                    </div>
-                </div>
+                    </template>
+                </ProjectCard>
             </div>
-        </div>
+        </mfp-container>
         <div v-else class="project-view">
             <mfp-button class="back-button" variant="secondary" @click="selectedProject = null">
-                <i class="fas fa-arrow-left me-2" aria-hidden="true"></i>Back to Data Analysis
+                <i class="fas fa-arrow-left mr-sm" aria-hidden="true"></i>Back to Data Analysis
             </mfp-button>
             <component :is="projectComponents[selectedProject]" />
         </div>
@@ -110,9 +103,26 @@
 </script>
 
 <style scoped>
+    .swap-page {
+        background-color: #f0f2f5;
+        min-height: calc(100vh - var(--site-nav-height, 56px));
+        padding-top: var(--space-stack-xl);
+    }
     .page-heading {
         color: var(--color-brand-primary, #1a2744);
         font-weight: bold;
+        text-align: center;
+    }
+    .cards-grid {
+        display: grid;
+        gap: var(--space-stack-lg);
+        grid-template-columns: 1fr;
+        grid-auto-rows: 1fr;
+    }
+    @media (min-width: 768px) {
+        .cards-grid {
+            grid-template-columns: repeat(3, 1fr);
+        }
     }
     .project-preview {
         height: 160px;

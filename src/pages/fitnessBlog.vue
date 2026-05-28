@@ -1,143 +1,103 @@
 <template>
-    <div class="container-fluid h-100 mt-0 pt-0 mb-0">
-        <div
-            class="row"
-            style="background-color: #f8f9fa; color: #333; min-height: calc(100vh - var(--site-nav-height, 56px))"
-        >
-            <div class="col-12">
-                <div class="fitness-hero">
-                    <div class="row justify-content-center align-items-center pt-4 pb-4 mx-0">
-                        <div class="col-3 col-lg-2">
-                            <img src="../assets/backPhoto.jpg" class="img-fluid" alt="Back muscle pose" />
-                        </div>
-                        <div class="col-6 col-lg-4">
-                            <div class="row justify-content-center align-items-center fitness-hero-text">
-                                Believe It.<br />
-                                Achieve It.
-                            </div>
-                        </div>
-                        <div class="col-3 col-lg-2">
-                            <img
-                                src="../assets/meFitness.jpg"
-                                class="img-fluid"
-                                alt="Melissa flexing after a workout"
-                            />
-                        </div>
-                    </div>
+    <div class="fitness-page">
+        <header class="fitness-hero">
+            <div class="hero-row">
+                <img src="../assets/backPhoto.jpg" class="hero-img" alt="Back muscle pose" />
+                <div class="fitness-hero-text">
+                    Believe It.<br />
+                    Achieve It.
                 </div>
-
-                <div class="row justify-content-center mt-4">
-                    <div class="col-12 col-lg-9">
-                        <div class="fitness-card-group">
-                            <mfp-card class="fitness-card">
-                                <h4 slot="header" class="fitness-card-header">My Routine</h4>
-                                <h5 class="card-title"><b>I workout 6 days a week.</b></h5>
-                                <p class="card-text">
-                                    Monday - Chest and Delts<br />
-                                    Tuesday - Back<br />
-                                    Wednesday - Legs (Quads)<br />
-                                    Thursday - Delts<br />
-                                    Friday - Arms and Abs<br />
-                                    Saturday - Legs (Hams/Glutes)
-                                </p>
-                            </mfp-card>
-                            <mfp-card class="fitness-card">
-                                <h4 slot="header" class="fitness-card-header">My Inspirations</h4>
-                                <h5 class="card-title"><b>These women are fxing BEASTS!</b></h5>
-                                <p class="card-text">
-                                    <a href="https://danalinnbailey.com/" target="_blank" rel="noopener"
-                                        >Dana Linn Bailey</a
-                                    >
-                                    — Professional Bodybuilder<br />
-                                    <a href="https://www.nakedtraining.app/" target="_blank" rel="noopener"
-                                        >Brooke Ence</a
-                                    >
-                                    — Professional Crossfit Trainer
-                                </p>
-                            </mfp-card>
-                            <mfp-card class="fitness-card">
-                                <h4 slot="header" class="fitness-card-header">My Gear</h4>
-                                <h5 class="card-title"><b>Some of the gear I love.</b></h5>
-                                <p class="card-text">
-                                    <a href="https://www.repfitness.com/" target="_blank" rel="noopener">Rep Fitness</a>
-                                    — Rack<br />
-                                    <a href="https://www.bowflex.com/" target="_blank" rel="noopener">Bowflex</a> —
-                                    Treadmill and Dumbbells<br />
-                                    <a href="https://www.centurymartialarts.com/" target="_blank" rel="noopener"
-                                        >Century Martial Arts</a
-                                    >
-                                    — Punching Bag<br />
-                                    <a href="https://flagnorfail.com/" target="_blank" rel="noopener">Flag Nor Fail</a>
-                                    — Clothing
-                                </p>
-                            </mfp-card>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row justify-content-center mt-4">
-                    <div class="col-12 col-lg-8">
-                        <mfp-card class="fitness-card">
-                            <h4 slot="header" class="fitness-card-header">Family Fitness</h4>
-                            <h5 class="card-title"><b>My kids and I often do our workouts together.</b></h5>
-                            <div class="row">
-                                <div class="col-lg-4">
-                                    <img
-                                        src="../assets/familyFitness.jpg"
-                                        class="img-fluid"
-                                        alt="Melissa working out with the family"
-                                    />
-                                </div>
-                                <div class="col-lg-8">
-                                    <div class="row mx-4 card-text">
-                                        I absolutely love working out with my kiddos! It's so much fun and it is so good
-                                        for them! Typically, we just do the workout that I would be doing for the day,
-                                        and then I modify it as needed for their fitness levels. They love doing
-                                        pull-ups (crazy kids) and anything with the cable machine.
-                                    </div>
-                                    <div class="row mx-4 mt-2 card-text">
-                                        We homeschool, so it's very easy for me to work it into our daily schedule. They
-                                        lift weights around 11:00am five days a week and then cardio around 2:30pm four
-                                        days a week. We alternate between walking on the treadmill and doing a boxing
-                                        workout with the punching bag.
-                                    </div>
-                                </div>
-                            </div>
-                        </mfp-card>
-                    </div>
-                </div>
-
-                <div class="row justify-content-center">
-                    <div class="col-12">
-                        <div class="row justify-content-center mt-4 sample-workouts-banner">Sample Workouts</div>
-                        <div class="row mb-4 mt-4 justify-content-center" style="color: #333">
-                            <div class="col-12 col-lg-4">
-                                <mfp-accordion exclusive class="mb-4">
-                                    <mfp-accordion-item
-                                        v-for="(pane, i) in panesOne"
-                                        :key="'p1-' + i"
-                                        :label="pane.title"
-                                    >
-                                        <span v-html="pane.content"></span>
-                                    </mfp-accordion-item>
-                                </mfp-accordion>
-                            </div>
-                            <div class="col-12 col-lg-4">
-                                <mfp-accordion exclusive>
-                                    <mfp-accordion-item
-                                        v-for="(pane, i) in panesTwo"
-                                        :key="'p2-' + i"
-                                        :label="pane.title"
-                                    >
-                                        <span v-html="pane.content"></span>
-                                    </mfp-accordion-item>
-                                </mfp-accordion>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <img src="../assets/meFitness.jpg" class="hero-img" alt="Melissa flexing after a workout" />
             </div>
-        </div>
+        </header>
+
+        <mfp-container size="xl" class="mt-lg">
+            <div class="fitness-card-group">
+                <mfp-card class="fitness-card">
+                    <h4 slot="header" class="fitness-card-header">My Routine</h4>
+                    <h5 class="card-title"><b>I workout 6 days a week.</b></h5>
+                    <p class="card-text">
+                        Monday - Chest and Delts<br />
+                        Tuesday - Back<br />
+                        Wednesday - Legs (Quads)<br />
+                        Thursday - Delts<br />
+                        Friday - Arms and Abs<br />
+                        Saturday - Legs (Hams/Glutes)
+                    </p>
+                </mfp-card>
+                <mfp-card class="fitness-card">
+                    <h4 slot="header" class="fitness-card-header">My Inspirations</h4>
+                    <h5 class="card-title"><b>These women are fxing BEASTS!</b></h5>
+                    <p class="card-text">
+                        <a href="https://danalinnbailey.com/" target="_blank" rel="noopener">Dana Linn Bailey</a>
+                        — Professional Bodybuilder<br />
+                        <a href="https://www.nakedtraining.app/" target="_blank" rel="noopener">Brooke Ence</a>
+                        — Professional Crossfit Trainer
+                    </p>
+                </mfp-card>
+                <mfp-card class="fitness-card">
+                    <h4 slot="header" class="fitness-card-header">My Gear</h4>
+                    <h5 class="card-title"><b>Some of the gear I love.</b></h5>
+                    <p class="card-text">
+                        <a href="https://www.repfitness.com/" target="_blank" rel="noopener">Rep Fitness</a>
+                        — Rack<br />
+                        <a href="https://www.bowflex.com/" target="_blank" rel="noopener">Bowflex</a> — Treadmill and
+                        Dumbbells<br />
+                        <a href="https://www.centurymartialarts.com/" target="_blank" rel="noopener"
+                            >Century Martial Arts</a
+                        >
+                        — Punching Bag<br />
+                        <a href="https://flagnorfail.com/" target="_blank" rel="noopener">Flag Nor Fail</a>
+                        — Clothing
+                    </p>
+                </mfp-card>
+            </div>
+        </mfp-container>
+
+        <mfp-container size="lg" class="mt-lg">
+            <mfp-card class="fitness-card">
+                <h4 slot="header" class="fitness-card-header">Family Fitness</h4>
+                <h5 class="card-title"><b>My kids and I often do our workouts together.</b></h5>
+                <div class="family-grid">
+                    <img
+                        src="../assets/familyFitness.jpg"
+                        class="img-fluid"
+                        alt="Melissa working out with the family"
+                    />
+                    <div>
+                        <p class="card-text">
+                            I absolutely love working out with my kiddos! It's so much fun and it is so good for them!
+                            Typically, we just do the workout that I would be doing for the day, and then I modify it as
+                            needed for their fitness levels. They love doing pull-ups (crazy kids) and anything with the
+                            cable machine.
+                        </p>
+                        <p class="card-text mt-sm">
+                            We homeschool, so it's very easy for me to work it into our daily schedule. They lift
+                            weights around 11:00am five days a week and then cardio around 2:30pm four days a week. We
+                            alternate between walking on the treadmill and doing a boxing workout with the punching bag.
+                        </p>
+                    </div>
+                </div>
+            </mfp-card>
+        </mfp-container>
+
+        <section class="mt-lg">
+            <div class="sample-workouts-banner text-center">Sample Workouts</div>
+            <mfp-container size="lg" class="my-lg">
+                <div class="workouts-grid">
+                    <mfp-accordion exclusive>
+                        <mfp-accordion-item v-for="(pane, i) in panesOne" :key="'p1-' + i" :label="pane.title">
+                            <span v-html="pane.content"></span>
+                        </mfp-accordion-item>
+                    </mfp-accordion>
+                    <mfp-accordion exclusive>
+                        <mfp-accordion-item v-for="(pane, i) in panesTwo" :key="'p2-' + i" :label="pane.title">
+                            <span v-html="pane.content"></span>
+                        </mfp-accordion-item>
+                    </mfp-accordion>
+                </div>
+            </mfp-container>
+        </section>
     </div>
 </template>
 
@@ -267,18 +227,61 @@
 </script>
 
 <style scoped>
+    .fitness-page {
+        background-color: #f8f9fa;
+        color: #333;
+        min-height: calc(100vh - var(--site-nav-height, 56px));
+    }
     .fitness-hero {
         background-color: #7f1d1d;
+        padding-block: var(--space-stack-lg);
+    }
+    .hero-row {
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr;
+        gap: var(--space-stack-md);
+        align-items: center;
+        justify-items: center;
+        max-width: 900px;
+        margin-inline: auto;
+        padding-inline: var(--space-stack-md);
+    }
+    .hero-img {
+        max-width: 100%;
+        height: auto;
     }
     .fitness-hero-text {
-        font-size: 80px;
+        font-size: clamp(2rem, 6vw, 5rem);
         color: #fff;
         text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        text-align: center;
+        line-height: 1.1;
     }
     .fitness-card-group {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-        gap: 1rem;
+        gap: var(--space-stack-md);
+    }
+    .family-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: var(--space-stack-md);
+    }
+    @media (min-width: 1024px) {
+        .family-grid {
+            grid-template-columns: 1fr 2fr;
+            align-items: center;
+        }
+    }
+    .workouts-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: var(--space-stack-lg);
+    }
+    @media (min-width: 1024px) {
+        .workouts-grid {
+            grid-template-columns: 1fr 1fr;
+        }
     }
     .fitness-card::part(header) {
         background-color: #2c3e50;
@@ -298,6 +301,7 @@
         font-size: 16px;
         background-color: var(--color-brand-primary, #1a2744);
         color: var(--color-brand-primary-fg, #ffffff);
+        padding: var(--space-stack-sm);
     }
     .card-text {
         color: #333;

@@ -1,38 +1,31 @@
 ﻿<template>
     <div>
-        <div class="container-fluid mt-0 pt-0" v-if="!selectedProject">
-            <div
-                class="row justify-content-center pt-5"
-                style="background-color: #f0f2f5; min-height: calc(100vh - var(--site-nav-height, 56px))"
-            >
-                <div class="col-lg-10 col-md-11">
-                    <h2 class="text-center mb-4 page-heading">Python Project</h2>
-                    <div class="row justify-content-center">
-                        <div class="col-lg-4 col-md-6 mb-4" v-for="project in projects" :key="project.key">
-                            <ProjectCard
-                                :title="project.title"
-                                :description="project.description"
-                                :tags="project.tags"
-                                cta-text="View Project"
-                                @select="selectedProject = project.key"
-                            >
-                                <template #preview>
-                                    <div class="project-preview" :class="project.previewClass">
-                                        <div class="preview-content">
-                                            <span class="preview-title">{{ project.title }}</span>
-                                            <span class="preview-subtitle">{{ project.subtitle }}</span>
-                                        </div>
-                                    </div>
-                                </template>
-                            </ProjectCard>
+        <mfp-container v-if="!selectedProject" size="2xl" class="swap-page">
+            <h2 class="page-heading text-center mb-lg">Python Project</h2>
+            <div class="cards-grid">
+                <ProjectCard
+                    v-for="project in projects"
+                    :key="project.key"
+                    :title="project.title"
+                    :description="project.description"
+                    :tags="project.tags"
+                    cta-text="View Project"
+                    @select="selectedProject = project.key"
+                >
+                    <template #preview>
+                        <div class="project-preview" :class="project.previewClass">
+                            <div class="preview-content">
+                                <span class="preview-title">{{ project.title }}</span>
+                                <span class="preview-subtitle">{{ project.subtitle }}</span>
+                            </div>
                         </div>
-                    </div>
-                </div>
+                    </template>
+                </ProjectCard>
             </div>
-        </div>
+        </mfp-container>
         <div v-else class="project-view">
             <mfp-button class="back-button" variant="secondary" @click="selectedProject = null">
-                <i class="fas fa-arrow-left me-2" aria-hidden="true"></i>Back to Python Project
+                <i class="fas fa-arrow-left mr-sm" aria-hidden="true"></i>Back to Python Project
             </mfp-button>
             <component :is="projectComponents[selectedProject]" />
         </div>
@@ -158,9 +151,15 @@
 </script>
 
 <style scoped>
+    .swap-page {
+        background-color: #f0f2f5;
+        min-height: calc(100vh - var(--site-nav-height, 56px));
+        padding-top: var(--space-stack-xl);
+    }
     .page-heading {
         color: var(--color-brand-primary, #1a2744);
         font-weight: bold;
+        text-align: center;
     }
     .project-preview {
         height: 160px;
@@ -219,5 +218,44 @@
     }
     .back-button::part(button) {
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    }
+</style>
+
+<style>
+    /*
+     * Grid layout for the Python Project card grid.
+     * Non-scoped because the rules need to target ProjectCard's component
+     * root, which uses <component :is>; Vue's scoped-CSS hash propagation
+     * isn't reliable in that case. The .swap-page parent class is shared
+     * with Data Analysis, but its 3 cards (1 full row) fall through the
+     * orphan rules unaffected.
+     */
+    .swap-page .cards-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-auto-rows: 1fr;
+        gap: var(--space-stack-lg);
+    }
+    .swap-page .cards-grid > * {
+        min-width: 0;
+    }
+    @media (min-width: 768px) {
+        .swap-page .cards-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+    @media (min-width: 1024px) {
+        .swap-page .cards-grid {
+            grid-template-columns: repeat(6, 1fr);
+        }
+        .swap-page .cards-grid > * {
+            grid-column: span 2;
+        }
+        .swap-page .cards-grid > :nth-last-child(2):nth-child(3n + 1) {
+            grid-column: 2 / span 2;
+        }
+        .swap-page .cards-grid > :nth-last-child(1):nth-child(3n + 1) {
+            grid-column: 3 / span 2;
+        }
     }
 </style>

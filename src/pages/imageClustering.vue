@@ -1,69 +1,65 @@
 ﻿<template>
-    <div class="container-fluid h-100 mt-0 pt-0">
-        <div class="row pt-4" style="height: calc(100vh - var(--site-nav-height, 56px)); background-color: #f0f2f5">
-            <div class="col-lg-7 col-sm-12">
-                <CodeBlock :code="imageClustering" />
-            </div>
-            <div
-                class="col-lg-5 col-sm-12 pb-4 d-flex flex-column align-items-center"
-                style="overflow-y: auto; height: calc(100vh - var(--site-nav-height, 56px) - 1.5rem)"
-            >
-                <p>
-                    This code imports an unlabeled dataset of drone images and then sorts them into clusters based on
-                    their features.
-                </p>
-                <img
-                    src="../assets/imageClusteringPCA.jpg"
-                    class="img-fluid mt-3"
-                    alt="PCA scatterplot reducing drone-image features to two dimensions, showing visible clusters"
-                />
-                <p class="mt-2">Image(1): PCA scatterplot</p>
-                <img
-                    src="../assets/imageClusteringPCA3D.png"
-                    class="img-fluid mt-3"
-                    alt="3D PCA scatterplot of drone image features"
-                />
-                <p class="mt-2">Image(2): 3D PCA scatterplot</p>
-                <img
-                    src="../assets/imageClusteringElbow.png"
-                    class="img-fluid mt-3"
-                    alt="Elbow plot for choosing optimal number of K-means clusters"
-                />
-                <p class="mt-2">Image(3): Elbow method</p>
-                <img
-                    src="../assets/imageClusteringYellowbrick.png"
-                    class="img-fluid mt-3"
-                    alt="Yellowbrick library cluster evaluation chart"
-                />
-                <p class="mt-2">Image(4): Yellowbrick method</p>
-                <img
-                    src="../assets/imageClusteringKmeans.png"
-                    class="img-fluid mt-3"
-                    alt="K-means clustering result projected on principal components"
-                />
-                <p class="mt-2">Image(5): KMeans Clustering</p>
-                <img
-                    src="../assets/imageClusteringSilhouette.png"
-                    class="img-fluid mt-3"
-                    alt="Silhouette analysis plot showing how well points fit their assigned cluster"
-                />
-                <p class="mt-2">Image(6): Silhouette</p>
-                <img
-                    src="../assets/imageClusteringViewCluster.jpg"
-                    class="img-fluid mt-3"
-                    alt="Grid of drone images belonging to cluster 0 after K-means classification"
-                />
-                <p class="mt-2">Image(7): View Cluster 0</p>
-            </div>
-        </div>
-    </div>
+    <ProjectShell>
+        <template #code>
+            <CodeBlock :code="imageClustering" />
+        </template>
+        <template #summary>
+            <p>
+                This code imports an unlabeled dataset of drone images and then sorts them into clusters based on their
+                features.
+            </p>
+            <img
+                src="../assets/imageClusteringPCA.jpg"
+                class="img-fluid mt-md"
+                alt="PCA scatterplot reducing drone-image features to two dimensions, showing visible clusters"
+            />
+            <p class="mt-sm">Image(1): PCA scatterplot</p>
+            <img
+                src="../assets/imageClusteringPCA3D.png"
+                class="img-fluid mt-md"
+                alt="3D PCA scatterplot of drone image features"
+            />
+            <p class="mt-sm">Image(2): 3D PCA scatterplot</p>
+            <img
+                src="../assets/imageClusteringElbow.png"
+                class="img-fluid mt-md"
+                alt="Elbow plot for choosing optimal number of K-means clusters"
+            />
+            <p class="mt-sm">Image(3): Elbow method</p>
+            <img
+                src="../assets/imageClusteringYellowbrick.png"
+                class="img-fluid mt-md"
+                alt="Yellowbrick library cluster evaluation chart"
+            />
+            <p class="mt-sm">Image(4): Yellowbrick method</p>
+            <img
+                src="../assets/imageClusteringKmeans.png"
+                class="img-fluid mt-md"
+                alt="K-means clustering result projected on principal components"
+            />
+            <p class="mt-sm">Image(5): KMeans Clustering</p>
+            <img
+                src="../assets/imageClusteringSilhouette.png"
+                class="img-fluid mt-md"
+                alt="Silhouette analysis plot showing how well points fit their assigned cluster"
+            />
+            <p class="mt-sm">Image(6): Silhouette</p>
+            <img
+                src="../assets/imageClusteringViewCluster.jpg"
+                class="img-fluid mt-md"
+                alt="Grid of drone images belonging to cluster 0 after K-means classification"
+            />
+            <p class="mt-sm">Image(7): View Cluster 0</p>
+        </template>
+    </ProjectShell>
 </template>
 
 <script>
     import CodeBlock from '@/components/CodeBlock.vue';
+    import ProjectShell from '@/components/ProjectShell.vue';
     export default {
         name: 'ImageClustering',
-        components: { CodeBlock },
+        components: { CodeBlock, ProjectShell },
         data() {
             return {
                 imageClustering: `# for loading/processing the images

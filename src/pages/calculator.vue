@@ -1,29 +1,21 @@
 ﻿<template>
-    <div class="container-fluid h-100 mt-0 pt-0">
-        <div class="row pt-4" style="height: calc(100vh - var(--site-nav-height, 56px)); background-color: #f0f2f5">
-            <div class="col-lg-7 col-sm-12">
-                <CodeBlock :code="calculator" />
-            </div>
-            <div
-                class="col-lg-5 col-sm-12 pb-4 d-flex flex-column align-items-center"
-                style="overflow-y: auto; height: calc(100vh - var(--site-nav-height, 56px) - 1.5rem)"
-            >
-                <img
-                    src="../assets/calculator.png"
-                    class="img-fluid"
-                    alt="Screenshot of the resulting calculator GUI"
-                />
-                <p class="mt-3">This code will create a grid for a calculator, as shown here.</p>
-            </div>
-        </div>
-    </div>
+    <ProjectShell>
+        <template #code>
+            <CodeBlock :code="calculator" />
+        </template>
+        <template #summary>
+            <img src="../assets/calculator.png" class="img-fluid" alt="Screenshot of the resulting calculator GUI" />
+            <p class="mt-md">This code will create a grid for a calculator, as shown here.</p>
+        </template>
+    </ProjectShell>
 </template>
 
 <script>
     import CodeBlock from '@/components/CodeBlock.vue';
+    import ProjectShell from '@/components/ProjectShell.vue';
     export default {
         name: 'Calculator',
-        components: { CodeBlock },
+        components: { CodeBlock, ProjectShell },
         data() {
             return {
                 calculator: `from tkinter import *

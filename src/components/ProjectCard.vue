@@ -15,7 +15,7 @@
             <div class="project-info">
                 <h4>{{ title }}</h4>
                 <p>{{ description }}</p>
-                <div v-if="tags && tags.length" class="tech-tags mb-3">
+                <div v-if="tags && tags.length" class="tech-tags mb-md">
                     <mfp-badge v-for="tag in tags" :key="tag">{{ tag }}</mfp-badge>
                 </div>
                 <mfp-button class="card-cta" variant="primary">{{ ctaText }}</mfp-button>

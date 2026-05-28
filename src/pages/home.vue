@@ -1,10 +1,7 @@
 <template>
-    <div class="container-fluid mt-0 pt-0">
-        <div
-            class="row align-items-center justify-content-center"
-            style="min-height: calc(100vh - var(--site-nav-height, 56px)); background-color: #f0f2f5; overflow: hidden"
-        >
-            <div class="col-12 col-md-6 col-lg-5 text-center">
+    <mfp-container size="xl" class="home-page">
+        <div class="hero-grid">
+            <div class="hero-image text-center">
                 <img
                     src="../assets/Family.jpeg"
                     class="img-fluid rounded shadow"
@@ -12,14 +9,14 @@
                     alt="Melissa with her wife and four kids"
                 />
             </div>
-            <div class="col-12 col-md-6 col-lg-5 ps-md-5 mt-4 mt-md-0">
+            <div class="hero-text">
                 <h1 class="hero-name">Melissa Freundschuh-Pula</h1>
-                <h4 class="hero-title mt-2">Full-Stack Software Engineer</h4>
-                <p class="hero-intro mt-3" style="color: #2c3e50">
+                <h4 class="hero-title mt-sm">Full-Stack Software Engineer</h4>
+                <p class="hero-intro mt-md" style="color: #2c3e50">
                     Six-plus years building enterprise web apps by day and live products on the side. Wife, mom of four,
                     Marine Corps veteran, and a believer that the best software is shipped, not just shipped on paper.
                 </p>
-                <div class="mt-4 hero-actions">
+                <div class="mt-lg hero-actions">
                     <router-link to="/portfolio" custom v-slot="{ navigate }">
                         <mfp-button variant="primary" @click="navigate">See Projects</mfp-button>
                     </router-link>
@@ -32,7 +29,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </mfp-container>
 </template>
 
 <script>
@@ -42,6 +39,26 @@
 </script>
 
 <style scoped>
+    .home-page {
+        background-color: #f0f2f5;
+        min-height: calc(100vh - var(--site-nav-height, 56px));
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+    }
+    .hero-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: var(--space-stack-lg);
+        align-items: center;
+        width: 100%;
+    }
+    @media (min-width: 768px) {
+        .hero-grid {
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-stack-xl);
+        }
+    }
     .hero-name {
         font-size: 2.5rem;
         font-weight: bold;

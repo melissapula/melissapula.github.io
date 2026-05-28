@@ -1,33 +1,29 @@
 ﻿<template>
-    <div class="container-fluid h-100 mt-0 pt-0">
-        <div class="row pt-4" style="height: calc(100vh - var(--site-nav-height, 56px)); background-color: #f0f2f5">
-            <div class="col-lg-7 col-sm-12">
-                <CodeBlock :code="macbeth" />
-            </div>
-            <div
-                class="col-lg-5 col-sm-12 pb-4 d-flex flex-column align-items-center"
-                style="overflow-y: auto; height: calc(100vh - var(--site-nav-height, 56px) - 1.5rem)"
-            >
-                <img
-                    src="../assets/macbethMap.png"
-                    class="img-fluid"
-                    alt="Map of the rooms the player can navigate in the Macbeth adventure game"
-                />
-                <p class="mt-3">
-                    This code is for a game. The goal of the game is to navigate through various rooms, collecting items
-                    as you go, and then bringing them all to the last room. Depending on the level of difficulty the
-                    user chooses, there is a map that can be drawn as well (as shown).
-                </p>
-            </div>
-        </div>
-    </div>
+    <ProjectShell>
+        <template #code>
+            <CodeBlock :code="macbeth" />
+        </template>
+        <template #summary>
+            <img
+                src="../assets/macbethMap.png"
+                class="img-fluid"
+                alt="Map of the rooms the player can navigate in the Macbeth adventure game"
+            />
+            <p class="mt-md">
+                This code is for a game. The goal of the game is to navigate through various rooms, collecting items as
+                you go, and then bringing them all to the last room. Depending on the level of difficulty the user
+                chooses, there is a map that can be drawn as well (as shown).
+            </p>
+        </template>
+    </ProjectShell>
 </template>
 
 <script>
     import CodeBlock from '@/components/CodeBlock.vue';
+    import ProjectShell from '@/components/ProjectShell.vue';
     export default {
         name: 'macbeth',
-        components: { CodeBlock },
+        components: { CodeBlock, ProjectShell },
         data() {
             return {
                 macbeth: `from turtle import Turtle

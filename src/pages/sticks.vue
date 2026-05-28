@@ -1,24 +1,23 @@
 ﻿<template>
-    <div class="container-fluid h-100 mt-0 pt-0">
-        <div class="row pt-4" style="height: calc(100vh - var(--site-nav-height, 56px)); background-color: #f0f2f5">
-            <div class="col-lg-7 col-sm-12">
-                <CodeBlock :code="code" />
-            </div>
-            <div class="col-lg-5 col-sm-12 pb-4 d-flex flex-column justify-content-center align-items-center">
-                <p>This code will create a game called Game of Sticks. The game is played as follows:</p>
-                <p>1. The computer asks how many sticks you would like to start with (10-100).</p>
-                <p>2. The two players then take turns reducing the number of sticks (1-3).</p>
-                <p>3. The player who takes the last stick loses.</p>
-            </div>
-        </div>
-    </div>
+    <ProjectShell center-summary>
+        <template #code>
+            <CodeBlock :code="code" />
+        </template>
+        <template #summary>
+            <p>This code will create a game called Game of Sticks. The game is played as follows:</p>
+            <p>1. The computer asks how many sticks you would like to start with (10-100).</p>
+            <p>2. The two players then take turns reducing the number of sticks (1-3).</p>
+            <p>3. The player who takes the last stick loses.</p>
+        </template>
+    </ProjectShell>
 </template>
 
 <script>
     import CodeBlock from '@/components/CodeBlock.vue';
+    import ProjectShell from '@/components/ProjectShell.vue';
     export default {
         name: 'Sticks',
-        components: { CodeBlock },
+        components: { CodeBlock, ProjectShell },
         data() {
             return {
                 code: `class gameOfSticks():

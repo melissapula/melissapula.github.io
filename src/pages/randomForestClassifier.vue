@@ -1,70 +1,66 @@
 ﻿<template>
-    <div class="container-fluid h-100 mt-0 pt-0">
-        <div class="row pt-4" style="height: calc(100vh - var(--site-nav-height, 56px)); background-color: #f0f2f5">
-            <div class="col-lg-7 col-sm-12">
-                <CodeBlock :code="rfc" />
-            </div>
-            <div
-                class="col-lg-5 col-sm-12 pb-4 d-flex flex-column align-items-center"
-                style="overflow-y: auto; height: calc(100vh - var(--site-nav-height, 56px) - 1.5rem)"
-            >
-                <p>This code imports a 1TB dataset and then performs predictive analysis on it.</p>
-                <img src="../assets/rfcInitial.png" class="img-fluid mt-3" alt="Initial table from imported dataset" />
-                <p class="mt-2">Image(1): Initial table.</p>
-                <img src="../assets/rfcDropNull.png" class="img-fluid mt-3" alt="Table after null values dropped" />
-                <p class="mt-2">Image(2): Table after null values have been dropped.</p>
-                <img src="../assets/rfcGroupBy.png" class="img-fluid mt-3" alt="Boolean target counts grouped" />
-                <p class="mt-2">Image(3): Boolean counts.</p>
-                <img
-                    src="../assets/rfcPipelineFit.png"
-                    class="img-fluid mt-3"
-                    alt="Table after running through preprocessing pipeline"
-                />
-                <p class="mt-2">Image(4): Table after running through pipeline.</p>
-                <img src="../assets/rfcTrain.png" class="img-fluid mt-3" alt="Sample rows from the training dataset" />
-                <p class="mt-2">Image(5): Table showing some of the values in the train dataset.</p>
-                <img
-                    src="../assets/rfcTrainGroupBy.png"
-                    class="img-fluid mt-3"
-                    alt="Boolean target counts in the training dataset"
-                />
-                <p class="mt-2">Image(6): Boolean count for train dataset.</p>
-                <img src="../assets/rfcTest.png" class="img-fluid mt-3" alt="Sample rows from the test dataset" />
-                <p class="mt-2">Image(7): Table showing some of the values in the test dataset.</p>
-                <img
-                    src="../assets/rfcTestGroupBy.png"
-                    class="img-fluid mt-3"
-                    alt="Boolean target counts in the test dataset"
-                />
-                <p class="mt-2">Image(8): Boolean count for test dataset.</p>
-                <img
-                    src="../assets/rfcPredictionsTransform.png"
-                    class="img-fluid mt-3"
-                    alt="Random Forest prediction model output"
-                />
-                <p class="mt-2">Image(9): Prediction model.</p>
-                <img
-                    src="../assets/rfcPredictionSelect.png"
-                    class="img-fluid mt-3"
-                    alt="Table comparing predicted values against actual values"
-                />
-                <p class="mt-2">Image(10): Predictions vs actual.</p>
-                <img
-                    src="../assets/rfcAccuracy.png"
-                    class="img-fluid mt-3"
-                    alt="Final accuracy score of the trained model"
-                />
-                <p class="mt-2">Image(11): Accuracy of predictions.</p>
-            </div>
-        </div>
-    </div>
+    <ProjectShell>
+        <template #code>
+            <CodeBlock :code="rfc" />
+        </template>
+        <template #summary>
+            <p>This code imports a 1TB dataset and then performs predictive analysis on it.</p>
+            <img src="../assets/rfcInitial.png" class="img-fluid mt-md" alt="Initial table from imported dataset" />
+            <p class="mt-sm">Image(1): Initial table.</p>
+            <img src="../assets/rfcDropNull.png" class="img-fluid mt-md" alt="Table after null values dropped" />
+            <p class="mt-sm">Image(2): Table after null values have been dropped.</p>
+            <img src="../assets/rfcGroupBy.png" class="img-fluid mt-md" alt="Boolean target counts grouped" />
+            <p class="mt-sm">Image(3): Boolean counts.</p>
+            <img
+                src="../assets/rfcPipelineFit.png"
+                class="img-fluid mt-md"
+                alt="Table after running through preprocessing pipeline"
+            />
+            <p class="mt-sm">Image(4): Table after running through pipeline.</p>
+            <img src="../assets/rfcTrain.png" class="img-fluid mt-md" alt="Sample rows from the training dataset" />
+            <p class="mt-sm">Image(5): Table showing some of the values in the train dataset.</p>
+            <img
+                src="../assets/rfcTrainGroupBy.png"
+                class="img-fluid mt-md"
+                alt="Boolean target counts in the training dataset"
+            />
+            <p class="mt-sm">Image(6): Boolean count for train dataset.</p>
+            <img src="../assets/rfcTest.png" class="img-fluid mt-md" alt="Sample rows from the test dataset" />
+            <p class="mt-sm">Image(7): Table showing some of the values in the test dataset.</p>
+            <img
+                src="../assets/rfcTestGroupBy.png"
+                class="img-fluid mt-md"
+                alt="Boolean target counts in the test dataset"
+            />
+            <p class="mt-sm">Image(8): Boolean count for test dataset.</p>
+            <img
+                src="../assets/rfcPredictionsTransform.png"
+                class="img-fluid mt-md"
+                alt="Random Forest prediction model output"
+            />
+            <p class="mt-sm">Image(9): Prediction model.</p>
+            <img
+                src="../assets/rfcPredictionSelect.png"
+                class="img-fluid mt-md"
+                alt="Table comparing predicted values against actual values"
+            />
+            <p class="mt-sm">Image(10): Predictions vs actual.</p>
+            <img
+                src="../assets/rfcAccuracy.png"
+                class="img-fluid mt-md"
+                alt="Final accuracy score of the trained model"
+            />
+            <p class="mt-sm">Image(11): Accuracy of predictions.</p>
+        </template>
+    </ProjectShell>
 </template>
 
 <script>
     import CodeBlock from '@/components/CodeBlock.vue';
+    import ProjectShell from '@/components/ProjectShell.vue';
     export default {
         name: 'RandomForestClassifier',
-        components: { CodeBlock },
+        components: { CodeBlock, ProjectShell },
         data() {
             return {
                 rfc: `
