@@ -68,6 +68,22 @@
                     </template>
                 </ProjectCard>
                 <ProjectCard
+                    title="Paint that Breathes"
+                    description="A WebGL experiment that brings one of Christine Freundschuh-Pula's paintings to life — ambient simplex-noise brushwork displacement with cursor-driven distortion, rendered through a custom GLSL shader on a full-screen Three.js plane. Move your cursor to push the paint like it's still wet."
+                    :tags="['Three.js', 'GLSL', 'WebGL', 'TypeScript']"
+                    cta-text="Open Painting"
+                    @select="selectedProject = 'painting'"
+                >
+                    <template #preview>
+                        <div class="project-preview painting-preview">
+                            <div class="preview-content">
+                                <span class="painting-title">Paint that Breathes</span>
+                                <span class="painting-subtitle">A living WebGL painting</span>
+                            </div>
+                        </div>
+                    </template>
+                </ProjectCard>
+                <ProjectCard
                     href="https://github.com/melissapula/lessonforge"
                     title="LessonForge"
                     description="An agentic, spec-driven lesson generator for the Modern Classrooms self-paced, mastery-based instructional model. A LangGraph pipeline drafts a lesson, scores its own work against a rubric, and pauses for the teacher to approve, revise, or reject before anything is finalized."
@@ -138,6 +154,7 @@
             </mfp-button>
             <FitnessBlog v-if="selectedProject === 'fitness'" />
             <Blockly v-if="selectedProject === 'blockly'" />
+            <BreathingPainting v-if="selectedProject === 'painting'" />
         </div>
     </div>
 </template>
@@ -146,18 +163,20 @@
     import { createSpinner } from 'love-is-love-spinners';
     import FitnessBlog from './fitnessBlog.vue';
     import Blockly from './blockly.vue';
+    import BreathingPainting from './breathingPainting.vue';
     import ProjectCard from '@/components/ProjectCard.vue';
     export default {
         name: 'Portfolio',
         components: {
             FitnessBlog,
             Blockly,
+            BreathingPainting,
             ProjectCard
         },
         data() {
             return {
                 spinner: null,
-                validProjects: ['blockly', 'fitness']
+                validProjects: ['blockly', 'fitness', 'painting']
             };
         },
         computed: {
@@ -229,6 +248,27 @@
         color: #7a6a5a;
         margin-top: 8px;
         letter-spacing: 1px;
+    }
+    .painting-preview {
+        background:
+            linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.5)),
+            url('/breathing-painting/horse-painting.jpg') center / cover no-repeat;
+    }
+    .painting-title {
+        display: block;
+        font-family: Georgia, 'Times New Roman', serif;
+        font-size: 24px;
+        color: #fff;
+        letter-spacing: 2px;
+        text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+    }
+    .painting-subtitle {
+        display: block;
+        font-size: 13px;
+        color: rgba(255, 255, 255, 0.9);
+        margin-top: 8px;
+        letter-spacing: 0.5px;
+        text-shadow: 0 1px 6px rgba(0, 0, 0, 0.6);
     }
     .ds-preview {
         background: linear-gradient(135deg, #1a2744 0%, #c4622a 50%, #f97316 100%);
@@ -349,6 +389,10 @@
     }
     .project-view--blockly :deep(.blockly-layout) {
         height: calc(100vh - 128px);
+    }
+    .project-view--painting {
+        padding-top: 0;
+        background-color: #000;
     }
     .back-button {
         position: fixed;
