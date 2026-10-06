@@ -7,7 +7,7 @@ Personal portfolio website for Melissa Freundschuh-Pula — Full-Stack Software 
 ## Tech Stack
 
 - **Vue 3.4** + **Vue Router 4** (hash-based routing for GitHub Pages)
-- **Vite 5** build tool, with route-level dynamic imports for code splitting
+- **Vite 8** build tool (Rolldown bundler), with route-level dynamic imports for code splitting
 - **`@mfp-design-system/*`** — the author's own Lit-based design system, consumed live throughout the site. Component packages: `button`, `card`, `badge`, `accordion`, `footer`, `icon-button`, `input`, `nav`, `select`, `spinner`. Layout package: `layout` (`<mfp-container>`, `<mfp-row>`, `<mfp-col>` + a spacing/flex/grid utility sheet). Design tokens: `tokens`.
 - **Font Awesome 7** for icons
 - **highlight.js** for read-only Python code display
