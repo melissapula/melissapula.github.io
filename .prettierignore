@@ -1,5 +1,6 @@
 node_modules
 docs
+public/breathing-painting
 dist
 build
 package-lock.json
