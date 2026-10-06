@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-Personal portfolio website (melissapula.github.io) built with **Vue 3** + **Vite** and deployed to **GitHub Pages**. It showcases a resume, About bio, project portfolio (live products + a Blockly sandbox + a Fitness blog), Python coursework projects, and data analysis projects.
+Personal portfolio website (melissapula.github.io) built with **Vue 3** + **Vite** and deployed to **GitHub Pages**. It doubles as the live showcase for the author's own design system, `@mfp-design-system/*` (Lit web components on npm). It contains a home hero, About bio, resume, a Projects grid (live products, npm packages, a Blockly sandbox, a WebGL painting, a Fitness blog), Python coursework, and data analysis projects.
 
 ## Commands
 
@@ -12,47 +12,71 @@ Personal portfolio website (melissapula.github.io) built with **Vue 3** + **Vite
 npm install              # Install dependencies
 npm run dev              # Dev server with hot reload
 npm run build            # Production build → outputs to docs/
-npm run preview          # Preview production build locally
+npm run preview          # Serve the built docs/ locally (port 4173)
 npm run lint             # ESLint check and auto-fix
+npm run format           # Prettier on src/ and root json/cjs/md
+npm run format:check     # Same, check only
 ```
+
+No test suite exists. Verification is `npm run lint`, `npm run build`, and checking the page in a browser.
+
+## Deployment
+
+GitHub Pages serves `docs/` from the `main` branch, so deploying is: `npm run build`, commit `src/` and `docs/` together, push `main`. The push triggers GitHub's built-in "pages build and deployment" workflow (there is no workflow file in the repo); it copies `docs/` as-is and runs no build. Every page chunk imports the main bundle by hashed filename, so any change to `App.vue` or `main.js` renames most files in `docs/assets/`; that churn is expected.
 
 ## Architecture
 
-**SPA with hash-based routing** — all navigation is client-side.
+**SPA with hash-based routing** (`createWebHashHistory`), so deep links work on GitHub Pages without a 404 fallback.
 
-- **Entry:** `src/main.js` → creates Vue app with `createApp()`, registers router and `vue-gtag` (GA4 ID: `G-ZP2LCLVZ2X`)
-- **Root component:** `src/App.vue` → top navbar + `<router-view>`. Navbar links: Home, About, Resume, Projects, Python, Data Analysis, Contact.
-- **Router:** `src/router/index.js` → 8 routes (including `/:pathMatch(.*)*` 404 catch-all). All routes except Home use dynamic `import()` for code-splitting. Each route declares `meta.title`; an `afterEach` guard updates `document.title` to `"<page> | Melissa Freundschuh-Pula"`.
-- **Pages:** `src/pages/` → main pages (home, about, resume, portfolio, contact, notFound) plus three "swap" pages (pythonCode, dataAnalysis, portfolio) that show a card grid and conditionally render a child project in place when a card is clicked.
-- **Swap pattern:** clicking a card sets a `selectedProject` data prop; the cards hide via `v-show` (kept in DOM so the live `love-is-love-spinners` spinner on portfolio.vue keeps animating) and a floating fixed-position "Back" button appears at top-left of the project view.
-- **Child project components** still live in `src/pages/` (calculator, macbeth, bullsCows, sticks, pig, turtle, pygame, wordcount, imageClustering, randomForestClassifier, blockly, fitnessBlog) but are NOT registered as their own routes — they're only reachable through the swap pages.
-- **Assets:** `src/assets/` → image files referenced by page components. Large images have been compressed.
-- **OG image:** `public/og-image.jpg` → 1200×630 social-preview image (resume photo + name + title on navy bg). Generated via PowerShell + System.Drawing if it ever needs to be regenerated.
-- **Build output:** `docs/` → compiled static files served directly by GitHub Pages.
+- **Entry:** `src/main.js` imports Font Awesome, the highlight.js theme, mfp tokens + layout utilities, every `@mfp-design-system/*` component package (each self-registers its custom elements), and `src/styles/app.css`. Calls `initTheme()` before mounting, then registers the router and `vue-gtag` (GA4 `G-ZP2LCLVZ2X`, `send_page_view: false`, router-driven page views).
+- **Root:** `src/App.vue` → `<mfp-nav-bar sticky variant="brand">` + `<router-view>` (wrapped in a fade `<Transition>` and `<Suspense>` with an `<mfp-spinner>` fallback) + `<mfp-footer>`. Nav links Home, About, Resume, Projects, Python, Data Analysis; Contact and the theme `<mfp-select>` sit in the nav's `actions` slot.
+- **Layout height variables:** `App.vue` measures the nav and footer with `ResizeObserver` and publishes `--site-nav-height` and `--site-footer-height` on `:root`. Full-height pages use `calc(100vh - var(--site-nav-height, 56px))`; never hardcode the nav height.
+- **Resume route:** `App.vue` adds `.route-resume` to `.app-shell`, which pins the footer (`position: fixed`). `resume.vue` reserves footer height as bottom padding and sizes its sticky photo/contact `<aside>` to `100vh` minus nav and footer (`box-sizing: border-box` so padding stays inside). It has extensive `@media print` styles; nav and footer are hidden in print.
+- **Router:** `src/router/index.js` → 8 routes including the `/:pathMatch(.*)*` 404. Each route has `meta.title`; an `afterEach` guard sets `document.title` to `"<title> | Melissa Freundschuh-Pula"`.
+- **Theming:** `src/themeManager.js` imports the six theme CSS files from `@mfp-design-system/tokens/themes/*?raw` (Blue, Emerald, Orange, Sand, Terracotta, Navy; default Navy), injects the active one into a single `<style id="mfp-active-theme">`, and persists the choice in `localStorage` under `mfp-theme`. `RENAMED` maps legacy saved names (portfolio, warm, earth) to current ones.
 
-**No Pinia/Vuex** — state is local to each component via `data()`. No centralized state management.
+### Swap pages
 
-## Key Tech Stack
+`portfolio.vue`, `pythonCode.vue` and `dataAnalysis.vue` show a `ProjectCard` grid and render the chosen project in place with a fixed "Back to ..." `<mfp-button>`.
 
-- **Vue 3.4** with **Vue Router 4** (hash mode for GitHub Pages compatibility)
-- **Vite 5** as build tool
-- **mdb-vue-ui-kit** (Material Design Bootstrap for Vue 3) for layout primitives (Container/Row/Col) and icons — used sparsely
-- **Bootstrap CSS** utility classes (`mt-4`, `pt-5`, `text-center`, etc.) come bundled with mdb
-- **FontAwesome** for icons (loaded once in `main.js`)
-- **CodeMirror** (`codemirror-editor-vue3`) for read-only Python code display
-- **Blockly** + a few custom components in `src/components/` for the Blockly sandbox
-- **love-is-love-spinners** (own npm package) — live demo on the portfolio page
-- **vue-gtag** for GA4 page-view tracking
-- **ESLint** with `plugin:vue/vue3-essential`
+- `selectedProject` is a **computed getter/setter over `$route.query.project`** (for example `#/python?project=pig`), so browser back/forward works and project views are linkable. Unknown keys fall back to the grid.
+- `portfolio.vue` hides its grid with `v-show` (kept in the DOM so the live `love-is-love-spinners` instance keeps running) and renders `FitnessBlog`, `Blockly` or `BreathingPainting` by key (`fitness`, `blockly`, `painting`). Its other cards are external links (`href` prop on `ProjectCard`).
+- `pythonCode.vue` and `dataAnalysis.vue` use `v-if`/`v-else` and resolve a key → component-name map through `<component :is>`. Data Analysis keys are lowercase (`wordcount`, `imageclustering`, `randomforestclassifier`); Python keys are camelCase (`bullsCows`).
+- Child project components live in `src/pages/` but are **not routes**: calculator, macbeth, bullsCows, sticks, pig, turtle, pygame, wordcount, imageClustering, randomForestClassifier (all use `ProjectShell`), plus blockly, fitnessBlog and breathingPainting.
+- Card grids use a 6-column grid with `span 2` at ≥1024px, with orphan rows centered via `grid-column: <start> / span 2` (shorthand; overriding only `grid-column-start` loses the span). These grid rules are in non-scoped `<style>` blocks scoped by a page class (`.portfolio-page`, `.swap-page`) because scoped styles don't reliably reach `ProjectCard`'s `<component :is>` root. `.swap-page` is shared by Python and Data Analysis.
+
+### Components (`src/components/`)
+
+- `ProjectCard.vue`: card with a `#preview` slot, title, description, `mfp-badge` tags, and a CTA `mfp-button`. With `href` it renders an `<a target="_blank">`; without, a `role="button"` div that emits `select`.
+- `ProjectShell.vue`: 7fr/5fr split (code pane left, summary pane right) used by the 10 Python/Data Analysis project pages; `center-summary` vertically centers the summary (bullsCows, pig, sticks).
+- `CodeBlock.vue`: read-only code display via **highlight.js** core with only Python registered (`atom-one-dark` theme from `main.js`). The Python source of each project is a template-literal string in the page's `data()`.
+- `BlocklyHeader.vue`, `BlocklyWorkspace.vue`, `CodePanel.vue`: the Blockly sandbox. Blockly 11.2.1 is **loaded at runtime from unpkg**, not npm; custom blocks and the toolbox are in `src/blockly/`. "Run Code" executes the generated JavaScript with `new Function` and a fake `console`.
+
+### Breathing painting
+
+`public/breathing-painting/` is a **prebuilt** Three.js/GLSL bundle from the separate paint-that-breathes repo, iframed by `breathingPainting.vue` at `/breathing-painting/index.html`. Treat it as vendored output: replace it wholesale from that repo, don't edit or format it (it is in `.prettierignore`).
+
+## Design system usage
+
+- Every `mfp-*` tag is a native custom element; `vite.config.js` sets `isCustomElement: (tag) => tag.startsWith('mfp-')`.
+- Use the HTML `slot="name"` attribute to fill mfp component slots, never Vue's `<template v-slot:name>` / `#name` (ESLint's `vue/no-deprecated-slot-attribute` is turned off for this). Vue's `#preview` syntax is only for Vue components such as `ProjectCard`.
+- mfp events are `CustomEvent`s; read values from `event.detail.value` (see `onThemeChange` in `App.vue` and the max-blocks input in `BlocklyHeader.vue`).
+- Style inside mfp shadow DOM through exposed parts, for example `.back-button::part(button)`, `.fitness-card::part(header)`.
+- Layout comes from `@mfp-design-system/layout`: `<mfp-container size="...">` plus utilities such as `mt-md`, `mb-lg`, `my-lg`, `mr-sm`, `flex`, `items-center`. Bootstrap is gone; Bootstrap class names like `mt-4` or `d-flex` do nothing.
+- `src/styles/app.css` adds the few utilities mfp doesn't ship: `text-center`, `img-fluid`, `rounded`, `shadow`, `lead`.
+- Brand color comes from tokens such as `var(--color-brand-primary, #1a2744)` so it follows the active theme. Page backgrounds (`#f0f2f5`) and much body text color are still hardcoded.
 
 ## Code Style
 
 - Do not add comments to new or modified code.
 - All routes (except Home) use dynamic `import()` — preserve this when adding new routes.
+- Prettier: 4-space indent, single quotes, semicolons, no trailing commas, 120 columns, indented `<script>`/`<style>` in `.vue`.
+- Options API is the norm; the Blockly components use `<script setup>`.
 
-## Build Configuration
+## Tooling
 
-- `vite.config.js` configures Vue plugin, `@` alias, and `outDir: 'docs'`
-- `@/*` path alias maps to `src/*` (configured in `jsconfig.json` and `vite.config.js`)
-- Production builds go to `docs/` which is committed and served directly by GitHub Pages
-- Files in `public/` (e.g. `favicon.ico`, `og-image.jpg`) are copied to `docs/` as-is
+- Husky pre-commit runs `lint-staged` (config in `package.json`): `eslint --fix` + `prettier --write` on `src/**/*.{vue,js}`, and `prettier --write` on `*.{json,css,md,cjs}` in any folder. `.prettierignore` excludes `docs`, `public/breathing-painting`, lockfiles and build dirs.
+- ESLint 8 (`.eslintrc.cjs`): `vue3-essential` + `eslint:recommended` + `prettier`, with `multi-word-component-names` and `no-deprecated-slot-attribute` off.
+- `@/*` maps to `src/*` (`vite.config.js` and `jsconfig.json`).
+- Files in `public/` (`favicon.ico`, `og-image.jpg`, `breathing-painting/`) are copied to `docs/` as-is. `og-image.jpg` is a 1200×630 social preview (resume photo + name + title on navy), generated with PowerShell + System.Drawing if it ever needs regenerating.
+- SEO lives in the root `index.html`: meta description, Open Graph/Twitter tags, Google site verification, and a schema.org `Person` JSON-LD block. Keep it in step with resume content.
