@@ -34,7 +34,7 @@
         <div class="plugin-status">
             <div class="status-header">
                 <div :class="['status-dot', { active: badgeEnabled }]" />
-                <span class="status-label">WorkspaceBlockCountBadge Plugin</span>
+                <span class="status-label">Block Count Badge</span>
             </div>
             <p class="status-text">
                 <template v-if="badgeEnabled">
