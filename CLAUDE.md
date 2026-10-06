@@ -75,6 +75,7 @@ GitHub Pages serves `docs/` from the `main` branch, so deploying is: `npm run bu
 
 ## Tooling
 
+- **npm only.** `package.json` pins `"packageManager": "npm@11.8.0"` and `package-lock.json` is the lockfile. Don't run pnpm or yarn here; install with `npm ci` for an exact lockfile install.
 - Husky pre-commit runs `lint-staged` (config in `package.json`): `eslint --fix` + `prettier --write` on `src/**/*.{vue,js}`, and `prettier --write` on `*.{json,css,md,cjs}` in any folder. `.prettierignore` excludes `docs`, `public/breathing-painting`, lockfiles and build dirs.
 - ESLint 8 (`.eslintrc.cjs`): `vue3-essential` + `eslint:recommended` + `prettier`, with `multi-word-component-names` and `no-deprecated-slot-attribute` off.
 - `@/*` maps to `src/*` (`vite.config.js` and `jsconfig.json`).
