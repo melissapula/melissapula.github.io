@@ -81,15 +81,23 @@
         <section class="mb-xl">
             <h3 class="section-heading">Work</h3>
             <p class="mb-sm">
-                <b>Software Engineer, TransImpact</b>
-                <span class="muted"> — Feb 2020 to present</span>
+                <b>Software Engineer, Modern Classrooms Project</b>
+                <span class="muted"> — Sept 2026 to Oct 2026</span>
             </p>
             <p style="color: #555; line-height: 1.7">
-                I architect and ship the company-wide Ti design system — 58 framework-agnostic Stencil web components
-                across four packages — and lead frontend on an Angular 19 enterprise supply-chain platform with 50+
-                lazy-loaded feature modules, AG Grid Enterprise, and MSAL/Azure AD auth. I also led the Vue rebuild of
-                eAudit, modernizing a legacy PHP shipping-audit app into a full-featured customer portal and admin suite
-                as the primary frontend engineer through the main build-out.
+                Built interactive, student-facing instructional tools on an Angular frontend.
+            </p>
+            <p class="mb-sm mt-lg">
+                <b>Application Developer, TransImpact</b>
+                <span class="muted"> — Feb 2020 to Aug 2026</span>
+            </p>
+            <p style="color: #555; line-height: 1.7">
+                I built and tested NestJS backend services on the Avercast supply-chain platform and Angular 19 features
+                on Neo, an enterprise planning platform with 50+ lazy-loaded modules, AG Grid views handling 100k+ rows,
+                and embedded Power BI dashboards. I was a key contributor to the company-wide Ti design system of 58
+                framework-agnostic Stencil web components and led the refactor that removed Tailwind CSS from 45+ of
+                them. I was also the primary engineer on eAudit, rebuilding a legacy PHP shipping-audit app as a Vue
+                customer portal and admin suite.
             </p>
             <p class="mb-sm mt-lg">
                 <b>Web Developer Intern, Big Rock Sports</b>
@@ -104,8 +112,9 @@
                 <span class="muted"> — 2003 to 2007</span>
             </p>
             <p style="color: #555; line-height: 1.7">
-                Two deployments to Iraq. Honorable discharge. The discipline, adaptability, and leadership I developed
-                in the Corps still shape everything I do as an engineer.
+                Small arms repairer, with two combat tours in Iraq and service in Okinawa and the Philippines. Honorable
+                discharge. The discipline, adaptability, and leadership I developed in the Corps still shape everything
+                I do as an engineer.
             </p>
         </section>
 

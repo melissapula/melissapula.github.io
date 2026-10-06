@@ -23,7 +23,7 @@
                     href="https://frulahomes.com"
                     title="Frula Homes"
                     description="A nationwide For Sale By Owner platform with map search, structured offers, buyer/seller messaging, a ZIP-level Market Snapshot from Zillow ZHVI, and a custom Dream Home Finder that match-scores listings to a buyer's wish list."
-                    :tags="['Nuxt 3', 'NestJS', 'Supabase', 'PostGIS', 'Mapbox']"
+                    :tags="['Nuxt 4', 'NestJS', 'Supabase', 'PostGIS', 'Mapbox']"
                     cta-text="Visit Site"
                 >
                     <template #preview>

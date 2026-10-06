@@ -13,7 +13,7 @@
                 <h1 class="hero-name">Melissa Freundschuh-Pula</h1>
                 <h4 class="hero-title mt-sm">Full-Stack Software Engineer</h4>
                 <p class="hero-intro mt-md" style="color: #2c3e50">
-                    Six-plus years building enterprise web apps by day and live products on the side. Wife, mom of four,
+                    Six-plus years building enterprise web apps, plus live products I ship on my own. Wife, mom of four,
                     Marine Corps veteran, and a believer that the best software is shipped, not just shipped on paper.
                 </p>
                 <div class="mt-lg hero-actions">
