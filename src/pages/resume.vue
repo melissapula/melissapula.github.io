@@ -220,7 +220,6 @@
     .resume-layout {
         display: grid;
         grid-template-columns: 1fr;
-        padding-bottom: var(--site-footer-height, 64px);
     }
     @media (min-width: 1024px) {
         .resume-layout {
@@ -267,9 +266,6 @@
     }
 
     @media print {
-        .resume-layout {
-            padding-bottom: 0;
-        }
         #pic {
             position: static;
             width: 100%;

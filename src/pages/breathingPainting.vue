@@ -16,7 +16,7 @@
 <style scoped>
     .painting-frame {
         width: 100%;
-        height: calc(100vh - var(--site-nav-height, 56px));
+        height: calc(100vh - var(--site-nav-height, 56px) - var(--site-footer-height, 64px));
         background-color: #000;
     }
     .painting-frame iframe {

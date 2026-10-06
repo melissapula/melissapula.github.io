@@ -231,7 +231,7 @@
 <style scoped>
     .portfolio-page {
         background-color: #f0f2f5;
-        min-height: calc(100vh - var(--site-nav-height, 56px));
+        min-height: calc(100vh - var(--site-nav-height, 56px) - var(--site-footer-height, 64px));
         padding-top: var(--space-stack-xl);
         padding-bottom: var(--space-stack-xl);
     }
@@ -433,7 +433,7 @@
         padding-top: 72px;
     }
     .project-view--blockly :deep(.blockly-layout) {
-        height: calc(100vh - 128px);
+        height: calc(100vh - var(--site-nav-height, 56px) - 72px - var(--site-footer-height, 64px));
     }
     .project-view--painting {
         padding-top: 0;

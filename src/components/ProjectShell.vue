@@ -24,13 +24,13 @@
     .project-shell {
         background-color: #f0f2f5;
         padding-top: var(--space-stack-lg);
-        min-height: calc(100vh - var(--site-nav-height, 56px));
+        min-height: calc(100vh - var(--site-nav-height, 56px) - var(--site-footer-height, 64px));
     }
     .project-split {
         display: grid;
         grid-template-columns: 1fr;
         gap: var(--space-stack-md);
-        height: calc(100vh - var(--site-nav-height, 56px));
+        height: calc(100vh - var(--site-nav-height, 56px) - var(--site-footer-height, 64px));
     }
     @media (min-width: 1024px) {
         .project-split {
@@ -39,7 +39,7 @@
     }
     .summary-pane {
         overflow-y: auto;
-        height: calc(100vh - var(--site-nav-height, 56px) - 1.5rem);
+        height: calc(100vh - var(--site-nav-height, 56px) - var(--site-footer-height, 64px) - 1.5rem);
     }
     .project-split--centered .summary-pane {
         justify-content: center;

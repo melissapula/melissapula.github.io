@@ -35,7 +35,7 @@
 <style scoped>
     .contact-page {
         background-color: #f0f2f5;
-        min-height: calc(100vh - var(--site-nav-height, 56px));
+        min-height: calc(100vh - var(--site-nav-height, 56px) - var(--site-footer-height, 64px));
         display: flex;
         align-items: center;
     }

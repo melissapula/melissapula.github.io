@@ -1,5 +1,5 @@
 <template>
-    <div class="app-shell" :class="{ 'route-resume': $route.path === '/resume' }">
+    <div class="app-shell">
         <mfp-nav-bar ref="navBar" sticky variant="brand">
             <router-link slot="brand" to="/" class="brand-link">Melissa Freundschuh-Pula</router-link>
 
@@ -132,9 +132,10 @@
         background-color: #f0f2f5;
     }
     .app-shell {
-        height: 100%;
+        box-sizing: border-box;
+        min-height: 100%;
         margin: 0;
-        padding: 0;
+        padding: 0 0 var(--site-footer-height, 64px);
     }
     .white-text {
         color: white !important;
@@ -165,10 +166,6 @@
         min-width: 9rem;
     }
     mfp-footer {
-        margin-top: 2rem;
-    }
-    .route-resume mfp-footer {
-        margin-top: 0;
         position: fixed;
         left: 0;
         right: 0;
@@ -205,7 +202,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        min-height: calc(100vh - var(--site-nav-height, 56px));
+        min-height: calc(100vh - var(--site-nav-height, 56px) - var(--site-footer-height, 64px));
         background-color: #f0f2f5;
         color: var(--color-brand-primary, #1a2744);
     }
@@ -220,6 +217,9 @@
         body {
             background: white !important;
             color: black !important;
+        }
+        .app-shell {
+            padding-bottom: 0;
         }
         .fade-enter-active,
         .fade-leave-active {
