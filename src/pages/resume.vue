@@ -3,7 +3,7 @@
         <aside id="pic">
             <div id="picInner">
                 <div class="text-center">
-                    <h1>Melissa Freundschuh-Pula</h1>
+                    <h1 class="mt-sm">Melissa Freundschuh-Pula</h1>
                     <h4>Full-Stack Software Engineer</h4>
                 </div>
                 <div class="my-md" style="flex: 1; min-height: 0; width: 80%">
@@ -19,7 +19,7 @@
                         "
                     />
                 </div>
-                <div class="text-center mb-sm">
+                <div class="mb-sm">
                     <p class="mb-xs">
                         <i class="fas fa-envelope mr-sm" aria-hidden="true"></i
                         ><a href="mailto:melissa_m_24@yahoo.com">melissa_m_24@yahoo.com</a>
@@ -229,7 +229,13 @@
     }
     #pic {
         background-color: white;
-        padding: 2rem 1.5rem;
+        padding: 1rem 1.5rem;
+    }
+    #pic h1 {
+        margin-bottom: 0;
+    }
+    #pic h4 {
+        margin-top: 0.25rem;
     }
     #picInner {
         display: flex;
@@ -249,7 +255,7 @@
             box-sizing: border-box;
             height: calc(100vh - var(--site-nav-height, 56px) - var(--site-footer-height, 64px));
             overflow: auto;
-            padding: 1.5rem 1rem;
+            padding: 1rem;
         }
         #picInner {
             height: 100%;
