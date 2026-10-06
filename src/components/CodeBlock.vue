@@ -41,7 +41,7 @@
 <style scoped>
     .code-block {
         margin: 0;
-        max-height: calc(100vh - var(--site-nav-height, 56px) - 1.5rem);
+        max-height: calc(100vh - var(--site-nav-height, 56px) - var(--site-footer-height, 64px) - 1.5rem);
         overflow: auto;
         border-radius: 8px;
         background: #282c34;

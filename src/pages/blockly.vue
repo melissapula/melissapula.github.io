@@ -74,7 +74,7 @@
 <style scoped>
     .blockly-layout {
         width: 100%;
-        height: calc(100vh - var(--site-nav-height, 56px));
+        height: calc(100vh - var(--site-nav-height, 56px) - var(--site-footer-height, 64px));
         display: flex;
         flex-direction: column;
         background: #0f172a;

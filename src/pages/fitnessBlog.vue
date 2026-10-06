@@ -230,7 +230,7 @@
     .fitness-page {
         background-color: #f8f9fa;
         color: #333;
-        min-height: calc(100vh - var(--site-nav-height, 56px));
+        min-height: calc(100vh - var(--site-nav-height, 56px) - var(--site-footer-height, 64px));
     }
     .fitness-hero {
         background-color: #7f1d1d;
