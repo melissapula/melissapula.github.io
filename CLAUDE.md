@@ -22,6 +22,8 @@ No test suite exists. Verification is `npm run lint`, `npm run build`, and check
 
 ## Deployment
 
+**Commit and push straight to `main`; don't create feature branches or pull requests.** This is a single-maintainer repo.
+
 GitHub Pages serves `docs/` from the `main` branch, so deploying is: `npm run build`, commit `src/` and `docs/` together, push `main`. The push triggers GitHub's built-in "pages build and deployment" workflow (there is no workflow file in the repo); it copies `docs/` as-is and runs no build. Every page chunk imports the main bundle by hashed filename, so any change to `App.vue` or `main.js` renames most files in `docs/assets/`; that churn is expected.
 
 ## Architecture
