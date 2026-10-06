@@ -220,6 +220,7 @@
     .resume-layout {
         display: grid;
         grid-template-columns: 1fr;
+        padding-bottom: var(--site-footer-height, 64px);
     }
     @media (min-width: 1024px) {
         .resume-layout {
@@ -239,13 +240,14 @@
         background-color: #f0f2f5;
         color: #333;
         padding: 1rem 2rem 2rem;
-        min-height: calc(100vh - var(--site-nav-height, 56px));
+        min-height: calc(100vh - var(--site-nav-height, 56px) - var(--site-footer-height, 64px));
     }
     @media (min-width: 1024px) {
         #pic {
             position: sticky;
             top: var(--site-nav-height, 56px);
-            height: calc(100vh - var(--site-nav-height, 56px));
+            box-sizing: border-box;
+            height: calc(100vh - var(--site-nav-height, 56px) - var(--site-footer-height, 64px));
             overflow: auto;
             padding: 1.5rem 1rem;
         }
@@ -259,6 +261,9 @@
     }
 
     @media print {
+        .resume-layout {
+            padding-bottom: 0;
+        }
         #pic {
             position: static;
             width: 100%;

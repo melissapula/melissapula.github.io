@@ -40,7 +40,7 @@
                 </Suspense>
             </Transition>
         </router-view>
-        <mfp-footer variant="brand">
+        <mfp-footer ref="footer" variant="brand">
             <span class="footer-copy">&copy; {{ currentYear }} Melissa Freundschuh-Pula</span>
             <div class="footer-links">
                 <a href="https://github.com/melissapula" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
@@ -96,15 +96,23 @@
             syncNavHeight() {
                 const h = this.$refs.navBar?.offsetHeight;
                 if (h) document.documentElement.style.setProperty('--site-nav-height', `${h}px`);
+            },
+            syncFooterHeight() {
+                const h = this.$refs.footer?.offsetHeight;
+                if (h) document.documentElement.style.setProperty('--site-footer-height', `${h}px`);
             }
         },
         mounted() {
             this.syncNavHeight();
+            this.syncFooterHeight();
             this._navResizeObserver = new ResizeObserver(() => this.syncNavHeight());
             this._navResizeObserver.observe(this.$refs.navBar);
+            this._footerResizeObserver = new ResizeObserver(() => this.syncFooterHeight());
+            this._footerResizeObserver.observe(this.$refs.footer);
         },
         beforeUnmount() {
             this._navResizeObserver?.disconnect();
+            this._footerResizeObserver?.disconnect();
         }
     };
 </script>
@@ -161,6 +169,11 @@
     }
     .route-resume mfp-footer {
         margin-top: 0;
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 10;
     }
     .footer-copy {
         letter-spacing: 0.3px;
