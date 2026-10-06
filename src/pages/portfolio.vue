@@ -68,6 +68,23 @@
                     </template>
                 </ProjectCard>
                 <ProjectCard
+                    href="https://vendor-checkout-app.expo.app"
+                    title="Vendor Checkout"
+                    description="A multi-tenant inventory and self-checkout web app for art and craft fair vendors, first built for Four Seasons Studio. Prints barcode and QR labels to Avery sheets, auto-applies deals, and takes payment by QR code through each vendor's own Stripe Connect account, or by Venmo, PayPal, Cash App, or cash."
+                    :tags="['Expo', 'React Native Web', 'TypeScript', 'Supabase', 'Stripe Connect']"
+                    cta-text="Open App"
+                >
+                    <template #preview>
+                        <div class="project-preview vc-preview">
+                            <img :src="vendorCheckoutCart" class="vc-icon" alt="" />
+                            <div class="preview-content">
+                                <span class="vc-title">Vendor Checkout</span>
+                                <span class="vc-subtitle">Scan. Cart. Get paid.</span>
+                            </div>
+                        </div>
+                    </template>
+                </ProjectCard>
+                <ProjectCard
                     title="Paint that Breathes"
                     description="A WebGL experiment that brings one of Christine Freundschuh-Pula's paintings to life — ambient simplex-noise brushwork displacement with cursor-driven distortion, rendered through a custom GLSL shader on a full-screen Three.js plane. Move your cursor to push the paint like it's still wet."
                     :tags="['Three.js', 'GLSL', 'WebGL', 'TypeScript']"
@@ -165,6 +182,7 @@
     import Blockly from './blockly.vue';
     import BreathingPainting from './breathingPainting.vue';
     import ProjectCard from '@/components/ProjectCard.vue';
+    import vendorCheckoutCart from '@/assets/vendorCheckoutCart.png';
     export default {
         name: 'Portfolio',
         components: {
@@ -176,6 +194,7 @@
         data() {
             return {
                 spinner: null,
+                vendorCheckoutCart,
                 validProjects: ['blockly', 'fitness', 'painting']
             };
         },
@@ -248,6 +267,32 @@
         color: #7a6a5a;
         margin-top: 8px;
         letter-spacing: 1px;
+    }
+    .vc-preview {
+        background: linear-gradient(135deg, #fbf6ec 0%, #efe4d0 100%);
+        gap: 1rem;
+    }
+    .vc-icon {
+        height: 140px;
+        width: auto;
+    }
+    .vc-preview .preview-content {
+        text-align: left;
+        padding: 0;
+    }
+    .vc-title {
+        display: block;
+        font-family: Georgia, 'Times New Roman', serif;
+        font-size: 22px;
+        color: #1a1a1a;
+        letter-spacing: 1px;
+    }
+    .vc-subtitle {
+        display: block;
+        font-size: 13px;
+        color: #5c4a32;
+        margin-top: 8px;
+        letter-spacing: 0.5px;
     }
     .painting-preview {
         background:
