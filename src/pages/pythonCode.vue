@@ -1,6 +1,6 @@
 ﻿<template>
     <div>
-        <mfp-container v-if="!selectedProject" size="2xl" class="swap-page">
+        <mfp-container v-if="!selectedProject" size="2xl" class="swap-page python-page">
             <h2 class="page-heading text-center mb-lg">Python Project</h2>
             <div class="cards-grid">
                 <ProjectCard
@@ -226,35 +226,33 @@
      * Grid layout for the Python Project card grid.
      * Non-scoped because the rules need to target ProjectCard's component
      * root, which uses <component :is>; Vue's scoped-CSS hash propagation
-     * isn't reliable in that case. The .swap-page parent class is shared
-     * with Data Analysis, but its 3 cards (1 full row) fall through the
-     * orphan rules unaffected.
+     * isn't reliable in that case.
      */
-    .swap-page .cards-grid {
+    .python-page .cards-grid {
         display: grid;
         grid-template-columns: 1fr;
         grid-auto-rows: 1fr;
         gap: var(--space-stack-lg);
     }
-    .swap-page .cards-grid > * {
+    .python-page .cards-grid > * {
         min-width: 0;
     }
     @media (min-width: 768px) {
-        .swap-page .cards-grid {
+        .python-page .cards-grid {
             grid-template-columns: repeat(2, 1fr);
         }
     }
     @media (min-width: 1024px) {
-        .swap-page .cards-grid {
+        .python-page .cards-grid {
             grid-template-columns: repeat(6, 1fr);
         }
-        .swap-page .cards-grid > * {
+        .python-page .cards-grid > * {
             grid-column: span 2;
         }
-        .swap-page .cards-grid > :nth-last-child(2):nth-child(3n + 1) {
+        .python-page .cards-grid > :nth-last-child(2):nth-child(3n + 1) {
             grid-column: 2 / span 2;
         }
-        .swap-page .cards-grid > :nth-last-child(1):nth-child(3n + 1) {
+        .python-page .cards-grid > :nth-last-child(1):nth-child(3n + 1) {
             grid-column: 3 / span 2;
         }
     }
