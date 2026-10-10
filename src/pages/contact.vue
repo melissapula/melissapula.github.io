@@ -13,7 +13,10 @@
                 </div>
                 <div class="contact-item">
                     <i class="fab fa-linkedin contact-icon" aria-hidden="true"></i>
-                    <a href="https://www.linkedin.com/in/melissa-pula-833748172" target="_blank" rel="noopener"
+                    <a
+                        href="https://www.linkedin.com/in/melissa-freundschuh-pula-833748172"
+                        target="_blank"
+                        rel="noopener"
                         >LinkedIn</a
                     >
                 </div>

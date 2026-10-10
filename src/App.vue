@@ -47,7 +47,7 @@
                     <i class="fab fa-github" aria-hidden="true"></i>
                 </a>
                 <a
-                    href="https://www.linkedin.com/in/melissa-pula-833748172"
+                    href="https://www.linkedin.com/in/melissa-freundschuh-pula-833748172"
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="LinkedIn"
